@@ -1,0 +1,393 @@
+
+*** Running vivado
+    with args -log image_filter_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_filter_wrapper.tcl
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sun Mar  8 00:09:43 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source image_filter_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/2025.1/Vivado/data/ip'.
+INFO: [Project 1-5698] Found the below utility IPs instantiated in block design /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/image_filter.bd which have equivalent inline hdl with improved performance and reduced diskspace.
+It is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.
+More information on inline hdl is available in UG994.
+Utility IP Component Instances:
+ image_filter_xlconcat_0_2
+Command: read_checkpoint -auto_incremental -incremental /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/utils_1/imports/synth_1/acc_image_filter.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/utils_1/imports/synth_1/acc_image_filter.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top image_filter_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 992657
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2168.586 ; gain = 441.711 ; free physical = 2700 ; free virtual = 4811
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'image_filter_wrapper' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/hdl/image_filter_wrapper.vhd:41]
+INFO: [Synth 8-3491] module 'image_filter' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1057' bound to instance 'image_filter_i' of component 'image_filter' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/hdl/image_filter_wrapper.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'image_filter' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1087]
+INFO: [Synth 8-3491] module 'image_filter_acc_image_filter_0_2' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_acc_image_filter_0_2_stub.vhdl:6' bound to instance 'acc_image_filter_0' of component 'image_filter_acc_image_filter_0_2' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1678]
+INFO: [Synth 8-638] synthesizing module 'image_filter_acc_image_filter_0_2' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_acc_image_filter_0_2_stub.vhdl:49]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1088]
+INFO: [Synth 8-3491] module 'image_filter_axi_dma_0_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_dma_0_0_stub.vhdl:6' bound to instance 'axi_dma_0' of component 'image_filter_axi_dma_0_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1710]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_dma_0_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_dma_0_0_stub.vhdl:82]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_mem_intercon_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:611]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1AWKSWH' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:101]
+INFO: [Synth 8-3491] module 'image_filter_axi_mem_intercon_imp_auto_pc_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'image_filter_axi_mem_intercon_imp_auto_pc_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:186]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_mem_intercon_imp_auto_pc_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_pc_0_stub.vhdl:97]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1AWKSWH' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:101]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1E1DRPE' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:310]
+INFO: [Synth 8-3491] module 'image_filter_axi_mem_intercon_imp_auto_us_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_us_0_stub.vhdl:6' bound to instance 'auto_us' of component 'image_filter_axi_mem_intercon_imp_auto_us_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:351]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_mem_intercon_imp_auto_us_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_us_0_stub.vhdl:52]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1E1DRPE' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:310]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_19D4B42' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:436]
+INFO: [Synth 8-3491] module 'image_filter_axi_mem_intercon_imp_auto_us_1' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_us_1_stub.vhdl:6' bound to instance 'auto_us' of component 'image_filter_axi_mem_intercon_imp_auto_us_1' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:483]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_mem_intercon_imp_auto_us_1' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_auto_us_1_stub.vhdl:58]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_19D4B42' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:436]
+INFO: [Synth 8-3491] module 'image_filter_axi_mem_intercon_imp_xbar_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_xbar_0_stub.vhdl:6' bound to instance 'xbar' of component 'image_filter_axi_mem_intercon_imp_xbar_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:938]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_mem_intercon_imp_xbar_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_mem_intercon_imp_xbar_0_stub.vhdl:96]
+INFO: [Synth 8-256] done synthesizing module 'image_filter_axi_mem_intercon_0' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:611]
+INFO: [Synth 8-3491] module 'image_filter_axi_smc_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_smc_0_stub.vhdl:6' bound to instance 'axi_smc' of component 'image_filter_axi_smc_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1854]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_smc_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_smc_0_stub.vhdl:115]
+INFO: [Synth 8-3491] module 'image_filter_axi_timer_0_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_timer_0_0_stub.vhdl:6' bound to instance 'axi_timer_0' of component 'image_filter_axi_timer_0_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1954]
+INFO: [Synth 8-638] synthesizing module 'image_filter_axi_timer_0_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_axi_timer_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'image_filter_processing_system7_0_1' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_processing_system7_0_1_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'image_filter_processing_system7_0_1' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1983]
+INFO: [Synth 8-638] synthesizing module 'image_filter_processing_system7_0_1' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_processing_system7_0_1_stub.vhdl:129]
+INFO: [Synth 8-3491] module 'image_filter_rst_ps7_0_100M_0' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_rst_ps7_0_100M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_100M' of component 'image_filter_rst_ps7_0_100M_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:2100]
+INFO: [Synth 8-638] synthesizing module 'image_filter_rst_ps7_0_100M_0' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/.Xil/Vivado-992456-yoga/realtime/image_filter_rst_ps7_0_100M_0_stub.vhdl:28]
+INFO: [Synth 8-3491] module 'image_filter_xlconcat_0_2' declared at '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/ip/image_filter_xlconcat_0_2/synth/image_filter_xlconcat_0_2.v:53' bound to instance 'xlconcat_0' of component 'image_filter_xlconcat_0_2' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:2113]
+INFO: [Synth 8-6157] synthesizing module 'image_filter_xlconcat_0_2' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/ip/image_filter_xlconcat_0_2/synth/image_filter_xlconcat_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_7_xlconcat' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/ipshared/9c1a/hdl/xlconcat_v2_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_7_xlconcat' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/ipshared/9c1a/hdl/xlconcat_v2_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'image_filter_xlconcat_0_2' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/bd/image_filter/ip/image_filter_xlconcat_0_2/synth/image_filter_xlconcat_0_2.v:53]
+INFO: [Synth 8-256] done synthesizing module 'image_filter' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/synth/image_filter.vhd:1087]
+INFO: [Synth 8-256] done synthesizing module 'image_filter_wrapper' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/hdl/image_filter_wrapper.vhd:41]
+WARNING: [Synth 8-7129] Port In3[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In4[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In5[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In6[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In7[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In8[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In9[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In10[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In11[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In12[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In13[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In14[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In15[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In16[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In17[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In18[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In19[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In20[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In21[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In22[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In23[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In24[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In25[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In26[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In27[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In28[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In29[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In30[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In31[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In32[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In33[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In34[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In35[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In36[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In37[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In38[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In39[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In40[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In41[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In42[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In43[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In44[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In45[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In46[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In47[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In48[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In49[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In50[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In51[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In52[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In53[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In54[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In55[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In56[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In57[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In58[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In59[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In60[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In61[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In62[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In63[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In64[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In65[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In66[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In67[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In68[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In69[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In70[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In71[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In72[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In73[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In74[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In75[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In76[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In77[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In78[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In79[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In80[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In81[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In82[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In83[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In84[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In85[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In86[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In87[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In88[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In89[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In90[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In91[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In92[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In93[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In94[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In95[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In96[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In97[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In98[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In99[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In100[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In101[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+WARNING: [Synth 8-7129] Port In102[0] in module xlconcat_v2_1_7_xlconcat is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2254.523 ; gain = 527.648 ; free physical = 2617 ; free virtual = 4730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2269.367 ; gain = 542.492 ; free physical = 2617 ; free virtual = 4730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2269.367 ; gain = 542.492 ; free physical = 2617 ; free virtual = 4730
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2269.367 ; gain = 0.000 ; free physical = 2617 ; free virtual = 4730
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_dma_0_0/image_filter_axi_dma_0_0/image_filter_axi_dma_0_0_in_context.xdc] for cell 'image_filter_i/axi_dma_0'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_dma_0_0/image_filter_axi_dma_0_0/image_filter_axi_dma_0_0_in_context.xdc] for cell 'image_filter_i/axi_dma_0'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_smc_0/image_filter_axi_smc_0/image_filter_axi_smc_0_in_context.xdc] for cell 'image_filter_i/axi_smc'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_smc_0/image_filter_axi_smc_0/image_filter_axi_smc_0_in_context.xdc] for cell 'image_filter_i/axi_smc'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0_in_context.xdc] for cell 'image_filter_i/rst_ps7_0_100M'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0_in_context.xdc] for cell 'image_filter_i/rst_ps7_0_100M'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/xbar'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/xbar'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/s00_couplers/auto_us'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/s00_couplers/auto_us'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/s01_couplers/auto_us'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/s01_couplers/auto_us'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/m00_couplers/auto_pc'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0_in_context.xdc] for cell 'image_filter_i/axi_mem_intercon/m00_couplers/auto_pc'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1_in_context.xdc] for cell 'image_filter_i/processing_system7_0'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1_in_context.xdc] for cell 'image_filter_i/processing_system7_0'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2_in_context.xdc] for cell 'image_filter_i/acc_image_filter_0'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2_in_context.xdc] for cell 'image_filter_i/acc_image_filter_0'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0_in_context.xdc] for cell 'image_filter_i/axi_timer_0'
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0_in_context.xdc] for cell 'image_filter_i/axi_timer_0'
+Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2312.355 ; gain = 0.000 ; free physical = 2650 ; free virtual = 4763
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2312.391 ; gain = 0.000 ; free physical = 2650 ; free virtual = 4763
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2312.391 ; gain = 585.516 ; free physical = 2683 ; free virtual = 4796
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2320.359 ; gain = 593.484 ; free physical = 2683 ; free virtual = 4796
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2320.359 ; gain = 593.484 ; free physical = 2683 ; free virtual = 4796
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2320.359 ; gain = 593.484 ; free physical = 2682 ; free virtual = 4797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2320.359 ; gain = 593.484 ; free physical = 2682 ; free virtual = 4801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2414.359 ; gain = 687.484 ; free physical = 2612 ; free virtual = 4731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2414.359 ; gain = 687.484 ; free physical = 2612 ; free virtual = 4731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2424.375 ; gain = 697.500 ; free physical = 2604 ; free virtual = 4724
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------------+----------+
+|      |BlackBox name                               |Instances |
++------+--------------------------------------------+----------+
+|1     |image_filter_axi_mem_intercon_imp_xbar_0    |         1|
+|2     |image_filter_axi_mem_intercon_imp_auto_pc_0 |         1|
+|3     |image_filter_axi_mem_intercon_imp_auto_us_0 |         1|
+|4     |image_filter_axi_mem_intercon_imp_auto_us_1 |         1|
+|5     |image_filter_acc_image_filter_0_2           |         1|
+|6     |image_filter_axi_dma_0_0                    |         1|
+|7     |image_filter_axi_smc_0                      |         1|
+|8     |image_filter_axi_timer_0_0                  |         1|
+|9     |image_filter_processing_system7_0_1         |         1|
+|10    |image_filter_rst_ps7_0_100M_0               |         1|
++------+--------------------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------------------+------+
+|      |Cell                                             |Count |
++------+-------------------------------------------------+------+
+|1     |image_filter_acc_image_filter_0_2_bbox           |     1|
+|2     |image_filter_axi_dma_0_0_bbox                    |     1|
+|3     |image_filter_axi_mem_intercon_imp_auto_pc_0_bbox |     1|
+|4     |image_filter_axi_mem_intercon_imp_auto_us_0_bbox |     1|
+|5     |image_filter_axi_mem_intercon_imp_auto_us_1_bbox |     1|
+|6     |image_filter_axi_mem_intercon_imp_xbar_0_bbox    |     1|
+|7     |image_filter_axi_smc_0_bbox                      |     1|
+|8     |image_filter_axi_timer_0_0_bbox                  |     1|
+|9     |image_filter_processing_system7_0_1_bbox         |     1|
+|10    |image_filter_rst_ps7_0_100M_0_bbox               |     1|
++------+-------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.188 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2599.188 ; gain = 829.289 ; free physical = 2457 ; free virtual = 4576
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2599.195 ; gain = 872.312 ; free physical = 2457 ; free virtual = 4576
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2599.195 ; gain = 0.000 ; free physical = 2457 ; free virtual = 4576
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2599.195 ; gain = 0.000 ; free physical = 2630 ; free virtual = 4750
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 97c03b05
+INFO: [Common 17-83] Releasing license: Synthesis
+61 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2599.223 ; gain = 1062.223 ; free physical = 2631 ; free virtual = 4750
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1767.656; main = 1767.656; forked = 270.073
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3284.238; main = 2599.191; forked = 963.875
+INFO: [Common 17-1381] The checkpoint '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/synth_1/image_filter_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file image_filter_wrapper_utilization_synth.rpt -pb image_filter_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Mar  8 00:10:14 2026...

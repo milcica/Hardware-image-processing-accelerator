@@ -1,0 +1,10 @@
+vhdl xil_defaultlib  \
+"../../../bd/image_filter/ip/image_filter_axi_dma_0_0/sim/image_filter_axi_dma_0_0.vhd" \
+"../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_1/sim/bd_1755_psr_aclk_0.vhd" \
+"../../../bd/image_filter/ip/image_filter_rst_ps7_0_100M_0/sim/image_filter_rst_ps7_0_100M_0.vhd" \
+"../../../bd/image_filter/ip/image_filter_acc_image_filter_0_2/sim/image_filter_acc_image_filter_0_2.vhd" \
+"../../../bd/image_filter/ip/image_filter_axi_timer_0_0/sim/image_filter_axi_timer_0_0.vhd" \
+"../../../bd/image_filter/sim/image_filter.vhd" \
+
+# Do not sort compile order
+nosort
