@@ -58,9 +58,6 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
-set_param xicom.use_bs_reader 1
-set_param bd.open.in_stealth_mode 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -128,8 +125,6 @@ set_property used_in_implementation false [get_files -all /home/kowalski/Desktop
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_rst_ps7_0_100M_0/image_filter_rst_ps7_0_100M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1.xdc]
-set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_ooc.xdc]
@@ -137,6 +132,8 @@ set_property used_in_synthesis false [get_files -all /home/kowalski/Desktop/ETF/
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_processing_system7_0_1/image_filter_processing_system7_0_1.xdc]
+set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_timer_0_0/image_filter_axi_timer_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/image_filter_ooc.xdc]
 
 OPTRACE "Adding files" END { }

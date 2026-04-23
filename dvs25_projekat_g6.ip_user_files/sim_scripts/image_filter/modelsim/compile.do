@@ -82,6 +82,9 @@ vcom -work axi_dma_v7_1_36 -64 -93  \
 vcom -work xil_defaultlib -64 -93  \
 "../../../bd/image_filter/ip/image_filter_axi_dma_0_0/sim/image_filter_axi_dma_0_0.vhd" \
 
+vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
+"../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/sim/bd_1755.v" \
+
 vlog -work xlconstant_v1_1_10 -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a165/hdl/xlconstant_v1_1_vl_rfs.v" \
 
@@ -180,9 +183,6 @@ vlog -work xil_defaultlib -64 -incr -mfcu  -sv -L axi_vip_v1_1_21 -L smartconnec
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_45/sim/bd_1755_m02bn_0.sv" \
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_46/sim/bd_1755_m02e_0.sv" \
 
-vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
-"../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/sim/bd_1755.v" \
-
 vlog -work axi_infrastructure_v1_1_0 -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
@@ -243,6 +243,9 @@ vlog -work xlconcat_v2_1_7 -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_
 vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../bd/image_filter/ip/image_filter_xlconcat_0_2/sim/image_filter_xlconcat_0_2.v" \
 
+vcom -work xil_defaultlib -64 -93  \
+"../../../bd/image_filter/sim/image_filter.vhd" \
+
 vlog -work axi_protocol_converter_v2_1_36 -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" "+incdir+../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" "+incdir+../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" "+incdir+/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" \
 "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
@@ -259,9 +262,6 @@ vlog -work xil_defaultlib -64 -incr -mfcu  "+incdir+../../../../dvs25_projekat_g
 "../../../bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/sim/image_filter_axi_mem_intercon_imp_auto_us_0.v" \
 "../../../bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/sim/image_filter_axi_mem_intercon_imp_auto_us_1.v" \
 "../../../bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/sim/image_filter_axi_mem_intercon_imp_auto_pc_0.v" \
-
-vcom -work xil_defaultlib -64 -93  \
-"../../../bd/image_filter/sim/image_filter.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

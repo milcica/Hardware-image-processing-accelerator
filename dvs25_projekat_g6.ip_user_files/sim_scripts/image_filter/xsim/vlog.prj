@@ -1,4 +1,5 @@
 verilog xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" --include "/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" \
+"../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/sim/bd_1755.v" \
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_0/sim/bd_1755_one_0.v" \
 
 sv xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" --include "/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" \
@@ -47,11 +48,6 @@ sv xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rs
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_44/sim/bd_1755_m02wn_0.sv" \
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_45/sim/bd_1755_m02bn_0.sv" \
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/ip/ip_46/sim/bd_1755_m02e_0.sv" \
-
-verilog xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" --include "/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" \
-"../../../bd/image_filter/ip/image_filter_axi_smc_0/bd_0/sim/bd_1755.v" \
-
-sv xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" --include "/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" \
 "../../../bd/image_filter/ip/image_filter_axi_smc_0/sim/image_filter_axi_smc_0.sv" \
 
 verilog xil_defaultlib -i "../../../../../../../../../../../opt/Xilinx/2025.1/data/rsb/busdef" --include "/opt/Xilinx/2025.1/Vivado/data/xilinx_vip/include" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/f0b6/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/a8e4/hdl/verilog" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/ec67/hdl" --include "../../../../dvs25_projekat_g6.gen/sources_1/bd/image_filter/ipshared/6cfa/hdl" \

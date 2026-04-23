@@ -2,10 +2,10 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Sat Mar  7 19:06:55 2026
+-- Date        : Sun Apr 19 14:51:49 2026
 -- Host        : yoga running 64-bit Ubuntu 24.04.4 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top image_filter_axi_mem_intercon_imp_auto_us_0 -prefix
---               image_filter_axi_mem_intercon_imp_auto_us_0_ image_filter_axi_mem_intercon_imp_auto_us_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0_sim_netlist.vhdl
 -- Design      : image_filter_axi_mem_intercon_imp_auto_us_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -49,6 +49,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_
     D : in STD_LOGIC_VECTOR ( 2 downto 0 );
     \current_word_1_reg[2]_2\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_r_upsizer : entity is "axi_dwidth_converter_v2_1_36_r_upsizer";
 end image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_r_upsizer;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_r_upsizer is
@@ -1536,6 +1538,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_ax
     s_axi_arvalid : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 60 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axic_register_slice : entity is "axi_register_slice_v2_1_35_axic_register_slice";
 end image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axic_register_slice;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axic_register_slice is
@@ -5104,6 +5108,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_generic_baseblocks_v2_1_2_com
     m_axi_arready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 27 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_generic_baseblocks_v2_1_2_command_fifo : entity is "generic_baseblocks_v2_1_2_command_fifo";
 end image_filter_axi_mem_intercon_imp_auto_us_0_generic_baseblocks_v2_1_2_command_fifo;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_generic_baseblocks_v2_1_2_command_fifo is
@@ -6368,6 +6374,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_
     m_axi_arready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 27 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_a_upsizer : entity is "axi_dwidth_converter_v2_1_36_a_upsizer";
 end image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_a_upsizer;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_a_upsizer is
@@ -6442,6 +6450,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_ax
     s_ready_i_reg_0 : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axi_register_slice : entity is "axi_register_slice_v2_1_35_axi_register_slice";
 end image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axi_register_slice;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_axi_register_slice_v2_1_35_axi_register_slice is
@@ -6537,6 +6547,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_
     m_axi_arready : in STD_LOGIC;
     m_axi_rvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_axi_upsizer : entity is "axi_dwidth_converter_v2_1_36_axi_upsizer";
 end image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_axi_upsizer;
 
 architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_axi_upsizer is
@@ -7077,6 +7089,8 @@ entity image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_
   attribute C_S_AXI_ID_WIDTH of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_top : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_top : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_top : entity is "axi_dwidth_converter_v2_1_36_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of image_filter_axi_mem_intercon_imp_auto_us_0_axi_dwidth_converter_v2_1_36_top : entity is 1;
   attribute P_AXI4 : integer;
@@ -7418,7 +7432,7 @@ architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0 is
   attribute X_INTERFACE_MODE : string;
   attribute X_INTERFACE_MODE of s_axi_aclk : signal is "slave";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of s_axi_aclk : signal is "XIL_INTERFACENAME SI_CLK, ASSOCIATED_BUSIF S_AXI:M_AXI, ASSOCIATED_RESET S_AXI_ARESETN, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axi_aclk : signal is "XIL_INTERFACENAME SI_CLK, ASSOCIATED_BUSIF S_AXI:M_AXI, ASSOCIATED_RESET S_AXI_ARESETN, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 SI_RST RST";
   attribute X_INTERFACE_MODE of s_axi_aresetn : signal is "slave";
   attribute X_INTERFACE_PARAMETER of s_axi_aresetn : signal is "XIL_INTERFACENAME SI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0, TYPE INTERCONNECT";
@@ -7429,7 +7443,7 @@ architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0 is
   attribute X_INTERFACE_INFO of s_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI RVALID";
   attribute X_INTERFACE_INFO of m_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 M_AXI ARADDR";
   attribute X_INTERFACE_MODE of m_axi_araddr : signal is "master";
-  attribute X_INTERFACE_PARAMETER of m_axi_araddr : signal is "XIL_INTERFACENAME M_AXI, DATA_WIDTH 64, PROTOCOL AXI4, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 8, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of m_axi_araddr : signal is "XIL_INTERFACENAME M_AXI, DATA_WIDTH 64, PROTOCOL AXI4, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 8, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of m_axi_arburst : signal is "xilinx.com:interface:aximm:1.0 M_AXI ARBURST";
   attribute X_INTERFACE_INFO of m_axi_arcache : signal is "xilinx.com:interface:aximm:1.0 M_AXI ARCACHE";
   attribute X_INTERFACE_INFO of m_axi_arlen : signal is "xilinx.com:interface:aximm:1.0 M_AXI ARLEN";
@@ -7442,7 +7456,7 @@ architecture STRUCTURE of image_filter_axi_mem_intercon_imp_auto_us_0 is
   attribute X_INTERFACE_INFO of m_axi_rresp : signal is "xilinx.com:interface:aximm:1.0 M_AXI RRESP";
   attribute X_INTERFACE_INFO of s_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 S_AXI ARADDR";
   attribute X_INTERFACE_MODE of s_axi_araddr : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of s_axi_araddr : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 1e+08, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of s_axi_araddr : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN image_filter_processing_system7_0_1_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of s_axi_arburst : signal is "xilinx.com:interface:aximm:1.0 S_AXI ARBURST";
   attribute X_INTERFACE_INFO of s_axi_arcache : signal is "xilinx.com:interface:aximm:1.0 S_AXI ARCACHE";
   attribute X_INTERFACE_INFO of s_axi_arlen : signal is "xilinx.com:interface:aximm:1.0 S_AXI ARLEN";

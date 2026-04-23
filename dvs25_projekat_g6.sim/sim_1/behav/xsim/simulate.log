@@ -1,0 +1,12 @@
+Time resolution is 1 ps
+Note: --- Starting Test Case 1: 3x3 Uniform Filter ---
+Time: 70 ns  Iteration: 0  Process: /tb_filter_alu/stim_proc  File: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sim_1/new/tb_alu.vhd
+Note: --- Starting Test Case 2: 9x9 Uniform Filter ---
+Time: 650 ns  Iteration: 0  Process: /tb_filter_alu/stim_proc  File: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sim_1/new/tb_alu.vhd
+Note: --- Starting Test Case 1: 3x3 Uniform Filter ---
+Time: 70 ns  Iteration: 0  Process: /tb_filter_alu/stim_proc  File: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sim_1/new/tb_alu.vhd
+Note: --- Starting Test Case 2: 9x9 Uniform Filter ---
+Time: 650 ns  Iteration: 0  Process: /tb_filter_alu/stim_proc  File: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sim_1/new/tb_alu.vhd
+Note: --- Starting Test Case 3: Mode Switch to Q9.7 ---
+Time: 1630 ns  Iteration: 0  Process: /tb_filter_alu/stim_proc  File: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sim_1/new/tb_alu.vhd
+INFO: xsimkernel Simulation Memory Usage: 260788 KB (Peak: 318320 KB), Simulation CPU Usage: 48770 ms

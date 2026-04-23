@@ -16,6 +16,15 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filte
 # IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_xbar_0/image_filter_axi_mem_intercon_imp_xbar_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_xbar_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_xbar_0} -quiet] -quiet
 
+# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_0} -quiet] -quiet
+
+# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_1 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_1} -quiet] -quiet
+
+# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_pc_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_pc_0} -quiet] -quiet
+
 # IP: bd/image_filter/ip/image_filter_axi_mem_intercon_0/image_filter_axi_mem_intercon_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_0} -quiet] -quiet
 
@@ -30,14 +39,5 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filte
 
 # IP: bd/image_filter/ip/image_filter_xlconcat_0_2/image_filter_xlconcat_0_2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_xlconcat_0_2 || ORIG_REF_NAME==image_filter_xlconcat_0_2} -quiet] -quiet
-
-# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_0/image_filter_axi_mem_intercon_imp_auto_us_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_0} -quiet] -quiet
-
-# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_us_1/image_filter_axi_mem_intercon_imp_auto_us_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_1 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_us_1} -quiet] -quiet
-
-# IP: bd/image_filter/ip/image_filter_axi_mem_intercon_imp_auto_pc_0/image_filter_axi_mem_intercon_imp_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==image_filter_axi_mem_intercon_imp_auto_pc_0 || ORIG_REF_NAME==image_filter_axi_mem_intercon_imp_auto_pc_0} -quiet] -quiet
 
 # XDC: /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/image_filter_ooc.xdc

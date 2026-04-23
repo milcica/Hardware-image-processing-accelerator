@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1772924978">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1776603050">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="image_filter_wrapper_postroute_physopted.rqs"/>
@@ -182,7 +182,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_us_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_timer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_us_0"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_acc_image_filter_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_processing_system7_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_dma_0_0"/>
 </GenRun>

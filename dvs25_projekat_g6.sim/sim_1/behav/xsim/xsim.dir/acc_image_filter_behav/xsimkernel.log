@@ -1,0 +1,7 @@
+Running: xsim.dir/acc_image_filter_behav/xsimk -simmode gui -wdb acc_image_filter_behav.wdb -simrunnum 0 -socket 47201
+Design successfully loaded
+Design Loading Memory Usage: 179268 KB (Peak: 179268 KB)
+Design Loading CPU Usage: 2150 ms
+Simulation completed
+Simulation Memory Usage: 269204 KB (Peak: 318536 KB)
+Simulation CPU Usage: 2220 ms

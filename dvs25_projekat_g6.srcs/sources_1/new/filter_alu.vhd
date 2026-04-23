@@ -99,27 +99,27 @@ entity filter_alu is
         clk           : in  std_logic;
         rst           : in  std_logic;
 
-        -- ----------------------------------------------------------------
-        -- Configuration - driven from AXI-Lite helper registers
-        -- ----------------------------------------------------------------
+
+        -- Configuration
+
         radius        : in  std_logic_vector(2 downto 0);          -- 0..4
         coeff         : in  std_logic_vector(81*16-1 downto 0);    -- W0..W80 packed
         coeff_scale   : in  std_logic_vector(15 downto 0);         -- UQ4.12
         mode          : in  std_logic;                             -- 0=u8, 1=Q9.7
 
-        -- ----------------------------------------------------------------
+
         -- Pixel data
-        -- ----------------------------------------------------------------
+
         pixel_new     : in  std_logic_vector(7 downto 0);             -- AXI-Stream
         col_from_bram : in  std_logic_vector(2*MAX_R*8-1 downto 0);   -- BRAM word
 
         -- Advance all shift registers by one column position
         shift_en      : in  std_logic;
 
-        -- ----------------------------------------------------------------
+
         -- Registered output
-        -- ----------------------------------------------------------------
-        result        : out std_logic_vector(15 downto 0);
+
+        result        : out std_logic_vector(15 downto 0); -- wtf vratiti se
         result_valid  : out std_logic
     );
 end entity filter_alu;
@@ -127,72 +127,63 @@ end entity filter_alu;
 
 architecture Behavioral of filter_alu is
 
-    -- -----------------------------------------------------------------------
+
     -- Array dimensions (fixed at elaboration time for MAX_R = 4)
-    -- -----------------------------------------------------------------------
+
     constant ROWS        : integer := 2*MAX_R + 1;   -- 9
     constant COLS        : integer := 2*MAX_R + 1;   -- 9
-    constant ACC_W       : integer := 24;  -- 9 rows × 20-bit row_sum = max ~4.7M < 2^23, 24-bit signed
-    -- Scale multiply: acc (40-bit signed) × coeff_scale (17-bit non-negative signed)
-    -- Natural product width = 40 + 17 = 57 bits signed. We store all bits.
-    constant SCALE_W     : integer := ACC_W + 17;    -- 41
+    constant ACC_W       : integer := 33;  -- 9 rows × 29-bit row_sum = 32 + 1 for sign  -- 9*column * 9 for rows
+    -- Scale multiply: acc (33-bit signed) × coeff_scale (17-bit non-negative signed)
+    constant SCALE_W     : integer := ACC_W + 17;    -- 50
 
+ 
     -- -----------------------------------------------------------------------
     -- Shift-register types
     -- -----------------------------------------------------------------------
     type shift_row_t   is array (0 to COLS-1) of std_logic_vector(7 downto 0);
     type shift_array_t is array (0 to ROWS-1) of shift_row_t;
-
+ 
     signal shift_reg   : shift_array_t := (others => (others => (others => '0')));
-
+ 
     -- -----------------------------------------------------------------------
     -- Decoded radius
     -- -----------------------------------------------------------------------
     signal radius_int  : integer range 0 to MAX_R;
-
+ 
     -- -----------------------------------------------------------------------
     -- Pipeline stage 1: products (ROWS × COLS, each 25-bit signed)
     -- -----------------------------------------------------------------------
-    -- Products are truncated to 16 bits before row-sum to prevent DSP48
-    -- cascade inference (PCOUT->PCIN chains). Lower 9 bits are fractional
-    -- noise; coeff_scale normalisation absorbs remaining error.
-    constant PROD_TRUNC   : integer := 9;
-    constant PROD_KEEP    : integer := 16;  -- 25 - 9
-    type prod_array_t  is array (0 to ROWS-1, 0 to COLS-1) of signed(24 downto 0);
-    type trunc_array_t is array (0 to ROWS-1, 0 to COLS-1) of signed(PROD_KEEP-1 downto 0);
-    signal products       : prod_array_t;
-    signal products_reg   : prod_array_t;
-    signal products_trunc : trunc_array_t;
-
+    type prod_array_t is array (0 to ROWS-1, 0 to COLS-1) of signed(24 downto 0);
+    signal products     : prod_array_t;
+    signal products_reg : prod_array_t;
+ 
     -- Valid/mode pipeline
     signal valid_mul     : std_logic := '0';
     signal mode_mul      : std_logic := '0';
-
+ 
     -- Accumulator signals
-    -- 9 x 16-bit = max 9*(2^15-1)=294903, needs 19 bits signed; use 20 for margin
-    type rowsum_array_t is array (0 to ROWS-1) of signed(19 downto 0);
+    -- 9 x 25-bit signed = max 9*(2^24-1), needs 29-bit signed
+    type rowsum_array_t is array (0 to ROWS-1) of signed(28 downto 0);
     signal row_sums_reg  : rowsum_array_t := (others => (others => '0'));
     signal valid_rowsum  : std_logic := '0';
     signal mode_rowsum   : std_logic := '0';
-    signal acc_cnt       : integer range 0 to ROWS := 0;
-    signal acc_running   : std_logic := '0';
     signal acc_reg       : signed(ACC_W-1 downto 0) := (others => '0');
     signal valid_acc     : std_logic := '0';
     signal mode_acc      : std_logic := '0';
-
+ 
     -- -----------------------------------------------------------------------
-    -- Pipeline stage 1 register: acc after coeff_scale multiply (56 bits)
+    -- Pipeline stage 1 register: acc after coeff_scale multiply (50 bits)
     -- -----------------------------------------------------------------------
     signal scaled_reg  : signed(SCALE_W-1 downto 0) := (others => '0');
     signal mode_reg1   : std_logic := '0';
     signal valid_reg1  : std_logic := '0';
-
+ 
     -- -----------------------------------------------------------------------
     -- Pipeline stage 2 register: final formatted output
     -- -----------------------------------------------------------------------
     signal result_reg  : std_logic_vector(15 downto 0) := (others => '0');
     signal valid_reg2  : std_logic := '0';
-
+ 
     -- -----------------------------------------------------------------------
     -- Helper: extract coefficient k from the flat packed vector
     -- -----------------------------------------------------------------------
@@ -200,7 +191,7 @@ architecture Behavioral of filter_alu is
     begin
         return signed(flat((k+1)*16-1 downto k*16));
     end function;
-
+ 
     -- -----------------------------------------------------------------------
     -- Helper: arithmetic right-shift of a signed value (VHDL-93 compatible)
     -- -----------------------------------------------------------------------
@@ -208,14 +199,14 @@ architecture Behavioral of filter_alu is
     begin
         return shift_right(v, n);
     end function;
-
+ 
 begin
-
+ 
     -- -----------------------------------------------------------------------
     -- Radius decode
     -- -----------------------------------------------------------------------
     radius_int <= to_integer(unsigned(radius));
-
+ 
     -- -----------------------------------------------------------------------
     -- SHIFT-REGISTER UPDATE
     -- -----------------------------------------------------------------------
@@ -230,13 +221,13 @@ begin
             if rst = '1' then
                 shift_reg <= (others => (others => (others => '0')));
             elsif shift_en = '1' then
-
+ 
                 -- Row 0: new pixel enters at cell 0, older data shifts right
                 for c in COLS-1 downto 1 loop
                     shift_reg(0)(c) <= shift_reg(0)(c-1);
                 end loop;
                 shift_reg(0)(0) <= pixel_new;
-
+ 
                 -- Rows 1 .. ROWS-1: each fed from the corresponding BRAM byte
                 for r in 1 to ROWS-1 loop
                     for c in COLS-1 downto 1 loop
@@ -250,11 +241,11 @@ begin
                         shift_reg(r)(0) <= (others => '0');
                     end if;
                 end loop;
-
+ 
             end if;
         end if;
     end process p_shift;
-
+ 
     -- -----------------------------------------------------------------------
     -- MULTIPLY STAGE (fully combinatorial, unrolled over full 9×9 grid)
     --
@@ -270,7 +261,7 @@ begin
         variable fdim : integer;
     begin
         fdim := 2 * radius_int + 1;
-
+ 
         for r in 0 to ROWS-1 loop
             for c in 0 to COLS-1 loop
                 cff := get_coeff(coeff, r*9 + c);
@@ -284,7 +275,7 @@ begin
             end loop;
         end loop;
     end process p_mul;
-
+ 
     -- -----------------------------------------------------------------------
     -- MULTIPLY STAGE REGISTER
     -- -----------------------------------------------------------------------
@@ -302,15 +293,7 @@ begin
             end if;
         end if;
     end process p_mul_reg;
-
-    -- Truncate products_reg to PROD_KEEP bits (combinatorial, no register).
-    -- 16-bit elements prevent Vivado DSP48 cascade inference in row-sum adders.
-    gen_trunc: for r in 0 to ROWS-1 generate
-        gen_trunc_c: for c in 0 to COLS-1 generate
-            products_trunc(r, c) <= products_reg(r, c)(24 downto PROD_TRUNC);
-        end generate;
-    end generate;
-
+ 
     -- -----------------------------------------------------------------------
     -- ACCUMULATOR: parallel row-sum registration + serial addition
     --
@@ -328,13 +311,12 @@ begin
     --   Actually: row_sums_reg values are narrow (29-bit) so total MUX is small.
     --   acc_reg += row_sums_reg(cnt) each cycle.
     --
-    -- PIPELINE_DEPTH = 13 (unchanged): mul_reg(1) + rowsum(1) + serial_add(9)
-    --                                  + stage1(1) + stage2(1)
+    -- PIPELINE_DEPTH = 5: mul_reg(1) + rowsum(1) + acc_parallel(1) + stage1(1) + stage2(1)
     -- -----------------------------------------------------------------------
-
+ 
     -- Parallel row-sum register: fires once per pixel, computes 9 row sums
     p_rowsum_reg : process(clk)
-        variable rs : signed(19 downto 0);
+        variable rs : signed(28 downto 0);
     begin
         if rising_edge(clk) then
             if rst = '1' then
@@ -347,7 +329,7 @@ begin
                     for r in 0 to ROWS-1 loop
                         rs := (others => '0');
                         for c in 0 to COLS-1 loop
-                            rs := rs + resize(products_trunc(r, c), 20);
+                            rs := rs + resize(products_reg(r, c), 29);
                         end loop;
                         row_sums_reg(r) <= rs;
                     end loop;
@@ -357,40 +339,33 @@ begin
             end if;
         end if;
     end process p_rowsum_reg;
-
-    -- Serial accumulator: add one row sum per cycle (small MUX over 9×29-bit values)
-    p_acc_serial : process(clk)
+ 
+    -- Parallel accumulator: sum all 9 row sums in one cycle
+    -- This is a single registered stage - Vivado may infer DSP48 cascade here.
+    -- If timing fails, add attribute use_dsp of acc_reg : signal is "no".
+    p_acc_parallel : process(clk)
+        variable acc_v : signed(ACC_W-1 downto 0);
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                acc_cnt     <= 0;
-                acc_running <= '0';
-                acc_reg     <= (others => '0');
-                valid_acc   <= '0';
-                mode_acc    <= '0';
+                acc_reg   <= (others => '0');
+                valid_acc <= '0';
+                mode_acc  <= '0';
             else
                 valid_acc <= '0';
-
                 if valid_rowsum = '1' then
-                    acc_reg     <= (others => '0');
-                    acc_cnt     <= 0;
-                    acc_running <= '1';
-                end if;
-
-                if acc_running = '1' then
-                    acc_reg <= acc_reg + resize(row_sums_reg(acc_cnt), ACC_W);
-                    if acc_cnt = ROWS - 1 then
-                        acc_running <= '0';
-                        valid_acc   <= '1';
-                        mode_acc    <= mode_rowsum;
-                    else
-                        acc_cnt <= acc_cnt + 1;
-                    end if;
+                    acc_v := (others => '0');
+                    for r in 0 to ROWS-1 loop
+                        acc_v := acc_v + resize(row_sums_reg(r), ACC_W);
+                    end loop;
+                    acc_reg   <= acc_v;
+                    valid_acc <= '1';
+                    mode_acc  <= mode_rowsum;
                 end if;
             end if;
         end if;
-    end process p_acc_serial;
-
+    end process p_acc_parallel;
+ 
     -- -----------------------------------------------------------------------
     -- PIPELINE STAGE 1 REGISTER: acc_reg × coeff_scale (pure DSP path)
     -- -----------------------------------------------------------------------
@@ -404,7 +379,7 @@ begin
                 mode_reg1  <= '0';
                 valid_reg1 <= '0';
             elsif valid_acc = '1' then
-                scale_s    := signed('0' & coeff_scale);
+                scale_s    := signed('0' & coeff_scale);  -- UQ4.12 unsigned → 17-bit non-negative signed
                 prod       := acc_reg * scale_s;
                 scaled_reg <= prod;
                 mode_reg1  <= mode_acc;
@@ -414,7 +389,7 @@ begin
             end if;
         end if;
     end process p_stage1;
-
+ 
     -- -----------------------------------------------------------------------
     -- PIPELINE STAGE 2 REGISTER: shift, clamp, and format
     -- -----------------------------------------------------------------------
@@ -428,12 +403,12 @@ begin
                 result_reg <= (others => '0');
                 valid_reg2 <= '0';
             elsif valid_reg1 = '1' then
-
+ 
                 if mode_reg1 = '0' then
                     -- ---- uint8 ----
                     -- Right-shift by FRAC_COEFF + FRAC_SCALE = 27
                     sh8 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE);
-
+ 
                     if sh8 > to_signed(255, SCALE_W) then
                         out16 := (others => '0');
                         out16(7 downto 0) := x"FF";
@@ -444,12 +419,12 @@ begin
                         out16 := (others => '0');
                         out16(7 downto 0) := std_logic_vector(sh8(7 downto 0));
                     end if;
-
+ 
                 else
                     -- ---- Q9.7 signed 16-bit ----
                     -- Right-shift by FRAC_COEFF + FRAC_SCALE - 7 = 20
                     sh16 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE - 7);
-
+ 
                     if sh16 > to_signed(32767, SCALE_W) then
                         out16 := std_logic_vector(to_signed(32767, 16));
                     elsif sh16 < to_signed(-32768, SCALE_W) then
@@ -458,7 +433,7 @@ begin
                         out16 := std_logic_vector(sh16(15 downto 0));
                     end if;
                 end if;
-
+ 
                 result_reg <= out16;
                 valid_reg2 <= '1';
             else
@@ -466,11 +441,12 @@ begin
             end if;
         end if;
     end process p_stage2;
-
+ 
     -- -----------------------------------------------------------------------
     -- Output assignments
     -- -----------------------------------------------------------------------
     result       <= result_reg;
     result_valid <= valid_reg2;
-
+ 
 end architecture Behavioral;
+ 

@@ -1,9 +1,3 @@
--- =============================================================================
--- acc_image_filter.vhd  -  Complete image-filter hardware accelerator
--- All registered signals driven only from clocked processes (rising_edge(clk)).
--- No concurrent when/else assignments, no case statements, no attributes.
--- =============================================================================
-
 library IEEE;
 library xil_defaultlib;
 use IEEE.std_logic_1164.all;
@@ -64,7 +58,7 @@ architecture Behavioral of acc_image_filter is
     -- CONSTANTS
     -- =========================================================================
     constant ADDR_LSB       : natural := (C_S_AXI_DATA_WIDTH/32) + 1;
-    constant PIPELINE_DEPTH : natural := 13;
+    constant PIPELINE_DEPTH : natural := 5;
     constant CNT_W          : integer := 9; -- log2(MAX_IMG_WIDTH=512)
 
     constant WA_CTRL        : integer := 0;

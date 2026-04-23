@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1772924978" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/acc_image_filter.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1776603050" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/acc_image_filter.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="image_filter_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="image_filter_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="image_filter_wrapper_utilization_synth.pb"/>
@@ -72,7 +72,14 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_us_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_smc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_timer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_auto_us_0"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_acc_image_filter_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_mem_intercon_imp_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="image_filter_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_processing_system7_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="image_filter_axi_dma_0_0"/>
 </GenRun>
