@@ -56,7 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "image_filter_acc_image_filter_0_2_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 set_param general.usePosixSpawnForFork 1
 set_param bd.open.in_stealth_mode 1
 set_param project.vivado.isBlockSynthRun true

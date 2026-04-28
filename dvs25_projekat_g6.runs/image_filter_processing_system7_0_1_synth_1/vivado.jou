@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Apr 19 14:50:55 2026
-# Process ID         : 146670
+# Start of session at: Mon Apr 27 18:28:08 2026
+# Process ID         : 71671
 # Current directory  : /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/image_filter_processing_system7_0_1_synth_1
 # Command line       : vivado -log image_filter_processing_system7_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_filter_processing_system7_0_1.tcl
 # Log file           : /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/image_filter_processing_system7_0_1_synth_1/image_filter_processing_system7_0_1.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 7 8840HS w/ Radeon 780M Graphics
-# CPU Frequency      : 2455.487 MHz
+# CPU Frequency      : 2108.152 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 15976 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20271 MB
-# Available Virtual  : 15524 MB
+# Available Virtual  : 10647 MB
 #-----------------------------------------------------------
 source image_filter_processing_system7_0_1.tcl -notrace

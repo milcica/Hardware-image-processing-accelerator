@@ -171,6 +171,50 @@ architecture rtl of acc_image_filter is
         end loop;
         return res;
     end function;
+    
+    
+     -- VIVADO DEBUG ATTRIBUTES
+ 
+    attribute mark_debug : string;
+ 
+    -- AXI4-Lite Control Registers
+    attribute mark_debug of reg_ctrl        : signal is "true";
+    attribute mark_debug of reg_radius      : signal is "true";
+    attribute mark_debug of reg_img_w       : signal is "true";
+    attribute mark_debug of reg_img_h       : signal is "true";
+    attribute mark_debug of reg_coeff_scale : signal is "true";
+ 
+    -- Snapshot/Held Registers (Frame Start)
+    attribute mark_debug of h_ctrl          : signal is "true";
+    attribute mark_debug of h_radius        : signal is "true";
+    attribute mark_debug of h_img_w         : signal is "true";
+    attribute mark_debug of h_img_h         : signal is "true";
+ 
+    -- AXI-Stream Pipeline and Flow Control
+    attribute mark_debug of fsm_img_processing_state : signal is "true";
+    attribute mark_debug of tvalid_fifo     : signal is "true";
+    attribute mark_debug of tlast_fifo      : signal is "true";
+    attribute mark_debug of s_axis_tready   : signal is "true";
+    attribute mark_debug of m_axis_tvalid   : signal is "true";
+    attribute mark_debug of m_axis_tready   : signal is "true";
+ 
+    -- Counter and Addressing Logic
+    attribute mark_debug of img_row_counter : signal is "true";
+    attribute mark_debug of img_col_counter : signal is "true";
+ 
+    -- Data Path: BRAM and ALU Interface
+    attribute mark_debug of sA_data         : signal is "true";
+    attribute mark_debug of sA_out          : signal is "true";
+    attribute mark_debug of bram_col_out    : signal is "true";
+    attribute mark_debug of reg_output      : signal is "true";
+    attribute mark_debug of alu_valid       : signal is "true";
+ 
+    -- Stall/Buffer Mechanism
+    attribute mark_debug of buff_flag       : signal is "true";
+    attribute mark_debug of buff_tvalid     : signal is "true";
+   
+    
+
 
     
 begin
