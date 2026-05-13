@@ -64,7 +64,7 @@ architecture rtl of acc_image_filter is
     -- CONSTANTS
     
     constant ADDR_LSB       : natural := (C_S_AXI_DATA_WIDTH/32) + 1;
-    constant PIPELINE_DEPTH : natural := 7;
+    constant PIPELINE_DEPTH : natural := 8;
     constant CNT_W          : integer := 9; -- log2(MAX_IMG_WIDTH=512)
 
     constant WA_CTRL        : integer := 0;
@@ -155,7 +155,11 @@ architecture rtl of acc_image_filter is
     signal sA_data   : std_logic_vector(7 downto 0) := (others => '0');
     signal sA_last   : std_logic := '0';
     signal sA_out    : std_logic := '0';
+    signal sA_col : std_logic_vector(CNT_W-1 downto 0) := (others => '0');
+
     
+    signal alu_valid_output : std_logic_vector(PIPELINE_DEPTH-1 downto 0) := (others => '0');
+
     -- BRAM / ALU CONTROL
     signal bram_col_out  : std_logic_vector(2*MAX_FILTER_RADIUS*8-1 downto 0) := (others => '0');
     signal coeff_flat : std_logic_vector(((2*MAX_FILTER_RADIUS+1)**2) * 16 - 1 downto 0);
@@ -212,6 +216,7 @@ architecture rtl of acc_image_filter is
     -- Stall/Buffer Mechanism
     attribute mark_debug of buff_flag       : signal is "true";
     attribute mark_debug of buff_tvalid     : signal is "true";
+    attribute mark_debug of tvalid_buffer   : signal is "true";
    
     
 
@@ -435,7 +440,6 @@ MAIN_FSM_LOGIC: process (clk) is
                 tlast_fifo    <= (others => '0');
                 
                 sA_data     <= (others => '0');
-                reg_output    <= (others => '0');
                 
                 buff_tdata    <= (others => '0');
                 buff_tvalid   <= '0';
@@ -455,9 +459,12 @@ MAIN_FSM_LOGIC: process (clk) is
                 img_col_counter <= (others => '0');
                 
                 tdata_buffer  <= (others => '0');
+                alu_valid_output <= (others => '0');
                 tvalid_buffer <= '0';
                 tlast_buffer  <= '0';
                 sA_out        <= '0'; 
+                sA_col <= (others => '0');
+
 
             else
                 
@@ -517,8 +524,13 @@ MAIN_FSM_LOGIC: process (clk) is
                         -- STAGE A: p_preprocess (Border Logic)
                         
                         -- Initial handoff of control signals
-                        tvalid_fifo(0) <= tvalid_buffer;
-                        tlast_fifo(0)  <= tlast_buffer;
+                        sA_valid <= tvalid_buffer;
+                        tvalid_fifo(0) <= sA_valid;
+                        sA_last <= tlast_buffer;
+                        tlast_fifo(0)  <= sA_last;
+                        sA_col <= img_col_counter;
+
+                        
 
                         -- Prepare boundary math variables
                         v_col_u := unsigned(img_col_counter);
@@ -528,8 +540,9 @@ MAIN_FSM_LOGIC: process (clk) is
                         v_h_u   := unsigned(h_img_h(CNT_W-1 downto 0));
 
                         -- Detect Border Zones
-                        v_on_col_edge := (v_col_u < v_rad_u) or (v_col_u >= v_w_u - v_rad_u);
-                        v_on_row_edge := (v_row_u < v_rad_u) or (v_row_u >= v_h_u - v_rad_u);
+                       v_on_col_edge := (v_col_u < v_rad_u) or (v_col_u >= v_w_u - v_rad_u);
+                       v_on_row_edge := (v_row_u < v_rad_u) or (v_row_u >= v_h_u - v_rad_u);
+
 
                         -- Check for Bypass (Highest Priority)
                         if (h_ctrl(1) = '1') then
@@ -576,16 +589,24 @@ MAIN_FSM_LOGIC: process (clk) is
                             end if;      
                         end if;
                         
+                        if (v_col_u < (v_rad_u + v_rad_u)) or (v_row_u < (v_rad_u + v_rad_u)) then
+                            alu_valid_output(0) <= '0';
+                        else
+                            alu_valid_output(0) <= '1';
+                        end if;
+                        
                        
                          for i in PIPELINE_DEPTH-1 downto 2 loop
                                  tvalid_fifo(i) <= tvalid_fifo(i-1);
                                  tlast_fifo(i)  <= tlast_fifo(i-1);
+                                 alu_valid_output(i) <= alu_valid_output(i-1);
                                 end loop;
                             
                         -- Stage 1 update: Connect the output of your border logic (sA_out) 
                         -- to the rest of the pipeline chain
-                        tvalid_fifo(1) <= tvalid_fifo(0) and sA_out;
+                        tvalid_fifo(1) <= tvalid_fifo(0);
                         tlast_fifo(1)  <= tlast_fifo(0);
+                        alu_valid_output(1) <= alu_valid_output(0);
                       
                     else
                         
@@ -608,9 +629,9 @@ MAIN_FSM_LOGIC: process (clk) is
     end process;
 
     
-    -- OUTPUT MAPPING
+--    -- OUTPUT MAPPING
     
-    m_axis_tvalid <= tvalid_fifo(PIPELINE_DEPTH-1);
+    m_axis_tvalid <= tvalid_fifo(PIPELINE_DEPTH-1) and alu_valid_output(PIPELINE_DEPTH-1);
     m_axis_tlast  <= tlast_fifo(PIPELINE_DEPTH-1);
     m_axis_tdata  <= reg_output;
 
@@ -645,9 +666,9 @@ MAIN_FSM_LOGIC: process (clk) is
             rst       => reset,
             -- Read current column to get the neighborhood column 
             rd_addr   => img_col_counter(8 downto 0),
-            wr_addr   => img_col_counter(8 downto 0),
+            wr_addr   => sA_col(8 downto 0),
             pixel_in  => sA_data,
-            wr_enable => tvalid_buffer,
+            wr_enable => sA_valid,
             rd_enable => tvalid_buffer,
             col_out   => bram_col_out
         );
@@ -672,7 +693,7 @@ MAIN_FSM_LOGIC: process (clk) is
             -- col_from_bram contains ROWS 1 to 8 (buffered rows)
             col_from_bram => bram_col_out,
             -- Shift internal window only when new data is valid
-            shift_en      => tvalid_buffer,
+            shift_en      => sA_valid,
             result        => reg_output,
             result_valid  => alu_valid 
         );

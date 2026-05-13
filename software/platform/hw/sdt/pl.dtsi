@@ -8,7 +8,7 @@
 		clocking0: clocking0 {
 			compatible = "xlnx,fclk";
 			assigned-clocks = <&clkc 15>;
-			assigned-clock-rates = <90000000>;
+			assigned-clock-rates = <50000000>;
 			#clock-cells = <0>;
 			clock-output-names = "fabric_clk";
 			clocks = <&clkc 15>;
@@ -92,7 +92,7 @@
 			interrupts = < 0 31 4 >;
 			compatible = "xlnx,axi-timer-2.0" , "xlnx,xps-timer-1.00.a";
 			xlnx,gen1-assert = <1>;
-			clock-frequency = <0x56b29a0>;
+			clock-frequency = <0x2faf080>;
 			xlnx,trig0-assert = <1>;
 			interrupt-parent = <&intc>;
 			xlnx,count-width = <32>;

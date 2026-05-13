@@ -1045,7 +1045,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "90.909088"
+            "value": "50.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -1129,7 +1129,7 @@
             "value": "0"
           },
           "PCW_CLK0_FREQ": {
-            "value": "90909088"
+            "value": "50000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -1429,7 +1429,7 @@
             "value": "TRUE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "90"
+            "value": "50"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "50"
@@ -2798,7 +2798,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "90909088",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -2865,7 +2865,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "90909088",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
@@ -2908,7 +2908,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "90909088",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "ID_WIDTH": {
@@ -3129,7 +3129,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "90909088",
+                "value": "50000000",
                 "value_src": "user_prop"
               },
               "CLK_DOMAIN": {

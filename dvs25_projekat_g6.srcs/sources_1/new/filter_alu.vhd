@@ -113,6 +113,22 @@ architecture Behavioral of filter_alu is
     begin
         return shift_right(v, n);
     end function;
+    
+    -- VIVADO DEBUG ATTRIBUTES
+    attribute mark_debug : string;
+
+    attribute mark_debug of shift_en      : signal is "true";
+    attribute mark_debug of pixel_new     : signal is "true";
+    
+    attribute mark_debug of valid_mul     : signal is "true";
+    attribute mark_debug of valid_rowsum  : signal is "true";
+    attribute mark_debug of valid_acc     : signal is "true";
+    attribute mark_debug of valid_reg1    : signal is "true";
+    attribute mark_debug of valid_reg2    : signal is "true";
+
+    attribute mark_debug of acc_reg       : signal is "true";
+    attribute mark_debug of scaled_reg    : signal is "true";   
+    attribute mark_debug of result_reg    : signal is "true";
  
 begin
  

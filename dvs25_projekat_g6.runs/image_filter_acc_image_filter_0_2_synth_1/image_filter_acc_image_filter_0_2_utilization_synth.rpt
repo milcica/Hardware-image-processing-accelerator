@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue Apr 28 15:11:56 2026
+| Date         : Tue May 12 21:34:41 2026
 | Host         : yoga running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_utilization -file image_filter_acc_image_filter_0_2_utilization_synth.rpt -pb image_filter_acc_image_filter_0_2_utilization_synth.pb
 | Design       : image_filter_acc_image_filter_0_2
@@ -31,16 +31,16 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 2095 |     0 |          0 |     53200 |  3.94 |
-|   LUT as Logic             | 1071 |     0 |          0 |     53200 |  2.01 |
+| Slice LUTs*                | 3313 |     0 |          0 |     53200 |  6.23 |
+|   LUT as Logic             | 2289 |     0 |          0 |     53200 |  4.30 |
 |   LUT as Memory            | 1024 |     0 |          0 |     17400 |  5.89 |
 |     LUT as Distributed RAM | 1024 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 1597 |     0 |          0 |    106400 |  1.50 |
-|   Register as Flip Flop    | 1581 |     0 |          0 |    106400 |  1.49 |
+| Slice Registers            | 3681 |     0 |          0 |    106400 |  3.46 |
+|   Register as Flip Flop    | 3665 |     0 |          0 |    106400 |  3.44 |
 |   Register as Latch        |   16 |     0 |          0 |    106400 |  0.02 |
-| F7 Muxes                   |  644 |     0 |          0 |     26600 |  2.42 |
-| F8 Muxes                   |   35 |     0 |          0 |     13300 |  0.26 |
+| F7 Muxes                   |  618 |     0 |          0 |     26600 |  2.32 |
+| F8 Muxes                   |   30 |     0 |          0 |     13300 |  0.23 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -61,8 +61,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 16    |          Yes |           - |        Reset |
-| 1     |          Yes |         Set |            - |
-| 1580  |          Yes |       Reset |            - |
+| 8     |          Yes |         Set |            - |
+| 3657  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -82,11 +82,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 3. DSP
 ------
 
-+-----------+------+-------+------------+-----------+-------+
-| Site Type | Used | Fixed | Prohibited | Available | Util% |
-+-----------+------+-------+------------+-----------+-------+
-| DSPs      |    0 |     0 |          0 |       220 |  0.00 |
-+-----------+------+-------+------------+-----------+-------+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |   83 |     0 |          0 |       220 | 37.73 |
+|   DSP48E1 only |   83 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -151,19 +152,20 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1580 |        Flop & Latch |
+| FDRE     | 3657 |        Flop & Latch |
+| LUT6     | 1386 |                 LUT |
 | RAMD64E  | 1024 |  Distributed Memory |
-| LUT6     |  746 |                 LUT |
-| MUXF7    |  644 |               MuxFx |
-| LUT3     |  140 |                 LUT |
-| LUT4     |   96 |                 LUT |
-| LUT5     |   76 |                 LUT |
-| LUT2     |   39 |                 LUT |
-| MUXF8    |   35 |               MuxFx |
+| MUXF7    |  618 |               MuxFx |
+| LUT3     |  385 |                 LUT |
+| LUT5     |  358 |                 LUT |
+| LUT4     |  252 |                 LUT |
+| LUT2     |  184 |                 LUT |
+| DSP48E1  |   83 |    Block Arithmetic |
+| CARRY4   |   65 |          CarryLogic |
 | LUT1     |   32 |                 LUT |
-| CARRY4   |   18 |          CarryLogic |
+| MUXF8    |   30 |               MuxFx |
 | LDCE     |   16 |        Flop & Latch |
-| FDSE     |    1 |        Flop & Latch |
+| FDSE     |    8 |        Flop & Latch |
 +----------+------+---------------------+
 
 
