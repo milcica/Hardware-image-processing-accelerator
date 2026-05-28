@@ -15,6 +15,10 @@ entity bram_linebuf is
         pixel_in  : in  std_logic_vector(7 downto 0);
         wr_enable : in  std_logic;
         rd_enable : in  std_logic;
+        -- Pipeline-advance gate for the read output register.
+        -- When '0' (stall), col_out HOLDS so the 1-cycle read-skew is preserved.
+        -- Drive with combinatorial: (NOT tvalid_fifo(PD-1)) OR m_axis_tready.
+        rd_advance : in  std_logic;
         -- 2*MAX_R bytes packed; byte 0 (bits 7:0) = newest buffered row
         col_out   : out std_logic_vector(2*MAX_R*8-1 downto 0)
     );
@@ -38,8 +42,10 @@ begin
                 rd_idx := to_integer(unsigned(rd_addr));
                 wr_idx := to_integer(unsigned(wr_addr));
 
-                -- READ
-                if rd_enable = '1' then
+                -- READ: only advance col_out when the pipeline is advancing.
+                -- When rd_advance='0' (stall) col_out holds, preserving the 1-cycle
+                -- read-address skew so resume sees the correct buffered-row column.
+                if rd_enable = '1' and rd_advance = '1' then
                     col_out <= mem(rd_idx);
                 end if;
 

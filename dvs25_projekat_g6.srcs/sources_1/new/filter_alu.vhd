@@ -216,9 +216,15 @@ begin
                 products_reg <= (others => (others => (others => '0')));
                 valid_mul    <= '0';
                 mode_mul     <= '0';
-            else
+            elsif shift_en = '1' then
+                -- shift_en is the global clock-enable for the whole ALU pipeline.
+                -- When shift_en='0' (stall) this register HOLDS, so valid_mul and
+                -- products_reg freeze instead of draining.  In the original code
+                -- valid_mul<=shift_en meant valid_mul went to '0' as soon as the
+                -- stall began, draining the downstream stages.  Here a pixel always
+                -- advances on an enabled cycle, so valid_mul is simply '1'.
                 products_reg <= products;
-                valid_mul    <= shift_en;
+                valid_mul    <= '1';
                 mode_mul     <= mode;
             end if;
         end if;
@@ -253,7 +259,8 @@ begin
                 row_sums_reg <= (others => (others => '0'));
                 valid_rowsum <= '0';
                 mode_rowsum  <= '0';
-            else
+            elsif shift_en = '1' then
+                -- Clock-enabled by shift_en: holds during stall.
                 valid_rowsum <= '0';
                 if valid_mul = '1' then
                     for r in 0 to ROWS-1 loop
@@ -281,7 +288,8 @@ begin
                 acc_reg   <= (others => '0');
                 valid_acc <= '0';
                 mode_acc  <= '0';
-            else
+            elsif shift_en = '1' then
+                -- Clock-enabled by shift_en: holds during stall.
                 valid_acc <= '0';
                 if valid_rowsum = '1' then
                     acc_v := (others => '0');
@@ -308,14 +316,16 @@ begin
                 scaled_reg <= (others => '0');
                 mode_reg1  <= '0';
                 valid_reg1 <= '0';
-            elsif valid_acc = '1' then
-                scale_s    := signed('0' & coeff_scale);  -- UQ4.12 unsigned → 17-bit non-negative signed
-                prod       := acc_reg * scale_s;
-                scaled_reg <= prod;
-                mode_reg1  <= mode_acc;
-                valid_reg1 <= '1';
-            else
+            elsif shift_en = '1' then
+                -- Clock-enabled by shift_en: holds during stall.
                 valid_reg1 <= '0';
+                if valid_acc = '1' then
+                    scale_s    := signed('0' & coeff_scale);
+                    prod       := acc_reg * scale_s;
+                    scaled_reg <= prod;
+                    mode_reg1  <= mode_acc;
+                    valid_reg1 <= '1';
+                end if;
             end if;
         end if;
     end process p_stage1;
@@ -332,42 +342,39 @@ begin
             if rst = '1' then
                 result_reg <= (others => '0');
                 valid_reg2 <= '0';
-            elsif valid_reg1 = '1' then
- 
-                if mode_reg1 = '0' then
-                    -- ---- uint8 ----
-                    -- Right-shift by FRAC_COEFF + FRAC_SCALE = 27
-                    sh8 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE);
- 
-                    if sh8 > to_signed(255, SCALE_W) then
-                        out16 := (others => '0');
-                        out16(7 downto 0) := x"FF";
-                    elsif sh8 < to_signed(0, SCALE_W) then
-                        out16 := (others => '0');
-                    else
-                        -- Safe: bounds already checked, take low 8 bits
-                        out16 := (others => '0');
-                        out16(7 downto 0) := std_logic_vector(sh8(7 downto 0));
-                    end if;
- 
-                else
-                    -- ---- Q9.7 signed 16-bit ----
-                    -- Right-shift by FRAC_COEFF + FRAC_SCALE - 7 = 20
-                    sh16 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE - 7);
- 
-                    if sh16 > to_signed(32767, SCALE_W) then
-                        out16 := std_logic_vector(to_signed(32767, 16));
-                    elsif sh16 < to_signed(-32768, SCALE_W) then
-                        out16 := std_logic_vector(to_signed(-32768, 16));
-                    else
-                        out16 := std_logic_vector(sh16(15 downto 0));
-                    end if;
-                end if;
- 
-                result_reg <= out16;
-                valid_reg2 <= '1';
-            else
+            elsif shift_en = '1' then
+                -- Clock-enabled by shift_en: result_reg and valid_reg2 HOLD during
+                -- a stall, preserving the finished pixel until the DMA accepts it.
                 valid_reg2 <= '0';
+                if valid_reg1 = '1' then
+
+                    if mode_reg1 = '0' then
+                        -- ---- uint8 ----
+                        sh8 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE);
+                        if sh8 > to_signed(255, SCALE_W) then
+                            out16 := (others => '0');
+                            out16(7 downto 0) := x"FF";
+                        elsif sh8 < to_signed(0, SCALE_W) then
+                            out16 := (others => '0');
+                        else
+                            out16 := (others => '0');
+                            out16(7 downto 0) := std_logic_vector(sh8(7 downto 0));
+                        end if;
+                    else
+                        -- ---- Q9.7 signed 16-bit ----
+                        sh16 := shr(scaled_reg, FRAC_COEFF + FRAC_SCALE - 7);
+                        if sh16 > to_signed(32767, SCALE_W) then
+                            out16 := std_logic_vector(to_signed(32767, 16));
+                        elsif sh16 < to_signed(-32768, SCALE_W) then
+                            out16 := std_logic_vector(to_signed(-32768, 16));
+                        else
+                            out16 := std_logic_vector(sh16(15 downto 0));
+                        end if;
+                    end if;
+
+                    result_reg <= out16;
+                    valid_reg2 <= '1';
+                end if;
             end if;
         end if;
     end process p_stage2;
@@ -379,4 +386,3 @@ begin
     result_valid <= valid_reg2;
  
 end architecture Behavioral;
- 

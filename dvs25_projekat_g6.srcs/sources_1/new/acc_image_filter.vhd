@@ -64,7 +64,7 @@ architecture rtl of acc_image_filter is
     -- CONSTANTS
     
     constant ADDR_LSB       : natural := (C_S_AXI_DATA_WIDTH/32) + 1;
-    constant PIPELINE_DEPTH : natural := 8;
+    constant PIPELINE_DEPTH : natural := 7;
     constant CNT_W          : integer := 9; -- log2(MAX_IMG_WIDTH=512)
 
     constant WA_CTRL        : integer := 0;
@@ -164,6 +164,20 @@ architecture rtl of acc_image_filter is
     signal bram_col_out  : std_logic_vector(2*MAX_FILTER_RADIUS*8-1 downto 0) := (others => '0');
     signal coeff_flat : std_logic_vector(((2*MAX_FILTER_RADIUS+1)**2) * 16 - 1 downto 0);
     signal alu_valid : std_logic;
+    signal alu_shift_en : std_logic;
+    -- BRAM write gated directly by sA_valid + advance: prevents repeated
+    -- shift-left writes of the frozen sA_data during a stall, and prevents
+    -- spurious writes during end-of-frame drain cycles.
+    signal bram_wr_en  : std_logic;
+    -- BRAM read advance: combinatorial pipeline-advance condition fed directly to
+    -- the rd_advance port so col_out freezes during stall. Purely combinatorial -
+    -- no registered intermediate signal, cannot be optimized away by Vivado.
+    signal bram_rd_adv : std_logic;
+    -- pipe_draining: asserted whenever any in-flight valid pixel occupies stages
+    -- 0..PIPELINE_DEPTH-2 of tvalid_fifo.  Keeps alu_shift_en high after the
+    -- last input pixel (sA_valid drops) so the ALU's 5 internal registered stages
+    -- can drain completely instead of freezing with the last pixels stuck inside.
+    signal pipe_draining : std_logic;
     
     
    function flatten_coeffs(input : coeff_array_t; r : integer) return std_logic_vector is
@@ -212,11 +226,13 @@ architecture rtl of acc_image_filter is
     attribute mark_debug of bram_col_out    : signal is "true";
     attribute mark_debug of reg_output      : signal is "true";
     attribute mark_debug of alu_valid       : signal is "true";
+    attribute mark_debug of alu_valid_output : signal is "true";
  
     -- Stall/Buffer Mechanism
     attribute mark_debug of buff_flag       : signal is "true";
     attribute mark_debug of buff_tvalid     : signal is "true";
     attribute mark_debug of tvalid_buffer   : signal is "true";
+    attribute mark_debug of pipe_draining   : signal is "true";
    
     
 
@@ -654,6 +670,29 @@ MAIN_FSM_LOGIC: process (clk) is
         end if;
     end process;
     
+    -- pipe_draining: OR of all in-flight valid stages 0..PIPELINE_DEPTH-2.
+    -- After tlast, sA_valid drops to '0' but these stages still hold live pixels
+    -- that must propagate through the ALU's 5 registered stages (p_mul_reg,
+    -- p_rowsum_reg, p_acc_parallel, p_stage1, p_stage2) before appearing at
+    -- result_reg.  Without this, alu_shift_en freezes at '0' on the cycle after
+    -- the last pixel and those pixels never complete their computation.
+    pipe_draining <= tvalid_fifo(0) or tvalid_fifo(1) or tvalid_fifo(2) or
+                     tvalid_fifo(3) or tvalid_fifo(4) or tvalid_fifo(5);
+
+    -- alu_shift_en: advance the ALU when new data is entering (sA_valid='1') OR
+    -- in-flight pixels still need to drain (pipe_draining='1'), AND the output
+    -- stage is not blocking.
+    alu_shift_en <= (sA_valid or pipe_draining) and
+                    (not tvalid_fifo(PIPELINE_DEPTH-1) or m_axis_tready);
+
+    -- BRAM write: gated by sA_valid only (NOT alu_shift_en) to prevent spurious
+    -- shift-left BRAM writes during drain cycles when sA_data holds stale data.
+    bram_wr_en  <= sA_valid and (not tvalid_fifo(PIPELINE_DEPTH-1) or m_axis_tready);
+
+    -- BRAM read advance: purely combinatorial. Col_out holds when this is '0'.
+    -- Vivado cannot optimize this away because it directly gates the BRAM output register.
+    bram_rd_adv <= (not tvalid_fifo(PIPELINE_DEPTH-1)) or m_axis_tready;
+    
     -- BRAM INSTANCE
 
     u_bram : entity xil_defaultlib.bram_linebuf(Behavioral)
@@ -662,15 +701,15 @@ MAIN_FSM_LOGIC: process (clk) is
             IMG_WIDTH_MAX => MAX_IMG_WIDTH
         )
         port map (
-            clk       => clk,
-            rst       => reset,
-            -- Read current column to get the neighborhood column 
-            rd_addr   => img_col_counter(8 downto 0),
-            wr_addr   => sA_col(8 downto 0),
-            pixel_in  => sA_data,
-            wr_enable => sA_valid,
-            rd_enable => tvalid_buffer,
-            col_out   => bram_col_out
+            clk        => clk,
+            rst        => reset,
+            rd_addr    => img_col_counter(8 downto 0),
+            wr_addr    => sA_col(8 downto 0),
+            pixel_in   => sA_data,
+            wr_enable  => bram_wr_en,
+            rd_enable  => tvalid_buffer,
+            rd_advance => bram_rd_adv,
+            col_out    => bram_col_out
         );
 
     -- ALU INSTANCE
@@ -693,7 +732,7 @@ MAIN_FSM_LOGIC: process (clk) is
             -- col_from_bram contains ROWS 1 to 8 (buffered rows)
             col_from_bram => bram_col_out,
             -- Shift internal window only when new data is valid
-            shift_en      => sA_valid,
+            shift_en      => alu_shift_en,
             result        => reg_output,
             result_valid  => alu_valid 
         );

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue May 12 21:40:00 2026
+| Date         : Thu May 28 08:41:07 2026
 | Host         : yoga running 64-bit Ubuntu 24.04.4 LTS
 | Command      : report_drc -file image_filter_wrapper_drc_opted.rpt -pb image_filter_wrapper_drc_opted.pb -rpx image_filter_wrapper_drc_opted.rpx
 | Design       : image_filter_wrapper
@@ -848,42 +848,42 @@ Related violations: <none>
 
 DPIP-1#163 Warning
 Input pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#164 Warning
 Input pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#165 Warning
 Input pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#166 Warning
 Input pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0 input image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0 output image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0 output image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-1#2 Warning
 PREG Output pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0 output image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0 output image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
 MREG Output pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0 multiplier stage image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0 multiplier stage image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 DPOP-2#2 Warning
 MREG Output pipelining  
-DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0 multiplier stage image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg_reg0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+DSP image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0 multiplier stage image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg0__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 REQP-181#1 Advisory

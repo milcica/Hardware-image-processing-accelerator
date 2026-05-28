@@ -11,13 +11,13 @@
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
       <ZoomEndTime time="1,025"></ZoomEndTime>
-      <Cursor1Time time="500"></Cursor1Time>
+      <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="192"></NameColumnWidth>
+      <NameColumnWidth column_width="152"></NameColumnWidth>
       <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="53" />
+   <WVObjectSize size="58" />
    <wave_markers>
    </wave_markers>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata">
@@ -28,9 +28,8 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tvalid_fifo[7:0]</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalid_fifo[6:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -82,13 +81,6 @@
       <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/reg_radius[15:0]</obj_property>
       <obj_property name="ObjectShortName">reg_radius[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/reg_output">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/reg_output[15:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_output[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -152,20 +144,6 @@
       <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/h_ctrl[15:0]</obj_property>
       <obj_property name="ObjectShortName">h_ctrl[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/bram_col_out">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/bram_col_out[63:0]</obj_property>
-      <obj_property name="ObjectShortName">bram_col_out[63:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/img_col_counter">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_col_counter[8:0]</obj_property>
-      <obj_property name="ObjectShortName">img_col_counter[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -260,13 +238,6 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid</obj_property>
-      <obj_property name="ObjectShortName">s_axi_ctrl_bvalid</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_rready">
       <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/s_axi_ctrl_rready</obj_property>
       <obj_property name="ObjectShortName">s_axi_ctrl_rready</obj_property>
@@ -284,6 +255,13 @@
    <wvobject type="logic" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_wready">
       <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/s_axi_ctrl_wready</obj_property>
       <obj_property name="ObjectShortName">s_axi_ctrl_wready</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_ctrl_bvalid</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -330,11 +308,39 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/alu_valid_output">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tvalid_fifo[7:0]</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/alu_valid_output[6:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_valid_output[6:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/bram_col_out">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/bram_col_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_col_out[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/reg_output">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/reg_output[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_output[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalid_fifo[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/img_col_counter">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_col_counter[8:0]</obj_property>
+      <obj_property name="ObjectShortName">img_col_counter[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -383,9 +389,38 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalid_fifo[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tlast_fifo">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tvalid_fifo[7:0]</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tlast_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tlast_fifo[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalid_fifo[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/alu_valid_output">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/alu_valid_output[6:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_valid_output[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/tvalid_fifo">
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6:0]</obj_property>
+      <obj_property name="ObjectShortName">tvalid_fifo[6:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
