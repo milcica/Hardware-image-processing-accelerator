@@ -13,6 +13,22 @@
 #include "xil_util.h"
 
 /* ---------------------------------------------------------------
+ * SELECT OUTPUT MODE — change this ONE line to switch modes:
+ *
+ *   OUTPUT_MODE_UINT8  →  u8  output, 2 pixels packed per 16-bit DMA word
+ *                          DMA RxSize = OUT_W * OUT_H * sizeof(u8)
+ *                          Read result as u8*: buf[i] = pixel i
+ *
+ *   OUTPUT_MODE_Q9_7   →  s16 Q9.7 output, 1 pixel per 16-bit DMA word
+ *                          DMA RxSize = OUT_W * OUT_H * sizeof(u16)
+ *                          Read result as s16*: buf[i] = pixel i (signed)
+ * --------------------------------------------------------------- */
+#define OUTPUT_MODE_UINT8   0
+#define OUTPUT_MODE_Q9_7    1
+
+#define ACTIVE_MODE         OUTPUT_MODE_UINT8   /* ← change here */
+
+/* ---------------------------------------------------------------
  * AXI4-Lite register offsets
  * ADDR_LSB=2 → byte address = word address * 4
  * WA_CTRL=0        → 0x00
@@ -30,8 +46,12 @@
 #define REG_COEFF_SCALE_ADDR  0x10
 #define REG_COEFF_BASE_ADDR   0x20   /* stride=4 per coefficient */
 
-#define CTRL_MODE_Q9_7        0x0001
-#define COEFF_SCALE_1_0       4096
+/* ctrl register bit fields */
+#define CTRL_MODE_UINT8       0x0000  /* bit0=0 → u8  output  */
+#define CTRL_MODE_Q9_7        0x0001  /* bit0=1 → Q9.7 output */
+#define CTRL_BYPASS           0x0002  /* bit1=1 → bypass filter */
+
+#define COEFF_SCALE_1_0       4096    /* UQ4.12 = 1.0 */
 
 #define FILTER_RADIUS         4
 #define FILTER_SIDE           (2*FILTER_RADIUS + 1)
@@ -41,6 +61,21 @@
 #define IMG_HEIGHT            512
 #define OUT_WIDTH             (IMG_WIDTH  - 2*FILTER_RADIUS)
 #define OUT_HEIGHT            (IMG_HEIGHT - 2*FILTER_RADIUS)
+
+/* DMA RxSize depends on mode:
+ *   uint8 → 2 pixels per 16-bit word → OUT_W * OUT_H bytes
+ *   Q9.7  → 1 pixel per 16-bit word  → OUT_W * OUT_H * 2 bytes */
+#if (ACTIVE_MODE == OUTPUT_MODE_UINT8)
+  #define OUT_PIXEL_BYTES  sizeof(u8)
+  #define ACTIVE_CTRL      CTRL_MODE_UINT8
+  #define MODE_STR         "uint8"
+#else
+  #define OUT_PIXEL_BYTES  sizeof(u16)
+  #define ACTIVE_CTRL      CTRL_MODE_Q9_7
+  #define MODE_STR         "Q9.7"
+#endif
+
+#define OUT_BUFFER_BYTES  (OUT_WIDTH * OUT_HEIGHT * OUT_PIXEL_BYTES)
 
 #define DMA_TRANSFER_TIMEOUT  100000
 
@@ -75,17 +110,17 @@ static const s16 LogCoeffs[NUM_COEFFS] = {
     /*  Row 2 */
        405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 3 */
-      405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 4 */
-      405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 5 */
-      405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 6 */
-     405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 7 */
-        405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
     /*  Row 8 */
-    405,    405,    405,   405,   405,   405,    405,    405,    405,
+       405,    405,    405,   405,   405,   405,    405,    405,    405,
 };
 
 
@@ -100,10 +135,9 @@ static int  DmaWaitTransfers (volatile u32 *TxFlag, volatile u32 *RxFlag, u32 Ti
 
 static int  AccConfigure     (UINTPTR BaseAddress, FilterParams Params);
 
-static void FilterImageSW    (u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params);
-static int  ImageFilterHW    (u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params);
-
-static int  CheckData        (u16 *ResultBuffer, u16 *ReferentBuffer, FilterParams Params);
+static void FilterImageSW    (u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params);
+static int  ImageFilterHW    (u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params);
+static int  CheckData        (u8 *ResultBuffer, u8 *ReferentBuffer, FilterParams Params);
 
 static void TxIntrHandler    (void *Callback);
 static void RxIntrHandler    (void *Callback);
@@ -124,51 +158,51 @@ int main(void)
 {
     int Status;
 
-    u8 *DataBufferFull;
+    u8  *DataBufferFull;
     u8  *DataBuffer;
-    u16 *ReferentBuffer;
-    u16 *ResultBuffer;
+    u8  *ReferentBuffer;
+    u8  *ResultBuffer;
 
     FilterParams Params;
 
     u32 InSize;
-    u32 OutSize;
 
     u32 SwTimeStart, SwTimeEnd, SwTimeUs;
     u32 HwTimeStart, HwTimeEnd, HwTimeUs;
 
     xil_printf("\r\n--- Entering main() ---\r\n");
 
-    /* Define processing parameters */
-    Params.Img.Width      = IMG_WIDTH;
-    Params.Img.Height     = IMG_HEIGHT;
-    Params.Img.NumOfPlanes= 1;
-    Params.Radius         = FILTER_RADIUS;
-    Params.Ctrl           = CTRL_MODE_Q9_7;   /* bit0=MODE Q9.7, bit1=BYPASS off */
-    Params.CoeffScale     = COEFF_SCALE_1_0;
-    Params.Coeffs         = (s16*)LogCoeffs;
+    /* ---- Define processing parameters ---- */
+    Params.Img.Width       = IMG_WIDTH;
+    Params.Img.Height      = IMG_HEIGHT;
+    Params.Img.NumOfPlanes = 1;
+    Params.Radius          = FILTER_RADIUS;
+    Params.Ctrl            = ACTIVE_CTRL;     /* set by ACTIVE_MODE above */
+    Params.CoeffScale      = COEFF_SCALE_1_0;
+    Params.Coeffs          = (s16*)LogCoeffs;
 
-    InSize  = Params.Img.Width * Params.Img.Height * Params.Img.NumOfPlanes;
-    OutSize = OUT_WIDTH * OUT_HEIGHT * Params.Img.NumOfPlanes * sizeof(u16);
+    InSize = Params.Img.Width * Params.Img.Height * Params.Img.NumOfPlanes;
 
-    /* Buffer allocation */
-    DataBufferFull = (u8*) malloc(InSize+8);
+    /* ---- Buffer allocation ---- */
+    DataBufferFull = (u8*)malloc(InSize + 8);
     if (DataBufferFull == NULL) {
         xil_printf("ERROR: Cannot allocate Data buffer\r\n");
         return XST_FAILURE;
     }
-    xil_printf("\r\n Data buffer address: %x \r\n", DataBufferFull);
+    DataBuffer = DataBufferFull + 8;
+    xil_printf("\r\n Data buffer address: %x \r\n", DataBuffer);
 
-    DataBuffer = DataBufferFull+8;
-
-    ResultBuffer = (u16*) malloc(OutSize);
+    /* OUT_BUFFER_BYTES = OUT_W * OUT_H * OUT_PIXEL_BYTES
+     *   uint8 mode : OUT_W * OUT_H bytes  (u8 per pixel)
+     *   Q9.7  mode : OUT_W * OUT_H * 2 bytes (u16 per pixel) */
+    ResultBuffer = (u8*)malloc(OUT_BUFFER_BYTES);
     if (ResultBuffer == NULL) {
         xil_printf("ERROR: Cannot allocate Result buffer\r\n");
         return XST_FAILURE;
     }
-    xil_printf("\r\n Result buffer address: %x \r\n", ResultBuffer);
+    xil_printf("\r\n Result buffer address:   %x \r\n", ResultBuffer);
 
-    ReferentBuffer = (u16*) malloc(OutSize);
+    ReferentBuffer = (u8*)malloc(OUT_BUFFER_BYTES);
     if (ReferentBuffer == NULL) {
         xil_printf("ERROR: Cannot allocate Referent buffer\r\n");
         return XST_FAILURE;
@@ -192,8 +226,11 @@ int main(void)
     // Use mwr in debug console to load image into DataBuffer:
     //    mwr -size b -bin -file "path/to/image.bin"  <DataBuffer_addr>  <InSize>
 
-    xil_printf("INFO: Filter = LoG 9x9, Radius = %d, Mode = Q9.7, Image = %dx%d\r\n",
-               Params.Radius, Params.Img.Width, Params.Img.Height);
+    xil_printf("INFO: Filter = LoG 9x9, Radius = %d, Mode = %s, Image = %dx%d\r\n",
+               Params.Radius, MODE_STR, Params.Img.Width, Params.Img.Height);
+    xil_printf("INFO: OutSize = %u bytes (%u pixels x %u bytes/pixel)\r\n",
+               (u32)OUT_BUFFER_BYTES, (u32)(OUT_WIDTH * OUT_HEIGHT),
+               (u32)OUT_PIXEL_BYTES);
 
     xil_printf("\r\nStart processing\r\n");
 
@@ -231,13 +268,12 @@ int main(void)
         xil_printf("  Speedup : %u x\r\n", SwTimeUs / HwTimeUs);
 
     // Use mrd in debug console to save ResultBuffer:
-    //    mrd -size b -bin -file "path/to/result.bin"  <ResultBuffer_addr>  <OutSize>
+    //    mrd -size b -bin -file "path/to/result.bin"  <ResultBuffer_addr>  <OUT_BUFFER_BYTES>
 
-    /* Check data – called after mrd so the result binary is already saved */
+    /* Check data */
     Status = CheckData(ResultBuffer, ReferentBuffer, Params);
     if (Status != XST_SUCCESS) {
         xil_printf("ERROR: Data check failed\r\n");
-        /* Do NOT return here – free buffers first, then report failure */
         free(DataBufferFull);
         free(ResultBuffer);
         free(ReferentBuffer);
@@ -257,24 +293,33 @@ int main(void)
 /* ==============================================================
  * FilterImageSW
  *
- * Software reference filter. Supports bypass and filter modes, single
- * or multi-plane images, u8 uint output (mode=0) and Q9.7 s16 (mode=1).
- * ResultBuffer is u16* — negative Q9.7 values are stored as their raw
- * 16-bit two's-complement bit pattern, avoiding sign-extension issues
- * when comparing against the hardware DMA output (also u16).
+ * Software reference filter. Writes to a raw u8* buffer:
+ *
+ *   uint8 mode (ACTIVE_MODE=OUTPUT_MODE_UINT8):
+ *     Each output pixel stored as one u8 byte at ResultBuffer[i].
+ *     Buffer layout matches the DMA output: buf[i] = pixel i.
+ *
+ *   Q9.7 mode (ACTIVE_MODE=OUTPUT_MODE_Q9_7):
+ *     Each output pixel stored as a u16 (cast to u8* for uniform signature).
+ *     Negative values stored as raw two's-complement u16 bit pattern.
+ *     Cast to s16* to print or interpret signed values.
  *
  * Coefficient ordering matches hardware filter_alu.vhd:
  *   Coeffs[kr * 9 + kc] multiplies pixel at (row + kr - R, col + kc - R)
  * ============================================================== */
-static void FilterImageSW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params)
+static void FilterImageSW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
 {
-    int R      = Params.Radius;
-    int K      = 2 * R + 1;
-    int W      = Params.Img.Width;
-    int H      = Params.Img.Height;
-    int mode   = Params.Ctrl & 0x01;
-    int bypass = (Params.Ctrl & 0x02) != 0;
-    int i_out  = 0;
+    int   R      = Params.Radius;
+    int   K      = 2 * R + 1;
+    int   W      = Params.Img.Width;
+    int   H      = Params.Img.Height;
+    int   mode   = Params.Ctrl & 0x01;   /* 0=uint8, 1=Q9.7 */
+    int   bypass = (Params.Ctrl & 0x02) != 0;
+    u32   i_out  = 0;
+
+    /* Typed output pointers — only one is used, selected at compile time */
+    u8  *out_u8  = (u8  *)ResultBuffer;
+    u16 *out_u16 = (u16 *)ResultBuffer;
 
     for (int plane = 0; plane < Params.Img.NumOfPlanes; plane++) {
         int plane_offset = plane * W * H;
@@ -283,43 +328,38 @@ static void FilterImageSW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params
             for (int col = R; col < W - R; col++) {
 
                 if (bypass) {
-                    if (mode == 0) {
-                        ResultBuffer[i_out++] = (u16)DataBuffer[plane_offset + row * W + col];
-                    } else {
-                        ResultBuffer[i_out++] = ((u16)DataBuffer[plane_offset + row * W + col]) << 7;
-                    }
+                    if (mode == 0)
+                        out_u8[i_out++]  = DataBuffer[plane_offset + row * W + col];
+                    else
+                        out_u16[i_out++] = ((u16)DataBuffer[plane_offset + row * W + col]) << 7;
                     continue;
                 }
 
                 s64 total_sum = 0;
-
                 for (int kr = 0; kr < K; kr++) {
                     for (int kc = 0; kc < K; kc++) {
                         int img_r = row + kr - R;
                         int img_c = col + kc - R;
                         s32 pixel = (s32)DataBuffer[plane_offset + img_r * W + img_c];
                         s32 coeff = (s32)Params.Coeffs[kr * 9 + kc];
-                        total_sum += (pixel * coeff);
+                        total_sum += (s64)(pixel * coeff);
                     }
                 }
 
                 s64 scaled = total_sum * (s64)((u32)Params.CoeffScale);
 
                 if (mode == 0) {
-                    /* uint8 output: Q1.15 * UQ4.12 → shift 27 */
-                    s64 integer_part = scaled >> 27;
-                    if (integer_part < 0)        ResultBuffer[i_out] = 0;
-                    else if (integer_part > 255)  ResultBuffer[i_out] = 255;
-                    else                          ResultBuffer[i_out] = (u16)integer_part;
+                    /* uint8: shift 27 = FRAC_COEFF(15) + FRAC_SCALE(12), clamp [0,255] */
+                    s64 v = scaled >> 27;
+                    if      (v < 0)   out_u8[i_out] = 0;
+                    else if (v > 255) out_u8[i_out] = 255;
+                    else              out_u8[i_out]  = (u8)v;
                 } else {
-                    /* Q9.7 signed 16-bit output: shift 20 */
-                    s64 integer_part = scaled >> 20;
-                    if (integer_part > 32767)
-                        ResultBuffer[i_out] = 32767;
-                    else if (integer_part < -32768)
-                        ResultBuffer[i_out] = (u16)-32768;
-                    else
-                        ResultBuffer[i_out] = (u16)(integer_part & 0xFFFF);
+                    /* Q9.7: shift 20 = FRAC_COEFF(15) + FRAC_SCALE(12) - 7, clamp s16 */
+                    s64 v = scaled >> 20;
+                    if      (v >  32767) out_u16[i_out] = 32767;
+                    else if (v < -32768) out_u16[i_out] = (u16)(s16)(-32768);
+                    else                 out_u16[i_out]  = (u16)(v & 0xFFFF);
                 }
                 i_out++;
             }
@@ -329,14 +369,22 @@ static void FilterImageSW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params
 
 /* ==============================================================
  * ImageFilterHW
+ *
+ * OutSize is mode-dependent:
+ *   uint8: OUT_W * OUT_H * sizeof(u8)  — 2 pixels per 16-bit word
+ *   Q9.7:  OUT_W * OUT_H * sizeof(u16) — 1 pixel per 16-bit word
  * ============================================================== */
-static int ImageFilterHW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params)
+static int ImageFilterHW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
 {
     int Status;
     u32 InSize  = Params.Img.Width * Params.Img.Height * Params.Img.NumOfPlanes;
+
+    /* RxSize matches the packing ratio of the hardware output */
+    int mode    = Params.Ctrl & 0x01;
     u32 OutSize = (u32)(Params.Img.Width  - 2*Params.Radius) *
                   (u32)(Params.Img.Height - 2*Params.Radius) *
-                  Params.Img.NumOfPlanes * sizeof(u16);
+                  Params.Img.NumOfPlanes *
+                  (mode == 0 ? sizeof(u8) : sizeof(u16));
 
     XAxiDma_Config *AxiDmaConfigPtr;
 
@@ -356,8 +404,8 @@ static int ImageFilterHW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params)
     RxDone = 0;
 
     Status = DmaStartTransfers(&AxiDma,
-                               DataBuffer,        InSize,
-                               (u8*)ResultBuffer, OutSize);
+                               DataBuffer,  InSize,
+                               ResultBuffer, OutSize);
     if (Status != XST_SUCCESS) {
         xil_printf("  HW CONFIG ERROR: Starting DMA transfers failed\r\n");
         return XST_FAILURE;
@@ -379,36 +427,66 @@ static int ImageFilterHW(u8 *DataBuffer, u16 *ResultBuffer, FilterParams Params)
 /* ==============================================================
  * CheckData
  *
- * Compares HW output (ResultBuffer) against SW reference (ReferentBuffer).
- * Both buffers are u16* so signed Q9.7 values are compared as raw bit
- * patterns, avoiding sign-extension false mismatches.
- * Prints up to 15 mismatches per plane with row/col coords, then total.
+ * uint8 mode:
+ *   ResultBuffer and ReferentBuffer are u8* arrays.
+ *   Compare byte-by-byte; print as unsigned integers.
+ *
+ * Q9.7 mode:
+ *   Buffers treated as u16* (raw bit-pattern comparison).
+ *   Print via s16 cast so signed values display correctly.
+ *
+ * Prints up to 15 mismatches with row/col coords, then total.
  * ============================================================== */
-static int CheckData(u16 *ResultBuffer, u16 *ReferentBuffer, FilterParams Params)
+static int CheckData(u8 *ResultBuffer, u8 *ReferentBuffer, FilterParams Params)
 {
     u32 outW = Params.Img.Width  - 2 * Params.Radius;
     u32 outH = Params.Img.Height - 2 * Params.Radius;
+    int mode = Params.Ctrl & 0x01;
 
-    int errors = 0;
-    u32 TotalElements = outW * outH * Params.Img.NumOfPlanes;
+    int  errors       = 0;
+    u32  TotalElements = outW * outH * Params.Img.NumOfPlanes;
+    u32  TotalBytes    = TotalElements * (mode == 0 ? sizeof(u8) : sizeof(u16));
 
     /* Invalidate D-cache so we read the freshest DMA-written values */
-    Xil_DCacheInvalidateRange((UINTPTR)ResultBuffer, TotalElements * sizeof(u16));
+    Xil_DCacheInvalidateRange((UINTPTR)ResultBuffer, TotalBytes);
 
-    for (u32 plane = 0; plane < Params.Img.NumOfPlanes; plane++) {
-        u32 offset = plane * outW * outH;
-        for (u32 row = 0; row < outH; row++) {
-            for (u32 col = 0; col < outW; col++) {
-                u32 i = offset + row * outW + col;
-                if (ResultBuffer[i] != ReferentBuffer[i]) {
-                    if (errors < 15) {
-                        /* Cast to s16 only for printing so signed values display correctly */
-                        xil_printf("  MISMATCH [Plane %u] (%u,%u): HW=%d SW=%d\r\n",
-                                   plane, row, col,
-                                   (int)(s16)ResultBuffer[i],
-                                   (int)(s16)ReferentBuffer[i]);
+    if (mode == 0) {
+        /* --- uint8: byte-by-byte comparison --- */
+        for (u32 plane = 0; plane < Params.Img.NumOfPlanes; plane++) {
+            u32 offset = plane * outW * outH;
+            for (u32 row = 0; row < outH; row++) {
+                for (u32 col = 0; col < outW; col++) {
+                    u32 i = offset + row * outW + col;
+                    if (ResultBuffer[i] != ReferentBuffer[i]) {
+                        if (errors < 15) {
+                            xil_printf("  MISMATCH [Plane %u] (%u,%u): HW=%u SW=%u\r\n",
+                                       plane, row, col,
+                                       (u32)ResultBuffer[i],
+                                       (u32)ReferentBuffer[i]);
+                        }
+                        errors++;
                     }
-                    errors++;
+                }
+            }
+        }
+    } else {
+        /* --- Q9.7: word-by-word comparison (raw u16 bit-patterns) --- */
+        u16 *HW = (u16*)ResultBuffer;
+        u16 *SW = (u16*)ReferentBuffer;
+        for (u32 plane = 0; plane < Params.Img.NumOfPlanes; plane++) {
+            u32 offset = plane * outW * outH;
+            for (u32 row = 0; row < outH; row++) {
+                for (u32 col = 0; col < outW; col++) {
+                    u32 i = offset + row * outW + col;
+                    if (HW[i] != SW[i]) {
+                        if (errors < 15) {
+                            xil_printf("  MISMATCH [Plane %u] (%u,%u): HW=%d SW=%d\r\n",
+                                       plane, row, col,
+                                       (int)(s16)HW[i],
+                                       (int)(s16)SW[i]);
+                        }
+                        errors++;
+                    }
                 }
             }
         }

@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Thu May 28 08:34:36 2026
+// Date        : Wed Jun 10 11:11:21 2026
 // Host        : yoga running 64-bit Ubuntu 24.04.4 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2_sim_netlist.v
@@ -297,8 +297,9 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire clk;
   wire [1295:0]flatten_coeffs;
   (* MARK_DEBUG *) wire fsm_img_processing_state;
-  wire fsm_img_processing_state7_out;
+  wire fsm_img_processing_state14_out;
   wire fsm_img_processing_state_i_1_n_0;
+  wire fsm_img_processing_state_i_2_n_0;
   wire \h_coeff_scale_reg_n_0_[0] ;
   wire \h_coeff_scale_reg_n_0_[10] ;
   wire \h_coeff_scale_reg_n_0_[11] ;
@@ -388,43 +389,43 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \img_col_counter[1]_i_1_n_0 ;
   wire \img_col_counter[2]_i_1_n_0 ;
   wire \img_col_counter[3]_i_1_n_0 ;
-  wire \img_col_counter[3]_i_2_n_0 ;
   wire \img_col_counter[4]_i_1_n_0 ;
-  wire \img_col_counter[5]_i_10_n_0 ;
-  wire \img_col_counter[5]_i_11_n_0 ;
-  wire \img_col_counter[5]_i_12_n_0 ;
-  wire \img_col_counter[5]_i_13_n_0 ;
-  wire \img_col_counter[5]_i_14_n_0 ;
-  wire \img_col_counter[5]_i_15_n_0 ;
   wire \img_col_counter[5]_i_1_n_0 ;
-  wire \img_col_counter[5]_i_4_n_0 ;
-  wire \img_col_counter[5]_i_5_n_0 ;
-  wire \img_col_counter[5]_i_6_n_0 ;
-  wire \img_col_counter[5]_i_7_n_0 ;
-  wire \img_col_counter[5]_i_8_n_0 ;
-  wire \img_col_counter[5]_i_9_n_0 ;
+  wire \img_col_counter[5]_i_2_n_0 ;
   wire \img_col_counter[6]_i_1_n_0 ;
+  wire \img_col_counter[6]_i_2_n_0 ;
+  wire \img_col_counter[6]_i_3_n_0 ;
   wire \img_col_counter[7]_i_1_n_0 ;
   wire \img_col_counter[7]_i_2_n_0 ;
-  wire \img_col_counter[7]_i_3_n_0 ;
+  wire \img_col_counter[8]_i_10_n_0 ;
+  wire \img_col_counter[8]_i_11_n_0 ;
+  wire \img_col_counter[8]_i_12_n_0 ;
+  wire \img_col_counter[8]_i_13_n_0 ;
+  wire \img_col_counter[8]_i_14_n_0 ;
+  wire \img_col_counter[8]_i_15_n_0 ;
+  wire \img_col_counter[8]_i_16_n_0 ;
+  wire \img_col_counter[8]_i_17_n_0 ;
   wire \img_col_counter[8]_i_1_n_0 ;
   wire \img_col_counter[8]_i_2_n_0 ;
   wire \img_col_counter[8]_i_3_n_0 ;
-  wire \img_col_counter[8]_i_4_n_0 ;
-  wire \img_col_counter_reg[5]_i_3_n_0 ;
-  wire \img_col_counter_reg[5]_i_3_n_1 ;
-  wire \img_col_counter_reg[5]_i_3_n_2 ;
-  wire \img_col_counter_reg[5]_i_3_n_3 ;
+  wire \img_col_counter[8]_i_6_n_0 ;
+  wire \img_col_counter[8]_i_7_n_0 ;
+  wire \img_col_counter[8]_i_8_n_0 ;
+  wire \img_col_counter[8]_i_9_n_0 ;
+  wire \img_col_counter_reg[8]_i_5_n_0 ;
+  wire \img_col_counter_reg[8]_i_5_n_1 ;
+  wire \img_col_counter_reg[8]_i_5_n_2 ;
+  wire \img_col_counter_reg[8]_i_5_n_3 ;
   (* MARK_DEBUG *) wire [8:0]img_row_counter;
   wire img_row_counter1;
   wire img_row_counter10_in;
   wire \img_row_counter[0]_i_1_n_0 ;
   wire \img_row_counter[1]_i_1_n_0 ;
   wire \img_row_counter[2]_i_1_n_0 ;
-  wire \img_row_counter[2]_i_2_n_0 ;
   wire \img_row_counter[3]_i_1_n_0 ;
   wire \img_row_counter[4]_i_1_n_0 ;
   wire \img_row_counter[5]_i_1_n_0 ;
+  wire \img_row_counter[5]_i_2_n_0 ;
   wire \img_row_counter[6]_i_1_n_0 ;
   wire \img_row_counter[6]_i_2_n_0 ;
   wire \img_row_counter[6]_i_3_n_0 ;
@@ -448,37 +449,92 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \img_row_counter_reg[8]_i_4_n_1 ;
   wire \img_row_counter_reg[8]_i_4_n_2 ;
   wire \img_row_counter_reg[8]_i_4_n_3 ;
+  wire [15:0]m_axis_tdata;
+  wire m_axis_tlast;
   (* MARK_DEBUG *) wire m_axis_tready;
   (* MARK_DEBUG *) wire m_axis_tvalid;
+  wire p_13_in;
   wire [7:0]p_1_in__0;
   wire [15:15]p_1_out;
-  wire p_6_in;
   wire [15:0]p_6_out;
+  wire pack_buf;
+  wire pack_buf1;
+  wire \pack_buf_reg_n_0_[0] ;
+  wire \pack_buf_reg_n_0_[1] ;
+  wire \pack_buf_reg_n_0_[2] ;
+  wire \pack_buf_reg_n_0_[3] ;
+  wire \pack_buf_reg_n_0_[4] ;
+  wire \pack_buf_reg_n_0_[5] ;
+  wire \pack_buf_reg_n_0_[6] ;
+  wire \pack_buf_reg_n_0_[7] ;
+  (* MARK_DEBUG *) wire pack_half;
+  wire pack_half_i_1_n_0;
+  (* MARK_DEBUG *) wire pack_in_ready;
+  wire pack_out_data;
+  wire \pack_out_data[0]_i_1_n_0 ;
+  wire \pack_out_data[10]_i_1_n_0 ;
+  wire \pack_out_data[11]_i_1_n_0 ;
+  wire \pack_out_data[12]_i_1_n_0 ;
+  wire \pack_out_data[13]_i_1_n_0 ;
+  wire \pack_out_data[14]_i_1_n_0 ;
+  wire \pack_out_data[15]_i_2_n_0 ;
+  wire \pack_out_data[1]_i_1_n_0 ;
+  wire \pack_out_data[2]_i_1_n_0 ;
+  wire \pack_out_data[3]_i_1_n_0 ;
+  wire \pack_out_data[4]_i_1_n_0 ;
+  wire \pack_out_data[5]_i_1_n_0 ;
+  wire \pack_out_data[6]_i_1_n_0 ;
+  wire \pack_out_data[7]_i_1_n_0 ;
+  wire \pack_out_data[8]_i_1_n_0 ;
+  wire \pack_out_data[9]_i_1_n_0 ;
+  wire \pack_out_data_reg_n_0_[0] ;
+  wire \pack_out_data_reg_n_0_[10] ;
+  wire \pack_out_data_reg_n_0_[11] ;
+  wire \pack_out_data_reg_n_0_[12] ;
+  wire \pack_out_data_reg_n_0_[13] ;
+  wire \pack_out_data_reg_n_0_[14] ;
+  wire \pack_out_data_reg_n_0_[15] ;
+  wire \pack_out_data_reg_n_0_[1] ;
+  wire \pack_out_data_reg_n_0_[2] ;
+  wire \pack_out_data_reg_n_0_[3] ;
+  wire \pack_out_data_reg_n_0_[4] ;
+  wire \pack_out_data_reg_n_0_[5] ;
+  wire \pack_out_data_reg_n_0_[6] ;
+  wire \pack_out_data_reg_n_0_[7] ;
+  wire \pack_out_data_reg_n_0_[8] ;
+  wire \pack_out_data_reg_n_0_[9] ;
+  (* MARK_DEBUG *) wire pack_out_last;
+  wire pack_out_last_i_1_n_0;
+  (* MARK_DEBUG *) wire pack_out_valid;
+  wire pack_out_valid_i_1_n_0;
+  (* MARK_DEBUG *) wire pipe_advance;
   (* MARK_DEBUG *) wire pipe_draining;
   wire \reg_coeff[0][15]_i_1_n_0 ;
   wire \reg_coeff[0][15]_i_2_n_0 ;
   wire \reg_coeff[0][15]_i_3_n_0 ;
   wire \reg_coeff[0][15]_i_4_n_0 ;
-  wire \reg_coeff[0][15]_i_5_n_0 ;
   wire \reg_coeff[0][7]_i_1_n_0 ;
   wire \reg_coeff[0][7]_i_2_n_0 ;
   wire \reg_coeff[10][15]_i_1_n_0 ;
-  wire \reg_coeff[10][15]_i_2_n_0 ;
   wire \reg_coeff[10][7]_i_1_n_0 ;
   wire \reg_coeff[11][15]_i_1_n_0 ;
   wire \reg_coeff[11][15]_i_2_n_0 ;
   wire \reg_coeff[11][7]_i_1_n_0 ;
   wire \reg_coeff[12][15]_i_1_n_0 ;
+  wire \reg_coeff[12][15]_i_2_n_0 ;
   wire \reg_coeff[12][7]_i_1_n_0 ;
   wire \reg_coeff[13][15]_i_1_n_0 ;
   wire \reg_coeff[13][7]_i_1_n_0 ;
   wire \reg_coeff[14][15]_i_1_n_0 ;
   wire \reg_coeff[14][15]_i_2_n_0 ;
+  wire \reg_coeff[14][15]_i_3_n_0 ;
   wire \reg_coeff[14][7]_i_1_n_0 ;
   wire \reg_coeff[15][15]_i_1_n_0 ;
   wire \reg_coeff[15][15]_i_2_n_0 ;
+  wire \reg_coeff[15][15]_i_3_n_0 ;
   wire \reg_coeff[15][7]_i_1_n_0 ;
   wire \reg_coeff[16][15]_i_1_n_0 ;
+  wire \reg_coeff[16][15]_i_2_n_0 ;
   wire \reg_coeff[16][7]_i_1_n_0 ;
   wire \reg_coeff[17][15]_i_1_n_0 ;
   wire \reg_coeff[17][7]_i_1_n_0 ;
@@ -493,23 +549,22 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[1][15]_i_4_n_0 ;
   wire \reg_coeff[1][7]_i_1_n_0 ;
   wire \reg_coeff[20][15]_i_1_n_0 ;
-  wire \reg_coeff[20][15]_i_2_n_0 ;
   wire \reg_coeff[20][7]_i_1_n_0 ;
   wire \reg_coeff[21][15]_i_1_n_0 ;
   wire \reg_coeff[21][15]_i_2_n_0 ;
   wire \reg_coeff[21][7]_i_1_n_0 ;
   wire \reg_coeff[22][15]_i_1_n_0 ;
   wire \reg_coeff[22][15]_i_2_n_0 ;
+  wire \reg_coeff[22][15]_i_3_n_0 ;
   wire \reg_coeff[22][7]_i_1_n_0 ;
   wire \reg_coeff[23][15]_i_1_n_0 ;
   wire \reg_coeff[23][7]_i_1_n_0 ;
   wire \reg_coeff[24][15]_i_1_n_0 ;
   wire \reg_coeff[24][15]_i_2_n_0 ;
+  wire \reg_coeff[24][15]_i_3_n_0 ;
   wire \reg_coeff[24][7]_i_1_n_0 ;
   wire \reg_coeff[25][15]_i_1_n_0 ;
   wire \reg_coeff[25][15]_i_2_n_0 ;
-  wire \reg_coeff[25][15]_i_3_n_0 ;
-  wire \reg_coeff[25][15]_i_4_n_0 ;
   wire \reg_coeff[25][7]_i_1_n_0 ;
   wire \reg_coeff[26][15]_i_1_n_0 ;
   wire \reg_coeff[26][15]_i_2_n_0 ;
@@ -519,24 +574,26 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[27][15]_i_3_n_0 ;
   wire \reg_coeff[27][7]_i_1_n_0 ;
   wire \reg_coeff[28][15]_i_1_n_0 ;
+  wire \reg_coeff[28][15]_i_2_n_0 ;
   wire \reg_coeff[28][7]_i_1_n_0 ;
   wire \reg_coeff[29][15]_i_1_n_0 ;
   wire \reg_coeff[29][15]_i_2_n_0 ;
   wire \reg_coeff[29][7]_i_1_n_0 ;
   wire \reg_coeff[2][15]_i_1_n_0 ;
   wire \reg_coeff[2][15]_i_2_n_0 ;
+  wire \reg_coeff[2][15]_i_3_n_0 ;
   wire \reg_coeff[2][7]_i_1_n_0 ;
   wire \reg_coeff[30][15]_i_1_n_0 ;
   wire \reg_coeff[30][15]_i_2_n_0 ;
   wire \reg_coeff[30][7]_i_1_n_0 ;
   wire \reg_coeff[31][15]_i_1_n_0 ;
   wire \reg_coeff[31][15]_i_2_n_0 ;
-  wire \reg_coeff[31][15]_i_3_n_0 ;
   wire \reg_coeff[31][7]_i_1_n_0 ;
   wire \reg_coeff[32][15]_i_1_n_0 ;
   wire \reg_coeff[32][7]_i_1_n_0 ;
   wire \reg_coeff[33][15]_i_1_n_0 ;
   wire \reg_coeff[33][15]_i_2_n_0 ;
+  wire \reg_coeff[33][15]_i_3_n_0 ;
   wire \reg_coeff[33][7]_i_1_n_0 ;
   wire \reg_coeff[34][15]_i_1_n_0 ;
   wire \reg_coeff[34][7]_i_1_n_0 ;
@@ -545,26 +602,25 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[35][15]_i_3_n_0 ;
   wire \reg_coeff[35][7]_i_1_n_0 ;
   wire \reg_coeff[36][15]_i_1_n_0 ;
+  wire \reg_coeff[36][15]_i_2_n_0 ;
   wire \reg_coeff[36][7]_i_1_n_0 ;
   wire \reg_coeff[37][15]_i_1_n_0 ;
   wire \reg_coeff[37][15]_i_2_n_0 ;
   wire \reg_coeff[37][7]_i_1_n_0 ;
   wire \reg_coeff[38][15]_i_1_n_0 ;
-  wire \reg_coeff[38][15]_i_2_n_0 ;
   wire \reg_coeff[38][7]_i_1_n_0 ;
   wire \reg_coeff[39][15]_i_1_n_0 ;
-  wire \reg_coeff[39][15]_i_2_n_0 ;
   wire \reg_coeff[39][7]_i_1_n_0 ;
   wire \reg_coeff[3][15]_i_1_n_0 ;
   wire \reg_coeff[3][7]_i_1_n_0 ;
   wire \reg_coeff[40][15]_i_1_n_0 ;
   wire \reg_coeff[40][7]_i_1_n_0 ;
   wire \reg_coeff[41][15]_i_1_n_0 ;
-  wire \reg_coeff[41][15]_i_2_n_0 ;
   wire \reg_coeff[41][7]_i_1_n_0 ;
   wire \reg_coeff[42][15]_i_1_n_0 ;
   wire \reg_coeff[42][7]_i_1_n_0 ;
   wire \reg_coeff[43][15]_i_1_n_0 ;
+  wire \reg_coeff[43][15]_i_2_n_0 ;
   wire \reg_coeff[43][7]_i_1_n_0 ;
   wire \reg_coeff[44][15]_i_1_n_0 ;
   wire \reg_coeff[44][7]_i_1_n_0 ;
@@ -581,32 +637,34 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[48][15]_i_1_n_0 ;
   wire \reg_coeff[48][7]_i_1_n_0 ;
   wire \reg_coeff[49][15]_i_1_n_0 ;
+  wire \reg_coeff[49][15]_i_2_n_0 ;
+  wire \reg_coeff[49][15]_i_3_n_0 ;
   wire \reg_coeff[49][7]_i_1_n_0 ;
   wire \reg_coeff[4][15]_i_1_n_0 ;
   wire \reg_coeff[4][15]_i_2_n_0 ;
   wire \reg_coeff[4][7]_i_1_n_0 ;
   wire \reg_coeff[50][15]_i_1_n_0 ;
+  wire \reg_coeff[50][15]_i_2_n_0 ;
   wire \reg_coeff[50][7]_i_1_n_0 ;
   wire \reg_coeff[51][15]_i_1_n_0 ;
   wire \reg_coeff[51][15]_i_2_n_0 ;
   wire \reg_coeff[51][7]_i_1_n_0 ;
   wire \reg_coeff[52][15]_i_1_n_0 ;
   wire \reg_coeff[52][15]_i_2_n_0 ;
-  wire \reg_coeff[52][15]_i_3_n_0 ;
   wire \reg_coeff[52][7]_i_1_n_0 ;
   wire \reg_coeff[53][15]_i_1_n_0 ;
-  wire \reg_coeff[53][15]_i_2_n_0 ;
   wire \reg_coeff[53][7]_i_1_n_0 ;
   wire \reg_coeff[54][15]_i_1_n_0 ;
+  wire \reg_coeff[54][15]_i_2_n_0 ;
   wire \reg_coeff[54][7]_i_1_n_0 ;
   wire \reg_coeff[55][15]_i_1_n_0 ;
-  wire \reg_coeff[55][15]_i_2_n_0 ;
   wire \reg_coeff[55][7]_i_1_n_0 ;
   wire \reg_coeff[56][15]_i_1_n_0 ;
   wire \reg_coeff[56][15]_i_2_n_0 ;
   wire \reg_coeff[56][7]_i_1_n_0 ;
   wire \reg_coeff[57][15]_i_1_n_0 ;
   wire \reg_coeff[57][15]_i_2_n_0 ;
+  wire \reg_coeff[57][15]_i_3_n_0 ;
   wire \reg_coeff[57][7]_i_1_n_0 ;
   wire \reg_coeff[58][15]_i_1_n_0 ;
   wire \reg_coeff[58][15]_i_2_n_0 ;
@@ -620,9 +678,9 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[60][15]_i_1_n_0 ;
   wire \reg_coeff[60][7]_i_1_n_0 ;
   wire \reg_coeff[61][15]_i_1_n_0 ;
+  wire \reg_coeff[61][15]_i_2_n_0 ;
   wire \reg_coeff[61][7]_i_1_n_0 ;
   wire \reg_coeff[62][15]_i_1_n_0 ;
-  wire \reg_coeff[62][15]_i_2_n_0 ;
   wire \reg_coeff[62][7]_i_1_n_0 ;
   wire \reg_coeff[63][15]_i_1_n_0 ;
   wire \reg_coeff[63][7]_i_1_n_0 ;
@@ -634,13 +692,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[66][7]_i_1_n_0 ;
   wire \reg_coeff[67][15]_i_1_n_0 ;
   wire \reg_coeff[67][15]_i_2_n_0 ;
-  wire \reg_coeff[67][15]_i_3_n_0 ;
-  wire \reg_coeff[67][15]_i_4_n_0 ;
   wire \reg_coeff[67][7]_i_1_n_0 ;
   wire \reg_coeff[68][15]_i_1_n_0 ;
   wire \reg_coeff[68][7]_i_1_n_0 ;
   wire \reg_coeff[69][15]_i_1_n_0 ;
   wire \reg_coeff[69][15]_i_2_n_0 ;
+  wire \reg_coeff[69][15]_i_3_n_0 ;
   wire \reg_coeff[69][7]_i_1_n_0 ;
   wire \reg_coeff[6][15]_i_1_n_0 ;
   wire \reg_coeff[6][15]_i_2_n_0 ;
@@ -655,26 +712,23 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff[73][15]_i_1_n_0 ;
   wire \reg_coeff[73][15]_i_2_n_0 ;
   wire \reg_coeff[73][15]_i_3_n_0 ;
-  wire \reg_coeff[73][15]_i_4_n_0 ;
   wire \reg_coeff[73][7]_i_1_n_0 ;
   wire \reg_coeff[74][15]_i_1_n_0 ;
+  wire \reg_coeff[74][15]_i_2_n_0 ;
   wire \reg_coeff[74][7]_i_1_n_0 ;
   wire \reg_coeff[75][15]_i_1_n_0 ;
   wire \reg_coeff[75][15]_i_2_n_0 ;
-  wire \reg_coeff[75][15]_i_3_n_0 ;
   wire \reg_coeff[75][7]_i_1_n_0 ;
   wire \reg_coeff[76][15]_i_1_n_0 ;
+  wire \reg_coeff[76][15]_i_2_n_0 ;
   wire \reg_coeff[76][7]_i_1_n_0 ;
   wire \reg_coeff[77][15]_i_1_n_0 ;
-  wire \reg_coeff[77][15]_i_2_n_0 ;
-  wire \reg_coeff[77][15]_i_3_n_0 ;
   wire \reg_coeff[77][7]_i_1_n_0 ;
   wire \reg_coeff[78][15]_i_1_n_0 ;
   wire \reg_coeff[78][15]_i_2_n_0 ;
   wire \reg_coeff[78][7]_i_1_n_0 ;
   wire \reg_coeff[79][15]_i_1_n_0 ;
   wire \reg_coeff[79][15]_i_2_n_0 ;
-  wire \reg_coeff[79][15]_i_3_n_0 ;
   wire \reg_coeff[79][7]_i_1_n_0 ;
   wire \reg_coeff[7][15]_i_1_n_0 ;
   wire \reg_coeff[7][15]_i_2_n_0 ;
@@ -777,7 +831,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_coeff_scale[15]_i_1_n_0 ;
   wire \reg_coeff_scale[15]_i_2_n_0 ;
   wire \reg_coeff_scale[15]_i_3_n_0 ;
-  wire \reg_coeff_scale[15]_i_4_n_0 ;
   wire \reg_coeff_scale[1]_i_1_n_0 ;
   wire \reg_coeff_scale[2]_i_1_n_0 ;
   wire \reg_coeff_scale[3]_i_1_n_0 ;
@@ -797,6 +850,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_ctrl[14]_i_1_n_0 ;
   wire \reg_ctrl[15]_i_1_n_0 ;
   wire \reg_ctrl[15]_i_2_n_0 ;
+  wire \reg_ctrl[15]_i_3_n_0 ;
   wire \reg_ctrl[1]_i_1_n_0 ;
   wire \reg_ctrl[2]_i_1_n_0 ;
   wire \reg_ctrl[3]_i_1_n_0 ;
@@ -817,7 +871,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \reg_img_h[15]_i_1_n_0 ;
   wire \reg_img_h[15]_i_2_n_0 ;
   wire \reg_img_h[15]_i_3_n_0 ;
-  wire \reg_img_h[15]_i_4_n_0 ;
   wire \reg_img_h[1]_i_1_n_0 ;
   wire \reg_img_h[2]_i_1_n_0 ;
   wire \reg_img_h[3]_i_1_n_0 ;
@@ -850,7 +903,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   (* MARK_DEBUG *) wire [15:0]reg_output;
   (* MARK_DEBUG *) wire [15:0]reg_radius;
   wire \reg_radius[15]_i_3_n_0 ;
-  wire \reg_radius[7]_i_2_n_0 ;
   wire reset;
   wire sA_col;
   wire \sA_col_reg_n_0_[0] ;
@@ -870,13 +922,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire [8:0]sA_data40_out;
   wire [8:0]sA_data42_out;
   wire \sA_data[7]_i_2_n_0 ;
-  wire \sA_data[7]_i_3_n_0 ;
   wire [7:0]sA_data__0;
   wire sA_last;
   wire sA_last_i_1_n_0;
   (* MARK_DEBUG *) wire sA_out;
   wire sA_out_i_10_n_0;
-  wire sA_out_i_12_n_0;
+  wire sA_out_i_11_n_0;
   wire sA_out_i_13_n_0;
   wire sA_out_i_15_n_0;
   wire sA_out_i_16_n_0;
@@ -888,13 +939,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire sA_out_i_21_n_0;
   wire sA_out_i_22_n_0;
   wire sA_out_i_23_n_0;
+  wire sA_out_i_24_n_0;
   wire sA_out_i_25_n_0;
   wire sA_out_i_26_n_0;
   wire sA_out_i_27_n_0;
   wire sA_out_i_28_n_0;
   wire sA_out_i_29_n_0;
+  wire sA_out_i_2_n_0;
   wire sA_out_i_30_n_0;
-  wire sA_out_i_31_n_0;
   wire sA_out_i_32_n_0;
   wire sA_out_i_33_n_0;
   wire sA_out_i_34_n_0;
@@ -902,14 +954,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire sA_out_i_36_n_0;
   wire sA_out_i_37_n_0;
   wire sA_out_i_38_n_0;
+  wire sA_out_i_39_n_0;
   wire sA_out_i_40_n_0;
   wire sA_out_i_41_n_0;
   wire sA_out_i_42_n_0;
   wire sA_out_i_43_n_0;
   wire sA_out_i_44_n_0;
   wire sA_out_i_45_n_0;
-  wire sA_out_i_48_n_0;
-  wire sA_out_i_51_n_0;
+  wire sA_out_i_49_n_0;
   wire sA_out_i_52_n_0;
   wire sA_out_i_53_n_0;
   wire sA_out_i_54_n_0;
@@ -926,36 +978,36 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire sA_out_i_65_n_0;
   wire sA_out_i_66_n_0;
   wire sA_out_i_67_n_0;
-  wire sA_out_i_7_n_0;
+  wire sA_out_i_68_n_0;
   wire sA_out_i_8_n_0;
-  wire sA_out_reg_i_11_n_0;
-  wire sA_out_reg_i_11_n_1;
-  wire sA_out_reg_i_11_n_2;
-  wire sA_out_reg_i_11_n_3;
+  wire sA_out_reg_i_12_n_0;
+  wire sA_out_reg_i_12_n_1;
+  wire sA_out_reg_i_12_n_2;
+  wire sA_out_reg_i_12_n_3;
   wire sA_out_reg_i_14_n_0;
   wire sA_out_reg_i_14_n_1;
   wire sA_out_reg_i_14_n_2;
   wire sA_out_reg_i_14_n_3;
-  wire sA_out_reg_i_46_n_0;
-  wire sA_out_reg_i_46_n_1;
-  wire sA_out_reg_i_46_n_2;
-  wire sA_out_reg_i_46_n_3;
   wire sA_out_reg_i_47_n_0;
   wire sA_out_reg_i_47_n_1;
   wire sA_out_reg_i_47_n_2;
   wire sA_out_reg_i_47_n_3;
-  wire sA_out_reg_i_49_n_0;
-  wire sA_out_reg_i_49_n_1;
-  wire sA_out_reg_i_49_n_2;
-  wire sA_out_reg_i_49_n_3;
+  wire sA_out_reg_i_48_n_0;
+  wire sA_out_reg_i_48_n_1;
+  wire sA_out_reg_i_48_n_2;
+  wire sA_out_reg_i_48_n_3;
   wire sA_out_reg_i_50_n_0;
   wire sA_out_reg_i_50_n_1;
   wire sA_out_reg_i_50_n_2;
   wire sA_out_reg_i_50_n_3;
-  wire sA_out_reg_i_6_n_0;
-  wire sA_out_reg_i_6_n_1;
-  wire sA_out_reg_i_6_n_2;
-  wire sA_out_reg_i_6_n_3;
+  wire sA_out_reg_i_51_n_0;
+  wire sA_out_reg_i_51_n_1;
+  wire sA_out_reg_i_51_n_2;
+  wire sA_out_reg_i_51_n_3;
+  wire sA_out_reg_i_7_n_0;
+  wire sA_out_reg_i_7_n_1;
+  wire sA_out_reg_i_7_n_2;
+  wire sA_out_reg_i_7_n_3;
   wire sA_out_reg_i_9_n_0;
   wire sA_out_reg_i_9_n_1;
   wire sA_out_reg_i_9_n_2;
@@ -998,6 +1050,9 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[0]_i_32_n_0 ;
   wire \s_axi_ctrl_rdata_reg[0]_i_33_n_0 ;
   wire \s_axi_ctrl_rdata_reg[0]_i_34_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[0]_i_35_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[0]_i_36_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[0]_i_37_n_0 ;
   wire \s_axi_ctrl_rdata_reg[0]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[0]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[0]_i_5_n_0 ;
@@ -1035,7 +1090,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[10]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[10]_i_36_n_0 ;
   wire \s_axi_ctrl_rdata_reg[10]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[10]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[10]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[10]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[10]_i_5_n_0 ;
@@ -1111,6 +1165,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[12]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[12]_i_36_n_0 ;
   wire \s_axi_ctrl_rdata_reg[12]_i_37_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[12]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[12]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[12]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[12]_i_5_n_0 ;
@@ -1149,7 +1204,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[13]_i_36_n_0 ;
   wire \s_axi_ctrl_rdata_reg[13]_i_37_n_0 ;
   wire \s_axi_ctrl_rdata_reg[13]_i_38_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[13]_i_39_n_0 ;
   wire \s_axi_ctrl_rdata_reg[13]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[13]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[13]_i_5_n_0 ;
@@ -1230,6 +1284,9 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[15]_i_41_n_0 ;
   wire \s_axi_ctrl_rdata_reg[15]_i_42_n_0 ;
   wire \s_axi_ctrl_rdata_reg[15]_i_43_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[15]_i_44_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[15]_i_45_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[15]_i_46_n_0 ;
   wire \s_axi_ctrl_rdata_reg[15]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[15]_i_5_n_0 ;
   wire \s_axi_ctrl_rdata_reg[15]_i_6_n_0 ;
@@ -1302,8 +1359,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[2]_i_34_n_0 ;
   wire \s_axi_ctrl_rdata_reg[2]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[2]_i_36_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[2]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[2]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[2]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[2]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[2]_i_5_n_0 ;
@@ -1340,7 +1395,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[3]_i_34_n_0 ;
   wire \s_axi_ctrl_rdata_reg[3]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[3]_i_36_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[3]_i_37_n_0 ;
   wire \s_axi_ctrl_rdata_reg[3]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[3]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[3]_i_5_n_0 ;
@@ -1377,8 +1431,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[4]_i_34_n_0 ;
   wire \s_axi_ctrl_rdata_reg[4]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[4]_i_36_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[4]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[4]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[4]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[4]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[4]_i_5_n_0 ;
@@ -1412,6 +1464,10 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[5]_i_31_n_0 ;
   wire \s_axi_ctrl_rdata_reg[5]_i_32_n_0 ;
   wire \s_axi_ctrl_rdata_reg[5]_i_33_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[5]_i_34_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[5]_i_35_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[5]_i_36_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[5]_i_37_n_0 ;
   wire \s_axi_ctrl_rdata_reg[5]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[5]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[5]_i_5_n_0 ;
@@ -1446,10 +1502,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[6]_i_32_n_0 ;
   wire \s_axi_ctrl_rdata_reg[6]_i_33_n_0 ;
   wire \s_axi_ctrl_rdata_reg[6]_i_34_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[6]_i_35_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[6]_i_36_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[6]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[6]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[6]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[6]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[6]_i_5_n_0 ;
@@ -1487,8 +1539,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[7]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[7]_i_36_n_0 ;
   wire \s_axi_ctrl_rdata_reg[7]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[7]_i_38_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[7]_i_39_n_0 ;
   wire \s_axi_ctrl_rdata_reg[7]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[7]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[7]_i_5_n_0 ;
@@ -1525,6 +1575,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[8]_i_34_n_0 ;
   wire \s_axi_ctrl_rdata_reg[8]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[8]_i_36_n_0 ;
+  wire \s_axi_ctrl_rdata_reg[8]_i_37_n_0 ;
   wire \s_axi_ctrl_rdata_reg[8]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[8]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[8]_i_5_n_0 ;
@@ -1561,8 +1612,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire \s_axi_ctrl_rdata_reg[9]_i_34_n_0 ;
   wire \s_axi_ctrl_rdata_reg[9]_i_35_n_0 ;
   wire \s_axi_ctrl_rdata_reg[9]_i_36_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[9]_i_37_n_0 ;
-  wire \s_axi_ctrl_rdata_reg[9]_i_38_n_0 ;
   wire \s_axi_ctrl_rdata_reg[9]_i_3_n_0 ;
   wire \s_axi_ctrl_rdata_reg[9]_i_4_n_0 ;
   wire \s_axi_ctrl_rdata_reg[9]_i_5_n_0 ;
@@ -1589,39 +1638,35 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   wire tvalid_buffer_i_1_n_0;
   wire tvalid_buffer_i_2_n_0;
   (* MARK_DEBUG *) wire [6:0]tvalid_fifo;
-  wire tvalid_fifo1;
-  wire \tvalid_fifo[6]_i_1_n_0 ;
   wire [3:1]\NLW_alu_valid_output_reg[0]_i_2_CO_UNCONNECTED ;
   wire [3:0]\NLW_alu_valid_output_reg[0]_i_2_O_UNCONNECTED ;
   wire [3:1]\NLW_alu_valid_output_reg[0]_i_3_CO_UNCONNECTED ;
   wire [3:0]\NLW_alu_valid_output_reg[0]_i_3_O_UNCONNECTED ;
   wire [3:0]\NLW_alu_valid_output_reg[0]_i_4_O_UNCONNECTED ;
   wire [3:0]\NLW_alu_valid_output_reg[0]_i_6_O_UNCONNECTED ;
-  wire [3:1]\NLW_img_col_counter_reg[5]_i_2_CO_UNCONNECTED ;
-  wire [3:0]\NLW_img_col_counter_reg[5]_i_2_O_UNCONNECTED ;
-  wire [3:0]\NLW_img_col_counter_reg[5]_i_3_O_UNCONNECTED ;
+  wire [3:1]\NLW_img_col_counter_reg[8]_i_4_CO_UNCONNECTED ;
+  wire [3:0]\NLW_img_col_counter_reg[8]_i_4_O_UNCONNECTED ;
+  wire [3:0]\NLW_img_col_counter_reg[8]_i_5_O_UNCONNECTED ;
   wire [3:1]\NLW_img_row_counter_reg[8]_i_3_CO_UNCONNECTED ;
   wire [3:0]\NLW_img_row_counter_reg[8]_i_3_O_UNCONNECTED ;
   wire [3:0]\NLW_img_row_counter_reg[8]_i_4_O_UNCONNECTED ;
-  wire [3:0]NLW_sA_out_reg_i_11_O_UNCONNECTED;
+  wire [3:0]NLW_sA_out_reg_i_12_O_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_14_O_UNCONNECTED;
-  wire [3:1]NLW_sA_out_reg_i_2_CO_UNCONNECTED;
-  wire [3:0]NLW_sA_out_reg_i_2_O_UNCONNECTED;
-  wire [3:0]NLW_sA_out_reg_i_24_CO_UNCONNECTED;
-  wire [3:1]NLW_sA_out_reg_i_24_O_UNCONNECTED;
   wire [3:1]NLW_sA_out_reg_i_3_CO_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_3_O_UNCONNECTED;
-  wire [3:0]NLW_sA_out_reg_i_39_CO_UNCONNECTED;
-  wire [3:1]NLW_sA_out_reg_i_39_O_UNCONNECTED;
+  wire [3:0]NLW_sA_out_reg_i_31_CO_UNCONNECTED;
+  wire [3:1]NLW_sA_out_reg_i_31_O_UNCONNECTED;
   wire [3:1]NLW_sA_out_reg_i_4_CO_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_4_O_UNCONNECTED;
+  wire [3:0]NLW_sA_out_reg_i_46_CO_UNCONNECTED;
+  wire [3:1]NLW_sA_out_reg_i_46_O_UNCONNECTED;
   wire [3:1]NLW_sA_out_reg_i_5_CO_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_5_O_UNCONNECTED;
+  wire [3:1]NLW_sA_out_reg_i_6_CO_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_6_O_UNCONNECTED;
+  wire [3:0]NLW_sA_out_reg_i_7_O_UNCONNECTED;
   wire [3:0]NLW_sA_out_reg_i_9_O_UNCONNECTED;
 
-  assign m_axis_tdata[15:0] = reg_output;
-  assign m_axis_tlast = tlast_fifo[6];
   assign s_axi_ctrl_bresp[1] = \<const0> ;
   assign s_axi_ctrl_bresp[0] = \<const0> ;
   assign s_axi_ctrl_rdata[31] = \<const0> ;
@@ -2050,13 +2095,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(axi_wready_i_1_n_0),
         .Q(s_axi_ctrl_wready),
         .R(reset));
-  LUT4 #(
-    .INIT(16'h2F20)) 
+  LUT3 #(
+    .INIT(8'h5C)) 
     buff_flag_i_1
-       (.I0(tvalid_fifo[6]),
-        .I1(m_axis_tready),
+       (.I0(pipe_advance),
+        .I1(buff_flag),
         .I2(fsm_img_processing_state),
-        .I3(buff_flag),
         .O(buff_flag_i_1_n_0));
   (* KEEP = "yes" *) 
   FDRE buff_flag_reg
@@ -2065,13 +2109,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(buff_flag_i_1_n_0),
         .Q(buff_flag),
         .R(reset));
-  LUT4 #(
-    .INIT(16'h0400)) 
+  LUT3 #(
+    .INIT(8'h04)) 
     \buff_tdata[7]_i_1 
-       (.I0(buff_flag),
-        .I1(tvalid_fifo[6]),
-        .I2(m_axis_tready),
-        .I3(fsm_img_processing_state),
+       (.I0(pipe_advance),
+        .I1(fsm_img_processing_state),
+        .I2(buff_flag),
         .O(buff_tlast));
   FDRE \buff_tdata_reg[0] 
        (.C(clk),
@@ -2127,15 +2170,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(s_axis_tlast),
         .Q(buff_tlast_reg_n_0),
         .R(reset));
-  LUT6 #(
-    .INIT(64'hFF00FF20FF00DF00)) 
+  LUT5 #(
+    .INIT(32'hAAAAB8AA)) 
     buff_tvalid_i_1
-       (.I0(fsm_img_processing_state),
-        .I1(m_axis_tready),
-        .I2(tvalid_fifo[6]),
-        .I3(buff_tvalid),
-        .I4(buff_flag),
-        .I5(s_axis_tvalid),
+       (.I0(buff_tvalid),
+        .I1(buff_flag),
+        .I2(s_axis_tvalid),
+        .I3(fsm_img_processing_state),
+        .I4(pipe_advance),
         .O(buff_tvalid_i_1_n_0));
   (* KEEP = "yes" *) 
   FDRE buff_tvalid_reg
@@ -2144,15 +2186,23 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(buff_tvalid_i_1_n_0),
         .Q(buff_tvalid),
         .R(reset));
-  LUT5 #(
-    .INIT(32'h2EEEEEEE)) 
+  LUT3 #(
+    .INIT(8'h2E)) 
     fsm_img_processing_state_i_1
        (.I0(s_axis_tvalid),
         .I1(fsm_img_processing_state),
-        .I2(tlast_fifo[6]),
-        .I3(m_axis_tready),
-        .I4(tvalid_fifo[6]),
+        .I2(fsm_img_processing_state_i_2_n_0),
         .O(fsm_img_processing_state_i_1_n_0));
+  LUT6 #(
+    .INIT(64'hAA80008000800080)) 
+    fsm_img_processing_state_i_2
+       (.I0(m_axis_tready),
+        .I1(pack_out_last),
+        .I2(pack_out_valid),
+        .I3(h_ctrl[0]),
+        .I4(tvalid_fifo[6]),
+        .I5(tlast_fifo[6]),
+        .O(fsm_img_processing_state_i_2_n_0));
   (* KEEP = "yes" *) 
   FDRE fsm_img_processing_state_reg
        (.C(clk),
@@ -2165,12 +2215,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     \h_coeff[0][15]_i_1 
        (.I0(s_axis_tvalid),
         .I1(fsm_img_processing_state),
-        .O(fsm_img_processing_state7_out));
+        .O(fsm_img_processing_state14_out));
   FDRE #(
     .INIT(1'b0)) 
     \h_coeff_reg[0][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [0]),
         .Q(flatten_coeffs[0]),
         .R(reset));
@@ -2178,7 +2228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [10]),
         .Q(flatten_coeffs[10]),
         .R(reset));
@@ -2186,7 +2236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [11]),
         .Q(flatten_coeffs[11]),
         .R(reset));
@@ -2194,7 +2244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [12]),
         .Q(flatten_coeffs[12]),
         .R(reset));
@@ -2202,7 +2252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [13]),
         .Q(flatten_coeffs[13]),
         .R(reset));
@@ -2210,7 +2260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [14]),
         .Q(flatten_coeffs[14]),
         .R(reset));
@@ -2218,7 +2268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [15]),
         .Q(flatten_coeffs[15]),
         .R(reset));
@@ -2226,7 +2276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [1]),
         .Q(flatten_coeffs[1]),
         .R(reset));
@@ -2234,7 +2284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [2]),
         .Q(flatten_coeffs[2]),
         .R(reset));
@@ -2242,7 +2292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [3]),
         .Q(flatten_coeffs[3]),
         .R(reset));
@@ -2250,7 +2300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [4]),
         .Q(flatten_coeffs[4]),
         .R(reset));
@@ -2258,7 +2308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [5]),
         .Q(flatten_coeffs[5]),
         .R(reset));
@@ -2266,7 +2316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [6]),
         .Q(flatten_coeffs[6]),
         .R(reset));
@@ -2274,7 +2324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [7]),
         .Q(flatten_coeffs[7]),
         .R(reset));
@@ -2282,7 +2332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [8]),
         .Q(flatten_coeffs[8]),
         .R(reset));
@@ -2290,7 +2340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[0][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[0] [9]),
         .Q(flatten_coeffs[9]),
         .R(reset));
@@ -2298,7 +2348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [0]),
         .Q(flatten_coeffs[160]),
         .R(reset));
@@ -2306,7 +2356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [10]),
         .Q(flatten_coeffs[170]),
         .R(reset));
@@ -2314,7 +2364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [11]),
         .Q(flatten_coeffs[171]),
         .R(reset));
@@ -2322,7 +2372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [12]),
         .Q(flatten_coeffs[172]),
         .R(reset));
@@ -2330,7 +2380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [13]),
         .Q(flatten_coeffs[173]),
         .R(reset));
@@ -2338,7 +2388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [14]),
         .Q(flatten_coeffs[174]),
         .R(reset));
@@ -2346,7 +2396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [15]),
         .Q(flatten_coeffs[175]),
         .R(reset));
@@ -2354,7 +2404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [1]),
         .Q(flatten_coeffs[161]),
         .R(reset));
@@ -2362,7 +2412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [2]),
         .Q(flatten_coeffs[162]),
         .R(reset));
@@ -2370,7 +2420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [3]),
         .Q(flatten_coeffs[163]),
         .R(reset));
@@ -2378,7 +2428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [4]),
         .Q(flatten_coeffs[164]),
         .R(reset));
@@ -2386,7 +2436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [5]),
         .Q(flatten_coeffs[165]),
         .R(reset));
@@ -2394,7 +2444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [6]),
         .Q(flatten_coeffs[166]),
         .R(reset));
@@ -2402,7 +2452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [7]),
         .Q(flatten_coeffs[167]),
         .R(reset));
@@ -2410,7 +2460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [8]),
         .Q(flatten_coeffs[168]),
         .R(reset));
@@ -2418,7 +2468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[10][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[10] [9]),
         .Q(flatten_coeffs[169]),
         .R(reset));
@@ -2426,7 +2476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [0]),
         .Q(flatten_coeffs[176]),
         .R(reset));
@@ -2434,7 +2484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [10]),
         .Q(flatten_coeffs[186]),
         .R(reset));
@@ -2442,7 +2492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [11]),
         .Q(flatten_coeffs[187]),
         .R(reset));
@@ -2450,7 +2500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [12]),
         .Q(flatten_coeffs[188]),
         .R(reset));
@@ -2458,7 +2508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [13]),
         .Q(flatten_coeffs[189]),
         .R(reset));
@@ -2466,7 +2516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [14]),
         .Q(flatten_coeffs[190]),
         .R(reset));
@@ -2474,7 +2524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [15]),
         .Q(flatten_coeffs[191]),
         .R(reset));
@@ -2482,7 +2532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [1]),
         .Q(flatten_coeffs[177]),
         .R(reset));
@@ -2490,7 +2540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [2]),
         .Q(flatten_coeffs[178]),
         .R(reset));
@@ -2498,7 +2548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [3]),
         .Q(flatten_coeffs[179]),
         .R(reset));
@@ -2506,7 +2556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [4]),
         .Q(flatten_coeffs[180]),
         .R(reset));
@@ -2514,7 +2564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [5]),
         .Q(flatten_coeffs[181]),
         .R(reset));
@@ -2522,7 +2572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [6]),
         .Q(flatten_coeffs[182]),
         .R(reset));
@@ -2530,7 +2580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [7]),
         .Q(flatten_coeffs[183]),
         .R(reset));
@@ -2538,7 +2588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [8]),
         .Q(flatten_coeffs[184]),
         .R(reset));
@@ -2546,7 +2596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[11][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[11] [9]),
         .Q(flatten_coeffs[185]),
         .R(reset));
@@ -2554,7 +2604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [0]),
         .Q(flatten_coeffs[192]),
         .R(reset));
@@ -2562,7 +2612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [10]),
         .Q(flatten_coeffs[202]),
         .R(reset));
@@ -2570,7 +2620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [11]),
         .Q(flatten_coeffs[203]),
         .R(reset));
@@ -2578,7 +2628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [12]),
         .Q(flatten_coeffs[204]),
         .R(reset));
@@ -2586,7 +2636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [13]),
         .Q(flatten_coeffs[205]),
         .R(reset));
@@ -2594,7 +2644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [14]),
         .Q(flatten_coeffs[206]),
         .R(reset));
@@ -2602,7 +2652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [15]),
         .Q(flatten_coeffs[207]),
         .R(reset));
@@ -2610,7 +2660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [1]),
         .Q(flatten_coeffs[193]),
         .R(reset));
@@ -2618,7 +2668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [2]),
         .Q(flatten_coeffs[194]),
         .R(reset));
@@ -2626,7 +2676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [3]),
         .Q(flatten_coeffs[195]),
         .R(reset));
@@ -2634,7 +2684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [4]),
         .Q(flatten_coeffs[196]),
         .R(reset));
@@ -2642,7 +2692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [5]),
         .Q(flatten_coeffs[197]),
         .R(reset));
@@ -2650,7 +2700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [6]),
         .Q(flatten_coeffs[198]),
         .R(reset));
@@ -2658,7 +2708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [7]),
         .Q(flatten_coeffs[199]),
         .R(reset));
@@ -2666,7 +2716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [8]),
         .Q(flatten_coeffs[200]),
         .R(reset));
@@ -2674,7 +2724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[12][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[12] [9]),
         .Q(flatten_coeffs[201]),
         .R(reset));
@@ -2682,7 +2732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [0]),
         .Q(flatten_coeffs[208]),
         .R(reset));
@@ -2690,7 +2740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [10]),
         .Q(flatten_coeffs[218]),
         .R(reset));
@@ -2698,7 +2748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [11]),
         .Q(flatten_coeffs[219]),
         .R(reset));
@@ -2706,7 +2756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [12]),
         .Q(flatten_coeffs[220]),
         .R(reset));
@@ -2714,7 +2764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [13]),
         .Q(flatten_coeffs[221]),
         .R(reset));
@@ -2722,7 +2772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [14]),
         .Q(flatten_coeffs[222]),
         .R(reset));
@@ -2730,7 +2780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [15]),
         .Q(flatten_coeffs[223]),
         .R(reset));
@@ -2738,7 +2788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [1]),
         .Q(flatten_coeffs[209]),
         .R(reset));
@@ -2746,7 +2796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [2]),
         .Q(flatten_coeffs[210]),
         .R(reset));
@@ -2754,7 +2804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [3]),
         .Q(flatten_coeffs[211]),
         .R(reset));
@@ -2762,7 +2812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [4]),
         .Q(flatten_coeffs[212]),
         .R(reset));
@@ -2770,7 +2820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [5]),
         .Q(flatten_coeffs[213]),
         .R(reset));
@@ -2778,7 +2828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [6]),
         .Q(flatten_coeffs[214]),
         .R(reset));
@@ -2786,7 +2836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [7]),
         .Q(flatten_coeffs[215]),
         .R(reset));
@@ -2794,7 +2844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [8]),
         .Q(flatten_coeffs[216]),
         .R(reset));
@@ -2802,7 +2852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[13][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[13] [9]),
         .Q(flatten_coeffs[217]),
         .R(reset));
@@ -2810,7 +2860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [0]),
         .Q(flatten_coeffs[224]),
         .R(reset));
@@ -2818,7 +2868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [10]),
         .Q(flatten_coeffs[234]),
         .R(reset));
@@ -2826,7 +2876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [11]),
         .Q(flatten_coeffs[235]),
         .R(reset));
@@ -2834,7 +2884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [12]),
         .Q(flatten_coeffs[236]),
         .R(reset));
@@ -2842,7 +2892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [13]),
         .Q(flatten_coeffs[237]),
         .R(reset));
@@ -2850,7 +2900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [14]),
         .Q(flatten_coeffs[238]),
         .R(reset));
@@ -2858,7 +2908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [15]),
         .Q(flatten_coeffs[239]),
         .R(reset));
@@ -2866,7 +2916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [1]),
         .Q(flatten_coeffs[225]),
         .R(reset));
@@ -2874,7 +2924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [2]),
         .Q(flatten_coeffs[226]),
         .R(reset));
@@ -2882,7 +2932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [3]),
         .Q(flatten_coeffs[227]),
         .R(reset));
@@ -2890,7 +2940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [4]),
         .Q(flatten_coeffs[228]),
         .R(reset));
@@ -2898,7 +2948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [5]),
         .Q(flatten_coeffs[229]),
         .R(reset));
@@ -2906,7 +2956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [6]),
         .Q(flatten_coeffs[230]),
         .R(reset));
@@ -2914,7 +2964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [7]),
         .Q(flatten_coeffs[231]),
         .R(reset));
@@ -2922,7 +2972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [8]),
         .Q(flatten_coeffs[232]),
         .R(reset));
@@ -2930,7 +2980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[14][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[14] [9]),
         .Q(flatten_coeffs[233]),
         .R(reset));
@@ -2938,7 +2988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [0]),
         .Q(flatten_coeffs[240]),
         .R(reset));
@@ -2946,7 +2996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [10]),
         .Q(flatten_coeffs[250]),
         .R(reset));
@@ -2954,7 +3004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [11]),
         .Q(flatten_coeffs[251]),
         .R(reset));
@@ -2962,7 +3012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [12]),
         .Q(flatten_coeffs[252]),
         .R(reset));
@@ -2970,7 +3020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [13]),
         .Q(flatten_coeffs[253]),
         .R(reset));
@@ -2978,7 +3028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [14]),
         .Q(flatten_coeffs[254]),
         .R(reset));
@@ -2986,7 +3036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [15]),
         .Q(flatten_coeffs[255]),
         .R(reset));
@@ -2994,7 +3044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [1]),
         .Q(flatten_coeffs[241]),
         .R(reset));
@@ -3002,7 +3052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [2]),
         .Q(flatten_coeffs[242]),
         .R(reset));
@@ -3010,7 +3060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [3]),
         .Q(flatten_coeffs[243]),
         .R(reset));
@@ -3018,7 +3068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [4]),
         .Q(flatten_coeffs[244]),
         .R(reset));
@@ -3026,7 +3076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [5]),
         .Q(flatten_coeffs[245]),
         .R(reset));
@@ -3034,7 +3084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [6]),
         .Q(flatten_coeffs[246]),
         .R(reset));
@@ -3042,7 +3092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [7]),
         .Q(flatten_coeffs[247]),
         .R(reset));
@@ -3050,7 +3100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [8]),
         .Q(flatten_coeffs[248]),
         .R(reset));
@@ -3058,7 +3108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[15][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[15] [9]),
         .Q(flatten_coeffs[249]),
         .R(reset));
@@ -3066,7 +3116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [0]),
         .Q(flatten_coeffs[256]),
         .R(reset));
@@ -3074,7 +3124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [10]),
         .Q(flatten_coeffs[266]),
         .R(reset));
@@ -3082,7 +3132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [11]),
         .Q(flatten_coeffs[267]),
         .R(reset));
@@ -3090,7 +3140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [12]),
         .Q(flatten_coeffs[268]),
         .R(reset));
@@ -3098,7 +3148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [13]),
         .Q(flatten_coeffs[269]),
         .R(reset));
@@ -3106,7 +3156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [14]),
         .Q(flatten_coeffs[270]),
         .R(reset));
@@ -3114,7 +3164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [15]),
         .Q(flatten_coeffs[271]),
         .R(reset));
@@ -3122,7 +3172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [1]),
         .Q(flatten_coeffs[257]),
         .R(reset));
@@ -3130,7 +3180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [2]),
         .Q(flatten_coeffs[258]),
         .R(reset));
@@ -3138,7 +3188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [3]),
         .Q(flatten_coeffs[259]),
         .R(reset));
@@ -3146,7 +3196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [4]),
         .Q(flatten_coeffs[260]),
         .R(reset));
@@ -3154,7 +3204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [5]),
         .Q(flatten_coeffs[261]),
         .R(reset));
@@ -3162,7 +3212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [6]),
         .Q(flatten_coeffs[262]),
         .R(reset));
@@ -3170,7 +3220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [7]),
         .Q(flatten_coeffs[263]),
         .R(reset));
@@ -3178,7 +3228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [8]),
         .Q(flatten_coeffs[264]),
         .R(reset));
@@ -3186,7 +3236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[16][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[16] [9]),
         .Q(flatten_coeffs[265]),
         .R(reset));
@@ -3194,7 +3244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [0]),
         .Q(flatten_coeffs[272]),
         .R(reset));
@@ -3202,7 +3252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [10]),
         .Q(flatten_coeffs[282]),
         .R(reset));
@@ -3210,7 +3260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [11]),
         .Q(flatten_coeffs[283]),
         .R(reset));
@@ -3218,7 +3268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [12]),
         .Q(flatten_coeffs[284]),
         .R(reset));
@@ -3226,7 +3276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [13]),
         .Q(flatten_coeffs[285]),
         .R(reset));
@@ -3234,7 +3284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [14]),
         .Q(flatten_coeffs[286]),
         .R(reset));
@@ -3242,7 +3292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [15]),
         .Q(flatten_coeffs[287]),
         .R(reset));
@@ -3250,7 +3300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [1]),
         .Q(flatten_coeffs[273]),
         .R(reset));
@@ -3258,7 +3308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [2]),
         .Q(flatten_coeffs[274]),
         .R(reset));
@@ -3266,7 +3316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [3]),
         .Q(flatten_coeffs[275]),
         .R(reset));
@@ -3274,7 +3324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [4]),
         .Q(flatten_coeffs[276]),
         .R(reset));
@@ -3282,7 +3332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [5]),
         .Q(flatten_coeffs[277]),
         .R(reset));
@@ -3290,7 +3340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [6]),
         .Q(flatten_coeffs[278]),
         .R(reset));
@@ -3298,7 +3348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [7]),
         .Q(flatten_coeffs[279]),
         .R(reset));
@@ -3306,7 +3356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [8]),
         .Q(flatten_coeffs[280]),
         .R(reset));
@@ -3314,7 +3364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[17][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[17] [9]),
         .Q(flatten_coeffs[281]),
         .R(reset));
@@ -3322,7 +3372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [0]),
         .Q(flatten_coeffs[288]),
         .R(reset));
@@ -3330,7 +3380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [10]),
         .Q(flatten_coeffs[298]),
         .R(reset));
@@ -3338,7 +3388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [11]),
         .Q(flatten_coeffs[299]),
         .R(reset));
@@ -3346,7 +3396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [12]),
         .Q(flatten_coeffs[300]),
         .R(reset));
@@ -3354,7 +3404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [13]),
         .Q(flatten_coeffs[301]),
         .R(reset));
@@ -3362,7 +3412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [14]),
         .Q(flatten_coeffs[302]),
         .R(reset));
@@ -3370,7 +3420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [15]),
         .Q(flatten_coeffs[303]),
         .R(reset));
@@ -3378,7 +3428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [1]),
         .Q(flatten_coeffs[289]),
         .R(reset));
@@ -3386,7 +3436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [2]),
         .Q(flatten_coeffs[290]),
         .R(reset));
@@ -3394,7 +3444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [3]),
         .Q(flatten_coeffs[291]),
         .R(reset));
@@ -3402,7 +3452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [4]),
         .Q(flatten_coeffs[292]),
         .R(reset));
@@ -3410,7 +3460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [5]),
         .Q(flatten_coeffs[293]),
         .R(reset));
@@ -3418,7 +3468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [6]),
         .Q(flatten_coeffs[294]),
         .R(reset));
@@ -3426,7 +3476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [7]),
         .Q(flatten_coeffs[295]),
         .R(reset));
@@ -3434,7 +3484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [8]),
         .Q(flatten_coeffs[296]),
         .R(reset));
@@ -3442,7 +3492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[18][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[18] [9]),
         .Q(flatten_coeffs[297]),
         .R(reset));
@@ -3450,7 +3500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [0]),
         .Q(flatten_coeffs[304]),
         .R(reset));
@@ -3458,7 +3508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [10]),
         .Q(flatten_coeffs[314]),
         .R(reset));
@@ -3466,7 +3516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [11]),
         .Q(flatten_coeffs[315]),
         .R(reset));
@@ -3474,7 +3524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [12]),
         .Q(flatten_coeffs[316]),
         .R(reset));
@@ -3482,7 +3532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [13]),
         .Q(flatten_coeffs[317]),
         .R(reset));
@@ -3490,7 +3540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [14]),
         .Q(flatten_coeffs[318]),
         .R(reset));
@@ -3498,7 +3548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [15]),
         .Q(flatten_coeffs[319]),
         .R(reset));
@@ -3506,7 +3556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [1]),
         .Q(flatten_coeffs[305]),
         .R(reset));
@@ -3514,7 +3564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [2]),
         .Q(flatten_coeffs[306]),
         .R(reset));
@@ -3522,7 +3572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [3]),
         .Q(flatten_coeffs[307]),
         .R(reset));
@@ -3530,7 +3580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [4]),
         .Q(flatten_coeffs[308]),
         .R(reset));
@@ -3538,7 +3588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [5]),
         .Q(flatten_coeffs[309]),
         .R(reset));
@@ -3546,7 +3596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [6]),
         .Q(flatten_coeffs[310]),
         .R(reset));
@@ -3554,7 +3604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [7]),
         .Q(flatten_coeffs[311]),
         .R(reset));
@@ -3562,7 +3612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [8]),
         .Q(flatten_coeffs[312]),
         .R(reset));
@@ -3570,7 +3620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[19][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[19] [9]),
         .Q(flatten_coeffs[313]),
         .R(reset));
@@ -3578,7 +3628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [0]),
         .Q(flatten_coeffs[16]),
         .R(reset));
@@ -3586,7 +3636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [10]),
         .Q(flatten_coeffs[26]),
         .R(reset));
@@ -3594,7 +3644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [11]),
         .Q(flatten_coeffs[27]),
         .R(reset));
@@ -3602,7 +3652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [12]),
         .Q(flatten_coeffs[28]),
         .R(reset));
@@ -3610,7 +3660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [13]),
         .Q(flatten_coeffs[29]),
         .R(reset));
@@ -3618,7 +3668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [14]),
         .Q(flatten_coeffs[30]),
         .R(reset));
@@ -3626,7 +3676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [15]),
         .Q(flatten_coeffs[31]),
         .R(reset));
@@ -3634,7 +3684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [1]),
         .Q(flatten_coeffs[17]),
         .R(reset));
@@ -3642,7 +3692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [2]),
         .Q(flatten_coeffs[18]),
         .R(reset));
@@ -3650,7 +3700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [3]),
         .Q(flatten_coeffs[19]),
         .R(reset));
@@ -3658,7 +3708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [4]),
         .Q(flatten_coeffs[20]),
         .R(reset));
@@ -3666,7 +3716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [5]),
         .Q(flatten_coeffs[21]),
         .R(reset));
@@ -3674,7 +3724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [6]),
         .Q(flatten_coeffs[22]),
         .R(reset));
@@ -3682,7 +3732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [7]),
         .Q(flatten_coeffs[23]),
         .R(reset));
@@ -3690,7 +3740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [8]),
         .Q(flatten_coeffs[24]),
         .R(reset));
@@ -3698,7 +3748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[1][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[1] [9]),
         .Q(flatten_coeffs[25]),
         .R(reset));
@@ -3706,7 +3756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [0]),
         .Q(flatten_coeffs[320]),
         .R(reset));
@@ -3714,7 +3764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [10]),
         .Q(flatten_coeffs[330]),
         .R(reset));
@@ -3722,7 +3772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [11]),
         .Q(flatten_coeffs[331]),
         .R(reset));
@@ -3730,7 +3780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [12]),
         .Q(flatten_coeffs[332]),
         .R(reset));
@@ -3738,7 +3788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [13]),
         .Q(flatten_coeffs[333]),
         .R(reset));
@@ -3746,7 +3796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [14]),
         .Q(flatten_coeffs[334]),
         .R(reset));
@@ -3754,7 +3804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [15]),
         .Q(flatten_coeffs[335]),
         .R(reset));
@@ -3762,7 +3812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [1]),
         .Q(flatten_coeffs[321]),
         .R(reset));
@@ -3770,7 +3820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [2]),
         .Q(flatten_coeffs[322]),
         .R(reset));
@@ -3778,7 +3828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [3]),
         .Q(flatten_coeffs[323]),
         .R(reset));
@@ -3786,7 +3836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [4]),
         .Q(flatten_coeffs[324]),
         .R(reset));
@@ -3794,7 +3844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [5]),
         .Q(flatten_coeffs[325]),
         .R(reset));
@@ -3802,7 +3852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [6]),
         .Q(flatten_coeffs[326]),
         .R(reset));
@@ -3810,7 +3860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [7]),
         .Q(flatten_coeffs[327]),
         .R(reset));
@@ -3818,7 +3868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [8]),
         .Q(flatten_coeffs[328]),
         .R(reset));
@@ -3826,7 +3876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[20][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[20] [9]),
         .Q(flatten_coeffs[329]),
         .R(reset));
@@ -3834,7 +3884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [0]),
         .Q(flatten_coeffs[336]),
         .R(reset));
@@ -3842,7 +3892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [10]),
         .Q(flatten_coeffs[346]),
         .R(reset));
@@ -3850,7 +3900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [11]),
         .Q(flatten_coeffs[347]),
         .R(reset));
@@ -3858,7 +3908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [12]),
         .Q(flatten_coeffs[348]),
         .R(reset));
@@ -3866,7 +3916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [13]),
         .Q(flatten_coeffs[349]),
         .R(reset));
@@ -3874,7 +3924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [14]),
         .Q(flatten_coeffs[350]),
         .R(reset));
@@ -3882,7 +3932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [15]),
         .Q(flatten_coeffs[351]),
         .R(reset));
@@ -3890,7 +3940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [1]),
         .Q(flatten_coeffs[337]),
         .R(reset));
@@ -3898,7 +3948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [2]),
         .Q(flatten_coeffs[338]),
         .R(reset));
@@ -3906,7 +3956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [3]),
         .Q(flatten_coeffs[339]),
         .R(reset));
@@ -3914,7 +3964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [4]),
         .Q(flatten_coeffs[340]),
         .R(reset));
@@ -3922,7 +3972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [5]),
         .Q(flatten_coeffs[341]),
         .R(reset));
@@ -3930,7 +3980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [6]),
         .Q(flatten_coeffs[342]),
         .R(reset));
@@ -3938,7 +3988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [7]),
         .Q(flatten_coeffs[343]),
         .R(reset));
@@ -3946,7 +3996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [8]),
         .Q(flatten_coeffs[344]),
         .R(reset));
@@ -3954,7 +4004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[21][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[21] [9]),
         .Q(flatten_coeffs[345]),
         .R(reset));
@@ -3962,7 +4012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [0]),
         .Q(flatten_coeffs[352]),
         .R(reset));
@@ -3970,7 +4020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [10]),
         .Q(flatten_coeffs[362]),
         .R(reset));
@@ -3978,7 +4028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [11]),
         .Q(flatten_coeffs[363]),
         .R(reset));
@@ -3986,7 +4036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [12]),
         .Q(flatten_coeffs[364]),
         .R(reset));
@@ -3994,7 +4044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [13]),
         .Q(flatten_coeffs[365]),
         .R(reset));
@@ -4002,7 +4052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [14]),
         .Q(flatten_coeffs[366]),
         .R(reset));
@@ -4010,7 +4060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [15]),
         .Q(flatten_coeffs[367]),
         .R(reset));
@@ -4018,7 +4068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [1]),
         .Q(flatten_coeffs[353]),
         .R(reset));
@@ -4026,7 +4076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [2]),
         .Q(flatten_coeffs[354]),
         .R(reset));
@@ -4034,7 +4084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [3]),
         .Q(flatten_coeffs[355]),
         .R(reset));
@@ -4042,7 +4092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [4]),
         .Q(flatten_coeffs[356]),
         .R(reset));
@@ -4050,7 +4100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [5]),
         .Q(flatten_coeffs[357]),
         .R(reset));
@@ -4058,7 +4108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [6]),
         .Q(flatten_coeffs[358]),
         .R(reset));
@@ -4066,7 +4116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [7]),
         .Q(flatten_coeffs[359]),
         .R(reset));
@@ -4074,7 +4124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [8]),
         .Q(flatten_coeffs[360]),
         .R(reset));
@@ -4082,7 +4132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[22][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[22] [9]),
         .Q(flatten_coeffs[361]),
         .R(reset));
@@ -4090,7 +4140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [0]),
         .Q(flatten_coeffs[368]),
         .R(reset));
@@ -4098,7 +4148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [10]),
         .Q(flatten_coeffs[378]),
         .R(reset));
@@ -4106,7 +4156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [11]),
         .Q(flatten_coeffs[379]),
         .R(reset));
@@ -4114,7 +4164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [12]),
         .Q(flatten_coeffs[380]),
         .R(reset));
@@ -4122,7 +4172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [13]),
         .Q(flatten_coeffs[381]),
         .R(reset));
@@ -4130,7 +4180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [14]),
         .Q(flatten_coeffs[382]),
         .R(reset));
@@ -4138,7 +4188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [15]),
         .Q(flatten_coeffs[383]),
         .R(reset));
@@ -4146,7 +4196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [1]),
         .Q(flatten_coeffs[369]),
         .R(reset));
@@ -4154,7 +4204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [2]),
         .Q(flatten_coeffs[370]),
         .R(reset));
@@ -4162,7 +4212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [3]),
         .Q(flatten_coeffs[371]),
         .R(reset));
@@ -4170,7 +4220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [4]),
         .Q(flatten_coeffs[372]),
         .R(reset));
@@ -4178,7 +4228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [5]),
         .Q(flatten_coeffs[373]),
         .R(reset));
@@ -4186,7 +4236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [6]),
         .Q(flatten_coeffs[374]),
         .R(reset));
@@ -4194,7 +4244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [7]),
         .Q(flatten_coeffs[375]),
         .R(reset));
@@ -4202,7 +4252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [8]),
         .Q(flatten_coeffs[376]),
         .R(reset));
@@ -4210,7 +4260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[23][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[23] [9]),
         .Q(flatten_coeffs[377]),
         .R(reset));
@@ -4218,7 +4268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [0]),
         .Q(flatten_coeffs[384]),
         .R(reset));
@@ -4226,7 +4276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [10]),
         .Q(flatten_coeffs[394]),
         .R(reset));
@@ -4234,7 +4284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [11]),
         .Q(flatten_coeffs[395]),
         .R(reset));
@@ -4242,7 +4292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [12]),
         .Q(flatten_coeffs[396]),
         .R(reset));
@@ -4250,7 +4300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [13]),
         .Q(flatten_coeffs[397]),
         .R(reset));
@@ -4258,7 +4308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [14]),
         .Q(flatten_coeffs[398]),
         .R(reset));
@@ -4266,7 +4316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [15]),
         .Q(flatten_coeffs[399]),
         .R(reset));
@@ -4274,7 +4324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [1]),
         .Q(flatten_coeffs[385]),
         .R(reset));
@@ -4282,7 +4332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [2]),
         .Q(flatten_coeffs[386]),
         .R(reset));
@@ -4290,7 +4340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [3]),
         .Q(flatten_coeffs[387]),
         .R(reset));
@@ -4298,7 +4348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [4]),
         .Q(flatten_coeffs[388]),
         .R(reset));
@@ -4306,7 +4356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [5]),
         .Q(flatten_coeffs[389]),
         .R(reset));
@@ -4314,7 +4364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [6]),
         .Q(flatten_coeffs[390]),
         .R(reset));
@@ -4322,7 +4372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [7]),
         .Q(flatten_coeffs[391]),
         .R(reset));
@@ -4330,7 +4380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [8]),
         .Q(flatten_coeffs[392]),
         .R(reset));
@@ -4338,7 +4388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[24][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[24] [9]),
         .Q(flatten_coeffs[393]),
         .R(reset));
@@ -4346,7 +4396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [0]),
         .Q(flatten_coeffs[400]),
         .R(reset));
@@ -4354,7 +4404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [10]),
         .Q(flatten_coeffs[410]),
         .R(reset));
@@ -4362,7 +4412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [11]),
         .Q(flatten_coeffs[411]),
         .R(reset));
@@ -4370,7 +4420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [12]),
         .Q(flatten_coeffs[412]),
         .R(reset));
@@ -4378,7 +4428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [13]),
         .Q(flatten_coeffs[413]),
         .R(reset));
@@ -4386,7 +4436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [14]),
         .Q(flatten_coeffs[414]),
         .R(reset));
@@ -4394,7 +4444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [15]),
         .Q(flatten_coeffs[415]),
         .R(reset));
@@ -4402,7 +4452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [1]),
         .Q(flatten_coeffs[401]),
         .R(reset));
@@ -4410,7 +4460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [2]),
         .Q(flatten_coeffs[402]),
         .R(reset));
@@ -4418,7 +4468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [3]),
         .Q(flatten_coeffs[403]),
         .R(reset));
@@ -4426,7 +4476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [4]),
         .Q(flatten_coeffs[404]),
         .R(reset));
@@ -4434,7 +4484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [5]),
         .Q(flatten_coeffs[405]),
         .R(reset));
@@ -4442,7 +4492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [6]),
         .Q(flatten_coeffs[406]),
         .R(reset));
@@ -4450,7 +4500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [7]),
         .Q(flatten_coeffs[407]),
         .R(reset));
@@ -4458,7 +4508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [8]),
         .Q(flatten_coeffs[408]),
         .R(reset));
@@ -4466,7 +4516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[25][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[25] [9]),
         .Q(flatten_coeffs[409]),
         .R(reset));
@@ -4474,7 +4524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [0]),
         .Q(flatten_coeffs[416]),
         .R(reset));
@@ -4482,7 +4532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [10]),
         .Q(flatten_coeffs[426]),
         .R(reset));
@@ -4490,7 +4540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [11]),
         .Q(flatten_coeffs[427]),
         .R(reset));
@@ -4498,7 +4548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [12]),
         .Q(flatten_coeffs[428]),
         .R(reset));
@@ -4506,7 +4556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [13]),
         .Q(flatten_coeffs[429]),
         .R(reset));
@@ -4514,7 +4564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [14]),
         .Q(flatten_coeffs[430]),
         .R(reset));
@@ -4522,7 +4572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [15]),
         .Q(flatten_coeffs[431]),
         .R(reset));
@@ -4530,7 +4580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [1]),
         .Q(flatten_coeffs[417]),
         .R(reset));
@@ -4538,7 +4588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [2]),
         .Q(flatten_coeffs[418]),
         .R(reset));
@@ -4546,7 +4596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [3]),
         .Q(flatten_coeffs[419]),
         .R(reset));
@@ -4554,7 +4604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [4]),
         .Q(flatten_coeffs[420]),
         .R(reset));
@@ -4562,7 +4612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [5]),
         .Q(flatten_coeffs[421]),
         .R(reset));
@@ -4570,7 +4620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [6]),
         .Q(flatten_coeffs[422]),
         .R(reset));
@@ -4578,7 +4628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [7]),
         .Q(flatten_coeffs[423]),
         .R(reset));
@@ -4586,7 +4636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [8]),
         .Q(flatten_coeffs[424]),
         .R(reset));
@@ -4594,7 +4644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[26][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[26] [9]),
         .Q(flatten_coeffs[425]),
         .R(reset));
@@ -4602,7 +4652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [0]),
         .Q(flatten_coeffs[432]),
         .R(reset));
@@ -4610,7 +4660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [10]),
         .Q(flatten_coeffs[442]),
         .R(reset));
@@ -4618,7 +4668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [11]),
         .Q(flatten_coeffs[443]),
         .R(reset));
@@ -4626,7 +4676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [12]),
         .Q(flatten_coeffs[444]),
         .R(reset));
@@ -4634,7 +4684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [13]),
         .Q(flatten_coeffs[445]),
         .R(reset));
@@ -4642,7 +4692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [14]),
         .Q(flatten_coeffs[446]),
         .R(reset));
@@ -4650,7 +4700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [15]),
         .Q(flatten_coeffs[447]),
         .R(reset));
@@ -4658,7 +4708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [1]),
         .Q(flatten_coeffs[433]),
         .R(reset));
@@ -4666,7 +4716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [2]),
         .Q(flatten_coeffs[434]),
         .R(reset));
@@ -4674,7 +4724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [3]),
         .Q(flatten_coeffs[435]),
         .R(reset));
@@ -4682,7 +4732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [4]),
         .Q(flatten_coeffs[436]),
         .R(reset));
@@ -4690,7 +4740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [5]),
         .Q(flatten_coeffs[437]),
         .R(reset));
@@ -4698,7 +4748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [6]),
         .Q(flatten_coeffs[438]),
         .R(reset));
@@ -4706,7 +4756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [7]),
         .Q(flatten_coeffs[439]),
         .R(reset));
@@ -4714,7 +4764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [8]),
         .Q(flatten_coeffs[440]),
         .R(reset));
@@ -4722,7 +4772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[27][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[27] [9]),
         .Q(flatten_coeffs[441]),
         .R(reset));
@@ -4730,7 +4780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [0]),
         .Q(flatten_coeffs[448]),
         .R(reset));
@@ -4738,7 +4788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [10]),
         .Q(flatten_coeffs[458]),
         .R(reset));
@@ -4746,7 +4796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [11]),
         .Q(flatten_coeffs[459]),
         .R(reset));
@@ -4754,7 +4804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [12]),
         .Q(flatten_coeffs[460]),
         .R(reset));
@@ -4762,7 +4812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [13]),
         .Q(flatten_coeffs[461]),
         .R(reset));
@@ -4770,7 +4820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [14]),
         .Q(flatten_coeffs[462]),
         .R(reset));
@@ -4778,7 +4828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [15]),
         .Q(flatten_coeffs[463]),
         .R(reset));
@@ -4786,7 +4836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [1]),
         .Q(flatten_coeffs[449]),
         .R(reset));
@@ -4794,7 +4844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [2]),
         .Q(flatten_coeffs[450]),
         .R(reset));
@@ -4802,7 +4852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [3]),
         .Q(flatten_coeffs[451]),
         .R(reset));
@@ -4810,7 +4860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [4]),
         .Q(flatten_coeffs[452]),
         .R(reset));
@@ -4818,7 +4868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [5]),
         .Q(flatten_coeffs[453]),
         .R(reset));
@@ -4826,7 +4876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [6]),
         .Q(flatten_coeffs[454]),
         .R(reset));
@@ -4834,7 +4884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [7]),
         .Q(flatten_coeffs[455]),
         .R(reset));
@@ -4842,7 +4892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [8]),
         .Q(flatten_coeffs[456]),
         .R(reset));
@@ -4850,7 +4900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[28][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[28] [9]),
         .Q(flatten_coeffs[457]),
         .R(reset));
@@ -4858,7 +4908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [0]),
         .Q(flatten_coeffs[464]),
         .R(reset));
@@ -4866,7 +4916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [10]),
         .Q(flatten_coeffs[474]),
         .R(reset));
@@ -4874,7 +4924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [11]),
         .Q(flatten_coeffs[475]),
         .R(reset));
@@ -4882,7 +4932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [12]),
         .Q(flatten_coeffs[476]),
         .R(reset));
@@ -4890,7 +4940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [13]),
         .Q(flatten_coeffs[477]),
         .R(reset));
@@ -4898,7 +4948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [14]),
         .Q(flatten_coeffs[478]),
         .R(reset));
@@ -4906,7 +4956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [15]),
         .Q(flatten_coeffs[479]),
         .R(reset));
@@ -4914,7 +4964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [1]),
         .Q(flatten_coeffs[465]),
         .R(reset));
@@ -4922,7 +4972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [2]),
         .Q(flatten_coeffs[466]),
         .R(reset));
@@ -4930,7 +4980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [3]),
         .Q(flatten_coeffs[467]),
         .R(reset));
@@ -4938,7 +4988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [4]),
         .Q(flatten_coeffs[468]),
         .R(reset));
@@ -4946,7 +4996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [5]),
         .Q(flatten_coeffs[469]),
         .R(reset));
@@ -4954,7 +5004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [6]),
         .Q(flatten_coeffs[470]),
         .R(reset));
@@ -4962,7 +5012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [7]),
         .Q(flatten_coeffs[471]),
         .R(reset));
@@ -4970,7 +5020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [8]),
         .Q(flatten_coeffs[472]),
         .R(reset));
@@ -4978,7 +5028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[29][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[29] [9]),
         .Q(flatten_coeffs[473]),
         .R(reset));
@@ -4986,7 +5036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [0]),
         .Q(flatten_coeffs[32]),
         .R(reset));
@@ -4994,7 +5044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [10]),
         .Q(flatten_coeffs[42]),
         .R(reset));
@@ -5002,7 +5052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [11]),
         .Q(flatten_coeffs[43]),
         .R(reset));
@@ -5010,7 +5060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [12]),
         .Q(flatten_coeffs[44]),
         .R(reset));
@@ -5018,7 +5068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [13]),
         .Q(flatten_coeffs[45]),
         .R(reset));
@@ -5026,7 +5076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [14]),
         .Q(flatten_coeffs[46]),
         .R(reset));
@@ -5034,7 +5084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [15]),
         .Q(flatten_coeffs[47]),
         .R(reset));
@@ -5042,7 +5092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [1]),
         .Q(flatten_coeffs[33]),
         .R(reset));
@@ -5050,7 +5100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [2]),
         .Q(flatten_coeffs[34]),
         .R(reset));
@@ -5058,7 +5108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [3]),
         .Q(flatten_coeffs[35]),
         .R(reset));
@@ -5066,7 +5116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [4]),
         .Q(flatten_coeffs[36]),
         .R(reset));
@@ -5074,7 +5124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [5]),
         .Q(flatten_coeffs[37]),
         .R(reset));
@@ -5082,7 +5132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [6]),
         .Q(flatten_coeffs[38]),
         .R(reset));
@@ -5090,7 +5140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [7]),
         .Q(flatten_coeffs[39]),
         .R(reset));
@@ -5098,7 +5148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [8]),
         .Q(flatten_coeffs[40]),
         .R(reset));
@@ -5106,7 +5156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[2][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[2] [9]),
         .Q(flatten_coeffs[41]),
         .R(reset));
@@ -5114,7 +5164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [0]),
         .Q(flatten_coeffs[480]),
         .R(reset));
@@ -5122,7 +5172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [10]),
         .Q(flatten_coeffs[490]),
         .R(reset));
@@ -5130,7 +5180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [11]),
         .Q(flatten_coeffs[491]),
         .R(reset));
@@ -5138,7 +5188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [12]),
         .Q(flatten_coeffs[492]),
         .R(reset));
@@ -5146,7 +5196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [13]),
         .Q(flatten_coeffs[493]),
         .R(reset));
@@ -5154,7 +5204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [14]),
         .Q(flatten_coeffs[494]),
         .R(reset));
@@ -5162,7 +5212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [15]),
         .Q(flatten_coeffs[495]),
         .R(reset));
@@ -5170,7 +5220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [1]),
         .Q(flatten_coeffs[481]),
         .R(reset));
@@ -5178,7 +5228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [2]),
         .Q(flatten_coeffs[482]),
         .R(reset));
@@ -5186,7 +5236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [3]),
         .Q(flatten_coeffs[483]),
         .R(reset));
@@ -5194,7 +5244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [4]),
         .Q(flatten_coeffs[484]),
         .R(reset));
@@ -5202,7 +5252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [5]),
         .Q(flatten_coeffs[485]),
         .R(reset));
@@ -5210,7 +5260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [6]),
         .Q(flatten_coeffs[486]),
         .R(reset));
@@ -5218,7 +5268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [7]),
         .Q(flatten_coeffs[487]),
         .R(reset));
@@ -5226,7 +5276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [8]),
         .Q(flatten_coeffs[488]),
         .R(reset));
@@ -5234,7 +5284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[30][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[30] [9]),
         .Q(flatten_coeffs[489]),
         .R(reset));
@@ -5242,7 +5292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [0]),
         .Q(flatten_coeffs[496]),
         .R(reset));
@@ -5250,7 +5300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [10]),
         .Q(flatten_coeffs[506]),
         .R(reset));
@@ -5258,7 +5308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [11]),
         .Q(flatten_coeffs[507]),
         .R(reset));
@@ -5266,7 +5316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [12]),
         .Q(flatten_coeffs[508]),
         .R(reset));
@@ -5274,7 +5324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [13]),
         .Q(flatten_coeffs[509]),
         .R(reset));
@@ -5282,7 +5332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [14]),
         .Q(flatten_coeffs[510]),
         .R(reset));
@@ -5290,7 +5340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [15]),
         .Q(flatten_coeffs[511]),
         .R(reset));
@@ -5298,7 +5348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [1]),
         .Q(flatten_coeffs[497]),
         .R(reset));
@@ -5306,7 +5356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [2]),
         .Q(flatten_coeffs[498]),
         .R(reset));
@@ -5314,7 +5364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [3]),
         .Q(flatten_coeffs[499]),
         .R(reset));
@@ -5322,7 +5372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [4]),
         .Q(flatten_coeffs[500]),
         .R(reset));
@@ -5330,7 +5380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [5]),
         .Q(flatten_coeffs[501]),
         .R(reset));
@@ -5338,7 +5388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [6]),
         .Q(flatten_coeffs[502]),
         .R(reset));
@@ -5346,7 +5396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [7]),
         .Q(flatten_coeffs[503]),
         .R(reset));
@@ -5354,7 +5404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [8]),
         .Q(flatten_coeffs[504]),
         .R(reset));
@@ -5362,7 +5412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[31][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[31] [9]),
         .Q(flatten_coeffs[505]),
         .R(reset));
@@ -5370,7 +5420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [0]),
         .Q(flatten_coeffs[512]),
         .R(reset));
@@ -5378,7 +5428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [10]),
         .Q(flatten_coeffs[522]),
         .R(reset));
@@ -5386,7 +5436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [11]),
         .Q(flatten_coeffs[523]),
         .R(reset));
@@ -5394,7 +5444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [12]),
         .Q(flatten_coeffs[524]),
         .R(reset));
@@ -5402,7 +5452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [13]),
         .Q(flatten_coeffs[525]),
         .R(reset));
@@ -5410,7 +5460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [14]),
         .Q(flatten_coeffs[526]),
         .R(reset));
@@ -5418,7 +5468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [15]),
         .Q(flatten_coeffs[527]),
         .R(reset));
@@ -5426,7 +5476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [1]),
         .Q(flatten_coeffs[513]),
         .R(reset));
@@ -5434,7 +5484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [2]),
         .Q(flatten_coeffs[514]),
         .R(reset));
@@ -5442,7 +5492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [3]),
         .Q(flatten_coeffs[515]),
         .R(reset));
@@ -5450,7 +5500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [4]),
         .Q(flatten_coeffs[516]),
         .R(reset));
@@ -5458,7 +5508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [5]),
         .Q(flatten_coeffs[517]),
         .R(reset));
@@ -5466,7 +5516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [6]),
         .Q(flatten_coeffs[518]),
         .R(reset));
@@ -5474,7 +5524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [7]),
         .Q(flatten_coeffs[519]),
         .R(reset));
@@ -5482,7 +5532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [8]),
         .Q(flatten_coeffs[520]),
         .R(reset));
@@ -5490,7 +5540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[32][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[32] [9]),
         .Q(flatten_coeffs[521]),
         .R(reset));
@@ -5498,7 +5548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [0]),
         .Q(flatten_coeffs[528]),
         .R(reset));
@@ -5506,7 +5556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [10]),
         .Q(flatten_coeffs[538]),
         .R(reset));
@@ -5514,7 +5564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [11]),
         .Q(flatten_coeffs[539]),
         .R(reset));
@@ -5522,7 +5572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [12]),
         .Q(flatten_coeffs[540]),
         .R(reset));
@@ -5530,7 +5580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [13]),
         .Q(flatten_coeffs[541]),
         .R(reset));
@@ -5538,7 +5588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [14]),
         .Q(flatten_coeffs[542]),
         .R(reset));
@@ -5546,7 +5596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [15]),
         .Q(flatten_coeffs[543]),
         .R(reset));
@@ -5554,7 +5604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [1]),
         .Q(flatten_coeffs[529]),
         .R(reset));
@@ -5562,7 +5612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [2]),
         .Q(flatten_coeffs[530]),
         .R(reset));
@@ -5570,7 +5620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [3]),
         .Q(flatten_coeffs[531]),
         .R(reset));
@@ -5578,7 +5628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [4]),
         .Q(flatten_coeffs[532]),
         .R(reset));
@@ -5586,7 +5636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [5]),
         .Q(flatten_coeffs[533]),
         .R(reset));
@@ -5594,7 +5644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [6]),
         .Q(flatten_coeffs[534]),
         .R(reset));
@@ -5602,7 +5652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [7]),
         .Q(flatten_coeffs[535]),
         .R(reset));
@@ -5610,7 +5660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [8]),
         .Q(flatten_coeffs[536]),
         .R(reset));
@@ -5618,7 +5668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[33][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[33] [9]),
         .Q(flatten_coeffs[537]),
         .R(reset));
@@ -5626,7 +5676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [0]),
         .Q(flatten_coeffs[544]),
         .R(reset));
@@ -5634,7 +5684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [10]),
         .Q(flatten_coeffs[554]),
         .R(reset));
@@ -5642,7 +5692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [11]),
         .Q(flatten_coeffs[555]),
         .R(reset));
@@ -5650,7 +5700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [12]),
         .Q(flatten_coeffs[556]),
         .R(reset));
@@ -5658,7 +5708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [13]),
         .Q(flatten_coeffs[557]),
         .R(reset));
@@ -5666,7 +5716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [14]),
         .Q(flatten_coeffs[558]),
         .R(reset));
@@ -5674,7 +5724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [15]),
         .Q(flatten_coeffs[559]),
         .R(reset));
@@ -5682,7 +5732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [1]),
         .Q(flatten_coeffs[545]),
         .R(reset));
@@ -5690,7 +5740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [2]),
         .Q(flatten_coeffs[546]),
         .R(reset));
@@ -5698,7 +5748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [3]),
         .Q(flatten_coeffs[547]),
         .R(reset));
@@ -5706,7 +5756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [4]),
         .Q(flatten_coeffs[548]),
         .R(reset));
@@ -5714,7 +5764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [5]),
         .Q(flatten_coeffs[549]),
         .R(reset));
@@ -5722,7 +5772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [6]),
         .Q(flatten_coeffs[550]),
         .R(reset));
@@ -5730,7 +5780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [7]),
         .Q(flatten_coeffs[551]),
         .R(reset));
@@ -5738,7 +5788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [8]),
         .Q(flatten_coeffs[552]),
         .R(reset));
@@ -5746,7 +5796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[34][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[34] [9]),
         .Q(flatten_coeffs[553]),
         .R(reset));
@@ -5754,7 +5804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [0]),
         .Q(flatten_coeffs[560]),
         .R(reset));
@@ -5762,7 +5812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [10]),
         .Q(flatten_coeffs[570]),
         .R(reset));
@@ -5770,7 +5820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [11]),
         .Q(flatten_coeffs[571]),
         .R(reset));
@@ -5778,7 +5828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [12]),
         .Q(flatten_coeffs[572]),
         .R(reset));
@@ -5786,7 +5836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [13]),
         .Q(flatten_coeffs[573]),
         .R(reset));
@@ -5794,7 +5844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [14]),
         .Q(flatten_coeffs[574]),
         .R(reset));
@@ -5802,7 +5852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [15]),
         .Q(flatten_coeffs[575]),
         .R(reset));
@@ -5810,7 +5860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [1]),
         .Q(flatten_coeffs[561]),
         .R(reset));
@@ -5818,7 +5868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [2]),
         .Q(flatten_coeffs[562]),
         .R(reset));
@@ -5826,7 +5876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [3]),
         .Q(flatten_coeffs[563]),
         .R(reset));
@@ -5834,7 +5884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [4]),
         .Q(flatten_coeffs[564]),
         .R(reset));
@@ -5842,7 +5892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [5]),
         .Q(flatten_coeffs[565]),
         .R(reset));
@@ -5850,7 +5900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [6]),
         .Q(flatten_coeffs[566]),
         .R(reset));
@@ -5858,7 +5908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [7]),
         .Q(flatten_coeffs[567]),
         .R(reset));
@@ -5866,7 +5916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [8]),
         .Q(flatten_coeffs[568]),
         .R(reset));
@@ -5874,7 +5924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[35][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[35] [9]),
         .Q(flatten_coeffs[569]),
         .R(reset));
@@ -5882,7 +5932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [0]),
         .Q(flatten_coeffs[576]),
         .R(reset));
@@ -5890,7 +5940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [10]),
         .Q(flatten_coeffs[586]),
         .R(reset));
@@ -5898,7 +5948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [11]),
         .Q(flatten_coeffs[587]),
         .R(reset));
@@ -5906,7 +5956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [12]),
         .Q(flatten_coeffs[588]),
         .R(reset));
@@ -5914,7 +5964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [13]),
         .Q(flatten_coeffs[589]),
         .R(reset));
@@ -5922,7 +5972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [14]),
         .Q(flatten_coeffs[590]),
         .R(reset));
@@ -5930,7 +5980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [15]),
         .Q(flatten_coeffs[591]),
         .R(reset));
@@ -5938,7 +5988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [1]),
         .Q(flatten_coeffs[577]),
         .R(reset));
@@ -5946,7 +5996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [2]),
         .Q(flatten_coeffs[578]),
         .R(reset));
@@ -5954,7 +6004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [3]),
         .Q(flatten_coeffs[579]),
         .R(reset));
@@ -5962,7 +6012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [4]),
         .Q(flatten_coeffs[580]),
         .R(reset));
@@ -5970,7 +6020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [5]),
         .Q(flatten_coeffs[581]),
         .R(reset));
@@ -5978,7 +6028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [6]),
         .Q(flatten_coeffs[582]),
         .R(reset));
@@ -5986,7 +6036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [7]),
         .Q(flatten_coeffs[583]),
         .R(reset));
@@ -5994,7 +6044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [8]),
         .Q(flatten_coeffs[584]),
         .R(reset));
@@ -6002,7 +6052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[36][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[36] [9]),
         .Q(flatten_coeffs[585]),
         .R(reset));
@@ -6010,7 +6060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [0]),
         .Q(flatten_coeffs[592]),
         .R(reset));
@@ -6018,7 +6068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [10]),
         .Q(flatten_coeffs[602]),
         .R(reset));
@@ -6026,7 +6076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [11]),
         .Q(flatten_coeffs[603]),
         .R(reset));
@@ -6034,7 +6084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [12]),
         .Q(flatten_coeffs[604]),
         .R(reset));
@@ -6042,7 +6092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [13]),
         .Q(flatten_coeffs[605]),
         .R(reset));
@@ -6050,7 +6100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [14]),
         .Q(flatten_coeffs[606]),
         .R(reset));
@@ -6058,7 +6108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [15]),
         .Q(flatten_coeffs[607]),
         .R(reset));
@@ -6066,7 +6116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [1]),
         .Q(flatten_coeffs[593]),
         .R(reset));
@@ -6074,7 +6124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [2]),
         .Q(flatten_coeffs[594]),
         .R(reset));
@@ -6082,7 +6132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [3]),
         .Q(flatten_coeffs[595]),
         .R(reset));
@@ -6090,7 +6140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [4]),
         .Q(flatten_coeffs[596]),
         .R(reset));
@@ -6098,7 +6148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [5]),
         .Q(flatten_coeffs[597]),
         .R(reset));
@@ -6106,7 +6156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [6]),
         .Q(flatten_coeffs[598]),
         .R(reset));
@@ -6114,7 +6164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [7]),
         .Q(flatten_coeffs[599]),
         .R(reset));
@@ -6122,7 +6172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [8]),
         .Q(flatten_coeffs[600]),
         .R(reset));
@@ -6130,7 +6180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[37][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[37] [9]),
         .Q(flatten_coeffs[601]),
         .R(reset));
@@ -6138,7 +6188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [0]),
         .Q(flatten_coeffs[608]),
         .R(reset));
@@ -6146,7 +6196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [10]),
         .Q(flatten_coeffs[618]),
         .R(reset));
@@ -6154,7 +6204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [11]),
         .Q(flatten_coeffs[619]),
         .R(reset));
@@ -6162,7 +6212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [12]),
         .Q(flatten_coeffs[620]),
         .R(reset));
@@ -6170,7 +6220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [13]),
         .Q(flatten_coeffs[621]),
         .R(reset));
@@ -6178,7 +6228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [14]),
         .Q(flatten_coeffs[622]),
         .R(reset));
@@ -6186,7 +6236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [15]),
         .Q(flatten_coeffs[623]),
         .R(reset));
@@ -6194,7 +6244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [1]),
         .Q(flatten_coeffs[609]),
         .R(reset));
@@ -6202,7 +6252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [2]),
         .Q(flatten_coeffs[610]),
         .R(reset));
@@ -6210,7 +6260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [3]),
         .Q(flatten_coeffs[611]),
         .R(reset));
@@ -6218,7 +6268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [4]),
         .Q(flatten_coeffs[612]),
         .R(reset));
@@ -6226,7 +6276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [5]),
         .Q(flatten_coeffs[613]),
         .R(reset));
@@ -6234,7 +6284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [6]),
         .Q(flatten_coeffs[614]),
         .R(reset));
@@ -6242,7 +6292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [7]),
         .Q(flatten_coeffs[615]),
         .R(reset));
@@ -6250,7 +6300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [8]),
         .Q(flatten_coeffs[616]),
         .R(reset));
@@ -6258,7 +6308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[38][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[38] [9]),
         .Q(flatten_coeffs[617]),
         .R(reset));
@@ -6266,7 +6316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [0]),
         .Q(flatten_coeffs[624]),
         .R(reset));
@@ -6274,7 +6324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [10]),
         .Q(flatten_coeffs[634]),
         .R(reset));
@@ -6282,7 +6332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [11]),
         .Q(flatten_coeffs[635]),
         .R(reset));
@@ -6290,7 +6340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [12]),
         .Q(flatten_coeffs[636]),
         .R(reset));
@@ -6298,7 +6348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [13]),
         .Q(flatten_coeffs[637]),
         .R(reset));
@@ -6306,7 +6356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [14]),
         .Q(flatten_coeffs[638]),
         .R(reset));
@@ -6314,7 +6364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [15]),
         .Q(flatten_coeffs[639]),
         .R(reset));
@@ -6322,7 +6372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [1]),
         .Q(flatten_coeffs[625]),
         .R(reset));
@@ -6330,7 +6380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [2]),
         .Q(flatten_coeffs[626]),
         .R(reset));
@@ -6338,7 +6388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [3]),
         .Q(flatten_coeffs[627]),
         .R(reset));
@@ -6346,7 +6396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [4]),
         .Q(flatten_coeffs[628]),
         .R(reset));
@@ -6354,7 +6404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [5]),
         .Q(flatten_coeffs[629]),
         .R(reset));
@@ -6362,7 +6412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [6]),
         .Q(flatten_coeffs[630]),
         .R(reset));
@@ -6370,7 +6420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [7]),
         .Q(flatten_coeffs[631]),
         .R(reset));
@@ -6378,7 +6428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [8]),
         .Q(flatten_coeffs[632]),
         .R(reset));
@@ -6386,7 +6436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[39][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[39] [9]),
         .Q(flatten_coeffs[633]),
         .R(reset));
@@ -6394,7 +6444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [0]),
         .Q(flatten_coeffs[48]),
         .R(reset));
@@ -6402,7 +6452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [10]),
         .Q(flatten_coeffs[58]),
         .R(reset));
@@ -6410,7 +6460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [11]),
         .Q(flatten_coeffs[59]),
         .R(reset));
@@ -6418,7 +6468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [12]),
         .Q(flatten_coeffs[60]),
         .R(reset));
@@ -6426,7 +6476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [13]),
         .Q(flatten_coeffs[61]),
         .R(reset));
@@ -6434,7 +6484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [14]),
         .Q(flatten_coeffs[62]),
         .R(reset));
@@ -6442,7 +6492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [15]),
         .Q(flatten_coeffs[63]),
         .R(reset));
@@ -6450,7 +6500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [1]),
         .Q(flatten_coeffs[49]),
         .R(reset));
@@ -6458,7 +6508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [2]),
         .Q(flatten_coeffs[50]),
         .R(reset));
@@ -6466,7 +6516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [3]),
         .Q(flatten_coeffs[51]),
         .R(reset));
@@ -6474,7 +6524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [4]),
         .Q(flatten_coeffs[52]),
         .R(reset));
@@ -6482,7 +6532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [5]),
         .Q(flatten_coeffs[53]),
         .R(reset));
@@ -6490,7 +6540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [6]),
         .Q(flatten_coeffs[54]),
         .R(reset));
@@ -6498,7 +6548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [7]),
         .Q(flatten_coeffs[55]),
         .R(reset));
@@ -6506,7 +6556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [8]),
         .Q(flatten_coeffs[56]),
         .R(reset));
@@ -6514,7 +6564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[3][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[3] [9]),
         .Q(flatten_coeffs[57]),
         .R(reset));
@@ -6522,7 +6572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [0]),
         .Q(flatten_coeffs[640]),
         .R(reset));
@@ -6530,7 +6580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [10]),
         .Q(flatten_coeffs[650]),
         .R(reset));
@@ -6538,7 +6588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [11]),
         .Q(flatten_coeffs[651]),
         .R(reset));
@@ -6546,7 +6596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [12]),
         .Q(flatten_coeffs[652]),
         .R(reset));
@@ -6554,7 +6604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [13]),
         .Q(flatten_coeffs[653]),
         .R(reset));
@@ -6562,7 +6612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [14]),
         .Q(flatten_coeffs[654]),
         .R(reset));
@@ -6570,7 +6620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [15]),
         .Q(flatten_coeffs[655]),
         .R(reset));
@@ -6578,7 +6628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [1]),
         .Q(flatten_coeffs[641]),
         .R(reset));
@@ -6586,7 +6636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [2]),
         .Q(flatten_coeffs[642]),
         .R(reset));
@@ -6594,7 +6644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [3]),
         .Q(flatten_coeffs[643]),
         .R(reset));
@@ -6602,7 +6652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [4]),
         .Q(flatten_coeffs[644]),
         .R(reset));
@@ -6610,7 +6660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [5]),
         .Q(flatten_coeffs[645]),
         .R(reset));
@@ -6618,7 +6668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [6]),
         .Q(flatten_coeffs[646]),
         .R(reset));
@@ -6626,7 +6676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [7]),
         .Q(flatten_coeffs[647]),
         .R(reset));
@@ -6634,7 +6684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [8]),
         .Q(flatten_coeffs[648]),
         .R(reset));
@@ -6642,7 +6692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[40][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[40] [9]),
         .Q(flatten_coeffs[649]),
         .R(reset));
@@ -6650,7 +6700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [0]),
         .Q(flatten_coeffs[656]),
         .R(reset));
@@ -6658,7 +6708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [10]),
         .Q(flatten_coeffs[666]),
         .R(reset));
@@ -6666,7 +6716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [11]),
         .Q(flatten_coeffs[667]),
         .R(reset));
@@ -6674,7 +6724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [12]),
         .Q(flatten_coeffs[668]),
         .R(reset));
@@ -6682,7 +6732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [13]),
         .Q(flatten_coeffs[669]),
         .R(reset));
@@ -6690,7 +6740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [14]),
         .Q(flatten_coeffs[670]),
         .R(reset));
@@ -6698,7 +6748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [15]),
         .Q(flatten_coeffs[671]),
         .R(reset));
@@ -6706,7 +6756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [1]),
         .Q(flatten_coeffs[657]),
         .R(reset));
@@ -6714,7 +6764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [2]),
         .Q(flatten_coeffs[658]),
         .R(reset));
@@ -6722,7 +6772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [3]),
         .Q(flatten_coeffs[659]),
         .R(reset));
@@ -6730,7 +6780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [4]),
         .Q(flatten_coeffs[660]),
         .R(reset));
@@ -6738,7 +6788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [5]),
         .Q(flatten_coeffs[661]),
         .R(reset));
@@ -6746,7 +6796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [6]),
         .Q(flatten_coeffs[662]),
         .R(reset));
@@ -6754,7 +6804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [7]),
         .Q(flatten_coeffs[663]),
         .R(reset));
@@ -6762,7 +6812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [8]),
         .Q(flatten_coeffs[664]),
         .R(reset));
@@ -6770,7 +6820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[41][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[41] [9]),
         .Q(flatten_coeffs[665]),
         .R(reset));
@@ -6778,7 +6828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [0]),
         .Q(flatten_coeffs[672]),
         .R(reset));
@@ -6786,7 +6836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [10]),
         .Q(flatten_coeffs[682]),
         .R(reset));
@@ -6794,7 +6844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [11]),
         .Q(flatten_coeffs[683]),
         .R(reset));
@@ -6802,7 +6852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [12]),
         .Q(flatten_coeffs[684]),
         .R(reset));
@@ -6810,7 +6860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [13]),
         .Q(flatten_coeffs[685]),
         .R(reset));
@@ -6818,7 +6868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [14]),
         .Q(flatten_coeffs[686]),
         .R(reset));
@@ -6826,7 +6876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [15]),
         .Q(flatten_coeffs[687]),
         .R(reset));
@@ -6834,7 +6884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [1]),
         .Q(flatten_coeffs[673]),
         .R(reset));
@@ -6842,7 +6892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [2]),
         .Q(flatten_coeffs[674]),
         .R(reset));
@@ -6850,7 +6900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [3]),
         .Q(flatten_coeffs[675]),
         .R(reset));
@@ -6858,7 +6908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [4]),
         .Q(flatten_coeffs[676]),
         .R(reset));
@@ -6866,7 +6916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [5]),
         .Q(flatten_coeffs[677]),
         .R(reset));
@@ -6874,7 +6924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [6]),
         .Q(flatten_coeffs[678]),
         .R(reset));
@@ -6882,7 +6932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [7]),
         .Q(flatten_coeffs[679]),
         .R(reset));
@@ -6890,7 +6940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [8]),
         .Q(flatten_coeffs[680]),
         .R(reset));
@@ -6898,7 +6948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[42][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[42] [9]),
         .Q(flatten_coeffs[681]),
         .R(reset));
@@ -6906,7 +6956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [0]),
         .Q(flatten_coeffs[688]),
         .R(reset));
@@ -6914,7 +6964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [10]),
         .Q(flatten_coeffs[698]),
         .R(reset));
@@ -6922,7 +6972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [11]),
         .Q(flatten_coeffs[699]),
         .R(reset));
@@ -6930,7 +6980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [12]),
         .Q(flatten_coeffs[700]),
         .R(reset));
@@ -6938,7 +6988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [13]),
         .Q(flatten_coeffs[701]),
         .R(reset));
@@ -6946,7 +6996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [14]),
         .Q(flatten_coeffs[702]),
         .R(reset));
@@ -6954,7 +7004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [15]),
         .Q(flatten_coeffs[703]),
         .R(reset));
@@ -6962,7 +7012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [1]),
         .Q(flatten_coeffs[689]),
         .R(reset));
@@ -6970,7 +7020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [2]),
         .Q(flatten_coeffs[690]),
         .R(reset));
@@ -6978,7 +7028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [3]),
         .Q(flatten_coeffs[691]),
         .R(reset));
@@ -6986,7 +7036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [4]),
         .Q(flatten_coeffs[692]),
         .R(reset));
@@ -6994,7 +7044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [5]),
         .Q(flatten_coeffs[693]),
         .R(reset));
@@ -7002,7 +7052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [6]),
         .Q(flatten_coeffs[694]),
         .R(reset));
@@ -7010,7 +7060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [7]),
         .Q(flatten_coeffs[695]),
         .R(reset));
@@ -7018,7 +7068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [8]),
         .Q(flatten_coeffs[696]),
         .R(reset));
@@ -7026,7 +7076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[43][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[43] [9]),
         .Q(flatten_coeffs[697]),
         .R(reset));
@@ -7034,7 +7084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [0]),
         .Q(flatten_coeffs[704]),
         .R(reset));
@@ -7042,7 +7092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [10]),
         .Q(flatten_coeffs[714]),
         .R(reset));
@@ -7050,7 +7100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [11]),
         .Q(flatten_coeffs[715]),
         .R(reset));
@@ -7058,7 +7108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [12]),
         .Q(flatten_coeffs[716]),
         .R(reset));
@@ -7066,7 +7116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [13]),
         .Q(flatten_coeffs[717]),
         .R(reset));
@@ -7074,7 +7124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [14]),
         .Q(flatten_coeffs[718]),
         .R(reset));
@@ -7082,7 +7132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [15]),
         .Q(flatten_coeffs[719]),
         .R(reset));
@@ -7090,7 +7140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [1]),
         .Q(flatten_coeffs[705]),
         .R(reset));
@@ -7098,7 +7148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [2]),
         .Q(flatten_coeffs[706]),
         .R(reset));
@@ -7106,7 +7156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [3]),
         .Q(flatten_coeffs[707]),
         .R(reset));
@@ -7114,7 +7164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [4]),
         .Q(flatten_coeffs[708]),
         .R(reset));
@@ -7122,7 +7172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [5]),
         .Q(flatten_coeffs[709]),
         .R(reset));
@@ -7130,7 +7180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [6]),
         .Q(flatten_coeffs[710]),
         .R(reset));
@@ -7138,7 +7188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [7]),
         .Q(flatten_coeffs[711]),
         .R(reset));
@@ -7146,7 +7196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [8]),
         .Q(flatten_coeffs[712]),
         .R(reset));
@@ -7154,7 +7204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[44][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[44] [9]),
         .Q(flatten_coeffs[713]),
         .R(reset));
@@ -7162,7 +7212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [0]),
         .Q(flatten_coeffs[720]),
         .R(reset));
@@ -7170,7 +7220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [10]),
         .Q(flatten_coeffs[730]),
         .R(reset));
@@ -7178,7 +7228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [11]),
         .Q(flatten_coeffs[731]),
         .R(reset));
@@ -7186,7 +7236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [12]),
         .Q(flatten_coeffs[732]),
         .R(reset));
@@ -7194,7 +7244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [13]),
         .Q(flatten_coeffs[733]),
         .R(reset));
@@ -7202,7 +7252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [14]),
         .Q(flatten_coeffs[734]),
         .R(reset));
@@ -7210,7 +7260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [15]),
         .Q(flatten_coeffs[735]),
         .R(reset));
@@ -7218,7 +7268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [1]),
         .Q(flatten_coeffs[721]),
         .R(reset));
@@ -7226,7 +7276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [2]),
         .Q(flatten_coeffs[722]),
         .R(reset));
@@ -7234,7 +7284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [3]),
         .Q(flatten_coeffs[723]),
         .R(reset));
@@ -7242,7 +7292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [4]),
         .Q(flatten_coeffs[724]),
         .R(reset));
@@ -7250,7 +7300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [5]),
         .Q(flatten_coeffs[725]),
         .R(reset));
@@ -7258,7 +7308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [6]),
         .Q(flatten_coeffs[726]),
         .R(reset));
@@ -7266,7 +7316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [7]),
         .Q(flatten_coeffs[727]),
         .R(reset));
@@ -7274,7 +7324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [8]),
         .Q(flatten_coeffs[728]),
         .R(reset));
@@ -7282,7 +7332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[45][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[45] [9]),
         .Q(flatten_coeffs[729]),
         .R(reset));
@@ -7290,7 +7340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [0]),
         .Q(flatten_coeffs[736]),
         .R(reset));
@@ -7298,7 +7348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [10]),
         .Q(flatten_coeffs[746]),
         .R(reset));
@@ -7306,7 +7356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [11]),
         .Q(flatten_coeffs[747]),
         .R(reset));
@@ -7314,7 +7364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [12]),
         .Q(flatten_coeffs[748]),
         .R(reset));
@@ -7322,7 +7372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [13]),
         .Q(flatten_coeffs[749]),
         .R(reset));
@@ -7330,7 +7380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [14]),
         .Q(flatten_coeffs[750]),
         .R(reset));
@@ -7338,7 +7388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [15]),
         .Q(flatten_coeffs[751]),
         .R(reset));
@@ -7346,7 +7396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [1]),
         .Q(flatten_coeffs[737]),
         .R(reset));
@@ -7354,7 +7404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [2]),
         .Q(flatten_coeffs[738]),
         .R(reset));
@@ -7362,7 +7412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [3]),
         .Q(flatten_coeffs[739]),
         .R(reset));
@@ -7370,7 +7420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [4]),
         .Q(flatten_coeffs[740]),
         .R(reset));
@@ -7378,7 +7428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [5]),
         .Q(flatten_coeffs[741]),
         .R(reset));
@@ -7386,7 +7436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [6]),
         .Q(flatten_coeffs[742]),
         .R(reset));
@@ -7394,7 +7444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [7]),
         .Q(flatten_coeffs[743]),
         .R(reset));
@@ -7402,7 +7452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [8]),
         .Q(flatten_coeffs[744]),
         .R(reset));
@@ -7410,7 +7460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[46][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[46] [9]),
         .Q(flatten_coeffs[745]),
         .R(reset));
@@ -7418,7 +7468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [0]),
         .Q(flatten_coeffs[752]),
         .R(reset));
@@ -7426,7 +7476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [10]),
         .Q(flatten_coeffs[762]),
         .R(reset));
@@ -7434,7 +7484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [11]),
         .Q(flatten_coeffs[763]),
         .R(reset));
@@ -7442,7 +7492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [12]),
         .Q(flatten_coeffs[764]),
         .R(reset));
@@ -7450,7 +7500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [13]),
         .Q(flatten_coeffs[765]),
         .R(reset));
@@ -7458,7 +7508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [14]),
         .Q(flatten_coeffs[766]),
         .R(reset));
@@ -7466,7 +7516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [15]),
         .Q(flatten_coeffs[767]),
         .R(reset));
@@ -7474,7 +7524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [1]),
         .Q(flatten_coeffs[753]),
         .R(reset));
@@ -7482,7 +7532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [2]),
         .Q(flatten_coeffs[754]),
         .R(reset));
@@ -7490,7 +7540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [3]),
         .Q(flatten_coeffs[755]),
         .R(reset));
@@ -7498,7 +7548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [4]),
         .Q(flatten_coeffs[756]),
         .R(reset));
@@ -7506,7 +7556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [5]),
         .Q(flatten_coeffs[757]),
         .R(reset));
@@ -7514,7 +7564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [6]),
         .Q(flatten_coeffs[758]),
         .R(reset));
@@ -7522,7 +7572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [7]),
         .Q(flatten_coeffs[759]),
         .R(reset));
@@ -7530,7 +7580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [8]),
         .Q(flatten_coeffs[760]),
         .R(reset));
@@ -7538,7 +7588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[47][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[47] [9]),
         .Q(flatten_coeffs[761]),
         .R(reset));
@@ -7546,7 +7596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [0]),
         .Q(flatten_coeffs[768]),
         .R(reset));
@@ -7554,7 +7604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [10]),
         .Q(flatten_coeffs[778]),
         .R(reset));
@@ -7562,7 +7612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [11]),
         .Q(flatten_coeffs[779]),
         .R(reset));
@@ -7570,7 +7620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [12]),
         .Q(flatten_coeffs[780]),
         .R(reset));
@@ -7578,7 +7628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [13]),
         .Q(flatten_coeffs[781]),
         .R(reset));
@@ -7586,7 +7636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [14]),
         .Q(flatten_coeffs[782]),
         .R(reset));
@@ -7594,7 +7644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [15]),
         .Q(flatten_coeffs[783]),
         .R(reset));
@@ -7602,7 +7652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [1]),
         .Q(flatten_coeffs[769]),
         .R(reset));
@@ -7610,7 +7660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [2]),
         .Q(flatten_coeffs[770]),
         .R(reset));
@@ -7618,7 +7668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [3]),
         .Q(flatten_coeffs[771]),
         .R(reset));
@@ -7626,7 +7676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [4]),
         .Q(flatten_coeffs[772]),
         .R(reset));
@@ -7634,7 +7684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [5]),
         .Q(flatten_coeffs[773]),
         .R(reset));
@@ -7642,7 +7692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [6]),
         .Q(flatten_coeffs[774]),
         .R(reset));
@@ -7650,7 +7700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [7]),
         .Q(flatten_coeffs[775]),
         .R(reset));
@@ -7658,7 +7708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [8]),
         .Q(flatten_coeffs[776]),
         .R(reset));
@@ -7666,7 +7716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[48][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[48] [9]),
         .Q(flatten_coeffs[777]),
         .R(reset));
@@ -7674,7 +7724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [0]),
         .Q(flatten_coeffs[784]),
         .R(reset));
@@ -7682,7 +7732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [10]),
         .Q(flatten_coeffs[794]),
         .R(reset));
@@ -7690,7 +7740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [11]),
         .Q(flatten_coeffs[795]),
         .R(reset));
@@ -7698,7 +7748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [12]),
         .Q(flatten_coeffs[796]),
         .R(reset));
@@ -7706,7 +7756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [13]),
         .Q(flatten_coeffs[797]),
         .R(reset));
@@ -7714,7 +7764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [14]),
         .Q(flatten_coeffs[798]),
         .R(reset));
@@ -7722,7 +7772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [15]),
         .Q(flatten_coeffs[799]),
         .R(reset));
@@ -7730,7 +7780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [1]),
         .Q(flatten_coeffs[785]),
         .R(reset));
@@ -7738,7 +7788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [2]),
         .Q(flatten_coeffs[786]),
         .R(reset));
@@ -7746,7 +7796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [3]),
         .Q(flatten_coeffs[787]),
         .R(reset));
@@ -7754,7 +7804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [4]),
         .Q(flatten_coeffs[788]),
         .R(reset));
@@ -7762,7 +7812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [5]),
         .Q(flatten_coeffs[789]),
         .R(reset));
@@ -7770,7 +7820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [6]),
         .Q(flatten_coeffs[790]),
         .R(reset));
@@ -7778,7 +7828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [7]),
         .Q(flatten_coeffs[791]),
         .R(reset));
@@ -7786,7 +7836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [8]),
         .Q(flatten_coeffs[792]),
         .R(reset));
@@ -7794,7 +7844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[49][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[49] [9]),
         .Q(flatten_coeffs[793]),
         .R(reset));
@@ -7802,7 +7852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [0]),
         .Q(flatten_coeffs[64]),
         .R(reset));
@@ -7810,7 +7860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [10]),
         .Q(flatten_coeffs[74]),
         .R(reset));
@@ -7818,7 +7868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [11]),
         .Q(flatten_coeffs[75]),
         .R(reset));
@@ -7826,7 +7876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [12]),
         .Q(flatten_coeffs[76]),
         .R(reset));
@@ -7834,7 +7884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [13]),
         .Q(flatten_coeffs[77]),
         .R(reset));
@@ -7842,7 +7892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [14]),
         .Q(flatten_coeffs[78]),
         .R(reset));
@@ -7850,7 +7900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [15]),
         .Q(flatten_coeffs[79]),
         .R(reset));
@@ -7858,7 +7908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [1]),
         .Q(flatten_coeffs[65]),
         .R(reset));
@@ -7866,7 +7916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [2]),
         .Q(flatten_coeffs[66]),
         .R(reset));
@@ -7874,7 +7924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [3]),
         .Q(flatten_coeffs[67]),
         .R(reset));
@@ -7882,7 +7932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [4]),
         .Q(flatten_coeffs[68]),
         .R(reset));
@@ -7890,7 +7940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [5]),
         .Q(flatten_coeffs[69]),
         .R(reset));
@@ -7898,7 +7948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [6]),
         .Q(flatten_coeffs[70]),
         .R(reset));
@@ -7906,7 +7956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [7]),
         .Q(flatten_coeffs[71]),
         .R(reset));
@@ -7914,7 +7964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [8]),
         .Q(flatten_coeffs[72]),
         .R(reset));
@@ -7922,7 +7972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[4][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[4] [9]),
         .Q(flatten_coeffs[73]),
         .R(reset));
@@ -7930,7 +7980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [0]),
         .Q(flatten_coeffs[800]),
         .R(reset));
@@ -7938,7 +7988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [10]),
         .Q(flatten_coeffs[810]),
         .R(reset));
@@ -7946,7 +7996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [11]),
         .Q(flatten_coeffs[811]),
         .R(reset));
@@ -7954,7 +8004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [12]),
         .Q(flatten_coeffs[812]),
         .R(reset));
@@ -7962,7 +8012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [13]),
         .Q(flatten_coeffs[813]),
         .R(reset));
@@ -7970,7 +8020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [14]),
         .Q(flatten_coeffs[814]),
         .R(reset));
@@ -7978,7 +8028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [15]),
         .Q(flatten_coeffs[815]),
         .R(reset));
@@ -7986,7 +8036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [1]),
         .Q(flatten_coeffs[801]),
         .R(reset));
@@ -7994,7 +8044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [2]),
         .Q(flatten_coeffs[802]),
         .R(reset));
@@ -8002,7 +8052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [3]),
         .Q(flatten_coeffs[803]),
         .R(reset));
@@ -8010,7 +8060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [4]),
         .Q(flatten_coeffs[804]),
         .R(reset));
@@ -8018,7 +8068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [5]),
         .Q(flatten_coeffs[805]),
         .R(reset));
@@ -8026,7 +8076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [6]),
         .Q(flatten_coeffs[806]),
         .R(reset));
@@ -8034,7 +8084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [7]),
         .Q(flatten_coeffs[807]),
         .R(reset));
@@ -8042,7 +8092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [8]),
         .Q(flatten_coeffs[808]),
         .R(reset));
@@ -8050,7 +8100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[50][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[50] [9]),
         .Q(flatten_coeffs[809]),
         .R(reset));
@@ -8058,7 +8108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [0]),
         .Q(flatten_coeffs[816]),
         .R(reset));
@@ -8066,7 +8116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [10]),
         .Q(flatten_coeffs[826]),
         .R(reset));
@@ -8074,7 +8124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [11]),
         .Q(flatten_coeffs[827]),
         .R(reset));
@@ -8082,7 +8132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [12]),
         .Q(flatten_coeffs[828]),
         .R(reset));
@@ -8090,7 +8140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [13]),
         .Q(flatten_coeffs[829]),
         .R(reset));
@@ -8098,7 +8148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [14]),
         .Q(flatten_coeffs[830]),
         .R(reset));
@@ -8106,7 +8156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [15]),
         .Q(flatten_coeffs[831]),
         .R(reset));
@@ -8114,7 +8164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [1]),
         .Q(flatten_coeffs[817]),
         .R(reset));
@@ -8122,7 +8172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [2]),
         .Q(flatten_coeffs[818]),
         .R(reset));
@@ -8130,7 +8180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [3]),
         .Q(flatten_coeffs[819]),
         .R(reset));
@@ -8138,7 +8188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [4]),
         .Q(flatten_coeffs[820]),
         .R(reset));
@@ -8146,7 +8196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [5]),
         .Q(flatten_coeffs[821]),
         .R(reset));
@@ -8154,7 +8204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [6]),
         .Q(flatten_coeffs[822]),
         .R(reset));
@@ -8162,7 +8212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [7]),
         .Q(flatten_coeffs[823]),
         .R(reset));
@@ -8170,7 +8220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [8]),
         .Q(flatten_coeffs[824]),
         .R(reset));
@@ -8178,7 +8228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[51][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[51] [9]),
         .Q(flatten_coeffs[825]),
         .R(reset));
@@ -8186,7 +8236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [0]),
         .Q(flatten_coeffs[832]),
         .R(reset));
@@ -8194,7 +8244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [10]),
         .Q(flatten_coeffs[842]),
         .R(reset));
@@ -8202,7 +8252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [11]),
         .Q(flatten_coeffs[843]),
         .R(reset));
@@ -8210,7 +8260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [12]),
         .Q(flatten_coeffs[844]),
         .R(reset));
@@ -8218,7 +8268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [13]),
         .Q(flatten_coeffs[845]),
         .R(reset));
@@ -8226,7 +8276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [14]),
         .Q(flatten_coeffs[846]),
         .R(reset));
@@ -8234,7 +8284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [15]),
         .Q(flatten_coeffs[847]),
         .R(reset));
@@ -8242,7 +8292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [1]),
         .Q(flatten_coeffs[833]),
         .R(reset));
@@ -8250,7 +8300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [2]),
         .Q(flatten_coeffs[834]),
         .R(reset));
@@ -8258,7 +8308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [3]),
         .Q(flatten_coeffs[835]),
         .R(reset));
@@ -8266,7 +8316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [4]),
         .Q(flatten_coeffs[836]),
         .R(reset));
@@ -8274,7 +8324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [5]),
         .Q(flatten_coeffs[837]),
         .R(reset));
@@ -8282,7 +8332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [6]),
         .Q(flatten_coeffs[838]),
         .R(reset));
@@ -8290,7 +8340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [7]),
         .Q(flatten_coeffs[839]),
         .R(reset));
@@ -8298,7 +8348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [8]),
         .Q(flatten_coeffs[840]),
         .R(reset));
@@ -8306,7 +8356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[52][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[52] [9]),
         .Q(flatten_coeffs[841]),
         .R(reset));
@@ -8314,7 +8364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [0]),
         .Q(flatten_coeffs[848]),
         .R(reset));
@@ -8322,7 +8372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [10]),
         .Q(flatten_coeffs[858]),
         .R(reset));
@@ -8330,7 +8380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [11]),
         .Q(flatten_coeffs[859]),
         .R(reset));
@@ -8338,7 +8388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [12]),
         .Q(flatten_coeffs[860]),
         .R(reset));
@@ -8346,7 +8396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [13]),
         .Q(flatten_coeffs[861]),
         .R(reset));
@@ -8354,7 +8404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [14]),
         .Q(flatten_coeffs[862]),
         .R(reset));
@@ -8362,7 +8412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [15]),
         .Q(flatten_coeffs[863]),
         .R(reset));
@@ -8370,7 +8420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [1]),
         .Q(flatten_coeffs[849]),
         .R(reset));
@@ -8378,7 +8428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [2]),
         .Q(flatten_coeffs[850]),
         .R(reset));
@@ -8386,7 +8436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [3]),
         .Q(flatten_coeffs[851]),
         .R(reset));
@@ -8394,7 +8444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [4]),
         .Q(flatten_coeffs[852]),
         .R(reset));
@@ -8402,7 +8452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [5]),
         .Q(flatten_coeffs[853]),
         .R(reset));
@@ -8410,7 +8460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [6]),
         .Q(flatten_coeffs[854]),
         .R(reset));
@@ -8418,7 +8468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [7]),
         .Q(flatten_coeffs[855]),
         .R(reset));
@@ -8426,7 +8476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [8]),
         .Q(flatten_coeffs[856]),
         .R(reset));
@@ -8434,7 +8484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[53][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[53] [9]),
         .Q(flatten_coeffs[857]),
         .R(reset));
@@ -8442,7 +8492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [0]),
         .Q(flatten_coeffs[864]),
         .R(reset));
@@ -8450,7 +8500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [10]),
         .Q(flatten_coeffs[874]),
         .R(reset));
@@ -8458,7 +8508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [11]),
         .Q(flatten_coeffs[875]),
         .R(reset));
@@ -8466,7 +8516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [12]),
         .Q(flatten_coeffs[876]),
         .R(reset));
@@ -8474,7 +8524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [13]),
         .Q(flatten_coeffs[877]),
         .R(reset));
@@ -8482,7 +8532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [14]),
         .Q(flatten_coeffs[878]),
         .R(reset));
@@ -8490,7 +8540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [15]),
         .Q(flatten_coeffs[879]),
         .R(reset));
@@ -8498,7 +8548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [1]),
         .Q(flatten_coeffs[865]),
         .R(reset));
@@ -8506,7 +8556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [2]),
         .Q(flatten_coeffs[866]),
         .R(reset));
@@ -8514,7 +8564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [3]),
         .Q(flatten_coeffs[867]),
         .R(reset));
@@ -8522,7 +8572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [4]),
         .Q(flatten_coeffs[868]),
         .R(reset));
@@ -8530,7 +8580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [5]),
         .Q(flatten_coeffs[869]),
         .R(reset));
@@ -8538,7 +8588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [6]),
         .Q(flatten_coeffs[870]),
         .R(reset));
@@ -8546,7 +8596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [7]),
         .Q(flatten_coeffs[871]),
         .R(reset));
@@ -8554,7 +8604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [8]),
         .Q(flatten_coeffs[872]),
         .R(reset));
@@ -8562,7 +8612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[54][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[54] [9]),
         .Q(flatten_coeffs[873]),
         .R(reset));
@@ -8570,7 +8620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [0]),
         .Q(flatten_coeffs[880]),
         .R(reset));
@@ -8578,7 +8628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [10]),
         .Q(flatten_coeffs[890]),
         .R(reset));
@@ -8586,7 +8636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [11]),
         .Q(flatten_coeffs[891]),
         .R(reset));
@@ -8594,7 +8644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [12]),
         .Q(flatten_coeffs[892]),
         .R(reset));
@@ -8602,7 +8652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [13]),
         .Q(flatten_coeffs[893]),
         .R(reset));
@@ -8610,7 +8660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [14]),
         .Q(flatten_coeffs[894]),
         .R(reset));
@@ -8618,7 +8668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [15]),
         .Q(flatten_coeffs[895]),
         .R(reset));
@@ -8626,7 +8676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [1]),
         .Q(flatten_coeffs[881]),
         .R(reset));
@@ -8634,7 +8684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [2]),
         .Q(flatten_coeffs[882]),
         .R(reset));
@@ -8642,7 +8692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [3]),
         .Q(flatten_coeffs[883]),
         .R(reset));
@@ -8650,7 +8700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [4]),
         .Q(flatten_coeffs[884]),
         .R(reset));
@@ -8658,7 +8708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [5]),
         .Q(flatten_coeffs[885]),
         .R(reset));
@@ -8666,7 +8716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [6]),
         .Q(flatten_coeffs[886]),
         .R(reset));
@@ -8674,7 +8724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [7]),
         .Q(flatten_coeffs[887]),
         .R(reset));
@@ -8682,7 +8732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [8]),
         .Q(flatten_coeffs[888]),
         .R(reset));
@@ -8690,7 +8740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[55][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[55] [9]),
         .Q(flatten_coeffs[889]),
         .R(reset));
@@ -8698,7 +8748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [0]),
         .Q(flatten_coeffs[896]),
         .R(reset));
@@ -8706,7 +8756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [10]),
         .Q(flatten_coeffs[906]),
         .R(reset));
@@ -8714,7 +8764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [11]),
         .Q(flatten_coeffs[907]),
         .R(reset));
@@ -8722,7 +8772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [12]),
         .Q(flatten_coeffs[908]),
         .R(reset));
@@ -8730,7 +8780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [13]),
         .Q(flatten_coeffs[909]),
         .R(reset));
@@ -8738,7 +8788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [14]),
         .Q(flatten_coeffs[910]),
         .R(reset));
@@ -8746,7 +8796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [15]),
         .Q(flatten_coeffs[911]),
         .R(reset));
@@ -8754,7 +8804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [1]),
         .Q(flatten_coeffs[897]),
         .R(reset));
@@ -8762,7 +8812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [2]),
         .Q(flatten_coeffs[898]),
         .R(reset));
@@ -8770,7 +8820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [3]),
         .Q(flatten_coeffs[899]),
         .R(reset));
@@ -8778,7 +8828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [4]),
         .Q(flatten_coeffs[900]),
         .R(reset));
@@ -8786,7 +8836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [5]),
         .Q(flatten_coeffs[901]),
         .R(reset));
@@ -8794,7 +8844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [6]),
         .Q(flatten_coeffs[902]),
         .R(reset));
@@ -8802,7 +8852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [7]),
         .Q(flatten_coeffs[903]),
         .R(reset));
@@ -8810,7 +8860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [8]),
         .Q(flatten_coeffs[904]),
         .R(reset));
@@ -8818,7 +8868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[56][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[56] [9]),
         .Q(flatten_coeffs[905]),
         .R(reset));
@@ -8826,7 +8876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [0]),
         .Q(flatten_coeffs[912]),
         .R(reset));
@@ -8834,7 +8884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [10]),
         .Q(flatten_coeffs[922]),
         .R(reset));
@@ -8842,7 +8892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [11]),
         .Q(flatten_coeffs[923]),
         .R(reset));
@@ -8850,7 +8900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [12]),
         .Q(flatten_coeffs[924]),
         .R(reset));
@@ -8858,7 +8908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [13]),
         .Q(flatten_coeffs[925]),
         .R(reset));
@@ -8866,7 +8916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [14]),
         .Q(flatten_coeffs[926]),
         .R(reset));
@@ -8874,7 +8924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [15]),
         .Q(flatten_coeffs[927]),
         .R(reset));
@@ -8882,7 +8932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [1]),
         .Q(flatten_coeffs[913]),
         .R(reset));
@@ -8890,7 +8940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [2]),
         .Q(flatten_coeffs[914]),
         .R(reset));
@@ -8898,7 +8948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [3]),
         .Q(flatten_coeffs[915]),
         .R(reset));
@@ -8906,7 +8956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [4]),
         .Q(flatten_coeffs[916]),
         .R(reset));
@@ -8914,7 +8964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [5]),
         .Q(flatten_coeffs[917]),
         .R(reset));
@@ -8922,7 +8972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [6]),
         .Q(flatten_coeffs[918]),
         .R(reset));
@@ -8930,7 +8980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [7]),
         .Q(flatten_coeffs[919]),
         .R(reset));
@@ -8938,7 +8988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [8]),
         .Q(flatten_coeffs[920]),
         .R(reset));
@@ -8946,7 +8996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[57][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[57] [9]),
         .Q(flatten_coeffs[921]),
         .R(reset));
@@ -8954,7 +9004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [0]),
         .Q(flatten_coeffs[928]),
         .R(reset));
@@ -8962,7 +9012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [10]),
         .Q(flatten_coeffs[938]),
         .R(reset));
@@ -8970,7 +9020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [11]),
         .Q(flatten_coeffs[939]),
         .R(reset));
@@ -8978,7 +9028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [12]),
         .Q(flatten_coeffs[940]),
         .R(reset));
@@ -8986,7 +9036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [13]),
         .Q(flatten_coeffs[941]),
         .R(reset));
@@ -8994,7 +9044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [14]),
         .Q(flatten_coeffs[942]),
         .R(reset));
@@ -9002,7 +9052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [15]),
         .Q(flatten_coeffs[943]),
         .R(reset));
@@ -9010,7 +9060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [1]),
         .Q(flatten_coeffs[929]),
         .R(reset));
@@ -9018,7 +9068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [2]),
         .Q(flatten_coeffs[930]),
         .R(reset));
@@ -9026,7 +9076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [3]),
         .Q(flatten_coeffs[931]),
         .R(reset));
@@ -9034,7 +9084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [4]),
         .Q(flatten_coeffs[932]),
         .R(reset));
@@ -9042,7 +9092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [5]),
         .Q(flatten_coeffs[933]),
         .R(reset));
@@ -9050,7 +9100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [6]),
         .Q(flatten_coeffs[934]),
         .R(reset));
@@ -9058,7 +9108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [7]),
         .Q(flatten_coeffs[935]),
         .R(reset));
@@ -9066,7 +9116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [8]),
         .Q(flatten_coeffs[936]),
         .R(reset));
@@ -9074,7 +9124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[58][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[58] [9]),
         .Q(flatten_coeffs[937]),
         .R(reset));
@@ -9082,7 +9132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [0]),
         .Q(flatten_coeffs[944]),
         .R(reset));
@@ -9090,7 +9140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [10]),
         .Q(flatten_coeffs[954]),
         .R(reset));
@@ -9098,7 +9148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [11]),
         .Q(flatten_coeffs[955]),
         .R(reset));
@@ -9106,7 +9156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [12]),
         .Q(flatten_coeffs[956]),
         .R(reset));
@@ -9114,7 +9164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [13]),
         .Q(flatten_coeffs[957]),
         .R(reset));
@@ -9122,7 +9172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [14]),
         .Q(flatten_coeffs[958]),
         .R(reset));
@@ -9130,7 +9180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [15]),
         .Q(flatten_coeffs[959]),
         .R(reset));
@@ -9138,7 +9188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [1]),
         .Q(flatten_coeffs[945]),
         .R(reset));
@@ -9146,7 +9196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [2]),
         .Q(flatten_coeffs[946]),
         .R(reset));
@@ -9154,7 +9204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [3]),
         .Q(flatten_coeffs[947]),
         .R(reset));
@@ -9162,7 +9212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [4]),
         .Q(flatten_coeffs[948]),
         .R(reset));
@@ -9170,7 +9220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [5]),
         .Q(flatten_coeffs[949]),
         .R(reset));
@@ -9178,7 +9228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [6]),
         .Q(flatten_coeffs[950]),
         .R(reset));
@@ -9186,7 +9236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [7]),
         .Q(flatten_coeffs[951]),
         .R(reset));
@@ -9194,7 +9244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [8]),
         .Q(flatten_coeffs[952]),
         .R(reset));
@@ -9202,7 +9252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[59][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[59] [9]),
         .Q(flatten_coeffs[953]),
         .R(reset));
@@ -9210,7 +9260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [0]),
         .Q(flatten_coeffs[80]),
         .R(reset));
@@ -9218,7 +9268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [10]),
         .Q(flatten_coeffs[90]),
         .R(reset));
@@ -9226,7 +9276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [11]),
         .Q(flatten_coeffs[91]),
         .R(reset));
@@ -9234,7 +9284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [12]),
         .Q(flatten_coeffs[92]),
         .R(reset));
@@ -9242,7 +9292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [13]),
         .Q(flatten_coeffs[93]),
         .R(reset));
@@ -9250,7 +9300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [14]),
         .Q(flatten_coeffs[94]),
         .R(reset));
@@ -9258,7 +9308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [15]),
         .Q(flatten_coeffs[95]),
         .R(reset));
@@ -9266,7 +9316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [1]),
         .Q(flatten_coeffs[81]),
         .R(reset));
@@ -9274,7 +9324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [2]),
         .Q(flatten_coeffs[82]),
         .R(reset));
@@ -9282,7 +9332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [3]),
         .Q(flatten_coeffs[83]),
         .R(reset));
@@ -9290,7 +9340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [4]),
         .Q(flatten_coeffs[84]),
         .R(reset));
@@ -9298,7 +9348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [5]),
         .Q(flatten_coeffs[85]),
         .R(reset));
@@ -9306,7 +9356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [6]),
         .Q(flatten_coeffs[86]),
         .R(reset));
@@ -9314,7 +9364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [7]),
         .Q(flatten_coeffs[87]),
         .R(reset));
@@ -9322,7 +9372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [8]),
         .Q(flatten_coeffs[88]),
         .R(reset));
@@ -9330,7 +9380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[5][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[5] [9]),
         .Q(flatten_coeffs[89]),
         .R(reset));
@@ -9338,7 +9388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [0]),
         .Q(flatten_coeffs[960]),
         .R(reset));
@@ -9346,7 +9396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [10]),
         .Q(flatten_coeffs[970]),
         .R(reset));
@@ -9354,7 +9404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [11]),
         .Q(flatten_coeffs[971]),
         .R(reset));
@@ -9362,7 +9412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [12]),
         .Q(flatten_coeffs[972]),
         .R(reset));
@@ -9370,7 +9420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [13]),
         .Q(flatten_coeffs[973]),
         .R(reset));
@@ -9378,7 +9428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [14]),
         .Q(flatten_coeffs[974]),
         .R(reset));
@@ -9386,7 +9436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [15]),
         .Q(flatten_coeffs[975]),
         .R(reset));
@@ -9394,7 +9444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [1]),
         .Q(flatten_coeffs[961]),
         .R(reset));
@@ -9402,7 +9452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [2]),
         .Q(flatten_coeffs[962]),
         .R(reset));
@@ -9410,7 +9460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [3]),
         .Q(flatten_coeffs[963]),
         .R(reset));
@@ -9418,7 +9468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [4]),
         .Q(flatten_coeffs[964]),
         .R(reset));
@@ -9426,7 +9476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [5]),
         .Q(flatten_coeffs[965]),
         .R(reset));
@@ -9434,7 +9484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [6]),
         .Q(flatten_coeffs[966]),
         .R(reset));
@@ -9442,7 +9492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [7]),
         .Q(flatten_coeffs[967]),
         .R(reset));
@@ -9450,7 +9500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [8]),
         .Q(flatten_coeffs[968]),
         .R(reset));
@@ -9458,7 +9508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[60][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[60] [9]),
         .Q(flatten_coeffs[969]),
         .R(reset));
@@ -9466,7 +9516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [0]),
         .Q(flatten_coeffs[976]),
         .R(reset));
@@ -9474,7 +9524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [10]),
         .Q(flatten_coeffs[986]),
         .R(reset));
@@ -9482,7 +9532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [11]),
         .Q(flatten_coeffs[987]),
         .R(reset));
@@ -9490,7 +9540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [12]),
         .Q(flatten_coeffs[988]),
         .R(reset));
@@ -9498,7 +9548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [13]),
         .Q(flatten_coeffs[989]),
         .R(reset));
@@ -9506,7 +9556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [14]),
         .Q(flatten_coeffs[990]),
         .R(reset));
@@ -9514,7 +9564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [15]),
         .Q(flatten_coeffs[991]),
         .R(reset));
@@ -9522,7 +9572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [1]),
         .Q(flatten_coeffs[977]),
         .R(reset));
@@ -9530,7 +9580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [2]),
         .Q(flatten_coeffs[978]),
         .R(reset));
@@ -9538,7 +9588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [3]),
         .Q(flatten_coeffs[979]),
         .R(reset));
@@ -9546,7 +9596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [4]),
         .Q(flatten_coeffs[980]),
         .R(reset));
@@ -9554,7 +9604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [5]),
         .Q(flatten_coeffs[981]),
         .R(reset));
@@ -9562,7 +9612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [6]),
         .Q(flatten_coeffs[982]),
         .R(reset));
@@ -9570,7 +9620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [7]),
         .Q(flatten_coeffs[983]),
         .R(reset));
@@ -9578,7 +9628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [8]),
         .Q(flatten_coeffs[984]),
         .R(reset));
@@ -9586,7 +9636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[61][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[61] [9]),
         .Q(flatten_coeffs[985]),
         .R(reset));
@@ -9594,7 +9644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [0]),
         .Q(flatten_coeffs[992]),
         .R(reset));
@@ -9602,7 +9652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [10]),
         .Q(flatten_coeffs[1002]),
         .R(reset));
@@ -9610,7 +9660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [11]),
         .Q(flatten_coeffs[1003]),
         .R(reset));
@@ -9618,7 +9668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [12]),
         .Q(flatten_coeffs[1004]),
         .R(reset));
@@ -9626,7 +9676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [13]),
         .Q(flatten_coeffs[1005]),
         .R(reset));
@@ -9634,7 +9684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [14]),
         .Q(flatten_coeffs[1006]),
         .R(reset));
@@ -9642,7 +9692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [15]),
         .Q(flatten_coeffs[1007]),
         .R(reset));
@@ -9650,7 +9700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [1]),
         .Q(flatten_coeffs[993]),
         .R(reset));
@@ -9658,7 +9708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [2]),
         .Q(flatten_coeffs[994]),
         .R(reset));
@@ -9666,7 +9716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [3]),
         .Q(flatten_coeffs[995]),
         .R(reset));
@@ -9674,7 +9724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [4]),
         .Q(flatten_coeffs[996]),
         .R(reset));
@@ -9682,7 +9732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [5]),
         .Q(flatten_coeffs[997]),
         .R(reset));
@@ -9690,7 +9740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [6]),
         .Q(flatten_coeffs[998]),
         .R(reset));
@@ -9698,7 +9748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [7]),
         .Q(flatten_coeffs[999]),
         .R(reset));
@@ -9706,7 +9756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [8]),
         .Q(flatten_coeffs[1000]),
         .R(reset));
@@ -9714,7 +9764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[62][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[62] [9]),
         .Q(flatten_coeffs[1001]),
         .R(reset));
@@ -9722,7 +9772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [0]),
         .Q(flatten_coeffs[1008]),
         .R(reset));
@@ -9730,7 +9780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [10]),
         .Q(flatten_coeffs[1018]),
         .R(reset));
@@ -9738,7 +9788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [11]),
         .Q(flatten_coeffs[1019]),
         .R(reset));
@@ -9746,7 +9796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [12]),
         .Q(flatten_coeffs[1020]),
         .R(reset));
@@ -9754,7 +9804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [13]),
         .Q(flatten_coeffs[1021]),
         .R(reset));
@@ -9762,7 +9812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [14]),
         .Q(flatten_coeffs[1022]),
         .R(reset));
@@ -9770,7 +9820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [15]),
         .Q(flatten_coeffs[1023]),
         .R(reset));
@@ -9778,7 +9828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [1]),
         .Q(flatten_coeffs[1009]),
         .R(reset));
@@ -9786,7 +9836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [2]),
         .Q(flatten_coeffs[1010]),
         .R(reset));
@@ -9794,7 +9844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [3]),
         .Q(flatten_coeffs[1011]),
         .R(reset));
@@ -9802,7 +9852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [4]),
         .Q(flatten_coeffs[1012]),
         .R(reset));
@@ -9810,7 +9860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [5]),
         .Q(flatten_coeffs[1013]),
         .R(reset));
@@ -9818,7 +9868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [6]),
         .Q(flatten_coeffs[1014]),
         .R(reset));
@@ -9826,7 +9876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [7]),
         .Q(flatten_coeffs[1015]),
         .R(reset));
@@ -9834,7 +9884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [8]),
         .Q(flatten_coeffs[1016]),
         .R(reset));
@@ -9842,7 +9892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[63][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[63] [9]),
         .Q(flatten_coeffs[1017]),
         .R(reset));
@@ -9850,7 +9900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [0]),
         .Q(flatten_coeffs[1024]),
         .R(reset));
@@ -9858,7 +9908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [10]),
         .Q(flatten_coeffs[1034]),
         .R(reset));
@@ -9866,7 +9916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [11]),
         .Q(flatten_coeffs[1035]),
         .R(reset));
@@ -9874,7 +9924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [12]),
         .Q(flatten_coeffs[1036]),
         .R(reset));
@@ -9882,7 +9932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [13]),
         .Q(flatten_coeffs[1037]),
         .R(reset));
@@ -9890,7 +9940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [14]),
         .Q(flatten_coeffs[1038]),
         .R(reset));
@@ -9898,7 +9948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [15]),
         .Q(flatten_coeffs[1039]),
         .R(reset));
@@ -9906,7 +9956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [1]),
         .Q(flatten_coeffs[1025]),
         .R(reset));
@@ -9914,7 +9964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [2]),
         .Q(flatten_coeffs[1026]),
         .R(reset));
@@ -9922,7 +9972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [3]),
         .Q(flatten_coeffs[1027]),
         .R(reset));
@@ -9930,7 +9980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [4]),
         .Q(flatten_coeffs[1028]),
         .R(reset));
@@ -9938,7 +9988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [5]),
         .Q(flatten_coeffs[1029]),
         .R(reset));
@@ -9946,7 +9996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [6]),
         .Q(flatten_coeffs[1030]),
         .R(reset));
@@ -9954,7 +10004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [7]),
         .Q(flatten_coeffs[1031]),
         .R(reset));
@@ -9962,7 +10012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [8]),
         .Q(flatten_coeffs[1032]),
         .R(reset));
@@ -9970,7 +10020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[64][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[64] [9]),
         .Q(flatten_coeffs[1033]),
         .R(reset));
@@ -9978,7 +10028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [0]),
         .Q(flatten_coeffs[1040]),
         .R(reset));
@@ -9986,7 +10036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [10]),
         .Q(flatten_coeffs[1050]),
         .R(reset));
@@ -9994,7 +10044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [11]),
         .Q(flatten_coeffs[1051]),
         .R(reset));
@@ -10002,7 +10052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [12]),
         .Q(flatten_coeffs[1052]),
         .R(reset));
@@ -10010,7 +10060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [13]),
         .Q(flatten_coeffs[1053]),
         .R(reset));
@@ -10018,7 +10068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [14]),
         .Q(flatten_coeffs[1054]),
         .R(reset));
@@ -10026,7 +10076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [15]),
         .Q(flatten_coeffs[1055]),
         .R(reset));
@@ -10034,7 +10084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [1]),
         .Q(flatten_coeffs[1041]),
         .R(reset));
@@ -10042,7 +10092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [2]),
         .Q(flatten_coeffs[1042]),
         .R(reset));
@@ -10050,7 +10100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [3]),
         .Q(flatten_coeffs[1043]),
         .R(reset));
@@ -10058,7 +10108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [4]),
         .Q(flatten_coeffs[1044]),
         .R(reset));
@@ -10066,7 +10116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [5]),
         .Q(flatten_coeffs[1045]),
         .R(reset));
@@ -10074,7 +10124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [6]),
         .Q(flatten_coeffs[1046]),
         .R(reset));
@@ -10082,7 +10132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [7]),
         .Q(flatten_coeffs[1047]),
         .R(reset));
@@ -10090,7 +10140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [8]),
         .Q(flatten_coeffs[1048]),
         .R(reset));
@@ -10098,7 +10148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[65][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[65] [9]),
         .Q(flatten_coeffs[1049]),
         .R(reset));
@@ -10106,7 +10156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [0]),
         .Q(flatten_coeffs[1056]),
         .R(reset));
@@ -10114,7 +10164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [10]),
         .Q(flatten_coeffs[1066]),
         .R(reset));
@@ -10122,7 +10172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [11]),
         .Q(flatten_coeffs[1067]),
         .R(reset));
@@ -10130,7 +10180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [12]),
         .Q(flatten_coeffs[1068]),
         .R(reset));
@@ -10138,7 +10188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [13]),
         .Q(flatten_coeffs[1069]),
         .R(reset));
@@ -10146,7 +10196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [14]),
         .Q(flatten_coeffs[1070]),
         .R(reset));
@@ -10154,7 +10204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [15]),
         .Q(flatten_coeffs[1071]),
         .R(reset));
@@ -10162,7 +10212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [1]),
         .Q(flatten_coeffs[1057]),
         .R(reset));
@@ -10170,7 +10220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [2]),
         .Q(flatten_coeffs[1058]),
         .R(reset));
@@ -10178,7 +10228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [3]),
         .Q(flatten_coeffs[1059]),
         .R(reset));
@@ -10186,7 +10236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [4]),
         .Q(flatten_coeffs[1060]),
         .R(reset));
@@ -10194,7 +10244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [5]),
         .Q(flatten_coeffs[1061]),
         .R(reset));
@@ -10202,7 +10252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [6]),
         .Q(flatten_coeffs[1062]),
         .R(reset));
@@ -10210,7 +10260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [7]),
         .Q(flatten_coeffs[1063]),
         .R(reset));
@@ -10218,7 +10268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [8]),
         .Q(flatten_coeffs[1064]),
         .R(reset));
@@ -10226,7 +10276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[66][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[66] [9]),
         .Q(flatten_coeffs[1065]),
         .R(reset));
@@ -10234,7 +10284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [0]),
         .Q(flatten_coeffs[1072]),
         .R(reset));
@@ -10242,7 +10292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [10]),
         .Q(flatten_coeffs[1082]),
         .R(reset));
@@ -10250,7 +10300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [11]),
         .Q(flatten_coeffs[1083]),
         .R(reset));
@@ -10258,7 +10308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [12]),
         .Q(flatten_coeffs[1084]),
         .R(reset));
@@ -10266,7 +10316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [13]),
         .Q(flatten_coeffs[1085]),
         .R(reset));
@@ -10274,7 +10324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [14]),
         .Q(flatten_coeffs[1086]),
         .R(reset));
@@ -10282,7 +10332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [15]),
         .Q(flatten_coeffs[1087]),
         .R(reset));
@@ -10290,7 +10340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [1]),
         .Q(flatten_coeffs[1073]),
         .R(reset));
@@ -10298,7 +10348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [2]),
         .Q(flatten_coeffs[1074]),
         .R(reset));
@@ -10306,7 +10356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [3]),
         .Q(flatten_coeffs[1075]),
         .R(reset));
@@ -10314,7 +10364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [4]),
         .Q(flatten_coeffs[1076]),
         .R(reset));
@@ -10322,7 +10372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [5]),
         .Q(flatten_coeffs[1077]),
         .R(reset));
@@ -10330,7 +10380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [6]),
         .Q(flatten_coeffs[1078]),
         .R(reset));
@@ -10338,7 +10388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [7]),
         .Q(flatten_coeffs[1079]),
         .R(reset));
@@ -10346,7 +10396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [8]),
         .Q(flatten_coeffs[1080]),
         .R(reset));
@@ -10354,7 +10404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[67][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[67] [9]),
         .Q(flatten_coeffs[1081]),
         .R(reset));
@@ -10362,7 +10412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [0]),
         .Q(flatten_coeffs[1088]),
         .R(reset));
@@ -10370,7 +10420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [10]),
         .Q(flatten_coeffs[1098]),
         .R(reset));
@@ -10378,7 +10428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [11]),
         .Q(flatten_coeffs[1099]),
         .R(reset));
@@ -10386,7 +10436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [12]),
         .Q(flatten_coeffs[1100]),
         .R(reset));
@@ -10394,7 +10444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [13]),
         .Q(flatten_coeffs[1101]),
         .R(reset));
@@ -10402,7 +10452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [14]),
         .Q(flatten_coeffs[1102]),
         .R(reset));
@@ -10410,7 +10460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [15]),
         .Q(flatten_coeffs[1103]),
         .R(reset));
@@ -10418,7 +10468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [1]),
         .Q(flatten_coeffs[1089]),
         .R(reset));
@@ -10426,7 +10476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [2]),
         .Q(flatten_coeffs[1090]),
         .R(reset));
@@ -10434,7 +10484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [3]),
         .Q(flatten_coeffs[1091]),
         .R(reset));
@@ -10442,7 +10492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [4]),
         .Q(flatten_coeffs[1092]),
         .R(reset));
@@ -10450,7 +10500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [5]),
         .Q(flatten_coeffs[1093]),
         .R(reset));
@@ -10458,7 +10508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [6]),
         .Q(flatten_coeffs[1094]),
         .R(reset));
@@ -10466,7 +10516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [7]),
         .Q(flatten_coeffs[1095]),
         .R(reset));
@@ -10474,7 +10524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [8]),
         .Q(flatten_coeffs[1096]),
         .R(reset));
@@ -10482,7 +10532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[68][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[68] [9]),
         .Q(flatten_coeffs[1097]),
         .R(reset));
@@ -10490,7 +10540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [0]),
         .Q(flatten_coeffs[1104]),
         .R(reset));
@@ -10498,7 +10548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [10]),
         .Q(flatten_coeffs[1114]),
         .R(reset));
@@ -10506,7 +10556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [11]),
         .Q(flatten_coeffs[1115]),
         .R(reset));
@@ -10514,7 +10564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [12]),
         .Q(flatten_coeffs[1116]),
         .R(reset));
@@ -10522,7 +10572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [13]),
         .Q(flatten_coeffs[1117]),
         .R(reset));
@@ -10530,7 +10580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [14]),
         .Q(flatten_coeffs[1118]),
         .R(reset));
@@ -10538,7 +10588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [15]),
         .Q(flatten_coeffs[1119]),
         .R(reset));
@@ -10546,7 +10596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [1]),
         .Q(flatten_coeffs[1105]),
         .R(reset));
@@ -10554,7 +10604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [2]),
         .Q(flatten_coeffs[1106]),
         .R(reset));
@@ -10562,7 +10612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [3]),
         .Q(flatten_coeffs[1107]),
         .R(reset));
@@ -10570,7 +10620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [4]),
         .Q(flatten_coeffs[1108]),
         .R(reset));
@@ -10578,7 +10628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [5]),
         .Q(flatten_coeffs[1109]),
         .R(reset));
@@ -10586,7 +10636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [6]),
         .Q(flatten_coeffs[1110]),
         .R(reset));
@@ -10594,7 +10644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [7]),
         .Q(flatten_coeffs[1111]),
         .R(reset));
@@ -10602,7 +10652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [8]),
         .Q(flatten_coeffs[1112]),
         .R(reset));
@@ -10610,7 +10660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[69][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[69] [9]),
         .Q(flatten_coeffs[1113]),
         .R(reset));
@@ -10618,7 +10668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [0]),
         .Q(flatten_coeffs[96]),
         .R(reset));
@@ -10626,7 +10676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [10]),
         .Q(flatten_coeffs[106]),
         .R(reset));
@@ -10634,7 +10684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [11]),
         .Q(flatten_coeffs[107]),
         .R(reset));
@@ -10642,7 +10692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [12]),
         .Q(flatten_coeffs[108]),
         .R(reset));
@@ -10650,7 +10700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [13]),
         .Q(flatten_coeffs[109]),
         .R(reset));
@@ -10658,7 +10708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [14]),
         .Q(flatten_coeffs[110]),
         .R(reset));
@@ -10666,7 +10716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [15]),
         .Q(flatten_coeffs[111]),
         .R(reset));
@@ -10674,7 +10724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [1]),
         .Q(flatten_coeffs[97]),
         .R(reset));
@@ -10682,7 +10732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [2]),
         .Q(flatten_coeffs[98]),
         .R(reset));
@@ -10690,7 +10740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [3]),
         .Q(flatten_coeffs[99]),
         .R(reset));
@@ -10698,7 +10748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [4]),
         .Q(flatten_coeffs[100]),
         .R(reset));
@@ -10706,7 +10756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [5]),
         .Q(flatten_coeffs[101]),
         .R(reset));
@@ -10714,7 +10764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [6]),
         .Q(flatten_coeffs[102]),
         .R(reset));
@@ -10722,7 +10772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [7]),
         .Q(flatten_coeffs[103]),
         .R(reset));
@@ -10730,7 +10780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [8]),
         .Q(flatten_coeffs[104]),
         .R(reset));
@@ -10738,7 +10788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[6][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[6] [9]),
         .Q(flatten_coeffs[105]),
         .R(reset));
@@ -10746,7 +10796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [0]),
         .Q(flatten_coeffs[1120]),
         .R(reset));
@@ -10754,7 +10804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [10]),
         .Q(flatten_coeffs[1130]),
         .R(reset));
@@ -10762,7 +10812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [11]),
         .Q(flatten_coeffs[1131]),
         .R(reset));
@@ -10770,7 +10820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [12]),
         .Q(flatten_coeffs[1132]),
         .R(reset));
@@ -10778,7 +10828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [13]),
         .Q(flatten_coeffs[1133]),
         .R(reset));
@@ -10786,7 +10836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [14]),
         .Q(flatten_coeffs[1134]),
         .R(reset));
@@ -10794,7 +10844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [15]),
         .Q(flatten_coeffs[1135]),
         .R(reset));
@@ -10802,7 +10852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [1]),
         .Q(flatten_coeffs[1121]),
         .R(reset));
@@ -10810,7 +10860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [2]),
         .Q(flatten_coeffs[1122]),
         .R(reset));
@@ -10818,7 +10868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [3]),
         .Q(flatten_coeffs[1123]),
         .R(reset));
@@ -10826,7 +10876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [4]),
         .Q(flatten_coeffs[1124]),
         .R(reset));
@@ -10834,7 +10884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [5]),
         .Q(flatten_coeffs[1125]),
         .R(reset));
@@ -10842,7 +10892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [6]),
         .Q(flatten_coeffs[1126]),
         .R(reset));
@@ -10850,7 +10900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [7]),
         .Q(flatten_coeffs[1127]),
         .R(reset));
@@ -10858,7 +10908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [8]),
         .Q(flatten_coeffs[1128]),
         .R(reset));
@@ -10866,7 +10916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[70][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[70] [9]),
         .Q(flatten_coeffs[1129]),
         .R(reset));
@@ -10874,7 +10924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [0]),
         .Q(flatten_coeffs[1136]),
         .R(reset));
@@ -10882,7 +10932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [10]),
         .Q(flatten_coeffs[1146]),
         .R(reset));
@@ -10890,7 +10940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [11]),
         .Q(flatten_coeffs[1147]),
         .R(reset));
@@ -10898,7 +10948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [12]),
         .Q(flatten_coeffs[1148]),
         .R(reset));
@@ -10906,7 +10956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [13]),
         .Q(flatten_coeffs[1149]),
         .R(reset));
@@ -10914,7 +10964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [14]),
         .Q(flatten_coeffs[1150]),
         .R(reset));
@@ -10922,7 +10972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [15]),
         .Q(flatten_coeffs[1151]),
         .R(reset));
@@ -10930,7 +10980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [1]),
         .Q(flatten_coeffs[1137]),
         .R(reset));
@@ -10938,7 +10988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [2]),
         .Q(flatten_coeffs[1138]),
         .R(reset));
@@ -10946,7 +10996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [3]),
         .Q(flatten_coeffs[1139]),
         .R(reset));
@@ -10954,7 +11004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [4]),
         .Q(flatten_coeffs[1140]),
         .R(reset));
@@ -10962,7 +11012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [5]),
         .Q(flatten_coeffs[1141]),
         .R(reset));
@@ -10970,7 +11020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [6]),
         .Q(flatten_coeffs[1142]),
         .R(reset));
@@ -10978,7 +11028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [7]),
         .Q(flatten_coeffs[1143]),
         .R(reset));
@@ -10986,7 +11036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [8]),
         .Q(flatten_coeffs[1144]),
         .R(reset));
@@ -10994,7 +11044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[71][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[71] [9]),
         .Q(flatten_coeffs[1145]),
         .R(reset));
@@ -11002,7 +11052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [0]),
         .Q(flatten_coeffs[1152]),
         .R(reset));
@@ -11010,7 +11060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [10]),
         .Q(flatten_coeffs[1162]),
         .R(reset));
@@ -11018,7 +11068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [11]),
         .Q(flatten_coeffs[1163]),
         .R(reset));
@@ -11026,7 +11076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [12]),
         .Q(flatten_coeffs[1164]),
         .R(reset));
@@ -11034,7 +11084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [13]),
         .Q(flatten_coeffs[1165]),
         .R(reset));
@@ -11042,7 +11092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [14]),
         .Q(flatten_coeffs[1166]),
         .R(reset));
@@ -11050,7 +11100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [15]),
         .Q(flatten_coeffs[1167]),
         .R(reset));
@@ -11058,7 +11108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [1]),
         .Q(flatten_coeffs[1153]),
         .R(reset));
@@ -11066,7 +11116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [2]),
         .Q(flatten_coeffs[1154]),
         .R(reset));
@@ -11074,7 +11124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [3]),
         .Q(flatten_coeffs[1155]),
         .R(reset));
@@ -11082,7 +11132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [4]),
         .Q(flatten_coeffs[1156]),
         .R(reset));
@@ -11090,7 +11140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [5]),
         .Q(flatten_coeffs[1157]),
         .R(reset));
@@ -11098,7 +11148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [6]),
         .Q(flatten_coeffs[1158]),
         .R(reset));
@@ -11106,7 +11156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [7]),
         .Q(flatten_coeffs[1159]),
         .R(reset));
@@ -11114,7 +11164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [8]),
         .Q(flatten_coeffs[1160]),
         .R(reset));
@@ -11122,7 +11172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[72][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[72] [9]),
         .Q(flatten_coeffs[1161]),
         .R(reset));
@@ -11130,7 +11180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [0]),
         .Q(flatten_coeffs[1168]),
         .R(reset));
@@ -11138,7 +11188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [10]),
         .Q(flatten_coeffs[1178]),
         .R(reset));
@@ -11146,7 +11196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [11]),
         .Q(flatten_coeffs[1179]),
         .R(reset));
@@ -11154,7 +11204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [12]),
         .Q(flatten_coeffs[1180]),
         .R(reset));
@@ -11162,7 +11212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [13]),
         .Q(flatten_coeffs[1181]),
         .R(reset));
@@ -11170,7 +11220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [14]),
         .Q(flatten_coeffs[1182]),
         .R(reset));
@@ -11178,7 +11228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [15]),
         .Q(flatten_coeffs[1183]),
         .R(reset));
@@ -11186,7 +11236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [1]),
         .Q(flatten_coeffs[1169]),
         .R(reset));
@@ -11194,7 +11244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [2]),
         .Q(flatten_coeffs[1170]),
         .R(reset));
@@ -11202,7 +11252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [3]),
         .Q(flatten_coeffs[1171]),
         .R(reset));
@@ -11210,7 +11260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [4]),
         .Q(flatten_coeffs[1172]),
         .R(reset));
@@ -11218,7 +11268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [5]),
         .Q(flatten_coeffs[1173]),
         .R(reset));
@@ -11226,7 +11276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [6]),
         .Q(flatten_coeffs[1174]),
         .R(reset));
@@ -11234,7 +11284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [7]),
         .Q(flatten_coeffs[1175]),
         .R(reset));
@@ -11242,7 +11292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [8]),
         .Q(flatten_coeffs[1176]),
         .R(reset));
@@ -11250,7 +11300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[73][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[73] [9]),
         .Q(flatten_coeffs[1177]),
         .R(reset));
@@ -11258,7 +11308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [0]),
         .Q(flatten_coeffs[1184]),
         .R(reset));
@@ -11266,7 +11316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [10]),
         .Q(flatten_coeffs[1194]),
         .R(reset));
@@ -11274,7 +11324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [11]),
         .Q(flatten_coeffs[1195]),
         .R(reset));
@@ -11282,7 +11332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [12]),
         .Q(flatten_coeffs[1196]),
         .R(reset));
@@ -11290,7 +11340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [13]),
         .Q(flatten_coeffs[1197]),
         .R(reset));
@@ -11298,7 +11348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [14]),
         .Q(flatten_coeffs[1198]),
         .R(reset));
@@ -11306,7 +11356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [15]),
         .Q(flatten_coeffs[1199]),
         .R(reset));
@@ -11314,7 +11364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [1]),
         .Q(flatten_coeffs[1185]),
         .R(reset));
@@ -11322,7 +11372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [2]),
         .Q(flatten_coeffs[1186]),
         .R(reset));
@@ -11330,7 +11380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [3]),
         .Q(flatten_coeffs[1187]),
         .R(reset));
@@ -11338,7 +11388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [4]),
         .Q(flatten_coeffs[1188]),
         .R(reset));
@@ -11346,7 +11396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [5]),
         .Q(flatten_coeffs[1189]),
         .R(reset));
@@ -11354,7 +11404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [6]),
         .Q(flatten_coeffs[1190]),
         .R(reset));
@@ -11362,7 +11412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [7]),
         .Q(flatten_coeffs[1191]),
         .R(reset));
@@ -11370,7 +11420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [8]),
         .Q(flatten_coeffs[1192]),
         .R(reset));
@@ -11378,7 +11428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[74][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[74] [9]),
         .Q(flatten_coeffs[1193]),
         .R(reset));
@@ -11386,7 +11436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [0]),
         .Q(flatten_coeffs[1200]),
         .R(reset));
@@ -11394,7 +11444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [10]),
         .Q(flatten_coeffs[1210]),
         .R(reset));
@@ -11402,7 +11452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [11]),
         .Q(flatten_coeffs[1211]),
         .R(reset));
@@ -11410,7 +11460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [12]),
         .Q(flatten_coeffs[1212]),
         .R(reset));
@@ -11418,7 +11468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [13]),
         .Q(flatten_coeffs[1213]),
         .R(reset));
@@ -11426,7 +11476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [14]),
         .Q(flatten_coeffs[1214]),
         .R(reset));
@@ -11434,7 +11484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [15]),
         .Q(flatten_coeffs[1215]),
         .R(reset));
@@ -11442,7 +11492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [1]),
         .Q(flatten_coeffs[1201]),
         .R(reset));
@@ -11450,7 +11500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [2]),
         .Q(flatten_coeffs[1202]),
         .R(reset));
@@ -11458,7 +11508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [3]),
         .Q(flatten_coeffs[1203]),
         .R(reset));
@@ -11466,7 +11516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [4]),
         .Q(flatten_coeffs[1204]),
         .R(reset));
@@ -11474,7 +11524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [5]),
         .Q(flatten_coeffs[1205]),
         .R(reset));
@@ -11482,7 +11532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [6]),
         .Q(flatten_coeffs[1206]),
         .R(reset));
@@ -11490,7 +11540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [7]),
         .Q(flatten_coeffs[1207]),
         .R(reset));
@@ -11498,7 +11548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [8]),
         .Q(flatten_coeffs[1208]),
         .R(reset));
@@ -11506,7 +11556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[75][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[75] [9]),
         .Q(flatten_coeffs[1209]),
         .R(reset));
@@ -11514,7 +11564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [0]),
         .Q(flatten_coeffs[1216]),
         .R(reset));
@@ -11522,7 +11572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [10]),
         .Q(flatten_coeffs[1226]),
         .R(reset));
@@ -11530,7 +11580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [11]),
         .Q(flatten_coeffs[1227]),
         .R(reset));
@@ -11538,7 +11588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [12]),
         .Q(flatten_coeffs[1228]),
         .R(reset));
@@ -11546,7 +11596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [13]),
         .Q(flatten_coeffs[1229]),
         .R(reset));
@@ -11554,7 +11604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [14]),
         .Q(flatten_coeffs[1230]),
         .R(reset));
@@ -11562,7 +11612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [15]),
         .Q(flatten_coeffs[1231]),
         .R(reset));
@@ -11570,7 +11620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [1]),
         .Q(flatten_coeffs[1217]),
         .R(reset));
@@ -11578,7 +11628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [2]),
         .Q(flatten_coeffs[1218]),
         .R(reset));
@@ -11586,7 +11636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [3]),
         .Q(flatten_coeffs[1219]),
         .R(reset));
@@ -11594,7 +11644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [4]),
         .Q(flatten_coeffs[1220]),
         .R(reset));
@@ -11602,7 +11652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [5]),
         .Q(flatten_coeffs[1221]),
         .R(reset));
@@ -11610,7 +11660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [6]),
         .Q(flatten_coeffs[1222]),
         .R(reset));
@@ -11618,7 +11668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [7]),
         .Q(flatten_coeffs[1223]),
         .R(reset));
@@ -11626,7 +11676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [8]),
         .Q(flatten_coeffs[1224]),
         .R(reset));
@@ -11634,7 +11684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[76][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[76] [9]),
         .Q(flatten_coeffs[1225]),
         .R(reset));
@@ -11642,7 +11692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [0]),
         .Q(flatten_coeffs[1232]),
         .R(reset));
@@ -11650,7 +11700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [10]),
         .Q(flatten_coeffs[1242]),
         .R(reset));
@@ -11658,7 +11708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [11]),
         .Q(flatten_coeffs[1243]),
         .R(reset));
@@ -11666,7 +11716,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [12]),
         .Q(flatten_coeffs[1244]),
         .R(reset));
@@ -11674,7 +11724,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [13]),
         .Q(flatten_coeffs[1245]),
         .R(reset));
@@ -11682,7 +11732,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [14]),
         .Q(flatten_coeffs[1246]),
         .R(reset));
@@ -11690,7 +11740,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [15]),
         .Q(flatten_coeffs[1247]),
         .R(reset));
@@ -11698,7 +11748,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [1]),
         .Q(flatten_coeffs[1233]),
         .R(reset));
@@ -11706,7 +11756,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [2]),
         .Q(flatten_coeffs[1234]),
         .R(reset));
@@ -11714,7 +11764,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [3]),
         .Q(flatten_coeffs[1235]),
         .R(reset));
@@ -11722,7 +11772,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [4]),
         .Q(flatten_coeffs[1236]),
         .R(reset));
@@ -11730,7 +11780,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [5]),
         .Q(flatten_coeffs[1237]),
         .R(reset));
@@ -11738,7 +11788,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [6]),
         .Q(flatten_coeffs[1238]),
         .R(reset));
@@ -11746,7 +11796,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [7]),
         .Q(flatten_coeffs[1239]),
         .R(reset));
@@ -11754,7 +11804,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [8]),
         .Q(flatten_coeffs[1240]),
         .R(reset));
@@ -11762,7 +11812,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[77][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[77] [9]),
         .Q(flatten_coeffs[1241]),
         .R(reset));
@@ -11770,7 +11820,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [0]),
         .Q(flatten_coeffs[1248]),
         .R(reset));
@@ -11778,7 +11828,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [10]),
         .Q(flatten_coeffs[1258]),
         .R(reset));
@@ -11786,7 +11836,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [11]),
         .Q(flatten_coeffs[1259]),
         .R(reset));
@@ -11794,7 +11844,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [12]),
         .Q(flatten_coeffs[1260]),
         .R(reset));
@@ -11802,7 +11852,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [13]),
         .Q(flatten_coeffs[1261]),
         .R(reset));
@@ -11810,7 +11860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [14]),
         .Q(flatten_coeffs[1262]),
         .R(reset));
@@ -11818,7 +11868,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [15]),
         .Q(flatten_coeffs[1263]),
         .R(reset));
@@ -11826,7 +11876,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [1]),
         .Q(flatten_coeffs[1249]),
         .R(reset));
@@ -11834,7 +11884,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [2]),
         .Q(flatten_coeffs[1250]),
         .R(reset));
@@ -11842,7 +11892,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [3]),
         .Q(flatten_coeffs[1251]),
         .R(reset));
@@ -11850,7 +11900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [4]),
         .Q(flatten_coeffs[1252]),
         .R(reset));
@@ -11858,7 +11908,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [5]),
         .Q(flatten_coeffs[1253]),
         .R(reset));
@@ -11866,7 +11916,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [6]),
         .Q(flatten_coeffs[1254]),
         .R(reset));
@@ -11874,7 +11924,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [7]),
         .Q(flatten_coeffs[1255]),
         .R(reset));
@@ -11882,7 +11932,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [8]),
         .Q(flatten_coeffs[1256]),
         .R(reset));
@@ -11890,7 +11940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[78][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[78] [9]),
         .Q(flatten_coeffs[1257]),
         .R(reset));
@@ -11898,7 +11948,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [0]),
         .Q(flatten_coeffs[1264]),
         .R(reset));
@@ -11906,7 +11956,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [10]),
         .Q(flatten_coeffs[1274]),
         .R(reset));
@@ -11914,7 +11964,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [11]),
         .Q(flatten_coeffs[1275]),
         .R(reset));
@@ -11922,7 +11972,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [12]),
         .Q(flatten_coeffs[1276]),
         .R(reset));
@@ -11930,7 +11980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [13]),
         .Q(flatten_coeffs[1277]),
         .R(reset));
@@ -11938,7 +11988,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [14]),
         .Q(flatten_coeffs[1278]),
         .R(reset));
@@ -11946,7 +11996,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [15]),
         .Q(flatten_coeffs[1279]),
         .R(reset));
@@ -11954,7 +12004,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [1]),
         .Q(flatten_coeffs[1265]),
         .R(reset));
@@ -11962,7 +12012,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [2]),
         .Q(flatten_coeffs[1266]),
         .R(reset));
@@ -11970,7 +12020,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [3]),
         .Q(flatten_coeffs[1267]),
         .R(reset));
@@ -11978,7 +12028,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [4]),
         .Q(flatten_coeffs[1268]),
         .R(reset));
@@ -11986,7 +12036,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [5]),
         .Q(flatten_coeffs[1269]),
         .R(reset));
@@ -11994,7 +12044,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [6]),
         .Q(flatten_coeffs[1270]),
         .R(reset));
@@ -12002,7 +12052,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [7]),
         .Q(flatten_coeffs[1271]),
         .R(reset));
@@ -12010,7 +12060,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [8]),
         .Q(flatten_coeffs[1272]),
         .R(reset));
@@ -12018,7 +12068,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[79][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[79] [9]),
         .Q(flatten_coeffs[1273]),
         .R(reset));
@@ -12026,7 +12076,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [0]),
         .Q(flatten_coeffs[112]),
         .R(reset));
@@ -12034,7 +12084,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [10]),
         .Q(flatten_coeffs[122]),
         .R(reset));
@@ -12042,7 +12092,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [11]),
         .Q(flatten_coeffs[123]),
         .R(reset));
@@ -12050,7 +12100,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [12]),
         .Q(flatten_coeffs[124]),
         .R(reset));
@@ -12058,7 +12108,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [13]),
         .Q(flatten_coeffs[125]),
         .R(reset));
@@ -12066,7 +12116,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [14]),
         .Q(flatten_coeffs[126]),
         .R(reset));
@@ -12074,7 +12124,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [15]),
         .Q(flatten_coeffs[127]),
         .R(reset));
@@ -12082,7 +12132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [1]),
         .Q(flatten_coeffs[113]),
         .R(reset));
@@ -12090,7 +12140,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [2]),
         .Q(flatten_coeffs[114]),
         .R(reset));
@@ -12098,7 +12148,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [3]),
         .Q(flatten_coeffs[115]),
         .R(reset));
@@ -12106,7 +12156,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [4]),
         .Q(flatten_coeffs[116]),
         .R(reset));
@@ -12114,7 +12164,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [5]),
         .Q(flatten_coeffs[117]),
         .R(reset));
@@ -12122,7 +12172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [6]),
         .Q(flatten_coeffs[118]),
         .R(reset));
@@ -12130,7 +12180,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [7]),
         .Q(flatten_coeffs[119]),
         .R(reset));
@@ -12138,7 +12188,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [8]),
         .Q(flatten_coeffs[120]),
         .R(reset));
@@ -12146,7 +12196,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[7][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[7] [9]),
         .Q(flatten_coeffs[121]),
         .R(reset));
@@ -12154,7 +12204,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [0]),
         .Q(flatten_coeffs[1280]),
         .R(reset));
@@ -12162,7 +12212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [10]),
         .Q(flatten_coeffs[1290]),
         .R(reset));
@@ -12170,7 +12220,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [11]),
         .Q(flatten_coeffs[1291]),
         .R(reset));
@@ -12178,7 +12228,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [12]),
         .Q(flatten_coeffs[1292]),
         .R(reset));
@@ -12186,7 +12236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [13]),
         .Q(flatten_coeffs[1293]),
         .R(reset));
@@ -12194,7 +12244,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [14]),
         .Q(flatten_coeffs[1294]),
         .R(reset));
@@ -12202,7 +12252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [15]),
         .Q(flatten_coeffs[1295]),
         .R(reset));
@@ -12210,7 +12260,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [1]),
         .Q(flatten_coeffs[1281]),
         .R(reset));
@@ -12218,7 +12268,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [2]),
         .Q(flatten_coeffs[1282]),
         .R(reset));
@@ -12226,7 +12276,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [3]),
         .Q(flatten_coeffs[1283]),
         .R(reset));
@@ -12234,7 +12284,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [4]),
         .Q(flatten_coeffs[1284]),
         .R(reset));
@@ -12242,7 +12292,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [5]),
         .Q(flatten_coeffs[1285]),
         .R(reset));
@@ -12250,7 +12300,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [6]),
         .Q(flatten_coeffs[1286]),
         .R(reset));
@@ -12258,7 +12308,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [7]),
         .Q(flatten_coeffs[1287]),
         .R(reset));
@@ -12266,7 +12316,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [8]),
         .Q(flatten_coeffs[1288]),
         .R(reset));
@@ -12274,7 +12324,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[80][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[80] [9]),
         .Q(flatten_coeffs[1289]),
         .R(reset));
@@ -12282,7 +12332,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [0]),
         .Q(flatten_coeffs[128]),
         .R(reset));
@@ -12290,7 +12340,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [10]),
         .Q(flatten_coeffs[138]),
         .R(reset));
@@ -12298,7 +12348,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [11]),
         .Q(flatten_coeffs[139]),
         .R(reset));
@@ -12306,7 +12356,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [12]),
         .Q(flatten_coeffs[140]),
         .R(reset));
@@ -12314,7 +12364,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [13]),
         .Q(flatten_coeffs[141]),
         .R(reset));
@@ -12322,7 +12372,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [14]),
         .Q(flatten_coeffs[142]),
         .R(reset));
@@ -12330,7 +12380,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [15]),
         .Q(flatten_coeffs[143]),
         .R(reset));
@@ -12338,7 +12388,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [1]),
         .Q(flatten_coeffs[129]),
         .R(reset));
@@ -12346,7 +12396,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [2]),
         .Q(flatten_coeffs[130]),
         .R(reset));
@@ -12354,7 +12404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [3]),
         .Q(flatten_coeffs[131]),
         .R(reset));
@@ -12362,7 +12412,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [4]),
         .Q(flatten_coeffs[132]),
         .R(reset));
@@ -12370,7 +12420,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [5]),
         .Q(flatten_coeffs[133]),
         .R(reset));
@@ -12378,7 +12428,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [6]),
         .Q(flatten_coeffs[134]),
         .R(reset));
@@ -12386,7 +12436,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [7]),
         .Q(flatten_coeffs[135]),
         .R(reset));
@@ -12394,7 +12444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [8]),
         .Q(flatten_coeffs[136]),
         .R(reset));
@@ -12402,7 +12452,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[8][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[8] [9]),
         .Q(flatten_coeffs[137]),
         .R(reset));
@@ -12410,7 +12460,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [0]),
         .Q(flatten_coeffs[144]),
         .R(reset));
@@ -12418,7 +12468,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [10]),
         .Q(flatten_coeffs[154]),
         .R(reset));
@@ -12426,7 +12476,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [11]),
         .Q(flatten_coeffs[155]),
         .R(reset));
@@ -12434,7 +12484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [12]),
         .Q(flatten_coeffs[156]),
         .R(reset));
@@ -12442,7 +12492,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [13]),
         .Q(flatten_coeffs[157]),
         .R(reset));
@@ -12450,7 +12500,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [14]),
         .Q(flatten_coeffs[158]),
         .R(reset));
@@ -12458,7 +12508,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [15]),
         .Q(flatten_coeffs[159]),
         .R(reset));
@@ -12466,7 +12516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [1]),
         .Q(flatten_coeffs[145]),
         .R(reset));
@@ -12474,7 +12524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [2]),
         .Q(flatten_coeffs[146]),
         .R(reset));
@@ -12482,7 +12532,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [3]),
         .Q(flatten_coeffs[147]),
         .R(reset));
@@ -12490,7 +12540,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [4]),
         .Q(flatten_coeffs[148]),
         .R(reset));
@@ -12498,7 +12548,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [5]),
         .Q(flatten_coeffs[149]),
         .R(reset));
@@ -12506,7 +12556,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [6]),
         .Q(flatten_coeffs[150]),
         .R(reset));
@@ -12514,7 +12564,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [7]),
         .Q(flatten_coeffs[151]),
         .R(reset));
@@ -12522,7 +12572,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [8]),
         .Q(flatten_coeffs[152]),
         .R(reset));
@@ -12530,7 +12580,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_reg[9][9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(\reg_coeff_reg[9] [9]),
         .Q(flatten_coeffs[153]),
         .R(reset));
@@ -12538,7 +12588,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[0] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[0]),
         .Q(\h_coeff_scale_reg_n_0_[0] ),
         .R(reset));
@@ -12546,7 +12596,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[10] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[10]),
         .Q(\h_coeff_scale_reg_n_0_[10] ),
         .R(reset));
@@ -12554,7 +12604,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[11] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[11]),
         .Q(\h_coeff_scale_reg_n_0_[11] ),
         .R(reset));
@@ -12562,7 +12612,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[12] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[12]),
         .Q(\h_coeff_scale_reg_n_0_[12] ),
         .R(reset));
@@ -12570,7 +12620,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[13] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[13]),
         .Q(\h_coeff_scale_reg_n_0_[13] ),
         .R(reset));
@@ -12578,7 +12628,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[14] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[14]),
         .Q(\h_coeff_scale_reg_n_0_[14] ),
         .R(reset));
@@ -12586,7 +12636,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[15] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[15]),
         .Q(\h_coeff_scale_reg_n_0_[15] ),
         .R(reset));
@@ -12594,7 +12644,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[1] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[1]),
         .Q(\h_coeff_scale_reg_n_0_[1] ),
         .R(reset));
@@ -12602,7 +12652,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[2] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[2]),
         .Q(\h_coeff_scale_reg_n_0_[2] ),
         .R(reset));
@@ -12610,7 +12660,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[3] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[3]),
         .Q(\h_coeff_scale_reg_n_0_[3] ),
         .R(reset));
@@ -12618,7 +12668,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[4] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[4]),
         .Q(\h_coeff_scale_reg_n_0_[4] ),
         .R(reset));
@@ -12626,7 +12676,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[5] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[5]),
         .Q(\h_coeff_scale_reg_n_0_[5] ),
         .R(reset));
@@ -12634,7 +12684,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[6] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[6]),
         .Q(\h_coeff_scale_reg_n_0_[6] ),
         .R(reset));
@@ -12642,7 +12692,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[7] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[7]),
         .Q(\h_coeff_scale_reg_n_0_[7] ),
         .R(reset));
@@ -12650,7 +12700,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[8] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[8]),
         .Q(\h_coeff_scale_reg_n_0_[8] ),
         .R(reset));
@@ -12658,7 +12708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_coeff_scale_reg[9] 
        (.C(clk),
-        .CE(fsm_img_processing_state7_out),
+        .CE(fsm_img_processing_state14_out),
         .D(reg_coeff_scale[9]),
         .Q(\h_coeff_scale_reg_n_0_[9] ),
         .R(reset));
@@ -12780,7 +12830,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[0] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[0]_i_1_n_0 ),
         .Q(h_ctrl[0]),
         .R(reset));
@@ -12790,7 +12840,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[10] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[10]_i_1_n_0 ),
         .Q(h_ctrl[10]),
         .R(reset));
@@ -12800,7 +12850,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[11] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[11]_i_1_n_0 ),
         .Q(h_ctrl[11]),
         .R(reset));
@@ -12810,7 +12860,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[12] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[12]_i_1_n_0 ),
         .Q(h_ctrl[12]),
         .R(reset));
@@ -12820,7 +12870,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[13] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[13]_i_1_n_0 ),
         .Q(h_ctrl[13]),
         .R(reset));
@@ -12830,7 +12880,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[14] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[14]_i_1_n_0 ),
         .Q(h_ctrl[14]),
         .R(reset));
@@ -12840,7 +12890,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[15] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[15]_i_1_n_0 ),
         .Q(h_ctrl[15]),
         .R(reset));
@@ -12850,7 +12900,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[1] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[1]_i_1_n_0 ),
         .Q(h_ctrl[1]),
         .R(reset));
@@ -12860,7 +12910,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[2] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[2]_i_1_n_0 ),
         .Q(h_ctrl[2]),
         .R(reset));
@@ -12870,7 +12920,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[3] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[3]_i_1_n_0 ),
         .Q(h_ctrl[3]),
         .R(reset));
@@ -12880,7 +12930,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[4] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[4]_i_1_n_0 ),
         .Q(h_ctrl[4]),
         .R(reset));
@@ -12890,7 +12940,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[5] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[5]_i_1_n_0 ),
         .Q(h_ctrl[5]),
         .R(reset));
@@ -12900,7 +12950,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[6] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[6]_i_1_n_0 ),
         .Q(h_ctrl[6]),
         .R(reset));
@@ -12910,7 +12960,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[7] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[7]_i_1_n_0 ),
         .Q(h_ctrl[7]),
         .R(reset));
@@ -12920,7 +12970,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[8] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[8]_i_1_n_0 ),
         .Q(h_ctrl[8]),
         .R(reset));
@@ -12930,7 +12980,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_ctrl_reg[9] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_ctrl[9]_i_1_n_0 ),
         .Q(h_ctrl[9]),
         .R(reset));
@@ -13052,7 +13102,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[0] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[0]_i_1_n_0 ),
         .Q(h_img_h[0]),
         .R(reset));
@@ -13062,7 +13112,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[10] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[10]_i_1_n_0 ),
         .Q(h_img_h[10]),
         .R(reset));
@@ -13072,7 +13122,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[11] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[11]_i_1_n_0 ),
         .Q(h_img_h[11]),
         .R(reset));
@@ -13082,7 +13132,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[12] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[12]_i_1_n_0 ),
         .Q(h_img_h[12]),
         .R(reset));
@@ -13092,7 +13142,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[13] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[13]_i_1_n_0 ),
         .Q(h_img_h[13]),
         .R(reset));
@@ -13102,7 +13152,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[14] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[14]_i_1_n_0 ),
         .Q(h_img_h[14]),
         .R(reset));
@@ -13112,7 +13162,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[15] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[15]_i_1_n_0 ),
         .Q(h_img_h[15]),
         .R(reset));
@@ -13122,7 +13172,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[1] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[1]_i_1_n_0 ),
         .Q(h_img_h[1]),
         .R(reset));
@@ -13132,7 +13182,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[2] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[2]_i_1_n_0 ),
         .Q(h_img_h[2]),
         .R(reset));
@@ -13142,7 +13192,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[3] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[3]_i_1_n_0 ),
         .Q(h_img_h[3]),
         .R(reset));
@@ -13152,7 +13202,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[4] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[4]_i_1_n_0 ),
         .Q(h_img_h[4]),
         .R(reset));
@@ -13162,7 +13212,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[5] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[5]_i_1_n_0 ),
         .Q(h_img_h[5]),
         .R(reset));
@@ -13172,7 +13222,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[6] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[6]_i_1_n_0 ),
         .Q(h_img_h[6]),
         .R(reset));
@@ -13182,7 +13232,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[7] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[7]_i_1_n_0 ),
         .Q(h_img_h[7]),
         .R(reset));
@@ -13192,7 +13242,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[8] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[8]_i_1_n_0 ),
         .Q(h_img_h[8]),
         .R(reset));
@@ -13202,7 +13252,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_h_reg[9] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_h[9]_i_1_n_0 ),
         .Q(h_img_h[9]),
         .R(reset));
@@ -13324,7 +13374,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[0] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[0]_i_1_n_0 ),
         .Q(h_img_w[0]),
         .R(reset));
@@ -13334,7 +13384,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[10] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[10]_i_1_n_0 ),
         .Q(h_img_w[10]),
         .R(reset));
@@ -13344,7 +13394,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[11] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[11]_i_1_n_0 ),
         .Q(h_img_w[11]),
         .R(reset));
@@ -13354,7 +13404,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[12] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[12]_i_1_n_0 ),
         .Q(h_img_w[12]),
         .R(reset));
@@ -13364,7 +13414,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[13] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[13]_i_1_n_0 ),
         .Q(h_img_w[13]),
         .R(reset));
@@ -13374,7 +13424,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[14] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[14]_i_1_n_0 ),
         .Q(h_img_w[14]),
         .R(reset));
@@ -13384,7 +13434,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[15] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[15]_i_1_n_0 ),
         .Q(h_img_w[15]),
         .R(reset));
@@ -13394,7 +13444,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[1] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[1]_i_1_n_0 ),
         .Q(h_img_w[1]),
         .R(reset));
@@ -13404,7 +13454,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[2] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[2]_i_1_n_0 ),
         .Q(h_img_w[2]),
         .R(reset));
@@ -13414,7 +13464,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[3] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[3]_i_1_n_0 ),
         .Q(h_img_w[3]),
         .R(reset));
@@ -13424,7 +13474,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[4] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[4]_i_1_n_0 ),
         .Q(h_img_w[4]),
         .R(reset));
@@ -13434,7 +13484,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[5] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[5]_i_1_n_0 ),
         .Q(h_img_w[5]),
         .R(reset));
@@ -13444,7 +13494,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[6] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[6]_i_1_n_0 ),
         .Q(h_img_w[6]),
         .R(reset));
@@ -13454,7 +13504,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[7] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[7]_i_1_n_0 ),
         .Q(h_img_w[7]),
         .R(reset));
@@ -13464,7 +13514,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[8] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[8]_i_1_n_0 ),
         .Q(h_img_w[8]),
         .R(reset));
@@ -13474,7 +13524,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_img_w_reg[9] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_img_w[9]_i_1_n_0 ),
         .Q(h_img_w[9]),
         .R(reset));
@@ -13524,7 +13574,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(2'h1)) 
     \h_radius[15]_i_1 
        (.I0(fsm_img_processing_state),
-        .O(p_6_in));
+        .O(p_13_in));
   LUT3 #(
     .INIT(8'hB8)) 
     \h_radius[15]_i_2 
@@ -13601,7 +13651,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[0] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[0]_i_1_n_0 ),
         .Q(h_radius[0]),
         .R(reset));
@@ -13611,7 +13661,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[10] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[10]_i_1_n_0 ),
         .Q(h_radius[10]),
         .R(reset));
@@ -13621,7 +13671,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[11] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[11]_i_1_n_0 ),
         .Q(h_radius[11]),
         .R(reset));
@@ -13631,7 +13681,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[12] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[12]_i_1_n_0 ),
         .Q(h_radius[12]),
         .R(reset));
@@ -13641,7 +13691,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[13] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[13]_i_1_n_0 ),
         .Q(h_radius[13]),
         .R(reset));
@@ -13651,7 +13701,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[14] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[14]_i_1_n_0 ),
         .Q(h_radius[14]),
         .R(reset));
@@ -13661,7 +13711,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[15] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[15]_i_2_n_0 ),
         .Q(h_radius[15]),
         .R(reset));
@@ -13671,7 +13721,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[1] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[1]_i_1_n_0 ),
         .Q(h_radius[1]),
         .R(reset));
@@ -13681,7 +13731,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[2] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[2]_i_1_n_0 ),
         .Q(h_radius[2]),
         .R(reset));
@@ -13691,7 +13741,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[3] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[3]_i_1_n_0 ),
         .Q(h_radius[3]),
         .R(reset));
@@ -13701,7 +13751,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[4] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[4]_i_1_n_0 ),
         .Q(h_radius[4]),
         .R(reset));
@@ -13711,7 +13761,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[5] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[5]_i_1_n_0 ),
         .Q(h_radius[5]),
         .R(reset));
@@ -13721,7 +13771,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[6] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[6]_i_1_n_0 ),
         .Q(h_radius[6]),
         .R(reset));
@@ -13731,7 +13781,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[7] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[7]_i_1_n_0 ),
         .Q(h_radius[7]),
         .R(reset));
@@ -13741,7 +13791,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[8] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[8]_i_1_n_0 ),
         .Q(h_radius[8]),
         .R(reset));
@@ -13751,28 +13801,28 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(1'b0)) 
     \h_radius_reg[9] 
        (.C(clk),
-        .CE(p_6_in),
+        .CE(p_13_in),
         .D(\h_radius[9]_i_1_n_0 ),
         .Q(h_radius[9]),
         .R(reset));
-  LUT6 #(
-    .INIT(64'h3F33FFFF80880000)) 
+  LUT5 #(
+    .INIT(32'h3FFF8000)) 
     \img_col_counter[0]_i_1 
        (.I0(img_row_counter10_in),
         .I1(tvalid_buffer),
-        .I2(m_axis_tready),
-        .I3(tvalid_fifo[6]),
-        .I4(fsm_img_processing_state),
-        .I5(img_col_counter[0]),
+        .I2(fsm_img_processing_state),
+        .I3(pipe_advance),
+        .I4(img_col_counter[0]),
         .O(\img_col_counter[0]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hDF20CF00)) 
+  LUT6 #(
+    .INIT(64'h7FFF80003FFF0000)) 
     \img_col_counter[1]_i_1 
        (.I0(img_col_counter[0]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(tvalid_buffer),
-        .I3(img_col_counter[1]),
-        .I4(img_row_counter10_in),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(tvalid_buffer),
+        .I4(img_col_counter[1]),
+        .I5(img_row_counter10_in),
         .O(\img_col_counter[1]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hF7FF0800F3F30000)) 
@@ -13785,188 +13835,92 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(img_row_counter10_in),
         .O(\img_col_counter[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hF7FF0800F0F00000)) 
+    .INIT(64'h9099999999999999)) 
     \img_col_counter[3]_i_1 
-       (.I0(img_col_counter[2]),
-        .I1(img_col_counter[0]),
-        .I2(\img_col_counter[3]_i_2_n_0 ),
-        .I3(img_col_counter[1]),
-        .I4(img_col_counter[3]),
-        .I5(img_row_counter10_in),
-        .O(\img_col_counter[3]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h5DFF)) 
-    \img_col_counter[3]_i_2 
-       (.I0(fsm_img_processing_state),
-        .I1(tvalid_fifo[6]),
-        .I2(m_axis_tready),
+       (.I0(\img_col_counter[6]_i_2_n_0 ),
+        .I1(img_col_counter[3]),
+        .I2(img_row_counter10_in),
         .I3(tvalid_buffer),
-        .O(\img_col_counter[3]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h99999099)) 
+        .I4(fsm_img_processing_state),
+        .I5(pipe_advance),
+        .O(\img_col_counter[3]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h9099999999999999)) 
     \img_col_counter[4]_i_1 
-       (.I0(\img_col_counter[7]_i_2_n_0 ),
+       (.I0(\img_col_counter[5]_i_2_n_0 ),
         .I1(img_col_counter[4]),
         .I2(img_row_counter10_in),
         .I3(tvalid_buffer),
-        .I4(tvalid_buffer_i_2_n_0),
+        .I4(fsm_img_processing_state),
+        .I5(pipe_advance),
         .O(\img_col_counter[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hD2D2D2D2D200D2D2)) 
     \img_col_counter[5]_i_1 
        (.I0(img_col_counter[4]),
-        .I1(\img_col_counter[7]_i_2_n_0 ),
+        .I1(\img_col_counter[5]_i_2_n_0 ),
         .I2(img_col_counter[5]),
         .I3(img_row_counter10_in),
         .I4(tvalid_buffer),
         .I5(tvalid_buffer_i_2_n_0),
         .O(\img_col_counter[5]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h90060990)) 
-    \img_col_counter[5]_i_10 
-       (.I0(h_img_w[7]),
-        .I1(img_col_counter[7]),
-        .I2(h_img_w[6]),
-        .I3(\img_col_counter[5]_i_14_n_0 ),
-        .I4(img_col_counter[6]),
-        .O(\img_col_counter[5]_i_10_n_0 ));
-  LUT5 #(
-    .INIT(32'h90060990)) 
-    \img_col_counter[5]_i_11 
-       (.I0(h_img_w[5]),
-        .I1(img_col_counter[5]),
-        .I2(h_img_w[4]),
-        .I3(\img_col_counter[5]_i_15_n_0 ),
-        .I4(img_col_counter[4]),
-        .O(\img_col_counter[5]_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'h9090900609090990)) 
-    \img_col_counter[5]_i_12 
-       (.I0(h_img_w[3]),
-        .I1(img_col_counter[3]),
-        .I2(h_img_w[2]),
-        .I3(h_img_w[1]),
-        .I4(h_img_w[0]),
-        .I5(img_col_counter[2]),
-        .O(\img_col_counter[5]_i_12_n_0 ));
-  LUT4 #(
-    .INIT(16'h0690)) 
-    \img_col_counter[5]_i_13 
-       (.I0(h_img_w[1]),
-        .I1(img_col_counter[1]),
-        .I2(h_img_w[0]),
-        .I3(img_col_counter[0]),
-        .O(\img_col_counter[5]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \img_col_counter[5]_i_14 
-       (.I0(h_img_w[5]),
-        .I1(h_img_w[3]),
-        .I2(h_img_w[0]),
-        .I3(h_img_w[1]),
-        .I4(h_img_w[2]),
-        .I5(h_img_w[4]),
-        .O(\img_col_counter[5]_i_14_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \img_col_counter[5]_i_15 
-       (.I0(h_img_w[3]),
-        .I1(h_img_w[0]),
-        .I2(h_img_w[1]),
-        .I3(h_img_w[2]),
-        .O(\img_col_counter[5]_i_15_n_0 ));
-  LUT5 #(
-    .INIT(32'h55540001)) 
-    \img_col_counter[5]_i_4 
-       (.I0(img_col_counter[8]),
-        .I1(\img_col_counter[5]_i_14_n_0 ),
-        .I2(h_img_w[6]),
-        .I3(h_img_w[7]),
-        .I4(h_img_w[8]),
-        .O(\img_col_counter[5]_i_4_n_0 ));
-  LUT5 #(
-    .INIT(32'hAAA95556)) 
-    \img_col_counter[5]_i_5 
-       (.I0(img_col_counter[8]),
-        .I1(\img_col_counter[5]_i_14_n_0 ),
-        .I2(h_img_w[6]),
-        .I3(h_img_w[7]),
-        .I4(h_img_w[8]),
-        .O(\img_col_counter[5]_i_5_n_0 ));
-  LUT5 #(
-    .INIT(32'h5401D543)) 
-    \img_col_counter[5]_i_6 
-       (.I0(img_col_counter[7]),
-        .I1(h_img_w[6]),
-        .I2(\img_col_counter[5]_i_14_n_0 ),
-        .I3(h_img_w[7]),
-        .I4(img_col_counter[6]),
-        .O(\img_col_counter[5]_i_6_n_0 ));
-  LUT5 #(
-    .INIT(32'h5401D543)) 
-    \img_col_counter[5]_i_7 
-       (.I0(img_col_counter[5]),
-        .I1(h_img_w[4]),
-        .I2(\img_col_counter[5]_i_15_n_0 ),
-        .I3(h_img_w[5]),
-        .I4(img_col_counter[4]),
-        .O(\img_col_counter[5]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'h55540001DDD54443)) 
-    \img_col_counter[5]_i_8 
-       (.I0(img_col_counter[3]),
-        .I1(h_img_w[2]),
-        .I2(h_img_w[1]),
-        .I3(h_img_w[0]),
-        .I4(h_img_w[3]),
-        .I5(img_col_counter[2]),
-        .O(\img_col_counter[5]_i_8_n_0 ));
-  LUT4 #(
-    .INIT(16'h4147)) 
-    \img_col_counter[5]_i_9 
-       (.I0(img_col_counter[1]),
-        .I1(h_img_w[1]),
-        .I2(h_img_w[0]),
-        .I3(img_col_counter[0]),
-        .O(\img_col_counter[5]_i_9_n_0 ));
-  LUT5 #(
-    .INIT(32'h0000DF20)) 
-    \img_col_counter[6]_i_1 
-       (.I0(img_col_counter[5]),
-        .I1(\img_col_counter[7]_i_2_n_0 ),
-        .I2(img_col_counter[4]),
-        .I3(img_col_counter[6]),
-        .I4(\img_col_counter[7]_i_3_n_0 ),
-        .O(\img_col_counter[6]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000F7FF0800)) 
-    \img_col_counter[7]_i_1 
-       (.I0(img_col_counter[6]),
-        .I1(img_col_counter[4]),
-        .I2(\img_col_counter[7]_i_2_n_0 ),
-        .I3(img_col_counter[5]),
-        .I4(img_col_counter[7]),
-        .I5(\img_col_counter[7]_i_3_n_0 ),
-        .O(\img_col_counter[7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hF7FFFFFFFFFFFFFF)) 
-    \img_col_counter[7]_i_2 
+    \img_col_counter[5]_i_2 
        (.I0(img_col_counter[2]),
         .I1(img_col_counter[0]),
         .I2(tvalid_buffer_i_2_n_0),
         .I3(tvalid_buffer),
         .I4(img_col_counter[1]),
         .I5(img_col_counter[3]),
-        .O(\img_col_counter[7]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h40440000)) 
-    \img_col_counter[7]_i_3 
+        .O(\img_col_counter[5]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000F7FF0800)) 
+    \img_col_counter[6]_i_1 
+       (.I0(img_col_counter[5]),
+        .I1(img_col_counter[3]),
+        .I2(\img_col_counter[6]_i_2_n_0 ),
+        .I3(img_col_counter[4]),
+        .I4(img_col_counter[6]),
+        .I5(\img_col_counter[6]_i_3_n_0 ),
+        .O(\img_col_counter[6]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \img_col_counter[6]_i_2 
+       (.I0(img_col_counter[1]),
+        .I1(tvalid_buffer),
+        .I2(fsm_img_processing_state),
+        .I3(pipe_advance),
+        .I4(img_col_counter[0]),
+        .I5(img_col_counter[2]),
+        .O(\img_col_counter[6]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h4000)) 
+    \img_col_counter[6]_i_3 
        (.I0(img_row_counter10_in),
         .I1(tvalid_buffer),
-        .I2(m_axis_tready),
-        .I3(tvalid_fifo[6]),
+        .I2(fsm_img_processing_state),
+        .I3(pipe_advance),
+        .O(\img_col_counter[6]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h9099999999999999)) 
+    \img_col_counter[7]_i_1 
+       (.I0(\img_col_counter[7]_i_2_n_0 ),
+        .I1(img_col_counter[7]),
+        .I2(img_row_counter10_in),
+        .I3(tvalid_buffer),
         .I4(fsm_img_processing_state),
-        .O(\img_col_counter[7]_i_3_n_0 ));
+        .I5(pipe_advance),
+        .O(\img_col_counter[7]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hF7FFFFFF)) 
+    \img_col_counter[7]_i_2 
+       (.I0(img_col_counter[5]),
+        .I1(img_col_counter[3]),
+        .I2(\img_col_counter[6]_i_2_n_0 ),
+        .I3(img_col_counter[4]),
+        .I4(img_col_counter[6]),
+        .O(\img_col_counter[7]_i_2_n_0 ));
   LUT3 #(
     .INIT(8'hF2)) 
     \img_col_counter[8]_i_1 
@@ -13974,35 +13928,134 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(fsm_img_processing_state),
         .I2(reset),
         .O(\img_col_counter[8]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h55540001DDD54443)) 
+    \img_col_counter[8]_i_10 
+       (.I0(img_col_counter[3]),
+        .I1(h_img_w[2]),
+        .I2(h_img_w[1]),
+        .I3(h_img_w[0]),
+        .I4(h_img_w[3]),
+        .I5(img_col_counter[2]),
+        .O(\img_col_counter[8]_i_10_n_0 ));
+  LUT4 #(
+    .INIT(16'h4147)) 
+    \img_col_counter[8]_i_11 
+       (.I0(img_col_counter[1]),
+        .I1(h_img_w[1]),
+        .I2(h_img_w[0]),
+        .I3(img_col_counter[0]),
+        .O(\img_col_counter[8]_i_11_n_0 ));
   LUT5 #(
-    .INIT(32'hF2FFD000)) 
+    .INIT(32'h90060990)) 
+    \img_col_counter[8]_i_12 
+       (.I0(h_img_w[7]),
+        .I1(img_col_counter[7]),
+        .I2(h_img_w[6]),
+        .I3(\img_col_counter[8]_i_16_n_0 ),
+        .I4(img_col_counter[6]),
+        .O(\img_col_counter[8]_i_12_n_0 ));
+  LUT5 #(
+    .INIT(32'h90060990)) 
+    \img_col_counter[8]_i_13 
+       (.I0(h_img_w[5]),
+        .I1(img_col_counter[5]),
+        .I2(h_img_w[4]),
+        .I3(\img_col_counter[8]_i_17_n_0 ),
+        .I4(img_col_counter[4]),
+        .O(\img_col_counter[8]_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'h9090900609090990)) 
+    \img_col_counter[8]_i_14 
+       (.I0(h_img_w[3]),
+        .I1(img_col_counter[3]),
+        .I2(h_img_w[2]),
+        .I3(h_img_w[1]),
+        .I4(h_img_w[0]),
+        .I5(img_col_counter[2]),
+        .O(\img_col_counter[8]_i_14_n_0 ));
+  LUT4 #(
+    .INIT(16'h0690)) 
+    \img_col_counter[8]_i_15 
+       (.I0(h_img_w[1]),
+        .I1(img_col_counter[1]),
+        .I2(h_img_w[0]),
+        .I3(img_col_counter[0]),
+        .O(\img_col_counter[8]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    \img_col_counter[8]_i_16 
+       (.I0(h_img_w[5]),
+        .I1(h_img_w[3]),
+        .I2(h_img_w[0]),
+        .I3(h_img_w[1]),
+        .I4(h_img_w[2]),
+        .I5(h_img_w[4]),
+        .O(\img_col_counter[8]_i_16_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \img_col_counter[8]_i_17 
+       (.I0(h_img_w[3]),
+        .I1(h_img_w[0]),
+        .I2(h_img_w[1]),
+        .I3(h_img_w[2]),
+        .O(\img_col_counter[8]_i_17_n_0 ));
+  LUT6 #(
+    .INIT(64'h9099999999999999)) 
     \img_col_counter[8]_i_2 
-       (.I0(tvalid_fifo[6]),
-        .I1(m_axis_tready),
-        .I2(\img_col_counter[8]_i_3_n_0 ),
-        .I3(fsm_img_processing_state),
-        .I4(img_col_counter[8]),
+       (.I0(\img_col_counter[8]_i_3_n_0 ),
+        .I1(img_col_counter[8]),
+        .I2(img_row_counter10_in),
+        .I3(tvalid_buffer),
+        .I4(fsm_img_processing_state),
+        .I5(pipe_advance),
         .O(\img_col_counter[8]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hAA2AFFFF00800000)) 
+    .INIT(64'hF7FFFFFFFFFFFFFF)) 
     \img_col_counter[8]_i_3 
-       (.I0(img_row_counter10_in),
-        .I1(img_col_counter[7]),
-        .I2(img_col_counter[6]),
-        .I3(\img_col_counter[8]_i_4_n_0 ),
-        .I4(tvalid_buffer),
-        .I5(img_col_counter[8]),
+       (.I0(img_col_counter[6]),
+        .I1(img_col_counter[4]),
+        .I2(\img_col_counter[6]_i_2_n_0 ),
+        .I3(img_col_counter[3]),
+        .I4(img_col_counter[5]),
+        .I5(img_col_counter[7]),
         .O(\img_col_counter[8]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \img_col_counter[8]_i_4 
-       (.I0(img_col_counter[4]),
-        .I1(img_col_counter[2]),
-        .I2(img_col_counter[0]),
-        .I3(img_col_counter[1]),
-        .I4(img_col_counter[3]),
-        .I5(img_col_counter[5]),
-        .O(\img_col_counter[8]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'h55540001)) 
+    \img_col_counter[8]_i_6 
+       (.I0(img_col_counter[8]),
+        .I1(\img_col_counter[8]_i_16_n_0 ),
+        .I2(h_img_w[6]),
+        .I3(h_img_w[7]),
+        .I4(h_img_w[8]),
+        .O(\img_col_counter[8]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'hAAA95556)) 
+    \img_col_counter[8]_i_7 
+       (.I0(img_col_counter[8]),
+        .I1(\img_col_counter[8]_i_16_n_0 ),
+        .I2(h_img_w[6]),
+        .I3(h_img_w[7]),
+        .I4(h_img_w[8]),
+        .O(\img_col_counter[8]_i_7_n_0 ));
+  LUT5 #(
+    .INIT(32'h5401D543)) 
+    \img_col_counter[8]_i_8 
+       (.I0(img_col_counter[7]),
+        .I1(h_img_w[6]),
+        .I2(\img_col_counter[8]_i_16_n_0 ),
+        .I3(h_img_w[7]),
+        .I4(img_col_counter[6]),
+        .O(\img_col_counter[8]_i_8_n_0 ));
+  LUT5 #(
+    .INIT(32'h5401D543)) 
+    \img_col_counter[8]_i_9 
+       (.I0(img_col_counter[5]),
+        .I1(h_img_w[4]),
+        .I2(\img_col_counter[8]_i_17_n_0 ),
+        .I3(h_img_w[5]),
+        .I4(img_col_counter[4]),
+        .O(\img_col_counter[8]_i_9_n_0 ));
   (* KEEP = "yes" *) 
   FDRE \img_col_counter_reg[0] 
        (.C(clk),
@@ -14045,22 +14098,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(\img_col_counter[5]_i_1_n_0 ),
         .Q(img_col_counter[5]),
         .R(\img_col_counter[8]_i_1_n_0 ));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \img_col_counter_reg[5]_i_2 
-       (.CI(\img_col_counter_reg[5]_i_3_n_0 ),
-        .CO({\NLW_img_col_counter_reg[5]_i_2_CO_UNCONNECTED [3:1],img_row_counter10_in}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,\img_col_counter[5]_i_4_n_0 }),
-        .O(\NLW_img_col_counter_reg[5]_i_2_O_UNCONNECTED [3:0]),
-        .S({1'b0,1'b0,1'b0,\img_col_counter[5]_i_5_n_0 }));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 \img_col_counter_reg[5]_i_3 
-       (.CI(1'b0),
-        .CO({\img_col_counter_reg[5]_i_3_n_0 ,\img_col_counter_reg[5]_i_3_n_1 ,\img_col_counter_reg[5]_i_3_n_2 ,\img_col_counter_reg[5]_i_3_n_3 }),
-        .CYINIT(1'b0),
-        .DI({\img_col_counter[5]_i_6_n_0 ,\img_col_counter[5]_i_7_n_0 ,\img_col_counter[5]_i_8_n_0 ,\img_col_counter[5]_i_9_n_0 }),
-        .O(\NLW_img_col_counter_reg[5]_i_3_O_UNCONNECTED [3:0]),
-        .S({\img_col_counter[5]_i_10_n_0 ,\img_col_counter[5]_i_11_n_0 ,\img_col_counter[5]_i_12_n_0 ,\img_col_counter[5]_i_13_n_0 }));
   (* KEEP = "yes" *) 
   FDRE \img_col_counter_reg[6] 
        (.C(clk),
@@ -14082,14 +14119,31 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(\img_col_counter[8]_i_2_n_0 ),
         .Q(img_col_counter[8]),
         .R(\img_col_counter[8]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFCF0020)) 
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 \img_col_counter_reg[8]_i_4 
+       (.CI(\img_col_counter_reg[8]_i_5_n_0 ),
+        .CO({\NLW_img_col_counter_reg[8]_i_4_CO_UNCONNECTED [3:1],img_row_counter10_in}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,\img_col_counter[8]_i_6_n_0 }),
+        .O(\NLW_img_col_counter_reg[8]_i_4_O_UNCONNECTED [3:0]),
+        .S({1'b0,1'b0,1'b0,\img_col_counter[8]_i_7_n_0 }));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 \img_col_counter_reg[8]_i_5 
+       (.CI(1'b0),
+        .CO({\img_col_counter_reg[8]_i_5_n_0 ,\img_col_counter_reg[8]_i_5_n_1 ,\img_col_counter_reg[8]_i_5_n_2 ,\img_col_counter_reg[8]_i_5_n_3 }),
+        .CYINIT(1'b0),
+        .DI({\img_col_counter[8]_i_8_n_0 ,\img_col_counter[8]_i_9_n_0 ,\img_col_counter[8]_i_10_n_0 ,\img_col_counter[8]_i_11_n_0 }),
+        .O(\NLW_img_col_counter_reg[8]_i_5_O_UNCONNECTED [3:0]),
+        .S({\img_col_counter[8]_i_12_n_0 ,\img_col_counter[8]_i_13_n_0 ,\img_col_counter[8]_i_14_n_0 ,\img_col_counter[8]_i_15_n_0 }));
+  LUT6 #(
+    .INIT(64'hCFFFFFFF20000000)) 
     \img_row_counter[0]_i_1 
        (.I0(img_row_counter1),
         .I1(img_row_counter10_in),
         .I2(tvalid_buffer),
-        .I3(tvalid_buffer_i_2_n_0),
-        .I4(img_row_counter[0]),
+        .I3(fsm_img_processing_state),
+        .I4(pipe_advance),
+        .I5(img_row_counter[0]),
         .O(\img_row_counter[0]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFDF0020FFDD0000)) 
@@ -14104,22 +14158,13 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'h9999999999999099)) 
     \img_row_counter[2]_i_1 
-       (.I0(\img_row_counter[2]_i_2_n_0 ),
+       (.I0(\img_row_counter[5]_i_2_n_0 ),
         .I1(img_row_counter[2]),
         .I2(tvalid_buffer_i_2_n_0),
         .I3(tvalid_buffer),
         .I4(img_row_counter10_in),
         .I5(img_row_counter1),
         .O(\img_row_counter[2]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFDFFFFF)) 
-    \img_row_counter[2]_i_2 
-       (.I0(tvalid_buffer),
-        .I1(img_row_counter10_in),
-        .I2(img_row_counter[0]),
-        .I3(tvalid_buffer_i_2_n_0),
-        .I4(img_row_counter[1]),
-        .O(\img_row_counter[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h9999999999999099)) 
     \img_row_counter[3]_i_1 
@@ -14130,23 +14175,36 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(img_row_counter10_in),
         .I5(img_row_counter1),
         .O(\img_row_counter[3]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h00D2)) 
+  LUT6 #(
+    .INIT(64'hDF20DF200000DF20)) 
     \img_row_counter[4]_i_1 
        (.I0(img_row_counter[3]),
-        .I1(\img_row_counter[6]_i_2_n_0 ),
-        .I2(img_row_counter[4]),
-        .I3(\img_row_counter[6]_i_3_n_0 ),
+        .I1(\img_row_counter[5]_i_2_n_0 ),
+        .I2(img_row_counter[2]),
+        .I3(img_row_counter[4]),
+        .I4(\img_col_counter[6]_i_3_n_0 ),
+        .I5(img_row_counter1),
         .O(\img_row_counter[4]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h0000DF20)) 
+  LUT6 #(
+    .INIT(64'h00000000F7FF0800)) 
     \img_row_counter[5]_i_1 
        (.I0(img_row_counter[4]),
-        .I1(\img_row_counter[6]_i_2_n_0 ),
-        .I2(img_row_counter[3]),
-        .I3(img_row_counter[5]),
-        .I4(\img_row_counter[6]_i_3_n_0 ),
+        .I1(img_row_counter[2]),
+        .I2(\img_row_counter[5]_i_2_n_0 ),
+        .I3(img_row_counter[3]),
+        .I4(img_row_counter[5]),
+        .I5(\img_row_counter[6]_i_3_n_0 ),
         .O(\img_row_counter[5]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hDFFFFFFFFFFFFFFF)) 
+    \img_row_counter[5]_i_2 
+       (.I0(tvalid_buffer),
+        .I1(img_row_counter10_in),
+        .I2(img_row_counter[0]),
+        .I3(fsm_img_processing_state),
+        .I4(pipe_advance),
+        .I5(img_row_counter[1]),
+        .O(\img_row_counter[5]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000F7FF0800)) 
     \img_row_counter[6]_i_1 
@@ -14167,15 +14225,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(tvalid_buffer),
         .I5(img_row_counter[2]),
         .O(\img_row_counter[6]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000000A200)) 
+  LUT5 #(
+    .INIT(32'h00000080)) 
     \img_row_counter[6]_i_3 
-       (.I0(fsm_img_processing_state),
-        .I1(tvalid_fifo[6]),
-        .I2(m_axis_tready),
-        .I3(tvalid_buffer),
-        .I4(img_row_counter10_in),
-        .I5(img_row_counter1),
+       (.I0(pipe_advance),
+        .I1(fsm_img_processing_state),
+        .I2(tvalid_buffer),
+        .I3(img_row_counter10_in),
+        .I4(img_row_counter1),
         .O(\img_row_counter[6]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h9999999999999099)) 
@@ -14187,14 +14244,15 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(img_row_counter10_in),
         .I5(img_row_counter1),
         .O(\img_row_counter[7]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hF7FFFFFF)) 
+  LUT6 #(
+    .INIT(64'hF7FFFFFFFFFFFFFF)) 
     \img_row_counter[7]_i_2 
        (.I0(img_row_counter[5]),
         .I1(img_row_counter[3]),
-        .I2(\img_row_counter[6]_i_2_n_0 ),
-        .I3(img_row_counter[4]),
-        .I4(img_row_counter[6]),
+        .I2(\img_row_counter[5]_i_2_n_0 ),
+        .I3(img_row_counter[2]),
+        .I4(img_row_counter[4]),
+        .I5(img_row_counter[6]),
         .O(\img_row_counter[7]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h9999999999999099)) 
@@ -14403,12 +14461,525 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .DI({\img_row_counter[8]_i_7_n_0 ,\img_row_counter[8]_i_8_n_0 ,\img_row_counter[8]_i_9_n_0 ,\img_row_counter[8]_i_10_n_0 }),
         .O(\NLW_img_row_counter_reg[8]_i_4_O_UNCONNECTED [3:0]),
         .S({\img_row_counter[8]_i_11_n_0 ,\img_row_counter[8]_i_12_n_0 ,\img_row_counter[8]_i_13_n_0 ,\img_row_counter[8]_i_14_n_0 }));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[0]_INST_0 
+       (.I0(reg_output[0]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[0] ),
+        .O(m_axis_tdata[0]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[10]_INST_0 
+       (.I0(reg_output[10]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[10] ),
+        .O(m_axis_tdata[10]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[11]_INST_0 
+       (.I0(reg_output[11]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[11] ),
+        .O(m_axis_tdata[11]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[12]_INST_0 
+       (.I0(reg_output[12]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[12] ),
+        .O(m_axis_tdata[12]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[13]_INST_0 
+       (.I0(reg_output[13]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[13] ),
+        .O(m_axis_tdata[13]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[14]_INST_0 
+       (.I0(reg_output[14]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[14] ),
+        .O(m_axis_tdata[14]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[15]_INST_0 
+       (.I0(reg_output[15]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[15] ),
+        .O(m_axis_tdata[15]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[1]_INST_0 
+       (.I0(reg_output[1]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[1] ),
+        .O(m_axis_tdata[1]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[2]_INST_0 
+       (.I0(reg_output[2]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[2] ),
+        .O(m_axis_tdata[2]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[3]_INST_0 
+       (.I0(reg_output[3]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[3] ),
+        .O(m_axis_tdata[3]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[4]_INST_0 
+       (.I0(reg_output[4]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[4] ),
+        .O(m_axis_tdata[4]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[5]_INST_0 
+       (.I0(reg_output[5]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[5] ),
+        .O(m_axis_tdata[5]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[6]_INST_0 
+       (.I0(reg_output[6]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[6] ),
+        .O(m_axis_tdata[6]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[7]_INST_0 
+       (.I0(reg_output[7]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[7] ),
+        .O(m_axis_tdata[7]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[8]_INST_0 
+       (.I0(reg_output[8]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[8] ),
+        .O(m_axis_tdata[8]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \m_axis_tdata[9]_INST_0 
+       (.I0(reg_output[9]),
+        .I1(h_ctrl[0]),
+        .I2(\pack_out_data_reg_n_0_[9] ),
+        .O(m_axis_tdata[9]));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    m_axis_tlast_INST_0
+       (.I0(tlast_fifo[6]),
+        .I1(h_ctrl[0]),
+        .I2(pack_out_last),
+        .O(m_axis_tlast));
+  LUT4 #(
+    .INIT(16'h8F80)) 
     m_axis_tvalid_inferred_i_1
        (.I0(tvalid_fifo[6]),
         .I1(alu_valid_output[6]),
+        .I2(h_ctrl[0]),
+        .I3(pack_out_valid),
         .O(m_axis_tvalid));
+  LUT6 #(
+    .INIT(64'h0000000000004000)) 
+    \pack_buf[7]_i_1 
+       (.I0(h_ctrl[0]),
+        .I1(pipe_advance),
+        .I2(tvalid_fifo[6]),
+        .I3(alu_valid_output[6]),
+        .I4(tlast_fifo[6]),
+        .I5(pack_half),
+        .O(pack_buf));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[0] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[0]),
+        .Q(\pack_buf_reg_n_0_[0] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[1] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[1]),
+        .Q(\pack_buf_reg_n_0_[1] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[2] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[2]),
+        .Q(\pack_buf_reg_n_0_[2] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[3] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[3]),
+        .Q(\pack_buf_reg_n_0_[3] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[4] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[4]),
+        .Q(\pack_buf_reg_n_0_[4] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[5] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[5]),
+        .Q(\pack_buf_reg_n_0_[5] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[6] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[6]),
+        .Q(\pack_buf_reg_n_0_[6] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_buf_reg[7] 
+       (.C(clk),
+        .CE(pack_buf),
+        .D(reg_output[7]),
+        .Q(\pack_buf_reg_n_0_[7] ),
+        .R(reset));
+  LUT4 #(
+    .INIT(16'h1F10)) 
+    pack_half_i_1
+       (.I0(pack_half),
+        .I1(tlast_fifo[6]),
+        .I2(pack_buf1),
+        .I3(pack_half),
+        .O(pack_half_i_1_n_0));
+  (* KEEP = "yes" *) 
+  (* mark_debug = "true" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    pack_half_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(pack_half_i_1_n_0),
+        .Q(pack_half),
+        .R(reset));
+  LUT4 #(
+    .INIT(16'hF0F7)) 
+    pack_in_ready_inferred_i_1
+       (.I0(pack_half),
+        .I1(pack_out_valid),
+        .I2(m_axis_tready),
+        .I3(h_ctrl[0]),
+        .O(pack_in_ready));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[0]_i_1 
+       (.I0(\pack_buf_reg_n_0_[0] ),
+        .I1(pack_half),
+        .I2(reg_output[0]),
+        .O(\pack_out_data[0]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[10]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[2]),
+        .O(\pack_out_data[10]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[11]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[3]),
+        .O(\pack_out_data[11]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[12]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[4]),
+        .O(\pack_out_data[12]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[13]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[5]),
+        .O(\pack_out_data[13]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[14]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[6]),
+        .O(\pack_out_data[14]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h4000400040000000)) 
+    \pack_out_data[15]_i_1 
+       (.I0(h_ctrl[0]),
+        .I1(pipe_advance),
+        .I2(tvalid_fifo[6]),
+        .I3(alu_valid_output[6]),
+        .I4(tlast_fifo[6]),
+        .I5(pack_half),
+        .O(pack_out_data));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[15]_i_2 
+       (.I0(pack_half),
+        .I1(reg_output[7]),
+        .O(\pack_out_data[15]_i_2_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[1]_i_1 
+       (.I0(\pack_buf_reg_n_0_[1] ),
+        .I1(pack_half),
+        .I2(reg_output[1]),
+        .O(\pack_out_data[1]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[2]_i_1 
+       (.I0(\pack_buf_reg_n_0_[2] ),
+        .I1(pack_half),
+        .I2(reg_output[2]),
+        .O(\pack_out_data[2]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[3]_i_1 
+       (.I0(\pack_buf_reg_n_0_[3] ),
+        .I1(pack_half),
+        .I2(reg_output[3]),
+        .O(\pack_out_data[3]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[4]_i_1 
+       (.I0(\pack_buf_reg_n_0_[4] ),
+        .I1(pack_half),
+        .I2(reg_output[4]),
+        .O(\pack_out_data[4]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[5]_i_1 
+       (.I0(\pack_buf_reg_n_0_[5] ),
+        .I1(pack_half),
+        .I2(reg_output[5]),
+        .O(\pack_out_data[5]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[6]_i_1 
+       (.I0(\pack_buf_reg_n_0_[6] ),
+        .I1(pack_half),
+        .I2(reg_output[6]),
+        .O(\pack_out_data[6]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \pack_out_data[7]_i_1 
+       (.I0(\pack_buf_reg_n_0_[7] ),
+        .I1(pack_half),
+        .I2(reg_output[7]),
+        .O(\pack_out_data[7]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[8]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[0]),
+        .O(\pack_out_data[8]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \pack_out_data[9]_i_1 
+       (.I0(pack_half),
+        .I1(reg_output[1]),
+        .O(\pack_out_data[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[0] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[0]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[0] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[10] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[10]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[10] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[11] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[11]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[11] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[12] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[12]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[12] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[13] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[13]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[13] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[14] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[14]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[14] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[15] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[15]_i_2_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[15] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[1] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[1]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[1] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[2] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[2]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[2] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[3] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[3]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[3] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[4] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[4]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[4] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[5] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[5]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[5] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[6] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[6]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[6] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[7] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[7]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[7] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[8] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[8]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[8] ),
+        .R(reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \pack_out_data_reg[9] 
+       (.C(clk),
+        .CE(pack_out_data),
+        .D(\pack_out_data[9]_i_1_n_0 ),
+        .Q(\pack_out_data_reg_n_0_[9] ),
+        .R(reset));
+  LUT5 #(
+    .INIT(32'hF2FFF200)) 
+    pack_out_last_i_1
+       (.I0(pack_out_last),
+        .I1(pack_half),
+        .I2(tlast_fifo[6]),
+        .I3(pack_buf1),
+        .I4(pack_out_last),
+        .O(pack_out_last_i_1_n_0));
+  LUT4 #(
+    .INIT(16'h0080)) 
+    pack_out_last_i_2
+       (.I0(alu_valid_output[6]),
+        .I1(tvalid_fifo[6]),
+        .I2(pipe_advance),
+        .I3(h_ctrl[0]),
+        .O(pack_buf1));
+  (* KEEP = "yes" *) 
+  (* mark_debug = "true" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    pack_out_last_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(pack_out_last_i_1_n_0),
+        .Q(pack_out_last),
+        .R(reset));
+  LUT4 #(
+    .INIT(16'h4544)) 
+    pack_out_valid_i_1
+       (.I0(reset),
+        .I1(pack_out_data),
+        .I2(m_axis_tready),
+        .I3(pack_out_valid),
+        .O(pack_out_valid_i_1_n_0));
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    pack_out_valid_reg
+       (.C(clk),
+        .CE(1'b1),
+        .D(pack_out_valid_i_1_n_0),
+        .Q(pack_out_valid),
+        .R(1'b0));
+  LUT2 #(
+    .INIT(4'hB)) 
+    pipe_advance_inferred_i_1
+       (.I0(pack_in_ready),
+        .I1(tvalid_fifo[6]),
+        .O(pipe_advance));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     pipe_draining_inferred_i_1
@@ -14429,13 +15000,13 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[0][15]_i_3_n_0 ),
         .I5(\reg_coeff[0][15]_i_4_n_0 ),
         .O(\reg_coeff[0][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \reg_coeff[0][15]_i_2 
-       (.I0(\reg_coeff[0][15]_i_5_n_0 ),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[8]),
+       (.I0(s_axi_ctrl_awaddr[7]),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(\reg_coeff[57][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[9]),
         .I4(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[0][15]_i_2_n_0 ));
@@ -14455,15 +15026,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
         .I4(s_axi_ctrl_wstrb[1]),
         .O(\reg_coeff[0][15]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
-  LUT4 #(
-    .INIT(16'h222A)) 
-    \reg_coeff[0][15]_i_5 
-       (.I0(\reg_coeff[41][15]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .O(\reg_coeff[0][15]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h0000000200000000)) 
     \reg_coeff[0][7]_i_1 
@@ -14487,29 +15049,19 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(64'h0000000200000000)) 
     \reg_coeff[10][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
+        .I1(\reg_coeff[2][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[5]),
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[10][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
-  LUT5 #(
-    .INIT(32'hFFFEFFFF)) 
-    \reg_coeff[10][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .O(\reg_coeff[10][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000200000000)) 
     \reg_coeff[10][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
+        .I1(\reg_coeff[2][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[5]),
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[10][7]_i_1_n_0 ));
@@ -14523,15 +15075,15 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[11][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFEFFFF)) 
     \reg_coeff[11][15]_i_2 
-       (.I0(\reg_coeff[25][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(s_axi_ctrl_awaddr[9]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[8]),
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[57][15]_i_3_n_0 ),
         .O(\reg_coeff[11][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
@@ -14544,24 +15096,34 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[11][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000200)) 
+    .INIT(64'h0000000200000000)) 
     \reg_coeff[12][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(s_axi_ctrl_awaddr[2]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff[0][15]_i_2_n_0 ),
-        .I5(\reg_coeff[4][15]_i_2_n_0 ),
+        .I3(\reg_coeff[12][15]_i_2_n_0 ),
+        .I4(\reg_coeff[1][15]_i_3_n_0 ),
+        .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[12][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000200)) 
+    .INIT(64'hFFFFFFFEFFFFFFFF)) 
+    \reg_coeff[12][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[3]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(\reg_coeff[57][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[8]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(s_axi_ctrl_awaddr[6]),
+        .O(\reg_coeff[12][15]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000200000000)) 
     \reg_coeff[12][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[2]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff[0][15]_i_2_n_0 ),
-        .I5(\reg_coeff[4][15]_i_2_n_0 ),
+        .I3(\reg_coeff[12][15]_i_2_n_0 ),
+        .I4(\reg_coeff[1][15]_i_3_n_0 ),
+        .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[12][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000080)) 
@@ -14584,83 +15146,106 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[11][15]_i_2_n_0 ),
         .O(\reg_coeff[13][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000080)) 
+    .INIT(64'h0000000020000000)) 
     \reg_coeff[14][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
+        .I1(\reg_coeff[14][15]_i_2_n_0 ),
         .I2(s_axi_ctrl_awaddr[3]),
-        .I3(\reg_coeff[1][15]_i_3_n_0 ),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[14][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[6]),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
         .O(\reg_coeff[14][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \reg_coeff[14][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
+       (.I0(s_axi_ctrl_awaddr[9]),
         .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[8]),
         .I3(s_axi_ctrl_awaddr[5]),
         .O(\reg_coeff[14][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \reg_coeff[14][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[2]),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .O(\reg_coeff[14][15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000080)) 
+    .INIT(64'h0000000020000000)) 
     \reg_coeff[14][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
+        .I1(\reg_coeff[14][15]_i_2_n_0 ),
         .I2(s_axi_ctrl_awaddr[3]),
-        .I3(\reg_coeff[1][15]_i_3_n_0 ),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[14][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[6]),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
         .O(\reg_coeff[14][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000002000000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[15][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .I5(\reg_coeff[15][15]_i_2_n_0 ),
+        .I1(\reg_coeff[15][15]_i_2_n_0 ),
+        .I2(\reg_coeff[15][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[9]),
+        .I5(s_axi_ctrl_awaddr[8]),
         .O(\reg_coeff[15][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFEFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  LUT4 #(
+    .INIT(16'hEFFF)) 
     \reg_coeff[15][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(\reg_coeff[0][15]_i_5_n_0 ),
+       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[15][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000002000000)) 
+    .INIT(64'h0004FFFFFFFFFFFF)) 
+    \reg_coeff[15][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[4]),
+        .I1(\reg_coeff[35][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[3]),
+        .I5(s_axi_ctrl_awaddr[2]),
+        .O(\reg_coeff[15][15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[15][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .I5(\reg_coeff[15][15]_i_2_n_0 ),
+        .I1(\reg_coeff[15][15]_i_2_n_0 ),
+        .I2(\reg_coeff[15][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[9]),
+        .I5(s_axi_ctrl_awaddr[8]),
         .O(\reg_coeff[15][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000200000000)) 
+    .INIT(64'h0000002000000000)) 
     \reg_coeff[16][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[5]),
+        .I1(\reg_coeff[16][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(\reg_coeff[1][15]_i_3_n_0 ),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[16][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \reg_coeff[16][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[2]),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .O(\reg_coeff[16][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000200000000)) 
+    .INIT(64'h0000002000000000)) 
     \reg_coeff[16][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[5]),
+        .I1(\reg_coeff[16][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(\reg_coeff[1][15]_i_3_n_0 ),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[16][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000080)) 
@@ -14683,53 +15268,53 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[1][15]_i_2_n_0 ),
         .O(\reg_coeff[17][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000080)) 
+    .INIT(64'h0000008000000000)) 
     \reg_coeff[18][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(s_axi_ctrl_awaddr[3]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[1][15]_i_3_n_0 ),
+        .I3(\reg_coeff[14][15]_i_3_n_0 ),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[18][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000080)) 
+    .INIT(64'h0000008000000000)) 
     \reg_coeff[18][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[3]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[10][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[1][15]_i_3_n_0 ),
+        .I3(\reg_coeff[14][15]_i_3_n_0 ),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[18][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000080000000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[19][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[6]),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[2]),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
         .I5(\reg_coeff[19][15]_i_2_n_0 ),
         .O(\reg_coeff[19][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \reg_coeff[19][15]_i_2 
-       (.I0(\reg_coeff[0][15]_i_5_n_0 ),
-        .I1(s_axi_ctrl_awaddr[8]),
-        .I2(s_axi_ctrl_awaddr[4]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[9]),
-        .O(\reg_coeff[19][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000080000000)) 
-    \reg_coeff[19][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+    .INIT(64'hFFFFFFFFFFFFFFBF)) 
+    \reg_coeff[19][15]_i_2 
+       (.I0(\reg_coeff[7][15]_i_3_n_0 ),
         .I1(s_axi_ctrl_awaddr[6]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[2]),
+        .I3(\reg_coeff[59][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[15][15]_i_3_n_0 ),
+        .O(\reg_coeff[19][15]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000AA800000)) 
+    \reg_coeff[19][7]_i_1 
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
         .I5(\reg_coeff[19][15]_i_2_n_0 ),
         .O(\reg_coeff[19][7]_i_1_n_0 ));
   LUT6 #(
@@ -14742,15 +15327,15 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[1][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+    .INIT(32'hFFFEFFFF)) 
     \reg_coeff[1][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(\reg_coeff[25][15]_i_3_n_0 ),
+       (.I0(s_axi_ctrl_awaddr[7]),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[8]),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[2]),
         .O(\reg_coeff[1][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFFF0F8F0FFF0F0F3)) 
@@ -14762,7 +15347,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[7]),
         .I5(s_axi_ctrl_awaddr[5]),
         .O(\reg_coeff[1][15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \reg_coeff[1][15]_i_4 
@@ -14786,80 +15371,88 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(s_axi_ctrl_awaddr[4]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[20][15]_i_2_n_0 ),
+        .I3(\reg_coeff[14][15]_i_3_n_0 ),
         .I4(\reg_coeff[0][15]_i_2_n_0 ),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[20][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff[20][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[2]),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .O(\reg_coeff[20][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000008000000000)) 
     \reg_coeff[20][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[4]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[20][15]_i_2_n_0 ),
+        .I3(\reg_coeff[14][15]_i_3_n_0 ),
         .I4(\reg_coeff[0][15]_i_2_n_0 ),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[20][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[21][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(\reg_coeff[21][15]_i_2_n_0 ),
-        .I5(\reg_coeff[0][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[21][15]_i_2_n_0 ),
         .O(\reg_coeff[21][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFEFFFFFFFFF)) 
     \reg_coeff[21][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[4]),
+       (.I0(\reg_coeff[69][15]_i_3_n_0 ),
+        .I1(\reg_coeff[24][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(\reg_coeff[57][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(s_axi_ctrl_awaddr[2]),
         .O(\reg_coeff[21][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[21][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(\reg_coeff[21][15]_i_2_n_0 ),
-        .I5(\reg_coeff[0][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[21][15]_i_2_n_0 ),
         .O(\reg_coeff[21][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[22][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[7][15]_i_3_n_0 ),
-        .I2(\reg_coeff[22][15]_i_2_n_0 ),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[6]),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[22][15]_i_2_n_0 ),
         .O(\reg_coeff[22][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff[22][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .O(\reg_coeff[22][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'hFFF7FFFFFFFFFFFF)) 
+    \reg_coeff[22][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[4]),
+        .I2(\reg_coeff[7][15]_i_3_n_0 ),
+        .I3(\reg_coeff[22][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[6]),
+        .I5(s_axi_ctrl_awaddr[3]),
+        .O(\reg_coeff[22][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \reg_coeff[22][15]_i_3 
+       (.I0(\reg_coeff[57][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .O(\reg_coeff[22][15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[22][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[7][15]_i_3_n_0 ),
-        .I2(\reg_coeff[22][15]_i_2_n_0 ),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[6]),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[22][15]_i_2_n_0 ),
         .O(\reg_coeff[22][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000200)) 
@@ -14886,70 +15479,62 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     \reg_coeff[24][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(\reg_coeff[24][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[5]),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[4]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[8]),
+        .I4(\reg_coeff[24][15]_i_3_n_0 ),
+        .I5(\reg_coeff[0][15]_i_3_n_0 ),
         .O(\reg_coeff[24][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFB)) 
+  LUT2 #(
+    .INIT(4'hE)) 
     \reg_coeff[24][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[3]),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[9]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_awaddr[8]),
+       (.I0(s_axi_ctrl_awaddr[9]),
+        .I1(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[24][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \reg_coeff[24][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[6]),
+        .O(\reg_coeff[24][15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
     \reg_coeff[24][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(\reg_coeff[24][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[5]),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[4]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[8]),
+        .I4(\reg_coeff[24][15]_i_3_n_0 ),
+        .I5(\reg_coeff[0][15]_i_3_n_0 ),
         .O(\reg_coeff[24][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
     \reg_coeff[25][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[25][15]_i_2_n_0 ),
-        .I2(\reg_coeff[25][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[9]),
-        .I5(\reg_coeff[25][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(s_axi_ctrl_awaddr[9]),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[25][15]_i_2_n_0 ),
         .O(\reg_coeff[25][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  LUT4 #(
+    .INIT(16'hFFEF)) 
     \reg_coeff[25][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[6]),
+       (.I0(s_axi_ctrl_awaddr[6]),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(\reg_coeff[57][15]_i_3_n_0 ),
         .O(\reg_coeff[25][15]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \reg_coeff[25][15]_i_3 
-       (.I0(\reg_coeff[0][15]_i_5_n_0 ),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .O(\reg_coeff[25][15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff[25][15]_i_4 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .O(\reg_coeff[25][15]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
     \reg_coeff[25][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[25][15]_i_2_n_0 ),
-        .I2(\reg_coeff[25][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[9]),
-        .I5(\reg_coeff[25][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(s_axi_ctrl_awaddr[9]),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[25][15]_i_2_n_0 ),
         .O(\reg_coeff[25][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000020000)) 
@@ -14961,7 +15546,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[26][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT5 #(
     .INIT(32'hFFFEFFFF)) 
     \reg_coeff[26][15]_i_2 
@@ -14992,21 +15577,22 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[27][15]_i_2_n_0 ),
         .O(\reg_coeff[27][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFEFFF)) 
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \reg_coeff[27][15]_i_2 
-       (.I0(\reg_coeff[5][15]_i_2_n_0 ),
-        .I1(\reg_coeff[27][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[3]),
-        .I4(\reg_coeff[25][15]_i_4_n_0 ),
-        .I5(\reg_coeff[25][15]_i_3_n_0 ),
-        .O(\reg_coeff[27][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff[27][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[5]),
+       (.I0(\reg_coeff[27][15]_i_3_n_0 ),
         .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(\reg_coeff[15][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(s_axi_ctrl_awaddr[4]),
+        .O(\reg_coeff[27][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  LUT3 #(
+    .INIT(8'hFB)) 
+    \reg_coeff[27][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[6]),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[27][15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AA800000)) 
@@ -15026,8 +15612,18 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[5]),
         .I3(s_axi_ctrl_awaddr[4]),
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(\reg_coeff[24][15]_i_2_n_0 ),
+        .I5(\reg_coeff[28][15]_i_2_n_0 ),
         .O(\reg_coeff[28][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  LUT5 #(
+    .INIT(32'hFFFEFFFF)) 
+    \reg_coeff[28][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[8]),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[9]),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .O(\reg_coeff[28][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000200)) 
     \reg_coeff[28][7]_i_1 
@@ -15036,67 +15632,73 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[5]),
         .I3(s_axi_ctrl_awaddr[4]),
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(\reg_coeff[24][15]_i_2_n_0 ),
+        .I5(\reg_coeff[28][15]_i_2_n_0 ),
         .O(\reg_coeff[28][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000200000)) 
+    .INIT(64'h0002000000000000)) 
     \reg_coeff[29][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(\reg_coeff[29][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[6]),
         .I4(s_axi_ctrl_awaddr[4]),
-        .I5(\reg_coeff[1][15]_i_3_n_0 ),
+        .I5(s_axi_ctrl_awaddr[7]),
         .O(\reg_coeff[29][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFD)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFD)) 
     \reg_coeff[29][15]_i_2 
        (.I0(s_axi_ctrl_awaddr[2]),
-        .I1(s_axi_ctrl_awaddr[3]),
+        .I1(\reg_coeff[57][15]_i_3_n_0 ),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[8]),
+        .I3(s_axi_ctrl_awaddr[8]),
+        .I4(s_axi_ctrl_awaddr[9]),
+        .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[29][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000200000)) 
+    .INIT(64'h0002000000000000)) 
     \reg_coeff[29][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(\reg_coeff[29][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[6]),
         .I4(s_axi_ctrl_awaddr[4]),
-        .I5(\reg_coeff[1][15]_i_3_n_0 ),
+        .I5(s_axi_ctrl_awaddr[7]),
         .O(\reg_coeff[29][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000008)) 
     \reg_coeff[2][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[2][15]_i_2_n_0 ),
-        .O(\reg_coeff[2][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFDFFFFFFFF)) 
-    \reg_coeff[2][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[3]),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
-        .I2(\reg_coeff[19][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(s_axi_ctrl_awaddr[6]),
         .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .I5(s_axi_ctrl_awaddr[5]),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(\reg_coeff[2][15]_i_3_n_0 ),
+        .O(\reg_coeff[2][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \reg_coeff[2][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[4]),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[7]),
         .O(\reg_coeff[2][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  LUT2 #(
+    .INIT(4'hB)) 
+    \reg_coeff[2][15]_i_3 
+       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .O(\reg_coeff[2][15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000008)) 
     \reg_coeff[2][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[2][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(\reg_coeff[2][15]_i_2_n_0 ),
+        .I5(\reg_coeff[2][15]_i_3_n_0 ),
         .O(\reg_coeff[2][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
@@ -15108,7 +15710,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[4]),
         .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[30][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFB)) 
     \reg_coeff[30][15]_i_2 
@@ -15129,41 +15731,32 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[30][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[31][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[6]),
         .I5(\reg_coeff[31][15]_i_2_n_0 ),
         .O(\reg_coeff[31][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hEFFFFFFFFFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
     \reg_coeff[31][15]_i_2 
-       (.I0(\reg_coeff[31][15]_i_3_n_0 ),
-        .I1(\reg_coeff[25][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[4]),
+       (.I0(s_axi_ctrl_awaddr[4]),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[7]),
         .O(\reg_coeff[31][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
-  LUT3 #(
-    .INIT(8'hEF)) 
-    \reg_coeff[31][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .O(\reg_coeff[31][15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[31][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[6]),
         .I5(\reg_coeff[31][15]_i_2_n_0 ),
         .O(\reg_coeff[31][7]_i_1_n_0 ));
   LUT6 #(
@@ -15187,33 +15780,43 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[32][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[33][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[25][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(\reg_coeff[33][15]_i_2_n_0 ),
-        .I5(\reg_coeff[5][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[33][15]_i_2_n_0 ),
         .O(\reg_coeff[33][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFBFFFFFF)) 
+    \reg_coeff[33][15]_i_2 
+       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[33][15]_i_3_n_0 ),
+        .O(\reg_coeff[33][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \reg_coeff[33][15]_i_2 
+    \reg_coeff[33][15]_i_3 
        (.I0(s_axi_ctrl_awaddr[3]),
         .I1(s_axi_ctrl_awaddr[9]),
         .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[33][15]_i_2_n_0 ));
+        .O(\reg_coeff[33][15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[33][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[25][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(\reg_coeff[33][15]_i_2_n_0 ),
-        .I5(\reg_coeff[5][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[33][15]_i_2_n_0 ),
         .O(\reg_coeff[33][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000002000)) 
@@ -15245,14 +15848,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[35][15]_i_3_n_0 ),
         .I5(\reg_coeff[0][15]_i_3_n_0 ),
         .O(\reg_coeff[35][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \reg_coeff[35][15]_i_2 
        (.I0(s_axi_ctrl_awaddr[7]),
         .I1(s_axi_ctrl_awaddr[2]),
         .O(\reg_coeff[35][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \reg_coeff[35][15]_i_3 
@@ -15271,111 +15874,98 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[0][15]_i_3_n_0 ),
         .O(\reg_coeff[35][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[36][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[24][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(\reg_coeff[24][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[36][15]_i_2_n_0 ),
         .O(\reg_coeff[36][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  LUT4 #(
+    .INIT(16'hEFFF)) 
+    \reg_coeff[36][15]_i_2 
+       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[6]),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .O(\reg_coeff[36][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[36][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[24][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[8]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(\reg_coeff[24][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[36][15]_i_2_n_0 ),
         .O(\reg_coeff[36][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000800000)) 
+    .INIT(64'h0000000000000200)) 
     \reg_coeff[37][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(\reg_coeff[35][15]_i_3_n_0 ),
-        .I5(\reg_coeff[37][15]_i_2_n_0 ),
+        .I1(\reg_coeff[35][15]_i_2_n_0 ),
+        .I2(\reg_coeff[37][15]_i_2_n_0 ),
+        .I3(\reg_coeff[35][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[3]),
+        .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[37][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h7)) 
     \reg_coeff[37][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[3]),
-        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[37][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000800000)) 
+    .INIT(64'h0000000000000200)) 
     \reg_coeff[37][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(\reg_coeff[35][15]_i_3_n_0 ),
-        .I5(\reg_coeff[37][15]_i_2_n_0 ),
+        .I1(\reg_coeff[35][15]_i_2_n_0 ),
+        .I2(\reg_coeff[37][15]_i_2_n_0 ),
+        .I3(\reg_coeff[35][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[3]),
+        .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[37][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000800000)) 
     \reg_coeff[38][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[38][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[3]),
+        .I3(\reg_coeff[37][15]_i_2_n_0 ),
+        .I4(\reg_coeff[35][15]_i_3_n_0 ),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
         .O(\reg_coeff[38][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFBFFFFFFFFFFFF)) 
-    \reg_coeff[38][15]_i_2 
-       (.I0(\reg_coeff[20][15]_i_2_n_0 ),
-        .I1(\reg_coeff[35][15]_i_3_n_0 ),
-        .I2(\reg_coeff[0][15]_i_5_n_0 ),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[7]),
-        .O(\reg_coeff[38][15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000800000)) 
     \reg_coeff[38][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[38][15]_i_2_n_0 ),
-        .O(\reg_coeff[38][7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000AA800000)) 
-    \reg_coeff[39][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[39][15]_i_2_n_0 ),
-        .O(\reg_coeff[39][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFFB)) 
-    \reg_coeff[39][15]_i_2 
-       (.I0(\reg_coeff[7][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[39][15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+        .I2(s_axi_ctrl_awaddr[3]),
+        .I3(\reg_coeff[37][15]_i_2_n_0 ),
+        .I4(\reg_coeff[35][15]_i_3_n_0 ),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
+        .O(\reg_coeff[38][7]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'h00200000)) 
+    \reg_coeff[39][15]_i_1 
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(\reg_coeff[7][15]_i_2_n_0 ),
+        .I4(\reg_coeff[35][15]_i_3_n_0 ),
+        .O(\reg_coeff[39][15]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'h00200000)) 
     \reg_coeff[39][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[39][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(\reg_coeff[7][15]_i_2_n_0 ),
+        .I4(\reg_coeff[35][15]_i_3_n_0 ),
         .O(\reg_coeff[39][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000080)) 
@@ -15418,34 +16008,24 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[5]),
         .O(\reg_coeff[40][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000002000000)) 
     \reg_coeff[41][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[41][15]_i_2_n_0 ),
-        .I2(\reg_coeff[29][15]_i_2_n_0 ),
-        .I3(\reg_coeff[0][15]_i_3_n_0 ),
-        .I4(s_axi_ctrl_awaddr[7]),
-        .I5(s_axi_ctrl_awaddr[6]),
-        .O(\reg_coeff[41][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
-  LUT5 #(
-    .INIT(32'h00000001)) 
-    \reg_coeff[41][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[6]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[8]),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[5]),
-        .O(\reg_coeff[41][15]_i_2_n_0 ));
+        .I4(s_axi_ctrl_awaddr[6]),
+        .I5(\reg_coeff[29][15]_i_2_n_0 ),
+        .O(\reg_coeff[41][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000002000000)) 
     \reg_coeff[41][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[41][15]_i_2_n_0 ),
-        .I2(\reg_coeff[29][15]_i_2_n_0 ),
-        .I3(\reg_coeff[0][15]_i_3_n_0 ),
-        .I4(s_axi_ctrl_awaddr[7]),
-        .I5(s_axi_ctrl_awaddr[6]),
+        .I1(\reg_coeff[1][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[7]),
+        .I4(s_axi_ctrl_awaddr[6]),
+        .I5(\reg_coeff[29][15]_i_2_n_0 ),
         .O(\reg_coeff[41][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
@@ -15475,8 +16055,18 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[7]),
         .I4(s_axi_ctrl_awaddr[6]),
-        .I5(\reg_coeff[15][15]_i_2_n_0 ),
+        .I5(\reg_coeff[43][15]_i_2_n_0 ),
         .O(\reg_coeff[43][15]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFF7)) 
+    \reg_coeff[43][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[2]),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(\reg_coeff[57][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[9]),
+        .I5(s_axi_ctrl_awaddr[8]),
+        .O(\reg_coeff[43][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000002000000)) 
     \reg_coeff[43][7]_i_1 
@@ -15485,7 +16075,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[7]),
         .I4(s_axi_ctrl_awaddr[6]),
-        .I5(\reg_coeff[15][15]_i_2_n_0 ),
+        .I5(\reg_coeff[43][15]_i_2_n_0 ),
         .O(\reg_coeff[43][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000002000)) 
@@ -15517,7 +16107,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[35][15]_i_2_n_0 ),
         .I5(\reg_coeff[45][15]_i_2_n_0 ),
         .O(\reg_coeff[45][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'hFFF7)) 
     \reg_coeff[45][15]_i_2 
@@ -15537,69 +16127,73 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[45][15]_i_2_n_0 ),
         .O(\reg_coeff[45][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[46][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[46][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(\reg_coeff[46][15]_i_3_n_0 ),
-        .I5(\reg_coeff[20][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[46][15]_i_2_n_0 ),
         .O(\reg_coeff[46][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
     \reg_coeff[46][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[3]),
+       (.I0(\reg_coeff[14][15]_i_3_n_0 ),
         .I1(s_axi_ctrl_awaddr[4]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[46][15]_i_3_n_0 ),
         .O(\reg_coeff[46][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
     \reg_coeff[46][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[5]),
+       (.I0(\reg_coeff[57][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(s_axi_ctrl_awaddr[9]),
+        .I3(s_axi_ctrl_awaddr[8]),
         .O(\reg_coeff[46][15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[46][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[46][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(\reg_coeff[46][15]_i_3_n_0 ),
-        .I5(\reg_coeff[20][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[46][15]_i_2_n_0 ),
         .O(\reg_coeff[46][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000008000000000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[47][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[47][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[4]),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[47][15]_i_2_n_0 ),
         .O(\reg_coeff[47][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
-  LUT5 #(
-    .INIT(32'hFEFFFFFF)) 
+  LUT6 #(
+    .INIT(64'hEFFFFFFFFFFFFFFF)) 
     \reg_coeff[47][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_awaddr[7]),
+       (.I0(\reg_coeff[51][15]_i_2_n_0 ),
+        .I1(\reg_coeff[46][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(s_axi_ctrl_awaddr[7]),
         .O(\reg_coeff[47][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000008000000000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[47][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[47][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[4]),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[47][15]_i_2_n_0 ),
         .O(\reg_coeff[47][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000002000)) 
@@ -15621,84 +16215,113 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_coeff[48][7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000002000000)) 
+  LUT5 #(
+    .INIT(32'h00000080)) 
     \reg_coeff[49][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[25][15]_i_4_n_0 ),
-        .I2(\reg_coeff[37][15]_i_2_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[5]),
-        .I5(\reg_coeff[35][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(\reg_coeff[49][15]_i_2_n_0 ),
+        .I4(\reg_coeff[49][15]_i_3_n_0 ),
         .O(\reg_coeff[49][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000002000000)) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \reg_coeff[49][15]_i_2 
+       (.I0(\reg_coeff[57][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[8]),
+        .O(\reg_coeff[49][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  LUT4 #(
+    .INIT(16'hFFF7)) 
+    \reg_coeff[49][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[6]),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .O(\reg_coeff[49][15]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'h00000080)) 
     \reg_coeff[49][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[25][15]_i_4_n_0 ),
-        .I2(\reg_coeff[37][15]_i_2_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[5]),
-        .I5(\reg_coeff[35][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(\reg_coeff[49][15]_i_2_n_0 ),
+        .I4(\reg_coeff[49][15]_i_3_n_0 ),
         .O(\reg_coeff[49][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000020)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[4][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[4][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[0][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[4][15]_i_2_n_0 ),
         .O(\reg_coeff[4][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
-  LUT2 #(
-    .INIT(4'hB)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFEFFFFFF)) 
     \reg_coeff[4][15]_i_2 
-       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
+       (.I0(\reg_coeff[0][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .I4(s_axi_ctrl_awaddr[4]),
+        .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[4][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000020)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[4][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[4][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[0][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[4][15]_i_2_n_0 ),
         .O(\reg_coeff[4][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000008000000000)) 
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[50][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[26][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[5]),
+       (.I0(s_axi_ctrl_wstrb[1]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[50][15]_i_2_n_0 ),
         .O(\reg_coeff[50][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000008000000000)) 
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
+    \reg_coeff[50][15]_i_2 
+       (.I0(\reg_coeff[14][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[6]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[49][15]_i_2_n_0 ),
+        .O(\reg_coeff[50][15]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000AA800000)) 
     \reg_coeff[50][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[26][15]_i_2_n_0 ),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[5]),
+       (.I0(s_axi_ctrl_wstrb[0]),
+        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
+        .I2(s_axi_ctrl_awvalid),
+        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
+        .I4(s_axi_ctrl_wvalid),
+        .I5(\reg_coeff[50][15]_i_2_n_0 ),
         .O(\reg_coeff[50][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000002000000)) 
+    .INIT(64'h0000000000002000)) 
     \reg_coeff[51][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[25][15]_i_4_n_0 ),
-        .I2(\reg_coeff[51][15]_i_2_n_0 ),
+        .I1(\reg_coeff[35][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[5]),
         .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[5]),
-        .I5(\reg_coeff[35][15]_i_2_n_0 ),
+        .I4(\reg_coeff[49][15]_i_2_n_0 ),
+        .I5(\reg_coeff[51][15]_i_2_n_0 ),
         .O(\reg_coeff[51][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \reg_coeff[51][15]_i_2 
@@ -15706,133 +16329,113 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[51][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000002000000)) 
+    .INIT(64'h0000000000002000)) 
     \reg_coeff[51][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[25][15]_i_4_n_0 ),
-        .I2(\reg_coeff[51][15]_i_2_n_0 ),
+        .I1(\reg_coeff[35][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[5]),
         .I3(s_axi_ctrl_awaddr[3]),
-        .I4(s_axi_ctrl_awaddr[5]),
-        .I5(\reg_coeff[35][15]_i_2_n_0 ),
+        .I4(\reg_coeff[49][15]_i_2_n_0 ),
+        .I5(\reg_coeff[51][15]_i_2_n_0 ),
         .O(\reg_coeff[51][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000002000)) 
     \reg_coeff[52][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[52][15]_i_2_n_0 ),
-        .O(\reg_coeff[52][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFBFFFFFFF)) 
-    \reg_coeff[52][15]_i_2 
-       (.I0(\reg_coeff[20][15]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(s_axi_ctrl_awaddr[4]),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[52][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
         .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[7]),
-        .I5(\reg_coeff[52][15]_i_3_n_0 ),
-        .O(\reg_coeff[52][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+        .I4(\reg_coeff[37][15]_i_2_n_0 ),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
+        .O(\reg_coeff[52][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \reg_coeff[52][15]_i_3 
-       (.I0(\reg_coeff[0][15]_i_5_n_0 ),
+    \reg_coeff[52][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[3]),
         .I1(s_axi_ctrl_awaddr[9]),
-        .I2(s_axi_ctrl_awaddr[3]),
+        .I2(\reg_coeff[57][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[52][15]_i_3_n_0 ));
+        .O(\reg_coeff[52][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000002000)) 
     \reg_coeff[52][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[52][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[52][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(\reg_coeff[37][15]_i_2_n_0 ),
+        .I5(\reg_coeff[14][15]_i_3_n_0 ),
         .O(\reg_coeff[52][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000002000)) 
     \reg_coeff[53][15]_i_1 
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[52][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(\reg_coeff[37][15]_i_2_n_0 ),
+        .I5(\reg_coeff[51][15]_i_2_n_0 ),
+        .O(\reg_coeff[53][15]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000002000)) 
+    \reg_coeff[53][7]_i_1 
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[52][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(\reg_coeff[37][15]_i_2_n_0 ),
+        .I5(\reg_coeff[51][15]_i_2_n_0 ),
+        .O(\reg_coeff[53][7]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000AA800000)) 
+    \reg_coeff[54][15]_i_1 
        (.I0(s_axi_ctrl_wstrb[1]),
         .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
         .I2(s_axi_ctrl_awvalid),
         .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
         .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[53][15]_i_2_n_0 ),
-        .O(\reg_coeff[53][15]_i_1_n_0 ));
+        .I5(\reg_coeff[54][15]_i_2_n_0 ),
+        .O(\reg_coeff[54][15]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFBFFFFFFF)) 
-    \reg_coeff[53][15]_i_2 
+    \reg_coeff[54][15]_i_2 
        (.I0(\reg_coeff[51][15]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[4]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[3]),
         .I4(s_axi_ctrl_awaddr[7]),
-        .I5(\reg_coeff[52][15]_i_3_n_0 ),
-        .O(\reg_coeff[53][15]_i_2_n_0 ));
+        .I5(\reg_coeff[22][15]_i_3_n_0 ),
+        .O(\reg_coeff[54][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AA800000)) 
-    \reg_coeff[53][7]_i_1 
+    \reg_coeff[54][7]_i_1 
        (.I0(s_axi_ctrl_wstrb[0]),
         .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
         .I2(s_axi_ctrl_awvalid),
         .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
         .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[53][15]_i_2_n_0 ),
-        .O(\reg_coeff[53][7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002000000000000)) 
-    \reg_coeff[54][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[22][15]_i_2_n_0 ),
-        .I2(\reg_coeff[51][15]_i_2_n_0 ),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[7]),
-        .O(\reg_coeff[54][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002000000000000)) 
-    \reg_coeff[54][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[22][15]_i_2_n_0 ),
-        .I2(\reg_coeff[51][15]_i_2_n_0 ),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[54][15]_i_2_n_0 ),
         .O(\reg_coeff[54][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000080)) 
     \reg_coeff[55][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[55][15]_i_2_n_0 ),
-        .O(\reg_coeff[55][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFBF)) 
-    \reg_coeff[55][15]_i_2 
-       (.I0(\reg_coeff[7][15]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[6]),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[9]),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(\reg_coeff[1][15]_i_3_n_0 ),
         .I4(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[55][15]_i_2_n_0 ));
+        .I5(\reg_coeff[7][15]_i_2_n_0 ),
+        .O(\reg_coeff[55][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000080)) 
     \reg_coeff[55][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[55][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(\reg_coeff[1][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[7][15]_i_2_n_0 ),
         .O(\reg_coeff[55][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
@@ -15844,15 +16447,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[56][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
-  LUT5 #(
-    .INIT(32'hFFFFFFEF)) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
     \reg_coeff[56][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[3]),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[9]),
+       (.I0(s_axi_ctrl_awaddr[9]),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[3]),
+        .I3(s_axi_ctrl_awaddr[2]),
         .O(\reg_coeff[56][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
@@ -15864,33 +16466,45 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[56][7]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'h00000002)) 
+  LUT6 #(
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[57][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(\reg_coeff[57][15]_i_2_n_0 ),
         .I2(s_axi_ctrl_awaddr[6]),
         .I3(s_axi_ctrl_awaddr[5]),
-        .I4(\reg_coeff[25][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[57][15]_i_3_n_0 ),
         .O(\reg_coeff[57][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFEFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFEFFFF)) 
     \reg_coeff[57][15]_i_2 
        (.I0(\reg_coeff[1][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[4]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[7]),
-        .I5(s_axi_ctrl_awaddr[8]),
+        .I1(s_axi_ctrl_awaddr[4]),
+        .I2(s_axi_ctrl_awaddr[3]),
+        .I3(s_axi_ctrl_awaddr[7]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(s_axi_ctrl_awaddr[9]),
         .O(\reg_coeff[57][15]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h00000002)) 
+  LUT6 #(
+    .INIT(64'h0010001000101010)) 
+    \reg_coeff[57][15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(\reg_coeff[35][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(s_axi_ctrl_awaddr[3]),
+        .O(\reg_coeff[57][15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[57][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(\reg_coeff[57][15]_i_2_n_0 ),
         .I2(s_axi_ctrl_awaddr[6]),
         .I3(s_axi_ctrl_awaddr[5]),
-        .I4(\reg_coeff[25][15]_i_3_n_0 ),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[57][15]_i_3_n_0 ),
         .O(\reg_coeff[57][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000020000)) 
@@ -15902,7 +16516,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[58][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT5 #(
     .INIT(32'hFFFEFFFF)) 
     \reg_coeff[58][15]_i_2 
@@ -15923,33 +16537,31 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[1][15]_i_3_n_0 ),
         .O(\reg_coeff[58][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000008)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[59][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[9]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(\reg_coeff[25][15]_i_3_n_0 ),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I1(\reg_coeff[59][15]_i_2_n_0 ),
+        .I2(\reg_coeff[15][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[5]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[59][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
     \reg_coeff[59][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[6]),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[7]),
+       (.I0(s_axi_ctrl_awaddr[9]),
+        .I1(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff[59][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000008)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[59][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .I2(s_axi_ctrl_awaddr[9]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(\reg_coeff[25][15]_i_3_n_0 ),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I1(\reg_coeff[59][15]_i_2_n_0 ),
+        .I2(\reg_coeff[15][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[5]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[59][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0020000000000000)) 
@@ -15961,7 +16573,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[4]),
         .I5(s_axi_ctrl_awaddr[5]),
         .O(\reg_coeff[5][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \reg_coeff[5][15]_i_2 
@@ -16006,8 +16618,17 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[9]),
         .I3(s_axi_ctrl_awaddr[3]),
         .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I5(\reg_coeff[61][15]_i_2_n_0 ),
         .O(\reg_coeff[61][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \reg_coeff[61][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[6]),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(\reg_coeff[1][15]_i_3_n_0 ),
+        .I3(s_axi_ctrl_awaddr[7]),
+        .O(\reg_coeff[61][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000080000)) 
     \reg_coeff[61][7]_i_1 
@@ -16016,37 +16637,27 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[9]),
         .I3(s_axi_ctrl_awaddr[3]),
         .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I5(\reg_coeff[61][15]_i_2_n_0 ),
         .O(\reg_coeff[61][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[62][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[3]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(s_axi_ctrl_awaddr[5]),
+        .I5(\reg_coeff[6][15]_i_2_n_0 ),
         .O(\reg_coeff[62][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFD)) 
-    \reg_coeff[62][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[9]),
-        .I3(s_axi_ctrl_awaddr[5]),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[0][15]_i_5_n_0 ),
-        .O(\reg_coeff[62][15]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[62][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[3]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(s_axi_ctrl_awaddr[5]),
+        .I5(\reg_coeff[6][15]_i_2_n_0 ),
         .O(\reg_coeff[62][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000080000000)) 
@@ -16056,7 +16667,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[3]),
         .I3(s_axi_ctrl_awaddr[2]),
         .I4(s_axi_ctrl_awaddr[8]),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I5(\reg_coeff[61][15]_i_2_n_0 ),
         .O(\reg_coeff[63][15]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000080000000)) 
@@ -16066,7 +16677,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[3]),
         .I3(s_axi_ctrl_awaddr[2]),
         .I4(s_axi_ctrl_awaddr[8]),
-        .I5(\reg_coeff[59][15]_i_2_n_0 ),
+        .I5(\reg_coeff[61][15]_i_2_n_0 ),
         .O(\reg_coeff[63][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000020)) 
@@ -16089,21 +16700,21 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[64][7]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h00000008)) 
+    .INIT(32'h00002000)) 
     \reg_coeff[65][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[25][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[6]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[5]),
         .I4(\reg_coeff[57][15]_i_2_n_0 ),
         .O(\reg_coeff[65][15]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h00000008)) 
+    .INIT(32'h00002000)) 
     \reg_coeff[65][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[25][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[6]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[5]),
         .I4(\reg_coeff[57][15]_i_2_n_0 ),
         .O(\reg_coeff[65][7]_i_1_n_0 ));
   LUT6 #(
@@ -16127,95 +16738,90 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[66][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000020000)) 
-    \reg_coeff[67][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[67][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(\reg_coeff[67][15]_i_3_n_0 ),
-        .I5(\reg_coeff[67][15]_i_4_n_0 ),
-        .O(\reg_coeff[67][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
-  LUT3 #(
-    .INIT(8'hEF)) 
-    \reg_coeff[67][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[9]),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[67][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \reg_coeff[67][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[2]),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .O(\reg_coeff[67][15]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'hB)) 
-    \reg_coeff[67][15]_i_4 
-       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .O(\reg_coeff[67][15]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000020000)) 
-    \reg_coeff[67][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[67][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(s_axi_ctrl_awaddr[4]),
-        .I4(\reg_coeff[67][15]_i_3_n_0 ),
-        .I5(\reg_coeff[67][15]_i_4_n_0 ),
-        .O(\reg_coeff[67][7]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002000000000000)) 
-    \reg_coeff[68][15]_i_1 
-       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[56][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[5]),
-        .O(\reg_coeff[68][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002000000000000)) 
-    \reg_coeff[68][7]_i_1 
-       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[56][15]_i_2_n_0 ),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(s_axi_ctrl_awaddr[5]),
-        .O(\reg_coeff[68][7]_i_1_n_0 ));
-  LUT6 #(
     .INIT(64'h00000000AA800000)) 
-    \reg_coeff[69][15]_i_1 
+    \reg_coeff[67][15]_i_1 
        (.I0(s_axi_ctrl_wstrb[1]),
         .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
         .I2(s_axi_ctrl_awvalid),
         .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
         .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[69][15]_i_2_n_0 ),
-        .O(\reg_coeff[69][15]_i_1_n_0 ));
+        .I5(\reg_coeff[67][15]_i_2_n_0 ),
+        .O(\reg_coeff[67][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFEFFF)) 
-    \reg_coeff[69][15]_i_2 
-       (.I0(\reg_coeff[21][15]_i_2_n_0 ),
-        .I1(\reg_coeff[7][15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_awaddr[2]),
-        .I3(\reg_coeff[77][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .I5(s_axi_ctrl_awaddr[3]),
-        .O(\reg_coeff[69][15]_i_2_n_0 ));
+    .INIT(64'hFFFFFFFFFFFFFFBF)) 
+    \reg_coeff[67][15]_i_2 
+       (.I0(\reg_coeff[5][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(\reg_coeff[70][15]_i_2_n_0 ),
+        .O(\reg_coeff[67][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AA800000)) 
-    \reg_coeff[69][7]_i_1 
+    \reg_coeff[67][7]_i_1 
        (.I0(s_axi_ctrl_wstrb[0]),
         .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
         .I2(s_axi_ctrl_awvalid),
         .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
         .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[69][15]_i_2_n_0 ),
+        .I5(\reg_coeff[67][15]_i_2_n_0 ),
+        .O(\reg_coeff[67][7]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0020000000000000)) 
+    \reg_coeff[68][15]_i_1 
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[56][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[8]),
+        .I3(\reg_coeff[5][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[4]),
+        .I5(s_axi_ctrl_awaddr[5]),
+        .O(\reg_coeff[68][15]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0020000000000000)) 
+    \reg_coeff[68][7]_i_1 
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[56][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[8]),
+        .I3(\reg_coeff[5][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[4]),
+        .I5(s_axi_ctrl_awaddr[5]),
+        .O(\reg_coeff[68][7]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000002000000)) 
+    \reg_coeff[69][15]_i_1 
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(\reg_coeff[69][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[69][15]_i_3_n_0 ),
+        .O(\reg_coeff[69][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \reg_coeff[69][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[8]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .O(\reg_coeff[69][15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  LUT4 #(
+    .INIT(16'hEFFF)) 
+    \reg_coeff[69][15]_i_3 
+       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .I3(s_axi_ctrl_awaddr[5]),
+        .O(\reg_coeff[69][15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000002000000)) 
+    \reg_coeff[69][7]_i_1 
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[3]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(\reg_coeff[69][15]_i_2_n_0 ),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[69][15]_i_3_n_0 ),
         .O(\reg_coeff[69][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000002)) 
@@ -16227,7 +16833,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[8]),
         .I5(\reg_coeff[6][15]_i_2_n_0 ),
         .O(\reg_coeff[6][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'hEFFF)) 
     \reg_coeff[6][15]_i_2 
@@ -16247,54 +16853,52 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[6][15]_i_2_n_0 ),
         .O(\reg_coeff[6][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[70][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[70][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[37][15]_i_2_n_0 ),
+        .I2(\reg_coeff[70][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[70][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFEFFFFFFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  LUT3 #(
+    .INIT(8'hDF)) 
     \reg_coeff[70][15]_i_2 
-       (.I0(\reg_coeff[7][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[2]),
-        .I2(s_axi_ctrl_awaddr[6]),
-        .I3(\reg_coeff[21][15]_i_2_n_0 ),
-        .I4(s_axi_ctrl_awaddr[3]),
-        .I5(\reg_coeff[77][15]_i_2_n_0 ),
+       (.I0(s_axi_ctrl_awaddr[3]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[8]),
         .O(\reg_coeff[70][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000002)) 
     \reg_coeff[70][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[70][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[37][15]_i_2_n_0 ),
+        .I2(\reg_coeff[70][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[2]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[70][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000020)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[71][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[7][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[9]),
-        .I5(\reg_coeff[5][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[7][15]_i_2_n_0 ),
         .O(\reg_coeff[71][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000000020)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[71][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[7][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[7]),
-        .I4(s_axi_ctrl_awaddr[9]),
-        .I5(\reg_coeff[5][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[7][15]_i_2_n_0 ),
         .O(\reg_coeff[71][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000000020)) 
@@ -16327,29 +16931,21 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[73][15]_i_2_n_0 ),
         .O(\reg_coeff[73][15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFBFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFFEFFF)) 
     \reg_coeff[73][15]_i_2 
-       (.I0(\reg_coeff[7][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[6]),
-        .I2(\reg_coeff[73][15]_i_3_n_0 ),
-        .I3(s_axi_ctrl_awaddr[8]),
-        .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[73][15]_i_4_n_0 ),
+       (.I0(\reg_coeff[51][15]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[4]),
+        .I2(s_axi_ctrl_awaddr[8]),
+        .I3(s_axi_ctrl_awaddr[2]),
+        .I4(\reg_coeff[73][15]_i_3_n_0 ),
+        .I5(\reg_coeff[24][15]_i_2_n_0 ),
         .O(\reg_coeff[73][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \reg_coeff[73][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[9]),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .O(\reg_coeff[73][15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff[73][15]_i_4 
        (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .O(\reg_coeff[73][15]_i_4_n_0 ));
+        .I1(s_axi_ctrl_awaddr[7]),
+        .O(\reg_coeff[73][15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AA800000)) 
     \reg_coeff[73][7]_i_1 
@@ -16364,79 +16960,86 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
     .INIT(64'h0002000000000000)) 
     \reg_coeff[74][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
+        .I1(\reg_coeff[74][15]_i_2_n_0 ),
         .I2(\reg_coeff[1][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[4]),
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[74][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  LUT5 #(
+    .INIT(32'hFFFEFFFF)) 
+    \reg_coeff[74][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .O(\reg_coeff[74][15]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0002000000000000)) 
     \reg_coeff[74][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
+        .I1(\reg_coeff[74][15]_i_2_n_0 ),
         .I2(\reg_coeff[1][15]_i_3_n_0 ),
         .I3(s_axi_ctrl_awaddr[4]),
         .I4(s_axi_ctrl_awaddr[3]),
         .I5(s_axi_ctrl_awaddr[6]),
         .O(\reg_coeff[74][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000020000000)) 
     \reg_coeff[75][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[75][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(\reg_coeff[75][15]_i_2_n_0 ),
+        .I2(\reg_coeff[69][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[3]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[75][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFBFFFFFFFFF)) 
-    \reg_coeff[75][15]_i_2 
-       (.I0(\reg_coeff[75][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[6]),
-        .I2(s_axi_ctrl_awaddr[8]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[4]),
-        .I5(\reg_coeff[67][15]_i_3_n_0 ),
-        .O(\reg_coeff[75][15]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT3 #(
-    .INIT(8'hFE)) 
-    \reg_coeff[75][15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[7]),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(\reg_coeff[1][15]_i_3_n_0 ),
-        .O(\reg_coeff[75][15]_i_3_n_0 ));
+    .INIT(8'hFB)) 
+    \reg_coeff[75][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .I2(s_axi_ctrl_awaddr[4]),
+        .O(\reg_coeff[75][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000020000000)) 
     \reg_coeff[75][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
-        .I5(\reg_coeff[75][15]_i_2_n_0 ),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(\reg_coeff[75][15]_i_2_n_0 ),
+        .I2(\reg_coeff[69][15]_i_2_n_0 ),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(s_axi_ctrl_awaddr[3]),
+        .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[75][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[76][15]_i_1 
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[4]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[3]),
+        .I1(\reg_coeff[76][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[45][15]_i_2_n_0 ),
         .O(\reg_coeff[76][15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \reg_coeff[76][15]_i_2 
+       (.I0(s_axi_ctrl_awaddr[5]),
+        .I1(s_axi_ctrl_awaddr[2]),
+        .O(\reg_coeff[76][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0000000000002000)) 
+    .INIT(64'h0000000000020000)) 
     \reg_coeff[76][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
-        .I1(\reg_coeff[62][15]_i_2_n_0 ),
-        .I2(s_axi_ctrl_awaddr[4]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff[1][15]_i_3_n_0 ),
-        .I5(s_axi_ctrl_awaddr[3]),
+        .I1(\reg_coeff[76][15]_i_2_n_0 ),
+        .I2(s_axi_ctrl_awaddr[7]),
+        .I3(s_axi_ctrl_awaddr[9]),
+        .I4(s_axi_ctrl_awaddr[8]),
+        .I5(\reg_coeff[45][15]_i_2_n_0 ),
         .O(\reg_coeff[76][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h0000000002000000)) 
@@ -16444,35 +17047,19 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
        (.I0(\reg_coeff[0][15]_i_4_n_0 ),
         .I1(s_axi_ctrl_awaddr[3]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[77][15]_i_2_n_0 ),
+        .I3(\reg_coeff[69][15]_i_2_n_0 ),
         .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[77][15]_i_3_n_0 ),
+        .I5(\reg_coeff[15][15]_i_2_n_0 ),
         .O(\reg_coeff[77][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \reg_coeff[77][15]_i_2 
-       (.I0(s_axi_ctrl_awaddr[8]),
-        .I1(s_axi_ctrl_awaddr[9]),
-        .O(\reg_coeff[77][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
-  LUT4 #(
-    .INIT(16'hEFFF)) 
-    \reg_coeff[77][15]_i_3 
-       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .I2(s_axi_ctrl_awaddr[4]),
-        .I3(s_axi_ctrl_awaddr[6]),
-        .O(\reg_coeff[77][15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000000002000000)) 
     \reg_coeff[77][7]_i_1 
        (.I0(\reg_coeff[0][7]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[3]),
         .I2(s_axi_ctrl_awaddr[5]),
-        .I3(\reg_coeff[77][15]_i_2_n_0 ),
+        .I3(\reg_coeff[69][15]_i_2_n_0 ),
         .I4(s_axi_ctrl_awaddr[2]),
-        .I5(\reg_coeff[77][15]_i_3_n_0 ),
+        .I5(\reg_coeff[15][15]_i_2_n_0 ),
         .O(\reg_coeff[77][7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h00000000AA800000)) 
@@ -16487,10 +17074,10 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFBF)) 
     \reg_coeff[78][15]_i_2 
-       (.I0(\reg_coeff[77][15]_i_3_n_0 ),
+       (.I0(\reg_coeff[15][15]_i_2_n_0 ),
         .I1(s_axi_ctrl_awaddr[3]),
-        .I2(\reg_coeff[77][15]_i_2_n_0 ),
-        .I3(\reg_coeff[0][15]_i_5_n_0 ),
+        .I2(\reg_coeff[69][15]_i_2_n_0 ),
+        .I3(\reg_coeff[57][15]_i_3_n_0 ),
         .I4(s_axi_ctrl_awaddr[2]),
         .I5(s_axi_ctrl_awaddr[5]),
         .O(\reg_coeff[78][15]_i_2_n_0 ));
@@ -16505,42 +17092,32 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff[78][15]_i_2_n_0 ),
         .O(\reg_coeff[78][7]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000200)) 
     \reg_coeff[79][15]_i_1 
-       (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
+       (.I0(\reg_coeff[0][15]_i_4_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(\reg_coeff[79][15]_i_2_n_0 ),
         .O(\reg_coeff[79][15]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFEFFFF)) 
-    \reg_coeff[79][15]_i_2 
-       (.I0(\reg_coeff[1][15]_i_3_n_0 ),
-        .I1(s_axi_ctrl_awaddr[5]),
-        .I2(s_axi_ctrl_awaddr[7]),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[6]),
-        .I5(\reg_coeff[79][15]_i_3_n_0 ),
-        .O(\reg_coeff[79][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
-    \reg_coeff[79][15]_i_3 
+    \reg_coeff[79][15]_i_2 
        (.I0(s_axi_ctrl_awaddr[4]),
         .I1(s_axi_ctrl_awaddr[3]),
         .I2(s_axi_ctrl_awaddr[2]),
         .I3(s_axi_ctrl_awaddr[8]),
-        .O(\reg_coeff[79][15]_i_3_n_0 ));
+        .O(\reg_coeff[79][15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AA800000)) 
+    .INIT(64'h0000000000000200)) 
     \reg_coeff[79][7]_i_1 
-       (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\FSM_onehot_fsm_axi_write_state_reg_n_0_[0] ),
-        .I2(s_axi_ctrl_awvalid),
-        .I3(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
-        .I4(s_axi_ctrl_wvalid),
+       (.I0(\reg_coeff[0][7]_i_2_n_0 ),
+        .I1(s_axi_ctrl_awaddr[7]),
+        .I2(s_axi_ctrl_awaddr[5]),
+        .I3(s_axi_ctrl_awaddr[6]),
+        .I4(\reg_coeff[1][15]_i_3_n_0 ),
         .I5(\reg_coeff[79][15]_i_2_n_0 ),
         .O(\reg_coeff[79][7]_i_1_n_0 ));
   LUT6 #(
@@ -16553,7 +17130,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[8]),
         .I5(\reg_coeff[7][15]_i_3_n_0 ),
         .O(\reg_coeff[7][15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \reg_coeff[7][15]_i_2 
@@ -16562,7 +17139,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[3]),
         .I3(s_axi_ctrl_awaddr[2]),
         .O(\reg_coeff[7][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \reg_coeff[7][15]_i_3 
@@ -27063,7 +27640,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_coeff_scale[15]_i_3_n_0 ),
         .I2(s_axi_ctrl_awaddr[2]),
         .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff_scale[15]_i_4_n_0 ),
+        .I4(\reg_coeff[24][15]_i_2_n_0 ),
         .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff_scale[15]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair115" *) 
@@ -27075,13 +27652,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(s_axi_ctrl_awaddr[9]),
         .I3(s_axi_ctrl_awaddr[8]),
         .O(\reg_coeff_scale[15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_coeff_scale[15]_i_4 
-       (.I0(s_axi_ctrl_awaddr[9]),
-        .I1(s_axi_ctrl_awaddr[3]),
-        .O(\reg_coeff_scale[15]_i_4_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \reg_coeff_scale[1]_i_1 
@@ -27138,7 +27708,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_coeff_scale[15]_i_3_n_0 ),
         .I2(s_axi_ctrl_awaddr[2]),
         .I3(s_axi_ctrl_awaddr[6]),
-        .I4(\reg_coeff_scale[15]_i_4_n_0 ),
+        .I4(\reg_coeff[24][15]_i_2_n_0 ),
         .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_coeff_scale[7]_i_2_n_0 ));
   LUT3 #(
@@ -27364,16 +27934,26 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_ctrl[15]_i_2_n_0 ),
         .I2(reg_ctrl[15]),
         .O(\reg_ctrl[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT5 #(
     .INIT(32'h00000008)) 
     \reg_ctrl[15]_i_2 
        (.I0(s_axi_ctrl_wstrb[1]),
-        .I1(\reg_coeff[41][15]_i_2_n_0 ),
+        .I1(\reg_ctrl[15]_i_3_n_0 ),
         .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[3]),
         .I4(s_axi_ctrl_awaddr[2]),
         .O(\reg_ctrl[15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \reg_ctrl[15]_i_3 
+       (.I0(s_axi_ctrl_awaddr[6]),
+        .I1(s_axi_ctrl_awaddr[9]),
+        .I2(s_axi_ctrl_awaddr[8]),
+        .I3(s_axi_ctrl_awaddr[7]),
+        .I4(s_axi_ctrl_awaddr[5]),
+        .O(\reg_ctrl[15]_i_3_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \reg_ctrl[1]_i_1 
@@ -27423,12 +28003,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_ctrl[7]_i_2_n_0 ),
         .I2(reg_ctrl[7]),
         .O(\reg_ctrl[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT5 #(
     .INIT(32'h00000008)) 
     \reg_ctrl[7]_i_2 
        (.I0(s_axi_ctrl_wstrb[0]),
-        .I1(\reg_coeff[41][15]_i_2_n_0 ),
+        .I1(\reg_ctrl[15]_i_3_n_0 ),
         .I2(s_axi_ctrl_awaddr[4]),
         .I3(s_axi_ctrl_awaddr[3]),
         .I4(s_axi_ctrl_awaddr[2]),
@@ -27656,7 +28236,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_img_h[15]_i_2_n_0 ),
         .I2(reg_img_h[15]),
         .O(\reg_img_h[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT5 #(
     .INIT(32'h22202020)) 
     \reg_img_h[15]_i_2 
@@ -27667,22 +28247,15 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_awaddr[2]),
         .O(\reg_img_h[15]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFD)) 
+    .INIT(64'hFFFFFFFFFFFFFEFF)) 
     \reg_img_h[15]_i_3 
-       (.I0(s_axi_ctrl_awaddr[3]),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(\reg_img_h[15]_i_4_n_0 ),
-        .I3(s_axi_ctrl_awaddr[9]),
-        .I4(s_axi_ctrl_awaddr[8]),
-        .I5(s_axi_ctrl_awaddr[6]),
+       (.I0(s_axi_ctrl_awaddr[8]),
+        .I1(\reg_coeff[73][15]_i_3_n_0 ),
+        .I2(s_axi_ctrl_awaddr[6]),
+        .I3(s_axi_ctrl_awaddr[3]),
+        .I4(s_axi_ctrl_awaddr[9]),
+        .I5(s_axi_ctrl_awaddr[4]),
         .O(\reg_img_h[15]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \reg_img_h[15]_i_4 
-       (.I0(s_axi_ctrl_awaddr[5]),
-        .I1(s_axi_ctrl_awaddr[7]),
-        .O(\reg_img_h[15]_i_4_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \reg_img_h[1]_i_1 
@@ -27732,7 +28305,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_img_h[7]_i_2_n_0 ),
         .I2(reg_img_h[7]),
         .O(\reg_img_h[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT5 #(
     .INIT(32'h22202020)) 
     \reg_img_h[7]_i_2 
@@ -27965,7 +28538,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_img_w[15]_i_2_n_0 ),
         .I2(reg_img_w[15]),
         .O(\reg_img_w[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT5 #(
     .INIT(32'h00000222)) 
     \reg_img_w[15]_i_2 
@@ -28024,7 +28597,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\reg_img_w[7]_i_2_n_0 ),
         .I2(reg_img_w[7]),
         .O(\reg_img_w[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT5 #(
     .INIT(32'h00000222)) 
     \reg_img_w[7]_i_2 
@@ -28208,47 +28781,53 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(\reg_img_w[9]_i_1_n_0 ),
         .Q(reg_img_w[9]),
         .R(reset));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[0]_i_1 
-       (.I0(reg_radius[0]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[0]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[0]),
+        .I3(s_axi_ctrl_wdata[0]),
         .O(p_6_out[0]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[10]_i_1 
-       (.I0(reg_radius[10]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[10]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[10]),
+        .I3(s_axi_ctrl_wdata[10]),
         .O(p_6_out[10]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[11]_i_1 
-       (.I0(reg_radius[11]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[11]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[11]),
+        .I3(s_axi_ctrl_wdata[11]),
         .O(p_6_out[11]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[12]_i_1 
-       (.I0(reg_radius[12]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[12]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[12]),
+        .I3(s_axi_ctrl_wdata[12]),
         .O(p_6_out[12]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[13]_i_1 
-       (.I0(reg_radius[13]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[13]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[13]),
+        .I3(s_axi_ctrl_wdata[13]),
         .O(p_6_out[13]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[14]_i_1 
-       (.I0(reg_radius[14]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[14]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[14]),
+        .I3(s_axi_ctrl_wdata[14]),
         .O(p_6_out[14]));
   LUT4 #(
     .INIT(16'hF800)) 
@@ -28258,95 +28837,95 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(\FSM_onehot_fsm_axi_write_state_reg_n_0_[1] ),
         .I3(s_axi_ctrl_wvalid),
         .O(axi_write_ready));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[15]_i_2 
-       (.I0(reg_radius[15]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[15]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[15]),
+        .I3(s_axi_ctrl_wdata[15]),
         .O(p_6_out[15]));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
-  LUT5 #(
-    .INIT(32'hFDFFFFFF)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFDF)) 
     \reg_radius[15]_i_3 
-       (.I0(\reg_coeff[41][15]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(s_axi_ctrl_awaddr[3]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_wstrb[1]),
+       (.I0(\reg_coeff[35][15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_awaddr[5]),
+        .I2(s_axi_ctrl_awaddr[2]),
+        .I3(s_axi_ctrl_awaddr[4]),
+        .I4(s_axi_ctrl_awaddr[7]),
+        .I5(s_axi_ctrl_awaddr[3]),
         .O(\reg_radius[15]_i_3_n_0 ));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[1]_i_1 
-       (.I0(reg_radius[1]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[1]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[1]),
+        .I3(s_axi_ctrl_wdata[1]),
         .O(p_6_out[1]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[2]_i_1 
-       (.I0(reg_radius[2]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[2]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[2]),
+        .I3(s_axi_ctrl_wdata[2]),
         .O(p_6_out[2]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[3]_i_1 
-       (.I0(reg_radius[3]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[3]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[3]),
+        .I3(s_axi_ctrl_wdata[3]),
         .O(p_6_out[3]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[4]_i_1 
-       (.I0(reg_radius[4]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[4]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[4]),
+        .I3(s_axi_ctrl_wdata[4]),
         .O(p_6_out[4]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[5]_i_1 
-       (.I0(reg_radius[5]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[5]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[5]),
+        .I3(s_axi_ctrl_wdata[5]),
         .O(p_6_out[5]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[6]_i_1 
-       (.I0(reg_radius[6]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[6]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[6]),
+        .I3(s_axi_ctrl_wdata[6]),
         .O(p_6_out[6]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[7]_i_1 
-       (.I0(reg_radius[7]),
-        .I1(\reg_radius[7]_i_2_n_0 ),
-        .I2(s_axi_ctrl_wdata[7]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[0]),
+        .I2(reg_radius[7]),
+        .I3(s_axi_ctrl_wdata[7]),
         .O(p_6_out[7]));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
-  LUT5 #(
-    .INIT(32'hFDFFFFFF)) 
-    \reg_radius[7]_i_2 
-       (.I0(\reg_coeff[41][15]_i_2_n_0 ),
-        .I1(s_axi_ctrl_awaddr[4]),
-        .I2(s_axi_ctrl_awaddr[3]),
-        .I3(s_axi_ctrl_awaddr[2]),
-        .I4(s_axi_ctrl_wstrb[0]),
-        .O(\reg_radius[7]_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[8]_i_1 
-       (.I0(reg_radius[8]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[8]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[8]),
+        .I3(s_axi_ctrl_wdata[8]),
         .O(p_6_out[8]));
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT4 #(
+    .INIT(16'hF4B0)) 
     \reg_radius[9]_i_1 
-       (.I0(reg_radius[9]),
-        .I1(\reg_radius[15]_i_3_n_0 ),
-        .I2(s_axi_ctrl_wdata[9]),
+       (.I0(\reg_radius[15]_i_3_n_0 ),
+        .I1(s_axi_ctrl_wstrb[1]),
+        .I2(reg_radius[9]),
+        .I3(s_axi_ctrl_wdata[9]),
         .O(p_6_out[9]));
   (* KEEP = "yes" *) 
   (* mark_debug = "true" *) 
@@ -28580,94 +29159,94 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(img_col_counter[8]),
         .Q(\sA_col_reg_n_0_[8] ),
         .R(reset));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[0]_i_1 
        (.I0(sA_data[0]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[4]),
-        .I4(tdata_buffer[0]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[4]),
+        .I5(tdata_buffer[0]),
         .O(sA_data__0[0]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[1]_i_1 
        (.I0(sA_data[1]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[5]),
-        .I4(tdata_buffer[1]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[5]),
+        .I5(tdata_buffer[1]),
         .O(sA_data__0[1]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[2]_i_1 
        (.I0(sA_data[2]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[6]),
-        .I4(tdata_buffer[2]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[6]),
+        .I5(tdata_buffer[2]),
         .O(sA_data__0[2]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[3]_i_1 
        (.I0(sA_data[3]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[7]),
-        .I4(tdata_buffer[3]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[7]),
+        .I5(tdata_buffer[3]),
         .O(sA_data__0[3]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[4]_i_1 
        (.I0(sA_data[4]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[8]),
-        .I4(tdata_buffer[4]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[8]),
+        .I5(tdata_buffer[4]),
         .O(sA_data__0[4]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[5]_i_1 
        (.I0(sA_data[5]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[9]),
-        .I4(tdata_buffer[5]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[9]),
+        .I5(tdata_buffer[5]),
         .O(sA_data__0[5]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[6]_i_1 
        (.I0(sA_data[6]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[10]),
-        .I4(tdata_buffer[6]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[10]),
+        .I5(tdata_buffer[6]),
         .O(sA_data__0[6]));
-  LUT5 #(
-    .INIT(32'hBB8BB888)) 
+  LUT6 #(
+    .INIT(64'hEAEA2AEAEA2A2A2A)) 
     \sA_data[7]_i_1 
        (.I0(sA_data[7]),
-        .I1(tvalid_buffer_i_2_n_0),
-        .I2(\sA_data[7]_i_2_n_0 ),
-        .I3(h_ctrl[11]),
-        .I4(tdata_buffer[7]),
+        .I1(pipe_advance),
+        .I2(fsm_img_processing_state),
+        .I3(\sA_data[7]_i_2_n_0 ),
+        .I4(h_ctrl[11]),
+        .I5(tdata_buffer[7]),
         .O(sA_data__0[7]));
   LUT4 #(
     .INIT(16'h0400)) 
     \sA_data[7]_i_2 
-       (.I0(\sA_data[7]_i_3_n_0 ),
+       (.I0(sA_out_i_2_n_0),
         .I1(h_ctrl[3]),
         .I2(h_ctrl[1]),
         .I3(h_ctrl[2]),
         .O(\sA_data[7]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    \sA_data[7]_i_3 
-       (.I0(sA_data33_in),
-        .I1(sA_data3),
-        .I2(sA_data32_in),
-        .I3(sA_data31_in),
-        .O(\sA_data[7]_i_3_n_0 ));
   (* KEEP = "yes" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -28740,15 +29319,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(sA_data__0[7]),
         .Q(sA_data[7]),
         .R(reset));
-  LUT6 #(
-    .INIT(64'hEFEFFFEF20200020)) 
+  LUT5 #(
+    .INIT(32'hEFFF2000)) 
     sA_last_i_1
        (.I0(tlast_buffer),
         .I1(reset),
-        .I2(fsm_img_processing_state),
-        .I3(tvalid_fifo[6]),
-        .I4(m_axis_tready),
-        .I5(sA_last),
+        .I2(pipe_advance),
+        .I3(fsm_img_processing_state),
+        .I4(sA_last),
         .O(sA_last_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -28759,487 +29337,494 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .Q(sA_last),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hEEEEEEEEEEEEEEEF)) 
+    .INIT(64'hFEFEFF00FF00FF00)) 
     sA_out_i_1
        (.I0(h_ctrl[1]),
         .I1(h_ctrl[3]),
-        .I2(sA_data31_in),
-        .I3(sA_data32_in),
-        .I4(sA_data3),
-        .I5(sA_data33_in),
+        .I2(sA_out_i_2_n_0),
+        .I3(sA_out),
+        .I4(fsm_img_processing_state),
+        .I5(pipe_advance),
         .O(sA_out_i_1_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    sA_out_i_10
-       (.I0(img_row_counter[8]),
-        .O(sA_out_i_10_n_0));
   LUT2 #(
     .INIT(4'h2)) 
-    sA_out_i_12
+    sA_out_i_10
        (.I0(img_row_counter[8]),
         .I1(sA_data40_out[8]),
-        .O(sA_out_i_12_n_0));
+        .O(sA_out_i_10_n_0));
   LUT2 #(
     .INIT(4'h9)) 
-    sA_out_i_13
+    sA_out_i_11
        (.I0(sA_data40_out[8]),
         .I1(img_row_counter[8]),
-        .O(sA_out_i_13_n_0));
+        .O(sA_out_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
+    sA_out_i_13
+       (.I0(img_row_counter[8]),
+        .O(sA_out_i_13_n_0));
+  LUT2 #(
+    .INIT(4'h2)) 
     sA_out_i_15
        (.I0(img_col_counter[8]),
+        .I1(sA_data42_out[8]),
         .O(sA_out_i_15_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
+  LUT2 #(
+    .INIT(4'h9)) 
     sA_out_i_16
-       (.I0(img_col_counter[7]),
-        .I1(sA_data42_out[7]),
-        .I2(img_col_counter[6]),
-        .I3(sA_data42_out[6]),
+       (.I0(sA_data42_out[8]),
+        .I1(img_col_counter[8]),
         .O(sA_out_i_16_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
+  LUT3 #(
+    .INIT(8'h04)) 
     sA_out_i_17
-       (.I0(img_col_counter[5]),
-        .I1(sA_data42_out[5]),
-        .I2(img_col_counter[4]),
-        .I3(sA_data42_out[4]),
+       (.I0(img_col_counter[3]),
+        .I1(h_radius[2]),
+        .I2(img_col_counter[2]),
         .O(sA_out_i_17_n_0));
   LUT4 #(
-    .INIT(16'h22B2)) 
+    .INIT(16'h44D4)) 
     sA_out_i_18
-       (.I0(img_col_counter[3]),
-        .I1(sA_data42_out[3]),
-        .I2(img_col_counter[2]),
-        .I3(sA_data42_out[2]),
-        .O(sA_out_i_18_n_0));
-  LUT4 #(
-    .INIT(16'h22B2)) 
-    sA_out_i_19
        (.I0(img_col_counter[1]),
-        .I1(sA_data42_out[1]),
-        .I2(img_col_counter[0]),
-        .I3(sA_data42_out[0]),
+        .I1(h_radius[1]),
+        .I2(h_radius[0]),
+        .I3(img_col_counter[0]),
+        .O(sA_out_i_18_n_0));
+  LUT2 #(
+    .INIT(4'h1)) 
+    sA_out_i_19
+       (.I0(img_col_counter[6]),
+        .I1(img_col_counter[7]),
         .O(sA_out_i_19_n_0));
   LUT4 #(
-    .INIT(16'h9009)) 
+    .INIT(16'h0001)) 
+    sA_out_i_2
+       (.I0(sA_data33_in),
+        .I1(sA_data3),
+        .I2(sA_data32_in),
+        .I3(sA_data31_in),
+        .O(sA_out_i_2_n_0));
+  LUT2 #(
+    .INIT(4'h1)) 
     sA_out_i_20
-       (.I0(sA_data42_out[7]),
-        .I1(img_col_counter[7]),
-        .I2(sA_data42_out[6]),
-        .I3(img_col_counter[6]),
-        .O(sA_out_i_20_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
-    sA_out_i_21
-       (.I0(sA_data42_out[5]),
+       (.I0(img_col_counter[4]),
         .I1(img_col_counter[5]),
-        .I2(sA_data42_out[4]),
-        .I3(img_col_counter[4]),
+        .O(sA_out_i_20_n_0));
+  LUT3 #(
+    .INIT(8'h41)) 
+    sA_out_i_21
+       (.I0(img_col_counter[3]),
+        .I1(h_radius[2]),
+        .I2(img_col_counter[2]),
         .O(sA_out_i_21_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     sA_out_i_22
-       (.I0(sA_data42_out[3]),
-        .I1(img_col_counter[3]),
-        .I2(sA_data42_out[2]),
-        .I3(img_col_counter[2]),
+       (.I0(h_radius[1]),
+        .I1(img_col_counter[1]),
+        .I2(h_radius[0]),
+        .I3(img_col_counter[0]),
         .O(sA_out_i_22_n_0));
   LUT4 #(
-    .INIT(16'h9009)) 
-    sA_out_i_23
-       (.I0(sA_data42_out[1]),
-        .I1(img_col_counter[1]),
-        .I2(sA_data42_out[0]),
-        .I3(img_col_counter[0]),
-        .O(sA_out_i_23_n_0));
-  LUT3 #(
-    .INIT(8'h04)) 
-    sA_out_i_25
-       (.I0(img_row_counter[3]),
-        .I1(h_radius[2]),
-        .I2(img_row_counter[2]),
-        .O(sA_out_i_25_n_0));
-  LUT4 #(
-    .INIT(16'h44D4)) 
-    sA_out_i_26
-       (.I0(img_row_counter[1]),
-        .I1(h_radius[1]),
-        .I2(h_radius[0]),
-        .I3(img_row_counter[0]),
-        .O(sA_out_i_26_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    sA_out_i_27
-       (.I0(img_row_counter[6]),
-        .I1(img_row_counter[7]),
-        .O(sA_out_i_27_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    sA_out_i_28
-       (.I0(img_row_counter[4]),
-        .I1(img_row_counter[5]),
-        .O(sA_out_i_28_n_0));
-  LUT3 #(
-    .INIT(8'h41)) 
-    sA_out_i_29
-       (.I0(img_row_counter[3]),
-        .I1(h_radius[2]),
-        .I2(img_row_counter[2]),
-        .O(sA_out_i_29_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
-    sA_out_i_30
-       (.I0(h_radius[1]),
-        .I1(img_row_counter[1]),
-        .I2(h_radius[0]),
-        .I3(img_row_counter[0]),
-        .O(sA_out_i_30_n_0));
-  LUT4 #(
     .INIT(16'h22B2)) 
-    sA_out_i_31
+    sA_out_i_23
        (.I0(img_row_counter[7]),
         .I1(sA_data40_out[7]),
         .I2(img_row_counter[6]),
         .I3(sA_data40_out[6]),
-        .O(sA_out_i_31_n_0));
+        .O(sA_out_i_23_n_0));
   LUT4 #(
     .INIT(16'h22B2)) 
-    sA_out_i_32
+    sA_out_i_24
        (.I0(img_row_counter[5]),
         .I1(sA_data40_out[5]),
         .I2(img_row_counter[4]),
         .I3(sA_data40_out[4]),
-        .O(sA_out_i_32_n_0));
+        .O(sA_out_i_24_n_0));
   LUT4 #(
     .INIT(16'h22B2)) 
-    sA_out_i_33
+    sA_out_i_25
        (.I0(img_row_counter[3]),
         .I1(sA_data40_out[3]),
         .I2(img_row_counter[2]),
         .I3(sA_data40_out[2]),
-        .O(sA_out_i_33_n_0));
+        .O(sA_out_i_25_n_0));
   LUT4 #(
     .INIT(16'h22B2)) 
-    sA_out_i_34
+    sA_out_i_26
        (.I0(img_row_counter[1]),
         .I1(sA_data40_out[1]),
         .I2(img_row_counter[0]),
         .I3(sA_data40_out[0]),
-        .O(sA_out_i_34_n_0));
+        .O(sA_out_i_26_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    sA_out_i_35
+    sA_out_i_27
        (.I0(sA_data40_out[7]),
         .I1(img_row_counter[7]),
         .I2(sA_data40_out[6]),
         .I3(img_row_counter[6]),
-        .O(sA_out_i_35_n_0));
+        .O(sA_out_i_27_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    sA_out_i_36
+    sA_out_i_28
        (.I0(sA_data40_out[5]),
         .I1(img_row_counter[5]),
         .I2(sA_data40_out[4]),
         .I3(img_row_counter[4]),
-        .O(sA_out_i_36_n_0));
+        .O(sA_out_i_28_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    sA_out_i_37
+    sA_out_i_29
        (.I0(sA_data40_out[3]),
         .I1(img_row_counter[3]),
         .I2(sA_data40_out[2]),
         .I3(img_row_counter[2]),
-        .O(sA_out_i_37_n_0));
+        .O(sA_out_i_29_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    sA_out_i_38
+    sA_out_i_30
        (.I0(sA_data40_out[1]),
         .I1(img_row_counter[1]),
         .I2(sA_data40_out[0]),
         .I3(img_row_counter[0]),
-        .O(sA_out_i_38_n_0));
+        .O(sA_out_i_30_n_0));
   LUT3 #(
     .INIT(8'h04)) 
-    sA_out_i_40
-       (.I0(img_col_counter[3]),
+    sA_out_i_32
+       (.I0(img_row_counter[3]),
         .I1(h_radius[2]),
-        .I2(img_col_counter[2]),
-        .O(sA_out_i_40_n_0));
+        .I2(img_row_counter[2]),
+        .O(sA_out_i_32_n_0));
   LUT4 #(
     .INIT(16'h44D4)) 
-    sA_out_i_41
-       (.I0(img_col_counter[1]),
+    sA_out_i_33
+       (.I0(img_row_counter[1]),
         .I1(h_radius[1]),
         .I2(h_radius[0]),
-        .I3(img_col_counter[0]),
-        .O(sA_out_i_41_n_0));
+        .I3(img_row_counter[0]),
+        .O(sA_out_i_33_n_0));
   LUT2 #(
     .INIT(4'h1)) 
-    sA_out_i_42
-       (.I0(img_col_counter[6]),
-        .I1(img_col_counter[7]),
-        .O(sA_out_i_42_n_0));
+    sA_out_i_34
+       (.I0(img_row_counter[6]),
+        .I1(img_row_counter[7]),
+        .O(sA_out_i_34_n_0));
   LUT2 #(
     .INIT(4'h1)) 
-    sA_out_i_43
-       (.I0(img_col_counter[4]),
-        .I1(img_col_counter[5]),
-        .O(sA_out_i_43_n_0));
+    sA_out_i_35
+       (.I0(img_row_counter[4]),
+        .I1(img_row_counter[5]),
+        .O(sA_out_i_35_n_0));
   LUT3 #(
     .INIT(8'h41)) 
-    sA_out_i_44
-       (.I0(img_col_counter[3]),
+    sA_out_i_36
+       (.I0(img_row_counter[3]),
         .I1(h_radius[2]),
+        .I2(img_row_counter[2]),
+        .O(sA_out_i_36_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    sA_out_i_37
+       (.I0(h_radius[1]),
+        .I1(img_row_counter[1]),
+        .I2(h_radius[0]),
+        .I3(img_row_counter[0]),
+        .O(sA_out_i_37_n_0));
+  LUT4 #(
+    .INIT(16'h22B2)) 
+    sA_out_i_38
+       (.I0(img_col_counter[7]),
+        .I1(sA_data42_out[7]),
+        .I2(img_col_counter[6]),
+        .I3(sA_data42_out[6]),
+        .O(sA_out_i_38_n_0));
+  LUT4 #(
+    .INIT(16'h22B2)) 
+    sA_out_i_39
+       (.I0(img_col_counter[5]),
+        .I1(sA_data42_out[5]),
+        .I2(img_col_counter[4]),
+        .I3(sA_data42_out[4]),
+        .O(sA_out_i_39_n_0));
+  LUT4 #(
+    .INIT(16'h22B2)) 
+    sA_out_i_40
+       (.I0(img_col_counter[3]),
+        .I1(sA_data42_out[3]),
         .I2(img_col_counter[2]),
+        .I3(sA_data42_out[2]),
+        .O(sA_out_i_40_n_0));
+  LUT4 #(
+    .INIT(16'h22B2)) 
+    sA_out_i_41
+       (.I0(img_col_counter[1]),
+        .I1(sA_data42_out[1]),
+        .I2(img_col_counter[0]),
+        .I3(sA_data42_out[0]),
+        .O(sA_out_i_41_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    sA_out_i_42
+       (.I0(sA_data42_out[7]),
+        .I1(img_col_counter[7]),
+        .I2(sA_data42_out[6]),
+        .I3(img_col_counter[6]),
+        .O(sA_out_i_42_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    sA_out_i_43
+       (.I0(sA_data42_out[5]),
+        .I1(img_col_counter[5]),
+        .I2(sA_data42_out[4]),
+        .I3(img_col_counter[4]),
+        .O(sA_out_i_43_n_0));
+  LUT4 #(
+    .INIT(16'h9009)) 
+    sA_out_i_44
+       (.I0(sA_data42_out[3]),
+        .I1(img_col_counter[3]),
+        .I2(sA_data42_out[2]),
+        .I3(img_col_counter[2]),
         .O(sA_out_i_44_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     sA_out_i_45
-       (.I0(h_radius[1]),
+       (.I0(sA_data42_out[1]),
         .I1(img_col_counter[1]),
-        .I2(h_radius[0]),
+        .I2(sA_data42_out[0]),
         .I3(img_col_counter[0]),
         .O(sA_out_i_45_n_0));
   LUT1 #(
     .INIT(2'h1)) 
-    sA_out_i_48
-       (.I0(h_img_w[8]),
-        .O(sA_out_i_48_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    sA_out_i_51
+    sA_out_i_49
        (.I0(h_img_h[8]),
-        .O(sA_out_i_51_n_0));
+        .O(sA_out_i_49_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_52
-       (.I0(h_img_w[7]),
+       (.I0(h_img_w[8]),
         .O(sA_out_i_52_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_53
-       (.I0(h_img_w[6]),
+       (.I0(h_img_h[7]),
         .O(sA_out_i_53_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_54
-       (.I0(h_img_w[5]),
+       (.I0(h_img_h[6]),
         .O(sA_out_i_54_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_55
-       (.I0(h_img_w[4]),
+       (.I0(h_img_h[5]),
         .O(sA_out_i_55_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_56
-       (.I0(h_img_w[3]),
+       (.I0(h_img_h[4]),
         .O(sA_out_i_56_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     sA_out_i_57
-       (.I0(h_img_w[2]),
-        .I1(h_radius[2]),
+       (.I0(h_img_h[3]),
         .O(sA_out_i_57_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     sA_out_i_58
-       (.I0(h_img_w[1]),
-        .I1(h_radius[1]),
+       (.I0(h_img_h[2]),
+        .I1(h_radius[2]),
         .O(sA_out_i_58_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     sA_out_i_59
-       (.I0(h_img_w[0]),
-        .I1(h_radius[0]),
+       (.I0(h_img_h[1]),
+        .I1(h_radius[1]),
         .O(sA_out_i_59_n_0));
-  LUT1 #(
-    .INIT(2'h1)) 
+  LUT2 #(
+    .INIT(4'h9)) 
     sA_out_i_60
-       (.I0(h_img_h[7]),
+       (.I0(h_img_h[0]),
+        .I1(h_radius[0]),
         .O(sA_out_i_60_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_61
-       (.I0(h_img_h[6]),
+       (.I0(h_img_w[7]),
         .O(sA_out_i_61_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_62
-       (.I0(h_img_h[5]),
+       (.I0(h_img_w[6]),
         .O(sA_out_i_62_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_63
-       (.I0(h_img_h[4]),
+       (.I0(h_img_w[5]),
         .O(sA_out_i_63_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     sA_out_i_64
-       (.I0(h_img_h[3]),
+       (.I0(h_img_w[4]),
         .O(sA_out_i_64_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     sA_out_i_65
-       (.I0(h_img_h[2]),
-        .I1(h_radius[2]),
+       (.I0(h_img_w[3]),
         .O(sA_out_i_65_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     sA_out_i_66
-       (.I0(h_img_h[1]),
-        .I1(h_radius[1]),
+       (.I0(h_img_w[2]),
+        .I1(h_radius[2]),
         .O(sA_out_i_66_n_0));
   LUT2 #(
     .INIT(4'h9)) 
     sA_out_i_67
-       (.I0(h_img_h[0]),
-        .I1(h_radius[0]),
+       (.I0(h_img_w[1]),
+        .I1(h_radius[1]),
         .O(sA_out_i_67_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
-    sA_out_i_7
-       (.I0(img_col_counter[8]),
-        .I1(sA_data42_out[8]),
-        .O(sA_out_i_7_n_0));
-  LUT2 #(
     .INIT(4'h9)) 
+    sA_out_i_68
+       (.I0(h_img_w[0]),
+        .I1(h_radius[0]),
+        .O(sA_out_i_68_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
     sA_out_i_8
-       (.I0(sA_data42_out[8]),
-        .I1(img_col_counter[8]),
+       (.I0(img_col_counter[8]),
         .O(sA_out_i_8_n_0));
   (* KEEP = "yes" *) 
   FDRE #(
     .INIT(1'b0)) 
     sA_out_reg
        (.C(clk),
-        .CE(sA_col),
+        .CE(1'b1),
         .D(sA_out_i_1_n_0),
         .Q(sA_out),
         .R(reset));
   (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 sA_out_reg_i_11
+  CARRY4 sA_out_reg_i_12
        (.CI(1'b0),
-        .CO({sA_out_reg_i_11_n_0,sA_out_reg_i_11_n_1,sA_out_reg_i_11_n_2,sA_out_reg_i_11_n_3}),
-        .CYINIT(1'b1),
-        .DI({sA_out_i_31_n_0,sA_out_i_32_n_0,sA_out_i_33_n_0,sA_out_i_34_n_0}),
-        .O(NLW_sA_out_reg_i_11_O_UNCONNECTED[3:0]),
-        .S({sA_out_i_35_n_0,sA_out_i_36_n_0,sA_out_i_37_n_0,sA_out_i_38_n_0}));
+        .CO({sA_out_reg_i_12_n_0,sA_out_reg_i_12_n_1,sA_out_reg_i_12_n_2,sA_out_reg_i_12_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,sA_out_i_32_n_0,sA_out_i_33_n_0}),
+        .O(NLW_sA_out_reg_i_12_O_UNCONNECTED[3:0]),
+        .S({sA_out_i_34_n_0,sA_out_i_35_n_0,sA_out_i_36_n_0,sA_out_i_37_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sA_out_reg_i_14
        (.CI(1'b0),
         .CO({sA_out_reg_i_14_n_0,sA_out_reg_i_14_n_1,sA_out_reg_i_14_n_2,sA_out_reg_i_14_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,sA_out_i_40_n_0,sA_out_i_41_n_0}),
+        .CYINIT(1'b1),
+        .DI({sA_out_i_38_n_0,sA_out_i_39_n_0,sA_out_i_40_n_0,sA_out_i_41_n_0}),
         .O(NLW_sA_out_reg_i_14_O_UNCONNECTED[3:0]),
         .S({sA_out_i_42_n_0,sA_out_i_43_n_0,sA_out_i_44_n_0,sA_out_i_45_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 sA_out_reg_i_2
-       (.CI(sA_out_reg_i_6_n_0),
-        .CO({NLW_sA_out_reg_i_2_CO_UNCONNECTED[3:1],sA_data31_in}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,sA_out_i_7_n_0}),
-        .O(NLW_sA_out_reg_i_2_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,sA_out_i_8_n_0}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 sA_out_reg_i_24
-       (.CI(sA_out_reg_i_46_n_0),
-        .CO(NLW_sA_out_reg_i_24_CO_UNCONNECTED[3:0]),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({NLW_sA_out_reg_i_24_O_UNCONNECTED[3:1],sA_data42_out[8]}),
-        .S({1'b0,1'b0,1'b0,sA_out_i_48_n_0}));
-  (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sA_out_reg_i_3
-       (.CI(sA_out_reg_i_9_n_0),
-        .CO({NLW_sA_out_reg_i_3_CO_UNCONNECTED[3:1],sA_data32_in}),
+       (.CI(sA_out_reg_i_7_n_0),
+        .CO({NLW_sA_out_reg_i_3_CO_UNCONNECTED[3:1],sA_data33_in}),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(NLW_sA_out_reg_i_3_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,sA_out_i_10_n_0}));
+        .S({1'b0,1'b0,1'b0,sA_out_i_8_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 sA_out_reg_i_39
-       (.CI(sA_out_reg_i_49_n_0),
-        .CO(NLW_sA_out_reg_i_39_CO_UNCONNECTED[3:0]),
+  CARRY4 sA_out_reg_i_31
+       (.CI(sA_out_reg_i_47_n_0),
+        .CO(NLW_sA_out_reg_i_31_CO_UNCONNECTED[3:0]),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({NLW_sA_out_reg_i_39_O_UNCONNECTED[3:1],sA_data40_out[8]}),
-        .S({1'b0,1'b0,1'b0,sA_out_i_51_n_0}));
+        .O({NLW_sA_out_reg_i_31_O_UNCONNECTED[3:1],sA_data40_out[8]}),
+        .S({1'b0,1'b0,1'b0,sA_out_i_49_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sA_out_reg_i_4
-       (.CI(sA_out_reg_i_11_n_0),
+       (.CI(sA_out_reg_i_9_n_0),
         .CO({NLW_sA_out_reg_i_4_CO_UNCONNECTED[3:1],sA_data3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,sA_out_i_12_n_0}),
+        .DI({1'b0,1'b0,1'b0,sA_out_i_10_n_0}),
         .O(NLW_sA_out_reg_i_4_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,sA_out_i_13_n_0}));
+        .S({1'b0,1'b0,1'b0,sA_out_i_11_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 sA_out_reg_i_46
-       (.CI(sA_out_reg_i_47_n_0),
-        .CO({sA_out_reg_i_46_n_0,sA_out_reg_i_46_n_1,sA_out_reg_i_46_n_2,sA_out_reg_i_46_n_3}),
+       (.CI(sA_out_reg_i_50_n_0),
+        .CO(NLW_sA_out_reg_i_46_CO_UNCONNECTED[3:0]),
         .CYINIT(1'b0),
-        .DI(h_img_w[7:4]),
-        .O(sA_data42_out[7:4]),
-        .S({sA_out_i_52_n_0,sA_out_i_53_n_0,sA_out_i_54_n_0,sA_out_i_55_n_0}));
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_sA_out_reg_i_46_O_UNCONNECTED[3:1],sA_data42_out[8]}),
+        .S({1'b0,1'b0,1'b0,sA_out_i_52_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 sA_out_reg_i_47
-       (.CI(1'b0),
+       (.CI(sA_out_reg_i_48_n_0),
         .CO({sA_out_reg_i_47_n_0,sA_out_reg_i_47_n_1,sA_out_reg_i_47_n_2,sA_out_reg_i_47_n_3}),
-        .CYINIT(1'b1),
-        .DI(h_img_w[3:0]),
-        .O(sA_data42_out[3:0]),
-        .S({sA_out_i_56_n_0,sA_out_i_57_n_0,sA_out_i_58_n_0,sA_out_i_59_n_0}));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 sA_out_reg_i_49
-       (.CI(sA_out_reg_i_50_n_0),
-        .CO({sA_out_reg_i_49_n_0,sA_out_reg_i_49_n_1,sA_out_reg_i_49_n_2,sA_out_reg_i_49_n_3}),
         .CYINIT(1'b0),
         .DI(h_img_h[7:4]),
         .O(sA_data40_out[7:4]),
-        .S({sA_out_i_60_n_0,sA_out_i_61_n_0,sA_out_i_62_n_0,sA_out_i_63_n_0}));
-  (* COMPARATOR_THRESHOLD = "11" *) 
-  CARRY4 sA_out_reg_i_5
-       (.CI(sA_out_reg_i_14_n_0),
-        .CO({NLW_sA_out_reg_i_5_CO_UNCONNECTED[3:1],sA_data33_in}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_sA_out_reg_i_5_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,sA_out_i_15_n_0}));
+        .S({sA_out_i_53_n_0,sA_out_i_54_n_0,sA_out_i_55_n_0,sA_out_i_56_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 sA_out_reg_i_50
+  CARRY4 sA_out_reg_i_48
        (.CI(1'b0),
-        .CO({sA_out_reg_i_50_n_0,sA_out_reg_i_50_n_1,sA_out_reg_i_50_n_2,sA_out_reg_i_50_n_3}),
+        .CO({sA_out_reg_i_48_n_0,sA_out_reg_i_48_n_1,sA_out_reg_i_48_n_2,sA_out_reg_i_48_n_3}),
         .CYINIT(1'b1),
         .DI(h_img_h[3:0]),
         .O(sA_data40_out[3:0]),
-        .S({sA_out_i_64_n_0,sA_out_i_65_n_0,sA_out_i_66_n_0,sA_out_i_67_n_0}));
+        .S({sA_out_i_57_n_0,sA_out_i_58_n_0,sA_out_i_59_n_0,sA_out_i_60_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 sA_out_reg_i_5
+       (.CI(sA_out_reg_i_12_n_0),
+        .CO({NLW_sA_out_reg_i_5_CO_UNCONNECTED[3:1],sA_data32_in}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_sA_out_reg_i_5_O_UNCONNECTED[3:0]),
+        .S({1'b0,1'b0,1'b0,sA_out_i_13_n_0}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 sA_out_reg_i_50
+       (.CI(sA_out_reg_i_51_n_0),
+        .CO({sA_out_reg_i_50_n_0,sA_out_reg_i_50_n_1,sA_out_reg_i_50_n_2,sA_out_reg_i_50_n_3}),
+        .CYINIT(1'b0),
+        .DI(h_img_w[7:4]),
+        .O(sA_data42_out[7:4]),
+        .S({sA_out_i_61_n_0,sA_out_i_62_n_0,sA_out_i_63_n_0,sA_out_i_64_n_0}));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 sA_out_reg_i_51
+       (.CI(1'b0),
+        .CO({sA_out_reg_i_51_n_0,sA_out_reg_i_51_n_1,sA_out_reg_i_51_n_2,sA_out_reg_i_51_n_3}),
+        .CYINIT(1'b1),
+        .DI(h_img_w[3:0]),
+        .O(sA_data42_out[3:0]),
+        .S({sA_out_i_65_n_0,sA_out_i_66_n_0,sA_out_i_67_n_0,sA_out_i_68_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sA_out_reg_i_6
-       (.CI(1'b0),
-        .CO({sA_out_reg_i_6_n_0,sA_out_reg_i_6_n_1,sA_out_reg_i_6_n_2,sA_out_reg_i_6_n_3}),
-        .CYINIT(1'b1),
-        .DI({sA_out_i_16_n_0,sA_out_i_17_n_0,sA_out_i_18_n_0,sA_out_i_19_n_0}),
+       (.CI(sA_out_reg_i_14_n_0),
+        .CO({NLW_sA_out_reg_i_6_CO_UNCONNECTED[3:1],sA_data31_in}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,sA_out_i_15_n_0}),
         .O(NLW_sA_out_reg_i_6_O_UNCONNECTED[3:0]),
-        .S({sA_out_i_20_n_0,sA_out_i_21_n_0,sA_out_i_22_n_0,sA_out_i_23_n_0}));
+        .S({1'b0,1'b0,1'b0,sA_out_i_16_n_0}));
+  (* COMPARATOR_THRESHOLD = "11" *) 
+  CARRY4 sA_out_reg_i_7
+       (.CI(1'b0),
+        .CO({sA_out_reg_i_7_n_0,sA_out_reg_i_7_n_1,sA_out_reg_i_7_n_2,sA_out_reg_i_7_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,sA_out_i_17_n_0,sA_out_i_18_n_0}),
+        .O(NLW_sA_out_reg_i_7_O_UNCONNECTED[3:0]),
+        .S({sA_out_i_19_n_0,sA_out_i_20_n_0,sA_out_i_21_n_0,sA_out_i_22_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 sA_out_reg_i_9
        (.CI(1'b0),
         .CO({sA_out_reg_i_9_n_0,sA_out_reg_i_9_n_1,sA_out_reg_i_9_n_2,sA_out_reg_i_9_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,sA_out_i_25_n_0,sA_out_i_26_n_0}),
+        .CYINIT(1'b1),
+        .DI({sA_out_i_23_n_0,sA_out_i_24_n_0,sA_out_i_25_n_0,sA_out_i_26_n_0}),
         .O(NLW_sA_out_reg_i_9_O_UNCONNECTED[3:0]),
         .S({sA_out_i_27_n_0,sA_out_i_28_n_0,sA_out_i_29_n_0,sA_out_i_30_n_0}));
-  LUT6 #(
-    .INIT(64'hEFEFFFEF20200020)) 
+  LUT5 #(
+    .INIT(32'hEFFF2000)) 
     sA_valid_i_1
        (.I0(tvalid_buffer),
         .I1(reset),
-        .I2(fsm_img_processing_state),
-        .I3(tvalid_fifo[6]),
-        .I4(m_axis_tready),
-        .I5(sA_valid_reg_n_0),
+        .I2(pipe_advance),
+        .I3(fsm_img_processing_state),
+        .I4(sA_valid_reg_n_0),
         .O(sA_valid_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -29260,329 +29845,315 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [0]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF01010100)) 
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[0]_i_1 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_araddr[8]),
-        .I2(\s_axi_ctrl_rdata_reg[0]_i_2_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[0]_i_3_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_4_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_5_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_2_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[0]),
+        .I5(\s_axi_ctrl_rdata_reg[0]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_10 
-       (.I0(\reg_coeff_reg[35] [0]),
-        .I1(\reg_coeff_reg[34] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_11 
-       (.I0(\reg_coeff_reg[39] [0]),
-        .I1(\reg_coeff_reg[38] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_11_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_22_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_24_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_25_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[0]_i_12 
-       (.I0(\reg_coeff_reg[55] [0]),
-        .I1(\reg_coeff_reg[54] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_13 
-       (.I0(\reg_coeff_reg[51] [0]),
-        .I1(\reg_coeff_reg[50] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF0E000200)) 
-    \s_axi_ctrl_rdata_reg[0]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_21_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_22_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h505F3030505F3F3F)) 
-    \s_axi_ctrl_rdata_reg[0]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_24_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[0]_i_25_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[0]_i_26_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_16 
-       (.I0(reg_img_h[0]),
-        .I1(reg_img_w[0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_17 
-       (.I0(\reg_coeff_reg[23] [0]),
-        .I1(\reg_coeff_reg[22] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_18 
-       (.I0(\reg_coeff_reg[19] [0]),
-        .I1(\reg_coeff_reg[18] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_18_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_19 
-       (.I0(\reg_coeff_reg[15] [0]),
-        .I1(\reg_coeff_reg[14] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'h2020222020222222)) 
-    \s_axi_ctrl_rdata_reg[0]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_6_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[0]_i_7_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_8_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_9_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_20 
-       (.I0(\reg_coeff_reg[11] [0]),
-        .I1(\reg_coeff_reg[10] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_21 
-       (.I0(\reg_coeff_reg[43] [0]),
-        .I1(\reg_coeff_reg[42] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_22 
-       (.I0(\reg_coeff_reg[47] [0]),
-        .I1(\reg_coeff_reg[46] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
-  LUT5 #(
-    .INIT(32'h000000B8)) 
-    \s_axi_ctrl_rdata_reg[0]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_27_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(\s_axi_ctrl_rdata_reg[0]_i_28_n_0 ),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_24 
        (.I0(\reg_coeff_reg[79] [0]),
         .I1(\reg_coeff_reg[78] [0]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [0]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_24_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[0]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_25 
+    \s_axi_ctrl_rdata_reg[0]_i_13 
        (.I0(\reg_coeff_reg[75] [0]),
         .I1(\reg_coeff_reg[74] [0]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[73] [0]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_25_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[0]_i_26 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[0]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_26_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_27 
-       (.I0(\reg_coeff_reg[31] [0]),
-        .I1(\reg_coeff_reg[30] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_28 
-       (.I0(\reg_coeff_reg[27] [0]),
-        .I1(\reg_coeff_reg[26] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_28_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_29 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[0]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_13_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_14 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_14_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'h22200020FFFFFFFF)) 
-    \s_axi_ctrl_rdata_reg[0]_i_3 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[0]_i_10_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_11_n_0 ),
-        .I5(s_axi_ctrl_araddr[7]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_3_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_30 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[0]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_30_n_0 ),
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_16_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_32_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_33_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_17_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_31 
-       (.I0(\reg_coeff_reg[59] [0]),
-        .I1(\reg_coeff_reg[58] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_32 
-       (.I0(\reg_coeff_reg[63] [0]),
-        .I1(\reg_coeff_reg[62] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_33 
-       (.I0(\reg_coeff_reg[67] [0]),
-        .I1(\reg_coeff_reg[66] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_34 
-       (.I0(\reg_coeff_reg[71] [0]),
-        .I1(\reg_coeff_reg[70] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF80888000)) 
-    \s_axi_ctrl_rdata_reg[0]_i_4 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[0]_i_12_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_13_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h5555CC0C5555C000)) 
-    \s_axi_ctrl_rdata_reg[0]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(reg_coeff_scale[0]),
-        .I4(s_axi_ctrl_araddr[8]),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_16_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h1555151515555555)) 
-    \s_axi_ctrl_rdata_reg[0]_i_6 
-       (.I0(s_axi_ctrl_araddr[7]),
-        .I1(s_axi_ctrl_araddr[5]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[0]_i_17_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[0]_i_18_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_6_n_0 ));
-  LUT5 #(
-    .INIT(32'h080C0800)) 
-    \s_axi_ctrl_rdata_reg[0]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[0]_i_19_n_0 ),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[0]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_8 
-       (.I0(\reg_coeff_reg[7] [0]),
-        .I1(\reg_coeff_reg[6] [0]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [0]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_8_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[0]_i_9 
+    \s_axi_ctrl_rdata_reg[0]_i_18 
        (.I0(\reg_coeff_reg[3] [0]),
         .I1(\reg_coeff_reg[2] [0]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [0]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [0]),
-        .O(\s_axi_ctrl_rdata_reg[0]_i_9_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[0]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_19 
+       (.I0(\reg_coeff_reg[7] [0]),
+        .I1(\reg_coeff_reg[6] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[0]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [0]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[0]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_2_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_35_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_20_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_37_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_22 
+       (.I0(\reg_coeff_reg[59] [0]),
+        .I1(\reg_coeff_reg[58] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_23 
+       (.I0(\reg_coeff_reg[63] [0]),
+        .I1(\reg_coeff_reg[62] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_24 
+       (.I0(\reg_coeff_reg[67] [0]),
+        .I1(\reg_coeff_reg[66] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_25 
+       (.I0(\reg_coeff_reg[71] [0]),
+        .I1(\reg_coeff_reg[70] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_26 
+       (.I0(\reg_coeff_reg[51] [0]),
+        .I1(\reg_coeff_reg[50] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_27 
+       (.I0(\reg_coeff_reg[55] [0]),
+        .I1(\reg_coeff_reg[54] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_28 
+       (.I0(\reg_coeff_reg[43] [0]),
+        .I1(\reg_coeff_reg[42] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_29 
+       (.I0(\reg_coeff_reg[47] [0]),
+        .I1(\reg_coeff_reg[46] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFAAAAFC0C)) 
+    \s_axi_ctrl_rdata_reg[0]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_7_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_8_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[0]_i_9_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(s_axi_ctrl_araddr[8]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_30 
+       (.I0(\reg_coeff_reg[35] [0]),
+        .I1(\reg_coeff_reg[34] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_31 
+       (.I0(\reg_coeff_reg[39] [0]),
+        .I1(\reg_coeff_reg[38] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_32 
+       (.I0(\reg_coeff_reg[27] [0]),
+        .I1(\reg_coeff_reg[26] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_33 
+       (.I0(\reg_coeff_reg[31] [0]),
+        .I1(\reg_coeff_reg[30] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_34 
+       (.I0(\reg_coeff_reg[11] [0]),
+        .I1(\reg_coeff_reg[10] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_35 
+       (.I0(\reg_coeff_reg[15] [0]),
+        .I1(\reg_coeff_reg[14] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_36 
+       (.I0(\reg_coeff_reg[19] [0]),
+        .I1(\reg_coeff_reg[18] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_37 
+       (.I0(\reg_coeff_reg[23] [0]),
+        .I1(\reg_coeff_reg[22] [0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_4 
+       (.I0(reg_img_h[0]),
+        .I1(reg_img_w[0]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[0]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[0]),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_4_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[0]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[0]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_14_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_15_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[0]_i_16_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[0]_i_17_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_7_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[0]_i_8 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_18_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_19_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_8_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF8 \s_axi_ctrl_rdata_reg[0]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[0]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[0]_i_21_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[0]_i_9_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -29604,275 +30175,274 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(s_axi_ctrl_araddr[8]),
         .O(\s_axi_ctrl_rdata_reg[10]_i_1_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_18_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_15_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_16_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_10_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF8 \s_axi_ctrl_rdata_reg[10]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[10]_i_12 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_21_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[10]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_23_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_25_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_26_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_14_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+  LUT5 #(
+    .INIT(32'h47FF4700)) 
+    \s_axi_ctrl_rdata_reg[10]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_17_n_0 ),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(\s_axi_ctrl_rdata_reg[10]_i_18_n_0 ),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[10]_i_19_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'h5050303F5F5F303F)) 
+    \s_axi_ctrl_rdata_reg[10]_i_12 
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_21_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[10]_i_22_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[10]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_15 
+    \s_axi_ctrl_rdata_reg[10]_i_13 
        (.I0(\reg_coeff_reg[67] [10]),
         .I1(\reg_coeff_reg[66] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_15_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_16 
+    \s_axi_ctrl_rdata_reg[10]_i_14 
        (.I0(\reg_coeff_reg[71] [10]),
         .I1(\reg_coeff_reg[70] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_16_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_17 
+    \s_axi_ctrl_rdata_reg[10]_i_15 
        (.I0(\reg_coeff_reg[59] [10]),
         .I1(\reg_coeff_reg[58] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_17_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_15_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_18 
+    \s_axi_ctrl_rdata_reg[10]_i_16 
        (.I0(\reg_coeff_reg[63] [10]),
         .I1(\reg_coeff_reg[62] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_18_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_16_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_24_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_25_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_17_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_18 
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_18_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_27_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_28_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_29_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_19_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
-    .INIT(64'hFFFFFFFFF0CCAAAA)) 
+    .INIT(64'hFFFFFFFFF0CC5555)) 
     \s_axi_ctrl_rdata_reg[10]_i_2 
        (.I0(\s_axi_ctrl_rdata_reg[10]_i_5_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[10]_i_6_n_0 ),
         .I2(reg_coeff_scale[10]),
         .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
         .I5(s_axi_ctrl_araddr[8]),
         .O(\s_axi_ctrl_rdata_reg[10]_i_2_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_30_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_31_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_20_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_32_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_32_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_33_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_21_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_34_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_35_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_22_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_36_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_37_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_23_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_37_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_38_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_24_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_25 
-       (.I0(\reg_coeff_reg[3] [10]),
-        .I1(\reg_coeff_reg[2] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_26 
-       (.I0(\reg_coeff_reg[7] [10]),
-        .I1(\reg_coeff_reg[6] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_27 
-       (.I0(\reg_coeff_reg[43] [10]),
-        .I1(\reg_coeff_reg[42] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_28 
-       (.I0(\reg_coeff_reg[47] [10]),
-        .I1(\reg_coeff_reg[46] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_29 
-       (.I0(\reg_coeff_reg[51] [10]),
-        .I1(\reg_coeff_reg[50] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_29_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_8_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_3_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_30 
-       (.I0(\reg_coeff_reg[55] [10]),
-        .I1(\reg_coeff_reg[54] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_30_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_31 
-       (.I0(\reg_coeff_reg[27] [10]),
-        .I1(\reg_coeff_reg[26] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_32 
-       (.I0(\reg_coeff_reg[31] [10]),
-        .I1(\reg_coeff_reg[30] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_33 
-       (.I0(\reg_coeff_reg[35] [10]),
-        .I1(\reg_coeff_reg[34] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_34 
-       (.I0(\reg_coeff_reg[39] [10]),
-        .I1(\reg_coeff_reg[38] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_35 
-       (.I0(\reg_coeff_reg[11] [10]),
-        .I1(\reg_coeff_reg[10] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_36 
-       (.I0(\reg_coeff_reg[15] [10]),
-        .I1(\reg_coeff_reg[14] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_37 
+    \s_axi_ctrl_rdata_reg[10]_i_24 
        (.I0(\reg_coeff_reg[19] [10]),
         .I1(\reg_coeff_reg[18] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[17] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[16] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_37_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_38 
+    \s_axi_ctrl_rdata_reg[10]_i_25 
        (.I0(\reg_coeff_reg[23] [10]),
         .I1(\reg_coeff_reg[22] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[21] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[20] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
-    \s_axi_ctrl_rdata_reg[10]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_10_n_0 ),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_4_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_5 
+    \s_axi_ctrl_rdata_reg[10]_i_26 
+       (.I0(\reg_coeff_reg[11] [10]),
+        .I1(\reg_coeff_reg[10] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_27 
+       (.I0(\reg_coeff_reg[15] [10]),
+        .I1(\reg_coeff_reg[14] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'h505F3030505F3F3F)) 
+    \s_axi_ctrl_rdata_reg[10]_i_28 
+       (.I0(\reg_coeff_reg[3] [10]),
+        .I1(\reg_coeff_reg[2] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'h505F3030505F3F3F)) 
+    \s_axi_ctrl_rdata_reg[10]_i_29 
+       (.I0(\reg_coeff_reg[7] [10]),
+        .I1(\reg_coeff_reg[6] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_29_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_7_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_3_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_30 
+       (.I0(\reg_coeff_reg[51] [10]),
+        .I1(\reg_coeff_reg[50] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_31 
+       (.I0(\reg_coeff_reg[55] [10]),
+        .I1(\reg_coeff_reg[54] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_32 
+       (.I0(\reg_coeff_reg[43] [10]),
+        .I1(\reg_coeff_reg[42] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_33 
+       (.I0(\reg_coeff_reg[47] [10]),
+        .I1(\reg_coeff_reg[46] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_34 
+       (.I0(\reg_coeff_reg[27] [10]),
+        .I1(\reg_coeff_reg[26] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_35 
+       (.I0(\reg_coeff_reg[31] [10]),
+        .I1(\reg_coeff_reg[30] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_36 
+       (.I0(\reg_coeff_reg[35] [10]),
+        .I1(\reg_coeff_reg[34] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_37 
+       (.I0(\reg_coeff_reg[39] [10]),
+        .I1(\reg_coeff_reg[38] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hBFBB8F8BB0B88088)) 
+    \s_axi_ctrl_rdata_reg[10]_i_4 
+       (.I0(\reg_coeff_reg[80] [10]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[10]_i_9_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[10]_i_10_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_4_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[10]_i_5 
        (.I0(\s_axi_ctrl_rdata_reg[10]_i_11_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[10]_i_12_n_0 ),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(\s_axi_ctrl_rdata_reg[10]_i_13_n_0 ),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[10]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_5_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[10]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[7]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[10]_i_6 
@@ -29886,26 +30456,26 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[10]_i_7 
-       (.I0(\reg_coeff_reg[75] [10]),
-        .I1(\reg_coeff_reg[74] [10]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [10]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [10]),
-        .O(\s_axi_ctrl_rdata_reg[10]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[10]_i_8 
        (.I0(\reg_coeff_reg[79] [10]),
         .I1(\reg_coeff_reg[78] [10]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [10]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [10]),
+        .O(\s_axi_ctrl_rdata_reg[10]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[10]_i_8 
+       (.I0(\reg_coeff_reg[75] [10]),
+        .I1(\reg_coeff_reg[74] [10]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [10]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [10]),
         .O(\s_axi_ctrl_rdata_reg[10]_i_8_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[10]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[10]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[10]_i_16_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[10]_i_13_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[10]_i_14_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[10]_i_9_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
@@ -30005,7 +30575,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\s_axi_ctrl_rdata_reg[11]_i_6_n_0 ),
         .I2(reg_coeff_scale[11]),
         .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
         .I5(s_axi_ctrl_araddr[8]),
         .O(\s_axi_ctrl_rdata_reg[11]_i_2_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[11]_i_20 
@@ -30087,7 +30657,7 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
        (.I0(\s_axi_ctrl_rdata_reg[11]_i_7_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[11]_i_8_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[11]_i_3_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[11]_i_30 
@@ -30179,14 +30749,14 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I5(\reg_coeff_reg[20] [11]),
         .O(\s_axi_ctrl_rdata_reg[11]_i_38_n_0 ));
   LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
+    .INIT(64'hBFBB8F8BB0B88088)) 
     \s_axi_ctrl_rdata_reg[11]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[11]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[11]_i_10_n_0 ),
+       (.I0(\reg_coeff_reg[80] [11]),
+        .I1(s_axi_ctrl_araddr[6]),
         .I2(s_axi_ctrl_araddr[5]),
         .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [11]),
+        .I4(\s_axi_ctrl_rdata_reg[11]_i_9_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[11]_i_10_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[11]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -30211,22 +30781,22 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[11]_i_7 
-       (.I0(\reg_coeff_reg[75] [11]),
-        .I1(\reg_coeff_reg[74] [11]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [11]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [11]),
-        .O(\s_axi_ctrl_rdata_reg[11]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[11]_i_8 
        (.I0(\reg_coeff_reg[79] [11]),
         .I1(\reg_coeff_reg[78] [11]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [11]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [11]),
+        .O(\s_axi_ctrl_rdata_reg[11]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[11]_i_8 
+       (.I0(\reg_coeff_reg[75] [11]),
+        .I1(\reg_coeff_reg[74] [11]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [11]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [11]),
         .O(\s_axi_ctrl_rdata_reg[11]_i_8_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[11]_i_9 
        (.I0(\s_axi_ctrl_rdata_reg[11]_i_15_n_0 ),
@@ -30244,301 +30814,294 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [12]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF45454540)) 
+    .INIT(64'hAA8A0080AAAAAAAA)) 
     \s_axi_ctrl_rdata_reg[12]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[12]_i_3_n_0 ),
-        .I2(s_axi_ctrl_araddr[8]),
-        .I3(\s_axi_ctrl_rdata_reg[12]_i_4_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[12]_i_5_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[12]_i_6_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(\s_axi_ctrl_rdata_reg[12]_i_4_n_0 ),
+        .I5(s_axi_ctrl_araddr[8]),
         .O(\s_axi_ctrl_rdata_reg[12]_i_1_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[12]_i_10 
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_17_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_18_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF8 \s_axi_ctrl_rdata_reg[12]_i_11 
        (.I0(\s_axi_ctrl_rdata_reg[12]_i_19_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[12]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_10_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_11_n_0 ),
         .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_11 
+  MUXF8 \s_axi_ctrl_rdata_reg[12]_i_12 
        (.I0(\s_axi_ctrl_rdata_reg[12]_i_21_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[12]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_12 
+        .O(\s_axi_ctrl_rdata_reg[12]_i_12_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF8 \s_axi_ctrl_rdata_reg[12]_i_13 
        (.I0(\s_axi_ctrl_rdata_reg[12]_i_23_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[12]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_13 
-       (.I0(\reg_coeff_reg[11] [12]),
-        .I1(\reg_coeff_reg[10] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_14 
-       (.I0(\reg_coeff_reg[15] [12]),
-        .I1(\reg_coeff_reg[14] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h1111D1D111D111D1)) 
-    \s_axi_ctrl_rdata_reg[12]_i_15 
+        .O(\s_axi_ctrl_rdata_reg[12]_i_13_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_14 
        (.I0(\s_axi_ctrl_rdata_reg[12]_i_25_n_0 ),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(\s_axi_ctrl_rdata_reg[12]_i_26_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[12]_i_27_n_0 ),
-        .I5(s_axi_ctrl_araddr[4]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_16 
-       (.I0(reg_img_h[12]),
-        .I1(reg_img_w[12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_16_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_29_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_17_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_18 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_30_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_31_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_18_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_32_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_33_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
-  LUT4 #(
-    .INIT(16'h222A)) 
-    \s_axi_ctrl_rdata_reg[12]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(s_axi_ctrl_araddr[2]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_34_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_26_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_14_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_21 
-       (.I0(\reg_coeff_reg[43] [12]),
-        .I1(\reg_coeff_reg[42] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_22 
-       (.I0(\reg_coeff_reg[47] [12]),
-        .I1(\reg_coeff_reg[46] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_22_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_23 
-       (.I0(\reg_coeff_reg[51] [12]),
-        .I1(\reg_coeff_reg[50] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_24 
-       (.I0(\reg_coeff_reg[55] [12]),
-        .I1(\reg_coeff_reg[54] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_24_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_25 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_25_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_26 
-       (.I0(\reg_coeff_reg[19] [12]),
-        .I1(\reg_coeff_reg[18] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_27 
-       (.I0(\reg_coeff_reg[23] [12]),
-        .I1(\reg_coeff_reg[22] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_28 
-       (.I0(\reg_coeff_reg[59] [12]),
-        .I1(\reg_coeff_reg[58] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_29 
-       (.I0(\reg_coeff_reg[63] [12]),
-        .I1(\reg_coeff_reg[62] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_8_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[12]_i_9_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_30 
+    \s_axi_ctrl_rdata_reg[12]_i_15 
        (.I0(\reg_coeff_reg[67] [12]),
         .I1(\reg_coeff_reg[66] [12]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [12]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_30_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[12]_i_15_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_31 
+    \s_axi_ctrl_rdata_reg[12]_i_16 
        (.I0(\reg_coeff_reg[71] [12]),
         .I1(\reg_coeff_reg[70] [12]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [12]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_31_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[12]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_32 
-       (.I0(\reg_coeff_reg[27] [12]),
-        .I1(\reg_coeff_reg[26] [12]),
+    \s_axi_ctrl_rdata_reg[12]_i_17 
+       (.I0(\reg_coeff_reg[59] [12]),
+        .I1(\reg_coeff_reg[58] [12]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [12]),
+        .I3(\reg_coeff_reg[57] [12]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_32_n_0 ));
+        .I5(\reg_coeff_reg[56] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_33 
-       (.I0(\reg_coeff_reg[31] [12]),
-        .I1(\reg_coeff_reg[30] [12]),
+    \s_axi_ctrl_rdata_reg[12]_i_18 
+       (.I0(\reg_coeff_reg[63] [12]),
+        .I1(\reg_coeff_reg[62] [12]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [12]),
+        .I3(\reg_coeff_reg[61] [12]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_33_n_0 ));
+        .I5(\reg_coeff_reg[60] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_18_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_19 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_27_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_28_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_19_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFF0CCAAAA)) 
+    \s_axi_ctrl_rdata_reg[12]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_5_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_6_n_0 ),
+        .I2(reg_coeff_scale[12]),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I5(s_axi_ctrl_araddr[8]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_29_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_30_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_20_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_32_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_22 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_33_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_22_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_23 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_35_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_23_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_24 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_37_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_38_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_24_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_34 
-       (.I0(\reg_coeff_reg[35] [12]),
-        .I1(\reg_coeff_reg[34] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_35 
-       (.I0(\reg_coeff_reg[39] [12]),
-        .I1(\reg_coeff_reg[38] [12]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [12]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_36 
+    \s_axi_ctrl_rdata_reg[12]_i_25 
        (.I0(\reg_coeff_reg[3] [12]),
         .I1(\reg_coeff_reg[2] [12]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [12]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [12]),
-        .O(\s_axi_ctrl_rdata_reg[12]_i_36_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[12]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[12]_i_37 
+    \s_axi_ctrl_rdata_reg[12]_i_26 
        (.I0(\reg_coeff_reg[7] [12]),
         .I1(\reg_coeff_reg[6] [12]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[5] [12]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[4] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_27 
+       (.I0(\reg_coeff_reg[43] [12]),
+        .I1(\reg_coeff_reg[42] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_28 
+       (.I0(\reg_coeff_reg[47] [12]),
+        .I1(\reg_coeff_reg[46] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_29 
+       (.I0(\reg_coeff_reg[51] [12]),
+        .I1(\reg_coeff_reg[50] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_29_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_7_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_3_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_30 
+       (.I0(\reg_coeff_reg[55] [12]),
+        .I1(\reg_coeff_reg[54] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_31 
+       (.I0(\reg_coeff_reg[27] [12]),
+        .I1(\reg_coeff_reg[26] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_32 
+       (.I0(\reg_coeff_reg[31] [12]),
+        .I1(\reg_coeff_reg[30] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_33 
+       (.I0(\reg_coeff_reg[35] [12]),
+        .I1(\reg_coeff_reg[34] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_34 
+       (.I0(\reg_coeff_reg[39] [12]),
+        .I1(\reg_coeff_reg[38] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_35 
+       (.I0(\reg_coeff_reg[11] [12]),
+        .I1(\reg_coeff_reg[10] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_36 
+       (.I0(\reg_coeff_reg[15] [12]),
+        .I1(\reg_coeff_reg[14] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_37 
+       (.I0(\reg_coeff_reg[19] [12]),
+        .I1(\reg_coeff_reg[18] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [12]),
         .O(\s_axi_ctrl_rdata_reg[12]_i_37_n_0 ));
   LUT6 #(
-    .INIT(64'hEEE222E200000000)) 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[12]_i_38 
+       (.I0(\reg_coeff_reg[23] [12]),
+        .I1(\reg_coeff_reg[22] [12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [12]),
+        .O(\s_axi_ctrl_rdata_reg[12]_i_38_n_0 ));
+  LUT6 #(
+    .INIT(64'hBFBB8F8BB0B88088)) 
     \s_axi_ctrl_rdata_reg[12]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_10_n_0 ),
+       (.I0(\reg_coeff_reg[80] [12]),
         .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[12]_i_11_n_0 ),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[12]_i_12_n_0 ),
-        .I5(s_axi_ctrl_araddr[7]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[12]_i_9_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[12]_i_10_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[12]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h000000000000E4FF)) 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[12]_i_5 
-       (.I0(s_axi_ctrl_araddr[4]),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_13_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[12]_i_14_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(\s_axi_ctrl_rdata_reg[12]_i_15_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_11_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_12_n_0 ),
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(\s_axi_ctrl_rdata_reg[12]_i_13_n_0 ),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[12]_i_14_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[12]_i_5_n_0 ));
-  LUT4 #(
-    .INIT(16'hCA00)) 
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[12]_i_6 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_16_n_0 ),
-        .I1(reg_coeff_scale[12]),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
+       (.I0(reg_img_h[12]),
+        .I1(reg_img_w[12]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[12]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[12]),
         .O(\s_axi_ctrl_rdata_reg[12]_i_6_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -30560,11 +31123,11 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [12]),
         .O(\s_axi_ctrl_rdata_reg[12]_i_8_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[12]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_18_n_0 ),
+  MUXF7 \s_axi_ctrl_rdata_reg[12]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[12]_i_15_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[12]_i_16_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[12]_i_9_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
+        .S(s_axi_ctrl_araddr[4]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -30575,331 +31138,327 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .G(p_1_out),
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [13]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF22A20000)) 
+  LUT5 #(
+    .INIT(32'hABABABAA)) 
     \s_axi_ctrl_rdata_reg[13]_i_1 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(reg_coeff_scale[13]),
-        .I3(\s_axi_ctrl_rdata_reg[13]_i_2_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[13]_i_3_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[13]_i_4_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_2_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[13]_i_3_n_0 ),
+        .I3(s_axi_ctrl_araddr[8]),
+        .I4(\s_axi_ctrl_rdata_reg[13]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[13]_i_1_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_20_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_21_n_0 ),
+  MUXF8 \s_axi_ctrl_rdata_reg[13]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_21_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_22_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[13]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_23_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_24_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_12 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_25_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_26_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_12_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_13 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_27_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_28_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_13_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_11 
+    \s_axi_ctrl_rdata_reg[13]_i_14 
        (.I0(\reg_coeff_reg[79] [13]),
         .I1(\reg_coeff_reg[78] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_11_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_12 
+    \s_axi_ctrl_rdata_reg[13]_i_15 
        (.I0(\reg_coeff_reg[75] [13]),
         .I1(\reg_coeff_reg[74] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[73] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_12_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[13]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_22_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_24_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_25_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_14_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_15_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_15_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[13]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_29_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_29_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_30_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[13]_i_16_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[13]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_30_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_31_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_32_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[13]_i_17_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_18 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_32_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_33_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_18_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_34_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \s_axi_ctrl_rdata_reg[13]_i_2 
-       (.I0(s_axi_ctrl_araddr[3]),
-        .I1(s_axi_ctrl_araddr[2]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_20 
-       (.I0(\reg_coeff_reg[3] [13]),
-        .I1(\reg_coeff_reg[2] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_21 
-       (.I0(\reg_coeff_reg[7] [13]),
-        .I1(\reg_coeff_reg[6] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_21_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_22_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_38_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_39_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_23_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_24 
-       (.I0(\reg_coeff_reg[51] [13]),
-        .I1(\reg_coeff_reg[50] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_25 
-       (.I0(\reg_coeff_reg[55] [13]),
-        .I1(\reg_coeff_reg[54] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_26 
-       (.I0(\reg_coeff_reg[43] [13]),
-        .I1(\reg_coeff_reg[42] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_27 
+    \s_axi_ctrl_rdata_reg[13]_i_18 
        (.I0(\reg_coeff_reg[47] [13]),
         .I1(\reg_coeff_reg[46] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[45] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[44] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_27_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_28 
-       (.I0(\reg_coeff_reg[35] [13]),
-        .I1(\reg_coeff_reg[34] [13]),
+    \s_axi_ctrl_rdata_reg[13]_i_19 
+       (.I0(\reg_coeff_reg[43] [13]),
+        .I1(\reg_coeff_reg[42] [13]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [13]),
+        .I3(\reg_coeff_reg[41] [13]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_29 
-       (.I0(\reg_coeff_reg[39] [13]),
-        .I1(\reg_coeff_reg[38] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_29_n_0 ));
+        .I5(\reg_coeff_reg[40] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_19_n_0 ));
+  LUT4 #(
+    .INIT(16'hCA00)) 
+    \s_axi_ctrl_rdata_reg[13]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_5_n_0 ),
+        .I1(reg_coeff_scale[13]),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFF8A80)) 
-    \s_axi_ctrl_rdata_reg[13]_i_3 
-       (.I0(s_axi_ctrl_araddr[3]),
-        .I1(reg_img_h[13]),
-        .I2(s_axi_ctrl_araddr[2]),
-        .I3(reg_img_w[13]),
-        .I4(\s_axi_ctrl_rdata_reg[13]_i_5_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_3_n_0 ));
+    .INIT(32'hE2000000)) 
+    \s_axi_ctrl_rdata_reg[13]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_33_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(\s_axi_ctrl_rdata_reg[13]_i_34_n_0 ),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(s_axi_ctrl_araddr[5]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_20_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_35_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_22 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_37_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_38_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_22_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_30 
-       (.I0(\reg_coeff_reg[27] [13]),
-        .I1(\reg_coeff_reg[26] [13]),
+    \s_axi_ctrl_rdata_reg[13]_i_23 
+       (.I0(\reg_coeff_reg[3] [13]),
+        .I1(\reg_coeff_reg[2] [13]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [13]),
+        .I3(\reg_coeff_reg[1] [13]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_30_n_0 ));
+        .I5(\reg_coeff_reg[0] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_31 
-       (.I0(\reg_coeff_reg[31] [13]),
-        .I1(\reg_coeff_reg[30] [13]),
+    \s_axi_ctrl_rdata_reg[13]_i_24 
+       (.I0(\reg_coeff_reg[7] [13]),
+        .I1(\reg_coeff_reg[6] [13]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [13]),
+        .I3(\reg_coeff_reg[5] [13]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_31_n_0 ));
+        .I5(\reg_coeff_reg[4] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_32 
-       (.I0(\reg_coeff_reg[11] [13]),
-        .I1(\reg_coeff_reg[10] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_33 
-       (.I0(\reg_coeff_reg[15] [13]),
-        .I1(\reg_coeff_reg[14] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_34 
-       (.I0(\reg_coeff_reg[19] [13]),
-        .I1(\reg_coeff_reg[18] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_35 
-       (.I0(\reg_coeff_reg[23] [13]),
-        .I1(\reg_coeff_reg[22] [13]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [13]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_36 
+    \s_axi_ctrl_rdata_reg[13]_i_25 
        (.I0(\reg_coeff_reg[59] [13]),
         .I1(\reg_coeff_reg[58] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_36_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_37 
+    \s_axi_ctrl_rdata_reg[13]_i_26 
        (.I0(\reg_coeff_reg[63] [13]),
         .I1(\reg_coeff_reg[62] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_37_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_38 
+    \s_axi_ctrl_rdata_reg[13]_i_27 
        (.I0(\reg_coeff_reg[67] [13]),
         .I1(\reg_coeff_reg[66] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_38_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_39 
+    \s_axi_ctrl_rdata_reg[13]_i_28 
        (.I0(\reg_coeff_reg[71] [13]),
         .I1(\reg_coeff_reg[70] [13]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [13]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_39_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_6_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_7_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_4_n_0 ),
-        .S(s_axi_ctrl_araddr[8]));
-  LUT5 #(
-    .INIT(32'hFFFF00CA)) 
-    \s_axi_ctrl_rdata_reg[13]_i_5 
-       (.I0(reg_ctrl[13]),
-        .I1(reg_radius[13]),
-        .I2(s_axi_ctrl_araddr[2]),
-        .I3(s_axi_ctrl_araddr[3]),
-        .I4(s_axi_ctrl_araddr[4]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_5_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[13]_i_28_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000AAAACCF0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_6 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_29 
+       (.I0(\reg_coeff_reg[27] [13]),
+        .I1(\reg_coeff_reg[26] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[13]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_6_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [13]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[13]_i_7_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_30 
+       (.I0(\reg_coeff_reg[31] [13]),
+        .I1(\reg_coeff_reg[30] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_31 
+       (.I0(\reg_coeff_reg[35] [13]),
+        .I1(\reg_coeff_reg[34] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_32 
+       (.I0(\reg_coeff_reg[39] [13]),
+        .I1(\reg_coeff_reg[38] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_33 
+       (.I0(\reg_coeff_reg[51] [13]),
+        .I1(\reg_coeff_reg[50] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_34 
+       (.I0(\reg_coeff_reg[55] [13]),
+        .I1(\reg_coeff_reg[54] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_35 
+       (.I0(\reg_coeff_reg[11] [13]),
+        .I1(\reg_coeff_reg[10] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_36 
+       (.I0(\reg_coeff_reg[15] [13]),
+        .I1(\reg_coeff_reg[14] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_37 
+       (.I0(\reg_coeff_reg[19] [13]),
+        .I1(\reg_coeff_reg[18] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_38 
+       (.I0(\reg_coeff_reg[23] [13]),
+        .I1(\reg_coeff_reg[22] [13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_38_n_0 ));
+  LUT6 #(
+    .INIT(64'hCFC0EFEFCFC0E0E0)) 
+    \s_axi_ctrl_rdata_reg[13]_i_4 
        (.I0(\s_axi_ctrl_rdata_reg[13]_i_8_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[13]_i_9_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[13]_i_10_n_0 ),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_6_n_0 ));
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(\s_axi_ctrl_rdata_reg[13]_i_10_n_0 ),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[13]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[13]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[13]_i_12_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[13]_i_13_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [13]),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[13]_i_8 
+    \s_axi_ctrl_rdata_reg[13]_i_5 
+       (.I0(reg_img_h[13]),
+        .I1(reg_img_w[13]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[13]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[13]),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_5_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[13]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_6_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[13]_i_7 
        (.I0(\s_axi_ctrl_rdata_reg[13]_i_14_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[13]_i_15_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[13]_i_16_n_0 ),
-        .I4(s_axi_ctrl_araddr[5]),
-        .I5(\s_axi_ctrl_rdata_reg[13]_i_17_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_8_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[13]_i_9 
+        .O(\s_axi_ctrl_rdata_reg[13]_i_7_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[13]_i_8 
+       (.I0(\s_axi_ctrl_rdata_reg[13]_i_16_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[13]_i_17_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_8_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF0000AC00)) 
+    \s_axi_ctrl_rdata_reg[13]_i_9 
        (.I0(\s_axi_ctrl_rdata_reg[13]_i_18_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[13]_i_19_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[13]_i_9_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[13]_i_20_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[13]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -30911,222 +31470,214 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [14]));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF010B)) 
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[14]_i_1 
-       (.I0(s_axi_ctrl_araddr[7]),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_2_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[14]_i_3_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[14]_i_4_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[14]_i_5_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_6_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_2_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[14]),
+        .I5(\s_axi_ctrl_rdata_reg[14]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \s_axi_ctrl_rdata_reg[14]_i_10 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(s_axi_ctrl_araddr[9]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hABABABFBFBFBABFB)) 
-    \s_axi_ctrl_rdata_reg[14]_i_11 
-       (.I0(s_axi_ctrl_araddr[6]),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_21_n_0 ),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(\s_axi_ctrl_rdata_reg[14]_i_22_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_11_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_22_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_24_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_25_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[14]_i_12 
-       (.I0(\reg_coeff_reg[47] [14]),
-        .I1(\reg_coeff_reg[46] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_13 
-       (.I0(\reg_coeff_reg[43] [14]),
-        .I1(\reg_coeff_reg[42] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_13_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8000000)) 
-    \s_axi_ctrl_rdata_reg[14]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_24_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(\s_axi_ctrl_rdata_reg[14]_i_25_n_0 ),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_15 
-       (.I0(reg_img_h[14]),
-        .I1(reg_img_w[14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_15_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_16_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[14]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_29_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_17_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_18 
-       (.I0(\reg_coeff_reg[19] [14]),
-        .I1(\reg_coeff_reg[18] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_18_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_19 
-       (.I0(\reg_coeff_reg[23] [14]),
-        .I1(\reg_coeff_reg[22] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000DDFFDFDF)) 
-    \s_axi_ctrl_rdata_reg[14]_i_2 
-       (.I0(s_axi_ctrl_araddr[6]),
-        .I1(s_axi_ctrl_araddr[5]),
-        .I2(\s_axi_ctrl_rdata_reg[14]_i_7_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[14]_i_8_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_9_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_30_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_31_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_20_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_32_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_33_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_21_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_22 
-       (.I0(\reg_coeff_reg[35] [14]),
-        .I1(\reg_coeff_reg[34] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_22_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_23 
-       (.I0(\reg_coeff_reg[39] [14]),
-        .I1(\reg_coeff_reg[38] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_24 
-       (.I0(\reg_coeff_reg[55] [14]),
-        .I1(\reg_coeff_reg[54] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_25 
-       (.I0(\reg_coeff_reg[51] [14]),
-        .I1(\reg_coeff_reg[50] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_26 
-       (.I0(\reg_coeff_reg[75] [14]),
-        .I1(\reg_coeff_reg[74] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_27 
        (.I0(\reg_coeff_reg[79] [14]),
         .I1(\reg_coeff_reg[78] [14]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [14]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_27_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_28 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_34_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_28_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_29 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[14]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_29_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAAAAAAAABBBBBBBF)) 
-    \s_axi_ctrl_rdata_reg[14]_i_3 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(reg_coeff_scale[14]),
-        .I3(s_axi_ctrl_araddr[2]),
-        .I4(s_axi_ctrl_araddr[3]),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_10_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_3_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[14]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_30 
+    \s_axi_ctrl_rdata_reg[14]_i_13 
+       (.I0(\reg_coeff_reg[75] [14]),
+        .I1(\reg_coeff_reg[74] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_13_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_14 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_14_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_16_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_32_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_33_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_17_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_18 
        (.I0(\reg_coeff_reg[3] [14]),
         .I1(\reg_coeff_reg[2] [14]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [14]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_30_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[14]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_31 
+    \s_axi_ctrl_rdata_reg[14]_i_19 
        (.I0(\reg_coeff_reg[7] [14]),
         .I1(\reg_coeff_reg[6] [14]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[5] [14]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[4] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[14]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [14]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[14]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_2_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_35_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_20_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_37_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_22 
+       (.I0(\reg_coeff_reg[59] [14]),
+        .I1(\reg_coeff_reg[58] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_23 
+       (.I0(\reg_coeff_reg[63] [14]),
+        .I1(\reg_coeff_reg[62] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_24 
+       (.I0(\reg_coeff_reg[67] [14]),
+        .I1(\reg_coeff_reg[66] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_25 
+       (.I0(\reg_coeff_reg[71] [14]),
+        .I1(\reg_coeff_reg[70] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_26 
+       (.I0(\reg_coeff_reg[51] [14]),
+        .I1(\reg_coeff_reg[50] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_27 
+       (.I0(\reg_coeff_reg[55] [14]),
+        .I1(\reg_coeff_reg[54] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_28 
+       (.I0(\reg_coeff_reg[43] [14]),
+        .I1(\reg_coeff_reg[42] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_29 
+       (.I0(\reg_coeff_reg[47] [14]),
+        .I1(\reg_coeff_reg[46] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFAAAAFC0C)) 
+    \s_axi_ctrl_rdata_reg[14]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_7_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_8_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[14]_i_9_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(s_axi_ctrl_araddr[8]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_30 
+       (.I0(\reg_coeff_reg[35] [14]),
+        .I1(\reg_coeff_reg[34] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_31 
+       (.I0(\reg_coeff_reg[39] [14]),
+        .I1(\reg_coeff_reg[38] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [14]),
         .O(\s_axi_ctrl_rdata_reg[14]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -31151,103 +31702,83 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[14]_i_34 
-       (.I0(\reg_coeff_reg[59] [14]),
-        .I1(\reg_coeff_reg[58] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_35 
-       (.I0(\reg_coeff_reg[63] [14]),
-        .I1(\reg_coeff_reg[62] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_36 
-       (.I0(\reg_coeff_reg[67] [14]),
-        .I1(\reg_coeff_reg[66] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_37 
-       (.I0(\reg_coeff_reg[71] [14]),
-        .I1(\reg_coeff_reg[70] [14]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [14]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000022A22AAA)) 
-    \s_axi_ctrl_rdata_reg[14]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[14]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(\s_axi_ctrl_rdata_reg[14]_i_12_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[14]_i_13_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0A0A0A8A00000080)) 
-    \s_axi_ctrl_rdata_reg[14]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
-        .I1(reg_coeff_scale[14]),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(s_axi_ctrl_araddr[3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_15_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h8AAA8A0A80A08000)) 
-    \s_axi_ctrl_rdata_reg[14]_i_6 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(\reg_coeff_reg[80] [14]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[14]_i_16_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_17_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_7 
        (.I0(\reg_coeff_reg[11] [14]),
         .I1(\reg_coeff_reg[10] [14]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[9] [14]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[8] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_7_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[14]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[14]_i_8 
+    \s_axi_ctrl_rdata_reg[14]_i_35 
        (.I0(\reg_coeff_reg[15] [14]),
         .I1(\reg_coeff_reg[14] [14]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[13] [14]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[12] [14]),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_8_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[14]_i_35_n_0 ));
   LUT6 #(
-    .INIT(64'hE200FFFFE2000000)) 
-    \s_axi_ctrl_rdata_reg[14]_i_9 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_36 
+       (.I0(\reg_coeff_reg[19] [14]),
+        .I1(\reg_coeff_reg[18] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_37 
+       (.I0(\reg_coeff_reg[23] [14]),
+        .I1(\reg_coeff_reg[22] [14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_4 
+       (.I0(reg_img_h[14]),
+        .I1(reg_img_w[14]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[14]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[14]),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_4_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[14]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[14]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_14_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_15_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[14]_i_16_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[14]_i_17_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_7_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[14]_i_8 
        (.I0(\s_axi_ctrl_rdata_reg[14]_i_18_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(\s_axi_ctrl_rdata_reg[14]_i_19_n_0 ),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[14]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[14]_i_9_n_0 ));
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_19_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_8_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF8 \s_axi_ctrl_rdata_reg[14]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[14]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[14]_i_21_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[14]_i_9_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -31259,235 +31790,203 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [15]));
   LUT6 #(
-    .INIT(64'hFF00FF10FFFFFF10)) 
+    .INIT(64'hD0D0D0D0D0D0D0DD)) 
     \s_axi_ctrl_rdata_reg[15]_i_1 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_3_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_5_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_6_n_0 ),
-        .I4(s_axi_ctrl_araddr[8]),
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_5_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_6_n_0 ),
         .I5(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[15]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h1515155555551555)) 
+    .INIT(64'h1515151515151555)) 
     \s_axi_ctrl_rdata_reg[15]_i_10 
        (.I0(s_axi_ctrl_araddr[7]),
-        .I1(s_axi_ctrl_araddr[5]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_27_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_28_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
-  LUT5 #(
-    .INIT(32'h0C080008)) 
-    \s_axi_ctrl_rdata_reg[15]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_29_n_0 ),
         .I1(s_axi_ctrl_araddr[6]),
         .I2(s_axi_ctrl_araddr[5]),
         .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_11_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_12 
-       (.I0(\reg_coeff_reg[7] [15]),
-        .I1(\reg_coeff_reg[6] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [15]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_12_n_0 ));
+        .I5(s_axi_ctrl_araddr[3]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_10_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_13 
-       (.I0(\reg_coeff_reg[3] [15]),
-        .I1(\reg_coeff_reg[2] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'h80888000FFFFFFFF)) 
-    \s_axi_ctrl_rdata_reg[15]_i_14 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_31_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_32_n_0 ),
-        .I5(s_axi_ctrl_araddr[7]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF22200020)) 
-    \s_axi_ctrl_rdata_reg[15]_i_15 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_33_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_34_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_16 
-       (.I0(\reg_coeff_reg[31] [15]),
-        .I1(\reg_coeff_reg[30] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_17 
-       (.I0(\reg_coeff_reg[27] [15]),
-        .I1(\reg_coeff_reg[26] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_17_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \s_axi_ctrl_rdata_reg[15]_i_18 
-       (.I0(s_axi_ctrl_araddr[6]),
-        .I1(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_18_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFF00CA)) 
-    \s_axi_ctrl_rdata_reg[15]_i_19 
-       (.I0(reg_ctrl[15]),
-        .I1(reg_radius[15]),
-        .I2(s_axi_ctrl_araddr[2]),
-        .I3(s_axi_ctrl_araddr[3]),
-        .I4(s_axi_ctrl_araddr[4]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'h1F1F00FF1F1F0000)) 
-    \s_axi_ctrl_rdata_reg[15]_i_2 
-       (.I0(s_axi_ctrl_araddr[2]),
-        .I1(s_axi_ctrl_araddr[3]),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(s_axi_ctrl_araddr[9]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_9_n_0 ),
-        .O(p_1_out));
-  LUT5 #(
-    .INIT(32'hDDDDDD5D)) 
-    \s_axi_ctrl_rdata_reg[15]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(reg_coeff_scale[15]),
-        .I3(s_axi_ctrl_araddr[2]),
-        .I4(s_axi_ctrl_araddr[3]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_21 
-       (.I0(\reg_coeff_reg[79] [15]),
-        .I1(\reg_coeff_reg[78] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_22 
+    \s_axi_ctrl_rdata_reg[15]_i_11 
        (.I0(\reg_coeff_reg[75] [15]),
         .I1(\reg_coeff_reg[74] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[73] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_22_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+        .O(\s_axi_ctrl_rdata_reg[15]_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_12 
+       (.I0(\reg_coeff_reg[79] [15]),
+        .I1(\reg_coeff_reg[78] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[77] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[76] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_12_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT2 #(
     .INIT(4'h2)) 
-    \s_axi_ctrl_rdata_reg[15]_i_23 
+    \s_axi_ctrl_rdata_reg[15]_i_13 
        (.I0(s_axi_ctrl_araddr[6]),
         .I1(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[15]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_24_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
+        .O(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ));
   LUT3 #(
-    .INIT(8'h4F)) 
-    \s_axi_ctrl_rdata_reg[15]_i_25 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT2 #(
-    .INIT(4'h7)) 
-    \s_axi_ctrl_rdata_reg[15]_i_26 
+    .INIT(8'h8A)) 
+    \s_axi_ctrl_rdata_reg[15]_i_14 
        (.I0(s_axi_ctrl_araddr[6]),
         .I1(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_26_n_0 ));
+        .I2(s_axi_ctrl_araddr[4]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[15]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_26_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  LUT5 #(
+    .INIT(32'hFFFFB800)) 
+    \s_axi_ctrl_rdata_reg[15]_i_16 
+       (.I0(reg_img_h[15]),
+        .I1(s_axi_ctrl_araddr[2]),
+        .I2(reg_img_w[15]),
+        .I3(s_axi_ctrl_araddr[3]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_16_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[15]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_17_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_18 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_18_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_19 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_32_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_33_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_19_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_27 
-       (.I0(\reg_coeff_reg[19] [15]),
-        .I1(\reg_coeff_reg[18] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_27_n_0 ));
+    .INIT(64'hAAFFAAFEAABBAABA)) 
+    \s_axi_ctrl_rdata_reg[15]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I1(s_axi_ctrl_araddr[8]),
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(s_axi_ctrl_araddr[9]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_9_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_10_n_0 ),
+        .O(p_1_out));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_28 
-       (.I0(\reg_coeff_reg[23] [15]),
-        .I1(\reg_coeff_reg[22] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_29 
-       (.I0(\reg_coeff_reg[11] [15]),
-        .I1(\reg_coeff_reg[10] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'h2020222020222222)) 
-    \s_axi_ctrl_rdata_reg[15]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_10_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_11_n_0 ),
+    .INIT(64'h35F5353535F5F5F5)) 
+    \s_axi_ctrl_rdata_reg[15]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_34_n_0 ),
+        .I1(s_axi_ctrl_araddr[5]),
         .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_12_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_3_n_0 ));
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_35_n_0 ),
+        .I4(s_axi_ctrl_araddr[4]),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_20_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_30 
+    \s_axi_ctrl_rdata_reg[15]_i_21 
        (.I0(\reg_coeff_reg[15] [15]),
         .I1(\reg_coeff_reg[14] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[13] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[12] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_22 
+       (.I0(\reg_coeff_reg[11] [15]),
+        .I1(\reg_coeff_reg[10] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_22_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \s_axi_ctrl_rdata_reg[15]_i_23 
+       (.I0(s_axi_ctrl_araddr[3]),
+        .I1(s_axi_ctrl_araddr[2]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \s_axi_ctrl_rdata_reg[15]_i_24 
+       (.I0(s_axi_ctrl_araddr[6]),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(s_axi_ctrl_araddr[9]),
+        .I3(s_axi_ctrl_araddr[7]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_24_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_25 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_37_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_38_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_26 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_39_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_40_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_26_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT5 #(
+    .INIT(32'h23232320)) 
+    \s_axi_ctrl_rdata_reg[15]_i_27 
+       (.I0(reg_radius[15]),
+        .I1(s_axi_ctrl_araddr[3]),
+        .I2(s_axi_ctrl_araddr[2]),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_ctrl[15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_27_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_28 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_41_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_42_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_28_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_29 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_43_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_44_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_29_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_11_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_12_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ),
+        .I3(\reg_coeff_reg[80] [15]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_30 
+       (.I0(\reg_coeff_reg[43] [15]),
+        .I1(\reg_coeff_reg[42] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [15]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[15]_i_31 
-       (.I0(\reg_coeff_reg[55] [15]),
-        .I1(\reg_coeff_reg[54] [15]),
+       (.I0(\reg_coeff_reg[47] [15]),
+        .I1(\reg_coeff_reg[46] [15]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [15]),
+        .I3(\reg_coeff_reg[45] [15]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [15]),
+        .I5(\reg_coeff_reg[44] [15]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -31502,162 +32001,192 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[15]_i_33 
-       (.I0(\reg_coeff_reg[35] [15]),
-        .I1(\reg_coeff_reg[34] [15]),
+       (.I0(\reg_coeff_reg[55] [15]),
+        .I1(\reg_coeff_reg[54] [15]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [15]),
+        .I3(\reg_coeff_reg[53] [15]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [15]),
+        .I5(\reg_coeff_reg[52] [15]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_33_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_34 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_45_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_46_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_34_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_34 
-       (.I0(\reg_coeff_reg[39] [15]),
-        .I1(\reg_coeff_reg[38] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_34_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT5 #(
-    .INIT(32'h080C0800)) 
     \s_axi_ctrl_rdata_reg[15]_i_35 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_38_n_0 ),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_39_n_0 ),
+       (.I0(\reg_coeff_reg[23] [15]),
+        .I1(\reg_coeff_reg[22] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [15]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_35_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_36 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_40_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_41_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_36_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[15]_i_37 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_42_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_43_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_37_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_38 
-       (.I0(\reg_coeff_reg[47] [15]),
-        .I1(\reg_coeff_reg[46] [15]),
+    \s_axi_ctrl_rdata_reg[15]_i_36 
+       (.I0(\reg_coeff_reg[19] [15]),
+        .I1(\reg_coeff_reg[18] [15]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [15]),
+        .I3(\reg_coeff_reg[17] [15]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_38_n_0 ));
+        .I5(\reg_coeff_reg[16] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_36_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_39 
-       (.I0(\reg_coeff_reg[43] [15]),
-        .I1(\reg_coeff_reg[42] [15]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [15]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_39_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000100010001)) 
-    \s_axi_ctrl_rdata_reg[15]_i_4 
-       (.I0(s_axi_ctrl_araddr[9]),
-        .I1(s_axi_ctrl_araddr[7]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[13]_i_2_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_40 
+    \s_axi_ctrl_rdata_reg[15]_i_37 
        (.I0(\reg_coeff_reg[59] [15]),
         .I1(\reg_coeff_reg[58] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_40_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[15]_i_37_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_41 
+    \s_axi_ctrl_rdata_reg[15]_i_38 
        (.I0(\reg_coeff_reg[63] [15]),
         .I1(\reg_coeff_reg[62] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_41_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[15]_i_38_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_42 
+    \s_axi_ctrl_rdata_reg[15]_i_39 
        (.I0(\reg_coeff_reg[67] [15]),
         .I1(\reg_coeff_reg[66] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [15]),
-        .O(\s_axi_ctrl_rdata_reg[15]_i_42_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[15]_i_39_n_0 ));
+  LUT5 #(
+    .INIT(32'hEEAEAAAA)) 
+    \s_axi_ctrl_rdata_reg[15]_i_4 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(reg_coeff_scale[15]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_16_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[15]_i_43 
+    \s_axi_ctrl_rdata_reg[15]_i_40 
        (.I0(\reg_coeff_reg[71] [15]),
         .I1(\reg_coeff_reg[70] [15]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [15]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_40_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_41 
+       (.I0(\reg_coeff_reg[27] [15]),
+        .I1(\reg_coeff_reg[26] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_41_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_42 
+       (.I0(\reg_coeff_reg[31] [15]),
+        .I1(\reg_coeff_reg[30] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_42_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_43 
+       (.I0(\reg_coeff_reg[35] [15]),
+        .I1(\reg_coeff_reg[34] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [15]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_43_n_0 ));
   LUT6 #(
-    .INIT(64'hEEEEEEEEFEFFFEEE)) 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_44 
+       (.I0(\reg_coeff_reg[39] [15]),
+        .I1(\reg_coeff_reg[38] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_44_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_45 
+       (.I0(\reg_coeff_reg[3] [15]),
+        .I1(\reg_coeff_reg[2] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_45_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[15]_i_46 
+       (.I0(\reg_coeff_reg[7] [15]),
+        .I1(\reg_coeff_reg[6] [15]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [15]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [15]),
+        .O(\s_axi_ctrl_rdata_reg[15]_i_46_n_0 ));
+  LUT6 #(
+    .INIT(64'h020202A2A2A202A2)) 
     \s_axi_ctrl_rdata_reg[15]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_15_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_16_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_17_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_18_n_0 ),
+       (.I0(s_axi_ctrl_araddr[7]),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_17_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_18_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_19_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[15]_i_5_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000FEAEAAAA)) 
+    .INIT(64'h0000000022A22AAA)) 
     \s_axi_ctrl_rdata_reg[15]_i_6 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_19_n_0 ),
-        .I1(reg_img_w[15]),
-        .I2(s_axi_ctrl_araddr[2]),
-        .I3(reg_img_h[15]),
-        .I4(s_axi_ctrl_araddr[3]),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_20_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_21_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_22_n_0 ),
+        .I5(s_axi_ctrl_araddr[7]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h505F3030505F3F3F)) 
+    .INIT(64'h0000000100010001)) 
     \s_axi_ctrl_rdata_reg[15]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_21_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_22_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_24_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [15]),
+       (.I0(s_axi_ctrl_araddr[6]),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(s_axi_ctrl_araddr[9]),
+        .I3(s_axi_ctrl_araddr[7]),
+        .I4(s_axi_ctrl_araddr[4]),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
-  LUT5 #(
-    .INIT(32'h00000001)) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  LUT4 #(
+    .INIT(16'h222A)) 
     \s_axi_ctrl_rdata_reg[15]_i_8 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(s_axi_ctrl_araddr[9]),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(s_axi_ctrl_araddr[5]),
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_24_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(s_axi_ctrl_araddr[2]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000FF01FFFFFFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
     \s_axi_ctrl_rdata_reg[15]_i_9 
-       (.I0(s_axi_ctrl_araddr[3]),
-        .I1(s_axi_ctrl_araddr[2]),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_26_n_0 ),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(s_axi_ctrl_araddr[8]),
+       (.I0(s_axi_ctrl_araddr[6]),
+        .I1(s_axi_ctrl_araddr[5]),
         .O(\s_axi_ctrl_rdata_reg[15]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
@@ -31669,70 +32198,76 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .G(p_1_out),
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [1]));
-  LUT5 #(
-    .INIT(32'hEEAEEAAA)) 
+  LUT6 #(
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[1]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[1]_i_2_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(reg_coeff_scale[1]),
-        .I4(\s_axi_ctrl_rdata_reg[1]_i_3_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[1]),
+        .I5(\s_axi_ctrl_rdata_reg[1]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[1]_i_1_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_22_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_24_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_25_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_10 
+    \s_axi_ctrl_rdata_reg[1]_i_12 
+       (.I0(\reg_coeff_reg[79] [1]),
+        .I1(\reg_coeff_reg[78] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[77] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[76] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_12_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_13 
        (.I0(\reg_coeff_reg[75] [1]),
         .I1(\reg_coeff_reg[74] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[73] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_10_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[1]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_20_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_21_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_12 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_22_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_24_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_25_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_14_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_29_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_15_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_16 
+    \s_axi_ctrl_rdata_reg[1]_i_14 
        (.I0(\reg_coeff_reg[3] [1]),
         .I1(\reg_coeff_reg[2] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_16_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_17 
+    \s_axi_ctrl_rdata_reg[1]_i_15 
        (.I0(\reg_coeff_reg[7] [1]),
         .I1(\reg_coeff_reg[6] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[5] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[4] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_17_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_15_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_16_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_17_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[1]_i_18 
        (.I0(\s_axi_ctrl_rdata_reg[1]_i_30_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[1]_i_31_n_0 ),
@@ -31743,11 +32278,16 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I1(\s_axi_ctrl_rdata_reg[1]_i_33_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[1]_i_19_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_4_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_5_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_2_n_0 ),
-        .S(s_axi_ctrl_araddr[8]));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[1]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [1]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[1]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_2_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[1]_i_20 
        (.I0(\s_axi_ctrl_rdata_reg[1]_i_34_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[1]_i_35_n_0 ),
@@ -31761,222 +32301,212 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[1]_i_22 
-       (.I0(\reg_coeff_reg[51] [1]),
-        .I1(\reg_coeff_reg[50] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_22_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_23 
-       (.I0(\reg_coeff_reg[55] [1]),
-        .I1(\reg_coeff_reg[54] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_24 
-       (.I0(\reg_coeff_reg[43] [1]),
-        .I1(\reg_coeff_reg[42] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_25 
-       (.I0(\reg_coeff_reg[47] [1]),
-        .I1(\reg_coeff_reg[46] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_26 
-       (.I0(\reg_coeff_reg[35] [1]),
-        .I1(\reg_coeff_reg[34] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_27 
-       (.I0(\reg_coeff_reg[39] [1]),
-        .I1(\reg_coeff_reg[38] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_28 
-       (.I0(\reg_coeff_reg[27] [1]),
-        .I1(\reg_coeff_reg[26] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_29 
-       (.I0(\reg_coeff_reg[31] [1]),
-        .I1(\reg_coeff_reg[30] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_3 
-       (.I0(reg_img_h[1]),
-        .I1(reg_img_w[1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_30 
-       (.I0(\reg_coeff_reg[11] [1]),
-        .I1(\reg_coeff_reg[10] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_30_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_31 
-       (.I0(\reg_coeff_reg[15] [1]),
-        .I1(\reg_coeff_reg[14] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_32 
-       (.I0(\reg_coeff_reg[19] [1]),
-        .I1(\reg_coeff_reg[18] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_33 
-       (.I0(\reg_coeff_reg[23] [1]),
-        .I1(\reg_coeff_reg[22] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_34 
        (.I0(\reg_coeff_reg[59] [1]),
         .I1(\reg_coeff_reg[58] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_34_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_35 
+    \s_axi_ctrl_rdata_reg[1]_i_23 
        (.I0(\reg_coeff_reg[63] [1]),
         .I1(\reg_coeff_reg[62] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_35_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_23_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_36 
+    \s_axi_ctrl_rdata_reg[1]_i_24 
        (.I0(\reg_coeff_reg[67] [1]),
         .I1(\reg_coeff_reg[66] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_36_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_37 
+    \s_axi_ctrl_rdata_reg[1]_i_25 
        (.I0(\reg_coeff_reg[71] [1]),
         .I1(\reg_coeff_reg[70] [1]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [1]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_26 
+       (.I0(\reg_coeff_reg[11] [1]),
+        .I1(\reg_coeff_reg[10] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_27 
+       (.I0(\reg_coeff_reg[15] [1]),
+        .I1(\reg_coeff_reg[14] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_28 
+       (.I0(\reg_coeff_reg[19] [1]),
+        .I1(\reg_coeff_reg[18] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_29 
+       (.I0(\reg_coeff_reg[23] [1]),
+        .I1(\reg_coeff_reg[22] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFEAEAAAAFEAE)) 
+    \s_axi_ctrl_rdata_reg[1]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[1]_i_8_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(\s_axi_ctrl_rdata_reg[1]_i_9_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_30 
+       (.I0(\reg_coeff_reg[51] [1]),
+        .I1(\reg_coeff_reg[50] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_31 
+       (.I0(\reg_coeff_reg[55] [1]),
+        .I1(\reg_coeff_reg[54] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_32 
+       (.I0(\reg_coeff_reg[43] [1]),
+        .I1(\reg_coeff_reg[42] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_33 
+       (.I0(\reg_coeff_reg[47] [1]),
+        .I1(\reg_coeff_reg[46] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_34 
+       (.I0(\reg_coeff_reg[35] [1]),
+        .I1(\reg_coeff_reg[34] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_35 
+       (.I0(\reg_coeff_reg[39] [1]),
+        .I1(\reg_coeff_reg[38] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_36 
+       (.I0(\reg_coeff_reg[27] [1]),
+        .I1(\reg_coeff_reg[26] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [1]),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[1]_i_37 
+       (.I0(\reg_coeff_reg[31] [1]),
+        .I1(\reg_coeff_reg[30] [1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [1]),
         .O(\s_axi_ctrl_rdata_reg[1]_i_37_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000BBB888B8)) 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[1]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_6_n_0 ),
-        .I1(s_axi_ctrl_araddr[7]),
-        .I2(\s_axi_ctrl_rdata_reg[1]_i_7_n_0 ),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(\s_axi_ctrl_rdata_reg[1]_i_8_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
+       (.I0(reg_img_h[1]),
+        .I1(reg_img_w[1]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[1]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[1]),
         .O(\s_axi_ctrl_rdata_reg[1]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_10_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[1]_i_11_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [1]),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[1]_i_6 
+  MUXF8 \s_axi_ctrl_rdata_reg[1]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[1]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[1]_i_6 
        (.I0(\s_axi_ctrl_rdata_reg[1]_i_12_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[1]_i_13_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[1]_i_14_n_0 ),
-        .I4(s_axi_ctrl_araddr[5]),
-        .I5(\s_axi_ctrl_rdata_reg[1]_i_15_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[1]_i_6_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[1]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[1]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_16_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_17_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_14_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_15_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[1]_i_7_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF8 \s_axi_ctrl_rdata_reg[1]_i_8 
-       (.I0(\s_axi_ctrl_rdata_reg[1]_i_18_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[1]_i_19_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_16_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_17_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[1]_i_8_n_0 ),
         .S(s_axi_ctrl_araddr[5]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[1]_i_9 
-       (.I0(\reg_coeff_reg[79] [1]),
-        .I1(\reg_coeff_reg[78] [1]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [1]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [1]),
+       (.I0(\s_axi_ctrl_rdata_reg[1]_i_18_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[1]_i_19_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[1]_i_20_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[1]_i_21_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[1]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
@@ -31989,320 +32519,314 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [2]));
   LUT6 #(
-    .INIT(64'hAA8A0080AAAAAAAA)) 
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[2]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[2]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[2]_i_3_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[2]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[2]),
+        .I5(\s_axi_ctrl_rdata_reg[2]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[2]_i_1_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[2]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_18_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_10_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF8 \s_axi_ctrl_rdata_reg[2]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[2]_i_12 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_21_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[2]_i_13 
        (.I0(\s_axi_ctrl_rdata_reg[2]_i_23_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[2]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_14 
+        .O(\s_axi_ctrl_rdata_reg[2]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_11 
        (.I0(\s_axi_ctrl_rdata_reg[2]_i_25_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[2]_i_26_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_14_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_11_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_15 
-       (.I0(\reg_coeff_reg[67] [2]),
-        .I1(\reg_coeff_reg[66] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_16 
-       (.I0(\reg_coeff_reg[71] [2]),
-        .I1(\reg_coeff_reg[70] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_17 
-       (.I0(\reg_coeff_reg[59] [2]),
-        .I1(\reg_coeff_reg[58] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_18 
-       (.I0(\reg_coeff_reg[63] [2]),
-        .I1(\reg_coeff_reg[62] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_18_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_27_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_28_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFF0CCAAAA)) 
-    \s_axi_ctrl_rdata_reg[2]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_5_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_6_n_0 ),
-        .I2(reg_coeff_scale[2]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_20_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_21_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_22_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_36_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_23_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_37_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_38_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_24_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_25 
-       (.I0(\reg_coeff_reg[3] [2]),
-        .I1(\reg_coeff_reg[2] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_26 
-       (.I0(\reg_coeff_reg[7] [2]),
-        .I1(\reg_coeff_reg[6] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_27 
-       (.I0(\reg_coeff_reg[43] [2]),
-        .I1(\reg_coeff_reg[42] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_28 
-       (.I0(\reg_coeff_reg[47] [2]),
-        .I1(\reg_coeff_reg[46] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_29 
-       (.I0(\reg_coeff_reg[51] [2]),
-        .I1(\reg_coeff_reg[50] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_29_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_8_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_3_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_30 
-       (.I0(\reg_coeff_reg[55] [2]),
-        .I1(\reg_coeff_reg[54] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_30_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_31 
-       (.I0(\reg_coeff_reg[27] [2]),
-        .I1(\reg_coeff_reg[26] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_32 
-       (.I0(\reg_coeff_reg[31] [2]),
-        .I1(\reg_coeff_reg[30] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_33 
-       (.I0(\reg_coeff_reg[35] [2]),
-        .I1(\reg_coeff_reg[34] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_34 
-       (.I0(\reg_coeff_reg[39] [2]),
-        .I1(\reg_coeff_reg[38] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_35 
-       (.I0(\reg_coeff_reg[11] [2]),
-        .I1(\reg_coeff_reg[10] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_36 
-       (.I0(\reg_coeff_reg[15] [2]),
-        .I1(\reg_coeff_reg[14] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_37 
-       (.I0(\reg_coeff_reg[19] [2]),
-        .I1(\reg_coeff_reg[18] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_38 
-       (.I0(\reg_coeff_reg[23] [2]),
-        .I1(\reg_coeff_reg[22] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
-    \s_axi_ctrl_rdata_reg[2]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_10_n_0 ),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_12_n_0 ),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(\s_axi_ctrl_rdata_reg[2]_i_13_n_0 ),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[2]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_6 
-       (.I0(reg_img_h[2]),
-        .I1(reg_img_w[2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_7 
-       (.I0(\reg_coeff_reg[75] [2]),
-        .I1(\reg_coeff_reg[74] [2]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [2]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[2]_i_8 
+    \s_axi_ctrl_rdata_reg[2]_i_12 
        (.I0(\reg_coeff_reg[79] [2]),
         .I1(\reg_coeff_reg[78] [2]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [2]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [2]),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_8_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[2]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[2]_i_16_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[2]_i_9_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_12_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_13 
+       (.I0(\reg_coeff_reg[75] [2]),
+        .I1(\reg_coeff_reg[74] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_13_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_14 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_27_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_28_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_14_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_29_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_30_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_32_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_16_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_33_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_17_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_18 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_35_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_18_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_19 
+       (.I0(\reg_coeff_reg[55] [2]),
+        .I1(\reg_coeff_reg[54] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[2]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [2]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[2]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_20 
+       (.I0(\reg_coeff_reg[51] [2]),
+        .I1(\reg_coeff_reg[50] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_21 
+       (.I0(\reg_coeff_reg[47] [2]),
+        .I1(\reg_coeff_reg[46] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_22 
+       (.I0(\reg_coeff_reg[43] [2]),
+        .I1(\reg_coeff_reg[42] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_23 
+       (.I0(\reg_coeff_reg[59] [2]),
+        .I1(\reg_coeff_reg[58] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_24 
+       (.I0(\reg_coeff_reg[63] [2]),
+        .I1(\reg_coeff_reg[62] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_25 
+       (.I0(\reg_coeff_reg[67] [2]),
+        .I1(\reg_coeff_reg[66] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_26 
+       (.I0(\reg_coeff_reg[71] [2]),
+        .I1(\reg_coeff_reg[70] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_27 
+       (.I0(\reg_coeff_reg[19] [2]),
+        .I1(\reg_coeff_reg[18] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_28 
+       (.I0(\reg_coeff_reg[23] [2]),
+        .I1(\reg_coeff_reg[22] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_29 
+       (.I0(\reg_coeff_reg[11] [2]),
+        .I1(\reg_coeff_reg[10] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hFEFEFEAEAEAEFEAE)) 
+    \s_axi_ctrl_rdata_reg[2]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(\s_axi_ctrl_rdata_reg[2]_i_8_n_0 ),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[2]_i_9_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_30 
+       (.I0(\reg_coeff_reg[15] [2]),
+        .I1(\reg_coeff_reg[14] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_31 
+       (.I0(\reg_coeff_reg[3] [2]),
+        .I1(\reg_coeff_reg[2] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_32 
+       (.I0(\reg_coeff_reg[7] [2]),
+        .I1(\reg_coeff_reg[6] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_33 
+       (.I0(\reg_coeff_reg[27] [2]),
+        .I1(\reg_coeff_reg[26] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_34 
+       (.I0(\reg_coeff_reg[31] [2]),
+        .I1(\reg_coeff_reg[30] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_35 
+       (.I0(\reg_coeff_reg[35] [2]),
+        .I1(\reg_coeff_reg[34] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_36 
+       (.I0(\reg_coeff_reg[39] [2]),
+        .I1(\reg_coeff_reg[38] [2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_4 
+       (.I0(reg_img_h[2]),
+        .I1(reg_img_w[2]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[2]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[2]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_4_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[2]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[2]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
+    \s_axi_ctrl_rdata_reg[2]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_14_n_0 ),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(\s_axi_ctrl_rdata_reg[2]_i_15_n_0 ),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[2]_i_16_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_7_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[2]_i_8 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_17_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_18_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_8_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  LUT6 #(
+    .INIT(64'hAFA0AFA0CFCFC0C0)) 
+    \s_axi_ctrl_rdata_reg[2]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[2]_i_19_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[2]_i_20_n_0 ),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\s_axi_ctrl_rdata_reg[2]_i_21_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[2]_i_22_n_0 ),
+        .I5(s_axi_ctrl_araddr[4]),
+        .O(\s_axi_ctrl_rdata_reg[2]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -32314,115 +32838,134 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [3]));
   LUT6 #(
-    .INIT(64'hF4F404F4F4040404)) 
+    .INIT(64'hAAAE0000AAAEAAAE)) 
     \s_axi_ctrl_rdata_reg[3]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[3]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[3]_i_3_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(reg_coeff_scale[3]),
-        .I5(\s_axi_ctrl_rdata_reg[3]_i_4_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[3]_i_4_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[3]_i_5_n_0 ),
+        .I5(s_axi_ctrl_araddr[8]),
         .O(\s_axi_ctrl_rdata_reg[3]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[3]_i_10 
-       (.I0(\reg_coeff_reg[3] [3]),
-        .I1(\reg_coeff_reg[2] [3]),
+       (.I0(\reg_coeff_reg[19] [3]),
+        .I1(\reg_coeff_reg[18] [3]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [3]),
+        .I3(\reg_coeff_reg[17] [3]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [3]),
+        .I5(\reg_coeff_reg[16] [3]),
         .O(\s_axi_ctrl_rdata_reg[3]_i_10_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[3]_i_11 
-       (.I0(\reg_coeff_reg[7] [3]),
-        .I1(\reg_coeff_reg[6] [3]),
+       (.I0(\reg_coeff_reg[23] [3]),
+        .I1(\reg_coeff_reg[22] [3]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [3]),
+        .I3(\reg_coeff_reg[21] [3]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [3]),
+        .I5(\reg_coeff_reg[20] [3]),
         .O(\s_axi_ctrl_rdata_reg[3]_i_11_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_12 
+  LUT6 #(
+    .INIT(64'h00CFAAAA00C0AAAA)) 
+    \s_axi_ctrl_rdata_reg[3]_i_12 
        (.I0(\s_axi_ctrl_rdata_reg[3]_i_22_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[3]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_24_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_25_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_14_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_29_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_15_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_30_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_31_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_16_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_32_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_33_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_17_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[3]_i_24_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_18 
+    \s_axi_ctrl_rdata_reg[3]_i_13 
        (.I0(\reg_coeff_reg[75] [3]),
         .I1(\reg_coeff_reg[74] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[73] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[72] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_18_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_19 
+    \s_axi_ctrl_rdata_reg[3]_i_14 
        (.I0(\reg_coeff_reg[79] [3]),
         .I1(\reg_coeff_reg[78] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_19_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000015155550151)) 
-    \s_axi_ctrl_rdata_reg[3]_i_2 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_5_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[3]_i_6_n_0 ),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(\s_axi_ctrl_rdata_reg[3]_i_7_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_34_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_20_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_14_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[3]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_25_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_26_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_27_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_28_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_16_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_21_n_0 ),
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_29_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_30_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_17_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_22 
-       (.I0(\reg_coeff_reg[11] [3]),
-        .I1(\reg_coeff_reg[10] [3]),
+    \s_axi_ctrl_rdata_reg[3]_i_18 
+       (.I0(\reg_coeff_reg[43] [3]),
+        .I1(\reg_coeff_reg[42] [3]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [3]),
+        .I3(\reg_coeff_reg[41] [3]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_22_n_0 ));
+        .I5(\reg_coeff_reg[40] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_19 
+       (.I0(\reg_coeff_reg[47] [3]),
+        .I1(\reg_coeff_reg[46] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_19_n_0 ));
+  LUT5 #(
+    .INIT(32'hEEAEEAAA)) 
+    \s_axi_ctrl_rdata_reg[3]_i_2 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(reg_coeff_scale[3]),
+        .I4(\s_axi_ctrl_rdata_reg[3]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_20 
+       (.I0(\reg_coeff_reg[51] [3]),
+        .I1(\reg_coeff_reg[50] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_21 
+       (.I0(\reg_coeff_reg[55] [3]),
+        .I1(\reg_coeff_reg[54] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_21_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_22 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_32_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_22_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[3]_i_23 
@@ -32436,193 +32979,178 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[3]_i_24 
-       (.I0(\reg_coeff_reg[19] [3]),
-        .I1(\reg_coeff_reg[18] [3]),
+       (.I0(\reg_coeff_reg[11] [3]),
+        .I1(\reg_coeff_reg[10] [3]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [3]),
+        .I3(\reg_coeff_reg[9] [3]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [3]),
+        .I5(\reg_coeff_reg[8] [3]),
         .O(\s_axi_ctrl_rdata_reg[3]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_25 
-       (.I0(\reg_coeff_reg[23] [3]),
-        .I1(\reg_coeff_reg[22] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_26 
-       (.I0(\reg_coeff_reg[51] [3]),
-        .I1(\reg_coeff_reg[50] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_26_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_25 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_33_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_25_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_26 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_35_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_26_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[3]_i_27 
-       (.I0(\reg_coeff_reg[55] [3]),
-        .I1(\reg_coeff_reg[54] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_28 
-       (.I0(\reg_coeff_reg[43] [3]),
-        .I1(\reg_coeff_reg[42] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_29 
-       (.I0(\reg_coeff_reg[47] [3]),
-        .I1(\reg_coeff_reg[46] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'hDF8FDF8FFFFF0F0F)) 
-    \s_axi_ctrl_rdata_reg[3]_i_3 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(\reg_coeff_reg[80] [3]),
-        .I2(s_axi_ctrl_araddr[8]),
-        .I3(\s_axi_ctrl_rdata_reg[3]_i_8_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[3]_i_9_n_0 ),
-        .I5(s_axi_ctrl_araddr[6]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_30 
-       (.I0(\reg_coeff_reg[35] [3]),
-        .I1(\reg_coeff_reg[34] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_30_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_31 
-       (.I0(\reg_coeff_reg[39] [3]),
-        .I1(\reg_coeff_reg[38] [3]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [3]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_31_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_32 
        (.I0(\reg_coeff_reg[27] [3]),
         .I1(\reg_coeff_reg[26] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[25] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[24] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_32_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_33 
+    \s_axi_ctrl_rdata_reg[3]_i_28 
        (.I0(\reg_coeff_reg[31] [3]),
         .I1(\reg_coeff_reg[30] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[29] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[28] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_33_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_34 
+    \s_axi_ctrl_rdata_reg[3]_i_29 
+       (.I0(\reg_coeff_reg[35] [3]),
+        .I1(\reg_coeff_reg[34] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hEEE222E2FFFFFFFF)) 
+    \s_axi_ctrl_rdata_reg[3]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_7_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[3]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(\s_axi_ctrl_rdata_reg[3]_i_9_n_0 ),
+        .I5(s_axi_ctrl_araddr[7]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_30 
+       (.I0(\reg_coeff_reg[39] [3]),
+        .I1(\reg_coeff_reg[38] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_31 
+       (.I0(\reg_coeff_reg[3] [3]),
+        .I1(\reg_coeff_reg[2] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_32 
+       (.I0(\reg_coeff_reg[7] [3]),
+        .I1(\reg_coeff_reg[6] [3]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [3]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [3]),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_33 
        (.I0(\reg_coeff_reg[59] [3]),
         .I1(\reg_coeff_reg[58] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_34_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_35 
+    \s_axi_ctrl_rdata_reg[3]_i_34 
        (.I0(\reg_coeff_reg[63] [3]),
         .I1(\reg_coeff_reg[62] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_35_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_36 
+    \s_axi_ctrl_rdata_reg[3]_i_35 
        (.I0(\reg_coeff_reg[67] [3]),
         .I1(\reg_coeff_reg[66] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_36_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_37 
+    \s_axi_ctrl_rdata_reg[3]_i_36 
        (.I0(\reg_coeff_reg[71] [3]),
         .I1(\reg_coeff_reg[70] [3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_37_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[3]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000000000FF1D)) 
+    \s_axi_ctrl_rdata_reg[3]_i_4 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_10_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(\s_axi_ctrl_rdata_reg[3]_i_11_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(\s_axi_ctrl_rdata_reg[3]_i_12_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_4 
+    \s_axi_ctrl_rdata_reg[3]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_13_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_14_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ),
+        .I3(\reg_coeff_reg[80] [3]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[3]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[3]_i_6 
        (.I0(reg_img_h[3]),
         .I1(reg_img_w[3]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(reg_radius[3]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(reg_ctrl[3]),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_4_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_10_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_11_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_5_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF8 \s_axi_ctrl_rdata_reg[3]_i_6 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_12_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_13_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_6_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[3]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[3]_i_16_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[3]_i_17_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[3]_i_7_n_0 ),
         .S(s_axi_ctrl_araddr[5]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[3]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[3]_i_14_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[3]_i_15_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[3]_i_16_n_0 ),
-        .I4(s_axi_ctrl_araddr[5]),
-        .I5(\s_axi_ctrl_rdata_reg[3]_i_17_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[3]_i_7_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[3]_i_8 
        (.I0(\s_axi_ctrl_rdata_reg[3]_i_18_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[3]_i_19_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[3]_i_8_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[3]_i_9 
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[3]_i_9 
        (.I0(\s_axi_ctrl_rdata_reg[3]_i_20_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[3]_i_21_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[3]_i_9_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
+        .S(s_axi_ctrl_araddr[4]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -32634,159 +33162,183 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [4]));
   LUT6 #(
-    .INIT(64'hAA8A0080AAAAAAAA)) 
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[4]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[4]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[4]_i_3_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[4]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[4]),
+        .I5(\s_axi_ctrl_rdata_reg[4]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[4]_i_1_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[4]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_18_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_10_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF8 \s_axi_ctrl_rdata_reg[4]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[4]_i_12 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_21_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[4]_i_13 
        (.I0(\s_axi_ctrl_rdata_reg[4]_i_23_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[4]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_14 
+        .O(\s_axi_ctrl_rdata_reg[4]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_11 
        (.I0(\s_axi_ctrl_rdata_reg[4]_i_25_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[4]_i_26_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_14_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_11_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_15 
-       (.I0(\reg_coeff_reg[67] [4]),
-        .I1(\reg_coeff_reg[66] [4]),
+    \s_axi_ctrl_rdata_reg[4]_i_12 
+       (.I0(\reg_coeff_reg[79] [4]),
+        .I1(\reg_coeff_reg[78] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [4]),
+        .I3(\reg_coeff_reg[77] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_15_n_0 ));
+        .I5(\reg_coeff_reg[76] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_16 
-       (.I0(\reg_coeff_reg[71] [4]),
-        .I1(\reg_coeff_reg[70] [4]),
+    \s_axi_ctrl_rdata_reg[4]_i_13 
+       (.I0(\reg_coeff_reg[75] [4]),
+        .I1(\reg_coeff_reg[74] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [4]),
+        .I3(\reg_coeff_reg[73] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_16_n_0 ));
+        .I5(\reg_coeff_reg[72] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_17 
-       (.I0(\reg_coeff_reg[59] [4]),
-        .I1(\reg_coeff_reg[58] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_18 
-       (.I0(\reg_coeff_reg[63] [4]),
-        .I1(\reg_coeff_reg[62] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_18_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_27_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_28_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFF0CCAAAA)) 
-    \s_axi_ctrl_rdata_reg[4]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_5_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_6_n_0 ),
-        .I2(reg_coeff_scale[4]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_20_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_21_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_22_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_36_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_23_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_37_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_38_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_24_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_25 
+    \s_axi_ctrl_rdata_reg[4]_i_14 
        (.I0(\reg_coeff_reg[3] [4]),
         .I1(\reg_coeff_reg[2] [4]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [4]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_25_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[4]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_26 
+    \s_axi_ctrl_rdata_reg[4]_i_15 
        (.I0(\reg_coeff_reg[7] [4]),
         .I1(\reg_coeff_reg[6] [4]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[5] [4]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[4] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_16 
+       (.I0(\reg_coeff_reg[23] [4]),
+        .I1(\reg_coeff_reg[22] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_16_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_17 
+       (.I0(\reg_coeff_reg[19] [4]),
+        .I1(\reg_coeff_reg[18] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_17_n_0 ));
+  LUT5 #(
+    .INIT(32'h44400400)) 
+    \s_axi_ctrl_rdata_reg[4]_i_18 
+       (.I0(s_axi_ctrl_araddr[5]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(\s_axi_ctrl_rdata_reg[4]_i_27_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[4]_i_28_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_18_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_19 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_29_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_30_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_19_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[4]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [4]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[4]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_2_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_32_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_20_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_33_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_22 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_35_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_36_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_22_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_23 
+       (.I0(\reg_coeff_reg[59] [4]),
+        .I1(\reg_coeff_reg[58] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_24 
+       (.I0(\reg_coeff_reg[63] [4]),
+        .I1(\reg_coeff_reg[62] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_25 
+       (.I0(\reg_coeff_reg[67] [4]),
+        .I1(\reg_coeff_reg[66] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [4]),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[4]_i_26 
+       (.I0(\reg_coeff_reg[71] [4]),
+        .I1(\reg_coeff_reg[70] [4]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [4]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_27 
-       (.I0(\reg_coeff_reg[43] [4]),
-        .I1(\reg_coeff_reg[42] [4]),
+       (.I0(\reg_coeff_reg[11] [4]),
+        .I1(\reg_coeff_reg[10] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [4]),
+        .I3(\reg_coeff_reg[9] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [4]),
+        .I5(\reg_coeff_reg[8] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_27_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_28 
-       (.I0(\reg_coeff_reg[47] [4]),
-        .I1(\reg_coeff_reg[46] [4]),
+       (.I0(\reg_coeff_reg[15] [4]),
+        .I1(\reg_coeff_reg[14] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [4]),
+        .I3(\reg_coeff_reg[13] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [4]),
+        .I5(\reg_coeff_reg[12] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -32798,11 +33350,16 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[48] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_29_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_8_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_3_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAEFFFFFFAEFF)) 
+    \s_axi_ctrl_rdata_reg[4]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[4]_i_8_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(\s_axi_ctrl_rdata_reg[4]_i_9_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_30 
@@ -32816,22 +33373,22 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_31 
-       (.I0(\reg_coeff_reg[27] [4]),
-        .I1(\reg_coeff_reg[26] [4]),
+       (.I0(\reg_coeff_reg[43] [4]),
+        .I1(\reg_coeff_reg[42] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [4]),
+        .I3(\reg_coeff_reg[41] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [4]),
+        .I5(\reg_coeff_reg[40] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_32 
-       (.I0(\reg_coeff_reg[31] [4]),
-        .I1(\reg_coeff_reg[30] [4]),
+       (.I0(\reg_coeff_reg[47] [4]),
+        .I1(\reg_coeff_reg[46] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [4]),
+        .I3(\reg_coeff_reg[45] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [4]),
+        .I5(\reg_coeff_reg[44] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -32856,98 +33413,68 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_35 
-       (.I0(\reg_coeff_reg[11] [4]),
-        .I1(\reg_coeff_reg[10] [4]),
+       (.I0(\reg_coeff_reg[27] [4]),
+        .I1(\reg_coeff_reg[26] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [4]),
+        .I3(\reg_coeff_reg[25] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [4]),
+        .I5(\reg_coeff_reg[24] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_35_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[4]_i_36 
-       (.I0(\reg_coeff_reg[15] [4]),
-        .I1(\reg_coeff_reg[14] [4]),
+       (.I0(\reg_coeff_reg[31] [4]),
+        .I1(\reg_coeff_reg[30] [4]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [4]),
+        .I3(\reg_coeff_reg[29] [4]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [4]),
+        .I5(\reg_coeff_reg[28] [4]),
         .O(\s_axi_ctrl_rdata_reg[4]_i_36_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_37 
-       (.I0(\reg_coeff_reg[19] [4]),
-        .I1(\reg_coeff_reg[18] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_38 
-       (.I0(\reg_coeff_reg[23] [4]),
-        .I1(\reg_coeff_reg[22] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
     \s_axi_ctrl_rdata_reg[4]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_10_n_0 ),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_12_n_0 ),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(\s_axi_ctrl_rdata_reg[4]_i_13_n_0 ),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[4]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_6 
        (.I0(reg_img_h[4]),
         .I1(reg_img_w[4]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(reg_radius[4]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(reg_ctrl[4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_7 
-       (.I0(\reg_coeff_reg[75] [4]),
-        .I1(\reg_coeff_reg[74] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[4]_i_8 
-       (.I0(\reg_coeff_reg[79] [4]),
-        .I1(\reg_coeff_reg[78] [4]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [4]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [4]),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_8_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[4]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[4]_i_16_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[4]_i_9_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_4_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[4]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[4]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_14_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_7_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'h000000007F777FFF)) 
+    \s_axi_ctrl_rdata_reg[4]_i_8 
+       (.I0(s_axi_ctrl_araddr[5]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[4]_i_16_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[4]_i_17_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[4]_i_18_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'h505F3030505F3F3F)) 
+    \s_axi_ctrl_rdata_reg[4]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[4]_i_19_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[4]_i_20_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[4]_i_21_n_0 ),
+        .I4(s_axi_ctrl_araddr[5]),
+        .I5(\s_axi_ctrl_rdata_reg[4]_i_22_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[4]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -32959,324 +33486,323 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [5]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF01010100)) 
+    .INIT(64'hF4F404F4F4040404)) 
     \s_axi_ctrl_rdata_reg[5]_i_1 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I1(s_axi_ctrl_araddr[8]),
-        .I2(\s_axi_ctrl_rdata_reg[5]_i_2_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[5]_i_3_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[5]_i_4_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_5_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_2_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(reg_coeff_scale[5]),
+        .I5(\s_axi_ctrl_rdata_reg[5]_i_4_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_10 
-       (.I0(\reg_coeff_reg[55] [5]),
-        .I1(\reg_coeff_reg[54] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_11 
-       (.I0(\reg_coeff_reg[39] [5]),
-        .I1(\reg_coeff_reg[38] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_11_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_22_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_11 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_24_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_25_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[5]_i_12 
-       (.I0(\reg_coeff_reg[35] [5]),
-        .I1(\reg_coeff_reg[34] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'h00FC00AA000C00AA)) 
-    \s_axi_ctrl_rdata_reg[5]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[5]_i_20_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_21_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_14 
-       (.I0(reg_img_h[5]),
-        .I1(reg_img_w[5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h0002220222222222)) 
-    \s_axi_ctrl_rdata_reg[5]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_22_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[5]_i_23_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[5]_i_24_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[5]_i_25_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_15_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[5]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_16_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_17 
-       (.I0(\reg_coeff_reg[19] [5]),
-        .I1(\reg_coeff_reg[18] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_18 
-       (.I0(\reg_coeff_reg[23] [5]),
-        .I1(\reg_coeff_reg[22] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_18_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_28_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[5]_i_29_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'h000000000000737F)) 
-    \s_axi_ctrl_rdata_reg[5]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_6_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(\s_axi_ctrl_rdata_reg[5]_i_7_n_0 ),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_8_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_20 
-       (.I0(\reg_coeff_reg[43] [5]),
-        .I1(\reg_coeff_reg[42] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_21 
-       (.I0(\reg_coeff_reg[47] [5]),
-        .I1(\reg_coeff_reg[46] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'h7C7F7C7C7C7F7F7F)) 
-    \s_axi_ctrl_rdata_reg[5]_i_22 
-       (.I0(\reg_coeff_reg[80] [5]),
-        .I1(s_axi_ctrl_araddr[5]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[5]_i_30_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_31_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_22_n_0 ));
-  LUT5 #(
-    .INIT(32'h00E20000)) 
-    \s_axi_ctrl_rdata_reg[5]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_32_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(\s_axi_ctrl_rdata_reg[5]_i_33_n_0 ),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(s_axi_ctrl_araddr[5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_24 
-       (.I0(\reg_coeff_reg[75] [5]),
-        .I1(\reg_coeff_reg[74] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_25 
        (.I0(\reg_coeff_reg[79] [5]),
         .I1(\reg_coeff_reg[78] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_25_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_26 
-       (.I0(\reg_coeff_reg[3] [5]),
-        .I1(\reg_coeff_reg[2] [5]),
+    \s_axi_ctrl_rdata_reg[5]_i_13 
+       (.I0(\reg_coeff_reg[75] [5]),
+        .I1(\reg_coeff_reg[74] [5]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [5]),
+        .I3(\reg_coeff_reg[73] [5]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_26_n_0 ));
+        .I5(\reg_coeff_reg[72] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_13_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_14 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_14_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_15_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_16 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_16_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_27 
-       (.I0(\reg_coeff_reg[7] [5]),
-        .I1(\reg_coeff_reg[6] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_28 
-       (.I0(\reg_coeff_reg[27] [5]),
-        .I1(\reg_coeff_reg[26] [5]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [5]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_29 
+    \s_axi_ctrl_rdata_reg[5]_i_17 
        (.I0(\reg_coeff_reg[31] [5]),
         .I1(\reg_coeff_reg[30] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[29] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[28] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'h88800080FFFFFFFF)) 
-    \s_axi_ctrl_rdata_reg[5]_i_3 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[5]_i_9_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[5]_i_10_n_0 ),
-        .I5(s_axi_ctrl_araddr[7]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_3_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_30 
-       (.I0(\reg_coeff_reg[63] [5]),
-        .I1(\reg_coeff_reg[62] [5]),
+    \s_axi_ctrl_rdata_reg[5]_i_18 
+       (.I0(\reg_coeff_reg[27] [5]),
+        .I1(\reg_coeff_reg[26] [5]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [5]),
+        .I3(\reg_coeff_reg[25] [5]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_30_n_0 ));
+        .I5(\reg_coeff_reg[24] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_18_n_0 ));
+  LUT5 #(
+    .INIT(32'h00001B00)) 
+    \s_axi_ctrl_rdata_reg[5]_i_19 
+       (.I0(s_axi_ctrl_araddr[4]),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_32_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[5]_i_33_n_0 ),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h11D100001DDD0000)) 
+    \s_axi_ctrl_rdata_reg[5]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_5_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\reg_coeff_reg[80] [5]),
+        .I4(s_axi_ctrl_araddr[8]),
+        .I5(\s_axi_ctrl_rdata_reg[5]_i_6_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_2_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_20 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_35_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_20_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_37_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_21_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_31 
+    \s_axi_ctrl_rdata_reg[5]_i_22 
        (.I0(\reg_coeff_reg[59] [5]),
         .I1(\reg_coeff_reg[58] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_31_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_22_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_32 
+    \s_axi_ctrl_rdata_reg[5]_i_23 
+       (.I0(\reg_coeff_reg[63] [5]),
+        .I1(\reg_coeff_reg[62] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_24 
        (.I0(\reg_coeff_reg[67] [5]),
         .I1(\reg_coeff_reg[66] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_32_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_24_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_33 
+    \s_axi_ctrl_rdata_reg[5]_i_25 
        (.I0(\reg_coeff_reg[71] [5]),
         .I1(\reg_coeff_reg[70] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF20222000)) 
-    \s_axi_ctrl_rdata_reg[5]_i_4 
-       (.I0(s_axi_ctrl_araddr[5]),
-        .I1(s_axi_ctrl_araddr[6]),
-        .I2(\s_axi_ctrl_rdata_reg[5]_i_11_n_0 ),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[5]_i_12_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_13_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hA280FFFFA280A280)) 
-    \s_axi_ctrl_rdata_reg[5]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(reg_coeff_scale[5]),
-        .I3(\s_axi_ctrl_rdata_reg[5]_i_14_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[5]_i_15_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_5_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_6 
-       (.I0(\reg_coeff_reg[15] [5]),
-        .I1(\reg_coeff_reg[14] [5]),
+    \s_axi_ctrl_rdata_reg[5]_i_26 
+       (.I0(\reg_coeff_reg[19] [5]),
+        .I1(\reg_coeff_reg[18] [5]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [5]),
+        .I3(\reg_coeff_reg[17] [5]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_6_n_0 ));
+        .I5(\reg_coeff_reg[16] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_7 
+    \s_axi_ctrl_rdata_reg[5]_i_27 
+       (.I0(\reg_coeff_reg[23] [5]),
+        .I1(\reg_coeff_reg[22] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_28 
        (.I0(\reg_coeff_reg[11] [5]),
         .I1(\reg_coeff_reg[10] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[9] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[8] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hCACACA0A0A0ACA0A)) 
-    \s_axi_ctrl_rdata_reg[5]_i_8 
-       (.I0(\s_axi_ctrl_rdata_reg[5]_i_16_n_0 ),
-        .I1(s_axi_ctrl_araddr[5]),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[5]_i_17_n_0 ),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[5]_i_18_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_8_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_28_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[5]_i_9 
+    \s_axi_ctrl_rdata_reg[5]_i_29 
+       (.I0(\reg_coeff_reg[15] [5]),
+        .I1(\reg_coeff_reg[14] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_29_n_0 ));
+  LUT6 #(
+    .INIT(64'hAEFEAEAEAEFEAEFE)) 
+    \s_axi_ctrl_rdata_reg[5]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_7_n_0 ),
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(\s_axi_ctrl_rdata_reg[5]_i_8_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[5]_i_9_n_0 ),
+        .I5(s_axi_ctrl_araddr[6]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_30 
+       (.I0(\reg_coeff_reg[3] [5]),
+        .I1(\reg_coeff_reg[2] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_31 
+       (.I0(\reg_coeff_reg[7] [5]),
+        .I1(\reg_coeff_reg[6] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_32 
+       (.I0(\reg_coeff_reg[35] [5]),
+        .I1(\reg_coeff_reg[34] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_33 
+       (.I0(\reg_coeff_reg[39] [5]),
+        .I1(\reg_coeff_reg[38] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_34 
+       (.I0(\reg_coeff_reg[43] [5]),
+        .I1(\reg_coeff_reg[42] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_35 
+       (.I0(\reg_coeff_reg[47] [5]),
+        .I1(\reg_coeff_reg[46] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_36 
        (.I0(\reg_coeff_reg[51] [5]),
         .I1(\reg_coeff_reg[50] [5]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[49] [5]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[48] [5]),
-        .O(\s_axi_ctrl_rdata_reg[5]_i_9_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[5]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_37 
+       (.I0(\reg_coeff_reg[55] [5]),
+        .I1(\reg_coeff_reg[54] [5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[5]_i_4 
+       (.I0(reg_img_h[5]),
+        .I1(reg_img_w[5]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[5]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[5]),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_4_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[5]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_10_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_11_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_5_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[5]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_12_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_6_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
+    \s_axi_ctrl_rdata_reg[5]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_14_n_0 ),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(\s_axi_ctrl_rdata_reg[5]_i_15_n_0 ),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[5]_i_16_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF01010011)) 
+    \s_axi_ctrl_rdata_reg[5]_i_8 
+       (.I0(s_axi_ctrl_araddr[6]),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(\s_axi_ctrl_rdata_reg[5]_i_17_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[5]_i_18_n_0 ),
+        .I4(s_axi_ctrl_araddr[4]),
+        .I5(\s_axi_ctrl_rdata_reg[5]_i_19_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_8_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[5]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[5]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[5]_i_21_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[5]_i_9_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -33288,139 +33814,189 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [6]));
   LUT6 #(
-    .INIT(64'h00000000FFDF55D5)) 
+    .INIT(64'hFFFFFFFF5500550C)) 
     \s_axi_ctrl_rdata_reg[6]_i_1 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_2_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[6]_i_3_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[6]_i_4_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_2_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_3_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[6]_i_4_n_0 ),
+        .I3(s_axi_ctrl_araddr[8]),
+        .I4(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[6]_i_5_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    .INIT(64'h0B000800FFFFFFFF)) 
     \s_axi_ctrl_rdata_reg[6]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_26_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[6]_i_27_n_0 ),
+        .I5(s_axi_ctrl_araddr[7]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_10_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_11 
+       (.I0(\reg_coeff_reg[51] [6]),
+        .I1(\reg_coeff_reg[50] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_12 
+       (.I0(\reg_coeff_reg[55] [6]),
+        .I1(\reg_coeff_reg[54] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_12_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_13 
+       (.I0(\reg_coeff_reg[23] [6]),
+        .I1(\reg_coeff_reg[22] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_14 
+       (.I0(\reg_coeff_reg[19] [6]),
+        .I1(\reg_coeff_reg[18] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'h00CFAAAA00C0AAAA)) 
+    \s_axi_ctrl_rdata_reg[6]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_29_n_0 ),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[6]_i_30_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_16 
        (.I0(reg_img_h[6]),
         .I1(reg_img_w[6]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(reg_radius[6]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(reg_ctrl[6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_10_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[6]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_11 
+    \s_axi_ctrl_rdata_reg[6]_i_17 
        (.I0(\reg_coeff_reg[67] [6]),
         .I1(\reg_coeff_reg[66] [6]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [6]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_11_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[6]_i_17_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_12 
+    \s_axi_ctrl_rdata_reg[6]_i_18 
        (.I0(\reg_coeff_reg[71] [6]),
         .I1(\reg_coeff_reg[70] [6]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [6]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_12_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[6]_i_18_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_13 
+    \s_axi_ctrl_rdata_reg[6]_i_19 
        (.I0(\reg_coeff_reg[59] [6]),
         .I1(\reg_coeff_reg[58] [6]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [6]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_13_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[6]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h0F0055330FFF5533)) 
+    \s_axi_ctrl_rdata_reg[6]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_6_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_7_n_0 ),
+        .I2(\reg_coeff_reg[80] [6]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[6]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_14 
+    \s_axi_ctrl_rdata_reg[6]_i_20 
        (.I0(\reg_coeff_reg[63] [6]),
         .I1(\reg_coeff_reg[62] [6]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [6]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_14_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[6]_i_15 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_15_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[6]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_21_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_16_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[6]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_23_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_17_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_18 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_25_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_26_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_18_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_27_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_28_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_5_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_6_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_2_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_20_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_21 
+        .O(\s_axi_ctrl_rdata_reg[6]_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_21 
+       (.I0(\reg_coeff_reg[79] [6]),
+        .I1(\reg_coeff_reg[78] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[77] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[76] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_22 
+       (.I0(\reg_coeff_reg[75] [6]),
+        .I1(\reg_coeff_reg[74] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_22_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_23 
        (.I0(\s_axi_ctrl_rdata_reg[6]_i_31_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[6]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_21_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_22_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_36_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_23_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_37_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_38_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_24_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_25 
-       (.I0(\reg_coeff_reg[3] [6]),
-        .I1(\reg_coeff_reg[2] [6]),
+    \s_axi_ctrl_rdata_reg[6]_i_24 
+       (.I0(\reg_coeff_reg[35] [6]),
+        .I1(\reg_coeff_reg[34] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [6]),
+        .I3(\reg_coeff_reg[33] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [6]),
+        .I5(\reg_coeff_reg[32] [6]),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[6]_i_25 
+       (.I0(\reg_coeff_reg[39] [6]),
+        .I1(\reg_coeff_reg[38] [6]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [6]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_25_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[6]_i_26 
-       (.I0(\reg_coeff_reg[7] [6]),
-        .I1(\reg_coeff_reg[6] [6]),
+       (.I0(\reg_coeff_reg[47] [6]),
+        .I1(\reg_coeff_reg[46] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [6]),
+        .I3(\reg_coeff_reg[45] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [6]),
+        .I5(\reg_coeff_reg[44] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -33432,45 +34008,40 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[40] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_28 
-       (.I0(\reg_coeff_reg[47] [6]),
-        .I1(\reg_coeff_reg[46] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_28_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_28 
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_33_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_28_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[6]_i_29 
-       (.I0(\reg_coeff_reg[51] [6]),
-        .I1(\reg_coeff_reg[50] [6]),
+       (.I0(\reg_coeff_reg[15] [6]),
+        .I1(\reg_coeff_reg[14] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [6]),
+        .I3(\reg_coeff_reg[13] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [6]),
+        .I5(\reg_coeff_reg[12] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_29_n_0 ));
   LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
+    .INIT(64'hEEEEEEEEFFFEEEFE)) 
     \s_axi_ctrl_rdata_reg[6]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_8_n_0 ),
-        .I2(s_axi_ctrl_araddr[5]),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_9_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_10_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[6]_i_11_n_0 ),
         .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [6]),
+        .I4(\s_axi_ctrl_rdata_reg[6]_i_12_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[6]_i_30 
-       (.I0(\reg_coeff_reg[55] [6]),
-        .I1(\reg_coeff_reg[54] [6]),
+       (.I0(\reg_coeff_reg[11] [6]),
+        .I1(\reg_coeff_reg[10] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [6]),
+        .I3(\reg_coeff_reg[9] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [6]),
+        .I5(\reg_coeff_reg[8] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -33495,112 +34066,65 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[6]_i_33 
-       (.I0(\reg_coeff_reg[35] [6]),
-        .I1(\reg_coeff_reg[34] [6]),
+       (.I0(\reg_coeff_reg[3] [6]),
+        .I1(\reg_coeff_reg[2] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [6]),
+        .I3(\reg_coeff_reg[1] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [6]),
+        .I5(\reg_coeff_reg[0] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[6]_i_34 
-       (.I0(\reg_coeff_reg[39] [6]),
-        .I1(\reg_coeff_reg[38] [6]),
+       (.I0(\reg_coeff_reg[7] [6]),
+        .I1(\reg_coeff_reg[6] [6]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [6]),
+        .I3(\reg_coeff_reg[5] [6]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [6]),
+        .I5(\reg_coeff_reg[4] [6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_34_n_0 ));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_35 
-       (.I0(\reg_coeff_reg[11] [6]),
-        .I1(\reg_coeff_reg[10] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_36 
-       (.I0(\reg_coeff_reg[15] [6]),
-        .I1(\reg_coeff_reg[14] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_37 
-       (.I0(\reg_coeff_reg[19] [6]),
-        .I1(\reg_coeff_reg[18] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_38 
-       (.I0(\reg_coeff_reg[23] [6]),
-        .I1(\reg_coeff_reg[22] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000F335555)) 
+    .INIT(64'h000000000000FF47)) 
     \s_axi_ctrl_rdata_reg[6]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_10_n_0 ),
-        .I2(reg_coeff_scale[6]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_13_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(\s_axi_ctrl_rdata_reg[6]_i_14_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(\s_axi_ctrl_rdata_reg[6]_i_15_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT4 #(
+    .INIT(16'hCA00)) 
     \s_axi_ctrl_rdata_reg[6]_i_5 
-       (.I0(\reg_coeff_reg[75] [6]),
-        .I1(\reg_coeff_reg[74] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [6]),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_16_n_0 ),
+        .I1(reg_coeff_scale[6]),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[6]_i_6 
-       (.I0(\reg_coeff_reg[79] [6]),
-        .I1(\reg_coeff_reg[78] [6]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [6]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [6]),
-        .O(\s_axi_ctrl_rdata_reg[6]_i_6_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[6]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_17_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_18_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[6]_i_6_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[6]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_12_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_19_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_20_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_7_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   MUXF7 \s_axi_ctrl_rdata_reg[6]_i_8 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_13_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_14_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_21_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[6]_i_22_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[6]_i_8_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    .INIT(64'h00000000EEE222E2)) 
     \s_axi_ctrl_rdata_reg[6]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[6]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[6]_i_16_n_0 ),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(\s_axi_ctrl_rdata_reg[6]_i_17_n_0 ),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[6]_i_18_n_0 ),
+       (.I0(\s_axi_ctrl_rdata_reg[6]_i_23_n_0 ),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(\s_axi_ctrl_rdata_reg[6]_i_24_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[6]_i_25_n_0 ),
+        .I5(s_axi_ctrl_araddr[6]),
         .O(\s_axi_ctrl_rdata_reg[6]_i_9_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
@@ -33613,40 +34137,55 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [7]));
   LUT6 #(
-    .INIT(64'hFFEEFEFEEEEEEEEE)) 
+    .INIT(64'hFFFFFFFFFFFF5510)) 
     \s_axi_ctrl_rdata_reg[7]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[7]_i_2_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_3_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[7]_i_4_n_0 ),
-        .I3(reg_coeff_scale[7]),
-        .I4(s_axi_ctrl_araddr[4]),
-        .I5(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[7]_i_3_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[7]_i_4_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[7]_i_5_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[7]_i_6_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[7]_i_1_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[7]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_20_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_21_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_10_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_22_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_12 
        (.I0(\s_axi_ctrl_rdata_reg[7]_i_24_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[7]_i_25_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_12_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_10_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_13 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_27_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'h80888000FFFFFFFF)) 
+    \s_axi_ctrl_rdata_reg[7]_i_11 
+       (.I0(s_axi_ctrl_araddr[5]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[7]_i_26_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[7]_i_27_n_0 ),
+        .I5(s_axi_ctrl_araddr[7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_11_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_12 
+       (.I0(\reg_coeff_reg[47] [7]),
+        .I1(\reg_coeff_reg[46] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_12_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_13 
+       (.I0(\reg_coeff_reg[43] [7]),
+        .I1(\reg_coeff_reg[42] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_13_n_0 ));
   MUXF7 \s_axi_ctrl_rdata_reg[7]_i_14 
        (.I0(\s_axi_ctrl_rdata_reg[7]_i_28_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[7]_i_29_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[7]_i_14_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
   MUXF8 \s_axi_ctrl_rdata_reg[7]_i_15 
        (.I0(\s_axi_ctrl_rdata_reg[7]_i_30_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[7]_i_31_n_0 ),
@@ -33655,282 +34194,276 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[7]_i_16 
-       (.I0(\reg_coeff_reg[75] [7]),
-        .I1(\reg_coeff_reg[74] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_17 
-       (.I0(\reg_coeff_reg[79] [7]),
-        .I1(\reg_coeff_reg[78] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_17_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_18 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_32_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_33_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_18_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_34_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_35_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT5 #(
-    .INIT(32'h0000DFD5)) 
-    \s_axi_ctrl_rdata_reg[7]_i_2 
-       (.I0(s_axi_ctrl_araddr[7]),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_5_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[7]_i_6_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[7]_i_7_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_20 
-       (.I0(\reg_coeff_reg[43] [7]),
-        .I1(\reg_coeff_reg[42] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_20_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_21 
-       (.I0(\reg_coeff_reg[47] [7]),
-        .I1(\reg_coeff_reg[46] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_21_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_22 
-       (.I0(\reg_coeff_reg[51] [7]),
-        .I1(\reg_coeff_reg[50] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_22_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_23 
-       (.I0(\reg_coeff_reg[55] [7]),
-        .I1(\reg_coeff_reg[54] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[53] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[52] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_23_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_24 
-       (.I0(\reg_coeff_reg[27] [7]),
-        .I1(\reg_coeff_reg[26] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_24_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_25 
-       (.I0(\reg_coeff_reg[31] [7]),
-        .I1(\reg_coeff_reg[30] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_26 
-       (.I0(\reg_coeff_reg[35] [7]),
-        .I1(\reg_coeff_reg[34] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_27 
-       (.I0(\reg_coeff_reg[39] [7]),
-        .I1(\reg_coeff_reg[38] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_28 
-       (.I0(\reg_coeff_reg[3] [7]),
-        .I1(\reg_coeff_reg[2] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_29 
-       (.I0(\reg_coeff_reg[7] [7]),
-        .I1(\reg_coeff_reg[6] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'hAA8A0A8AA0800080)) 
-    \s_axi_ctrl_rdata_reg[7]_i_3 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_8_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\reg_coeff_reg[80] [7]),
-        .I5(\s_axi_ctrl_rdata_reg[7]_i_9_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_3_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_30 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_36_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_37_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_30_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_31 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_38_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_39_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_31_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_32 
-       (.I0(\reg_coeff_reg[59] [7]),
-        .I1(\reg_coeff_reg[58] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_33 
-       (.I0(\reg_coeff_reg[63] [7]),
-        .I1(\reg_coeff_reg[62] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_34 
-       (.I0(\reg_coeff_reg[67] [7]),
-        .I1(\reg_coeff_reg[66] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_35 
-       (.I0(\reg_coeff_reg[71] [7]),
-        .I1(\reg_coeff_reg[70] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_36 
-       (.I0(\reg_coeff_reg[11] [7]),
-        .I1(\reg_coeff_reg[10] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_37 
-       (.I0(\reg_coeff_reg[15] [7]),
-        .I1(\reg_coeff_reg[14] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_38 
-       (.I0(\reg_coeff_reg[19] [7]),
-        .I1(\reg_coeff_reg[18] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_39 
-       (.I0(\reg_coeff_reg[23] [7]),
-        .I1(\reg_coeff_reg[22] [7]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [7]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_39_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[7]_i_4 
        (.I0(reg_img_h[7]),
         .I1(reg_img_w[7]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(reg_radius[7]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(reg_ctrl[7]),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_4_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[7]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_10_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_11_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_5_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[7]_i_6 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_12_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_13_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_6_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
+        .O(\s_axi_ctrl_rdata_reg[7]_i_16_n_0 ));
   LUT6 #(
-    .INIT(64'hEEEEEEEFEFEEEFEF)) 
-    \s_axi_ctrl_rdata_reg[7]_i_7 
-       (.I0(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_17 
+       (.I0(\reg_coeff_reg[3] [7]),
+        .I1(\reg_coeff_reg[2] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_17_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_18 
+       (.I0(\reg_coeff_reg[7] [7]),
+        .I1(\reg_coeff_reg[6] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_18_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_19 
+       (.I0(\reg_coeff_reg[19] [7]),
+        .I1(\reg_coeff_reg[18] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'hEFEEEFEFEEEEEEEE)) 
+    \s_axi_ctrl_rdata_reg[7]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
         .I1(s_axi_ctrl_araddr[8]),
         .I2(s_axi_ctrl_araddr[7]),
         .I3(s_axi_ctrl_araddr[6]),
-        .I4(\s_axi_ctrl_rdata_reg[7]_i_14_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[7]_i_15_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_7_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_8 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_16_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_17_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_8_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[7]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[7]_i_18_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[7]_i_19_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[7]_i_9_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[7]_i_7_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[7]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_20 
+       (.I0(\reg_coeff_reg[23] [7]),
+        .I1(\reg_coeff_reg[22] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  LUT5 #(
+    .INIT(32'h0C080008)) 
+    \s_axi_ctrl_rdata_reg[7]_i_21 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_32_n_0 ),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[7]_i_33_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_22 
+       (.I0(\reg_coeff_reg[27] [7]),
+        .I1(\reg_coeff_reg[26] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_23 
+       (.I0(\reg_coeff_reg[31] [7]),
+        .I1(\reg_coeff_reg[30] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_24 
+       (.I0(\reg_coeff_reg[35] [7]),
+        .I1(\reg_coeff_reg[34] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_25 
+       (.I0(\reg_coeff_reg[39] [7]),
+        .I1(\reg_coeff_reg[38] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_26 
+       (.I0(\reg_coeff_reg[55] [7]),
+        .I1(\reg_coeff_reg[54] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[53] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[52] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_27 
+       (.I0(\reg_coeff_reg[51] [7]),
+        .I1(\reg_coeff_reg[50] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[49] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[48] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_27_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_28 
+       (.I0(\reg_coeff_reg[79] [7]),
+        .I1(\reg_coeff_reg[78] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[77] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[76] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_29 
+       (.I0(\reg_coeff_reg[75] [7]),
+        .I1(\reg_coeff_reg[74] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_29_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[7]_i_3 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_9_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_10_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_3_n_0 ),
         .S(s_axi_ctrl_araddr[5]));
+  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_30 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_35_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_30_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_31 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_37_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_31_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_32 
+       (.I0(\reg_coeff_reg[11] [7]),
+        .I1(\reg_coeff_reg[10] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_33 
+       (.I0(\reg_coeff_reg[15] [7]),
+        .I1(\reg_coeff_reg[14] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_34 
+       (.I0(\reg_coeff_reg[59] [7]),
+        .I1(\reg_coeff_reg[58] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_35 
+       (.I0(\reg_coeff_reg[63] [7]),
+        .I1(\reg_coeff_reg[62] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_36 
+       (.I0(\reg_coeff_reg[67] [7]),
+        .I1(\reg_coeff_reg[66] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_36_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[7]_i_37 
+       (.I0(\reg_coeff_reg[71] [7]),
+        .I1(\reg_coeff_reg[70] [7]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [7]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [7]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAEEFAAAAA)) 
+    \s_axi_ctrl_rdata_reg[7]_i_4 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_11_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_12_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[7]_i_13_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(s_axi_ctrl_araddr[5]),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hAA8A0A8AA0800080)) 
+    \s_axi_ctrl_rdata_reg[7]_i_5 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_14_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(\reg_coeff_reg[80] [7]),
+        .I5(\s_axi_ctrl_rdata_reg[7]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hCA00)) 
+    \s_axi_ctrl_rdata_reg[7]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_16_n_0 ),
+        .I1(reg_coeff_scale[7]),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_6_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_17_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_18_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_7_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'h00000000777FFF7F)) 
+    \s_axi_ctrl_rdata_reg[7]_i_8 
+       (.I0(s_axi_ctrl_araddr[5]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[7]_i_19_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[7]_i_20_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[7]_i_21_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_8_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[7]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[7]_i_22_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[7]_i_23_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[7]_i_9_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -33942,146 +34475,140 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [8]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF11110100)) 
+    .INIT(64'hFFEEFEFEEEEEEEEE)) 
     \s_axi_ctrl_rdata_reg[8]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[8]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[8]_i_3_n_0 ),
-        .I2(s_axi_ctrl_araddr[6]),
-        .I3(\s_axi_ctrl_rdata_reg[8]_i_4_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[8]_i_5_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[8]_i_6_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[8]_i_4_n_0 ),
+        .I3(reg_coeff_scale[8]),
+        .I4(s_axi_ctrl_araddr[4]),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[8]_i_1_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_20_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_21_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_10_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_11 
+  MUXF8 \s_axi_ctrl_rdata_reg[8]_i_10 
        (.I0(\s_axi_ctrl_rdata_reg[8]_i_22_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[8]_i_23_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_12 
-       (.I0(\reg_coeff_reg[43] [8]),
-        .I1(\reg_coeff_reg[42] [8]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [8]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_12_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_13 
-       (.I0(\reg_coeff_reg[47] [8]),
-        .I1(\reg_coeff_reg[46] [8]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [8]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_13_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_10_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
   LUT6 #(
     .INIT(64'h80888000FFFFFFFF)) 
-    \s_axi_ctrl_rdata_reg[8]_i_14 
+    \s_axi_ctrl_rdata_reg[8]_i_11 
        (.I0(s_axi_ctrl_araddr[5]),
         .I1(s_axi_ctrl_araddr[6]),
         .I2(\s_axi_ctrl_rdata_reg[8]_i_24_n_0 ),
         .I3(s_axi_ctrl_araddr[4]),
         .I4(\s_axi_ctrl_rdata_reg[8]_i_25_n_0 ),
         .I5(s_axi_ctrl_araddr[7]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_14_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_11_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_15 
-       (.I0(reg_img_h[8]),
-        .I1(reg_img_w[8]),
+    \s_axi_ctrl_rdata_reg[8]_i_12 
+       (.I0(\reg_coeff_reg[47] [8]),
+        .I1(\reg_coeff_reg[46] [8]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(reg_radius[8]),
+        .I3(\reg_coeff_reg[45] [8]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(reg_ctrl[8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'h505F3030505F3F3F)) 
-    \s_axi_ctrl_rdata_reg[8]_i_16 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_26_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_27_n_0 ),
-        .I2(\s_axi_ctrl_rdata_reg[15]_i_23_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[8]_i_28_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ),
-        .I5(\reg_coeff_reg[80] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_16_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_17 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_17_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+        .I5(\reg_coeff_reg[44] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_12_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_18 
-       (.I0(\reg_coeff_reg[15] [8]),
-        .I1(\reg_coeff_reg[14] [8]),
+    \s_axi_ctrl_rdata_reg[8]_i_13 
+       (.I0(\reg_coeff_reg[43] [8]),
+        .I1(\reg_coeff_reg[42] [8]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [8]),
+        .I3(\reg_coeff_reg[41] [8]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_18_n_0 ));
+        .I5(\reg_coeff_reg[40] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_19 
-       (.I0(\reg_coeff_reg[11] [8]),
-        .I1(\reg_coeff_reg[10] [8]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [8]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_19_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \s_axi_ctrl_rdata_reg[8]_i_2 
-       (.I0(s_axi_ctrl_araddr[8]),
-        .I1(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_20 
+    \s_axi_ctrl_rdata_reg[8]_i_14 
        (.I0(\reg_coeff_reg[27] [8]),
         .I1(\reg_coeff_reg[26] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[25] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[24] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_20_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_14_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_21 
+    \s_axi_ctrl_rdata_reg[8]_i_15 
        (.I0(\reg_coeff_reg[31] [8]),
         .I1(\reg_coeff_reg[30] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[29] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[28] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_21_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_15_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_22 
+    \s_axi_ctrl_rdata_reg[8]_i_16 
        (.I0(\reg_coeff_reg[35] [8]),
         .I1(\reg_coeff_reg[34] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[33] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[32] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_22_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_23 
+    \s_axi_ctrl_rdata_reg[8]_i_17 
        (.I0(\reg_coeff_reg[39] [8]),
         .I1(\reg_coeff_reg[38] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[37] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[36] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_23_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_17_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_18 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_26_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_27_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_18_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF8 \s_axi_ctrl_rdata_reg[8]_i_19 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_28_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_29_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_19_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  LUT6 #(
+    .INIT(64'h00000000AAAAFEAE)) 
+    \s_axi_ctrl_rdata_reg[8]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_5_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_6_n_0 ),
+        .I2(s_axi_ctrl_araddr[5]),
+        .I3(\s_axi_ctrl_rdata_reg[8]_i_7_n_0 ),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[8]_i_8_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[8]_i_20 
+       (.I0(\reg_coeff_reg[79] [8]),
+        .I1(\reg_coeff_reg[78] [8]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[77] [8]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[76] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[8]_i_21 
+       (.I0(\reg_coeff_reg[75] [8]),
+        .I1(\reg_coeff_reg[74] [8]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [8]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_21_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_22 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_30_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_22_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_23 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_32_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_33_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_23_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[8]_i_24 
@@ -34105,163 +34632,168 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \s_axi_ctrl_rdata_reg[8]_i_26 
-       (.I0(\reg_coeff_reg[79] [8]),
-        .I1(\reg_coeff_reg[78] [8]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[77] [8]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[76] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_27 
-       (.I0(\reg_coeff_reg[75] [8]),
-        .I1(\reg_coeff_reg[74] [8]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [8]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_27_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[8]_i_28 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_28_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_29 
        (.I0(\reg_coeff_reg[3] [8]),
         .I1(\reg_coeff_reg[2] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[1] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[0] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_29_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000000000FF47)) 
-    \s_axi_ctrl_rdata_reg[8]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_7_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(\s_axi_ctrl_rdata_reg[8]_i_8_n_0 ),
-        .I3(\s_axi_ctrl_rdata_reg[15]_i_26_n_0 ),
-        .I4(s_axi_ctrl_araddr[7]),
-        .I5(\s_axi_ctrl_rdata_reg[8]_i_9_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_3_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_26_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_30 
+    \s_axi_ctrl_rdata_reg[8]_i_27 
        (.I0(\reg_coeff_reg[7] [8]),
         .I1(\reg_coeff_reg[6] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[5] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[4] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_30_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_31 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_31_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_27_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_28 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_34_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_35_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_28_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_32 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_36_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_32_n_0 ),
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_29 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_36_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_37_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_29_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
+    .INIT(64'hAA8A0A8AA0800080)) 
+    \s_axi_ctrl_rdata_reg[8]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_9_n_0 ),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(\reg_coeff_reg[80] [8]),
+        .I5(\s_axi_ctrl_rdata_reg[8]_i_10_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_3_n_0 ));
+  LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_33 
+    \s_axi_ctrl_rdata_reg[8]_i_30 
        (.I0(\reg_coeff_reg[59] [8]),
         .I1(\reg_coeff_reg[58] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[57] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[56] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_33_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_30_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_34 
+    \s_axi_ctrl_rdata_reg[8]_i_31 
        (.I0(\reg_coeff_reg[63] [8]),
         .I1(\reg_coeff_reg[62] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[61] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[60] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_34_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_31_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_35 
+    \s_axi_ctrl_rdata_reg[8]_i_32 
        (.I0(\reg_coeff_reg[67] [8]),
         .I1(\reg_coeff_reg[66] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[65] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[64] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_35_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_32_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_36 
+    \s_axi_ctrl_rdata_reg[8]_i_33 
        (.I0(\reg_coeff_reg[71] [8]),
         .I1(\reg_coeff_reg[70] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[69] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[68] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_36_n_0 ));
-  MUXF8 \s_axi_ctrl_rdata_reg[8]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_10_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_11_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_4_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF0E000200)) 
-    \s_axi_ctrl_rdata_reg[8]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_12_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[6]),
-        .I4(\s_axi_ctrl_rdata_reg[8]_i_13_n_0 ),
-        .I5(\s_axi_ctrl_rdata_reg[8]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hA280FFFFA280A280)) 
-    \s_axi_ctrl_rdata_reg[8]_i_6 
-       (.I0(\s_axi_ctrl_rdata_reg[12]_i_2_n_0 ),
-        .I1(s_axi_ctrl_araddr[4]),
-        .I2(reg_coeff_scale[8]),
-        .I3(\s_axi_ctrl_rdata_reg[8]_i_15_n_0 ),
-        .I4(\s_axi_ctrl_rdata_reg[8]_i_16_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_6_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_33_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_7 
-       (.I0(\reg_coeff_reg[23] [8]),
-        .I1(\reg_coeff_reg[22] [8]),
+    \s_axi_ctrl_rdata_reg[8]_i_34 
+       (.I0(\reg_coeff_reg[11] [8]),
+        .I1(\reg_coeff_reg[10] [8]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [8]),
+        .I3(\reg_coeff_reg[9] [8]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_7_n_0 ));
+        .I5(\reg_coeff_reg[8] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_34_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[8]_i_8 
+    \s_axi_ctrl_rdata_reg[8]_i_35 
+       (.I0(\reg_coeff_reg[15] [8]),
+        .I1(\reg_coeff_reg[14] [8]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[13] [8]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[12] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[8]_i_36 
        (.I0(\reg_coeff_reg[19] [8]),
         .I1(\reg_coeff_reg[18] [8]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[17] [8]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[16] [8]),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_8_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_36_n_0 ));
   LUT6 #(
-    .INIT(64'h00CFAAAA00C0AAAA)) 
-    \s_axi_ctrl_rdata_reg[8]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[8]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[8]_i_18_n_0 ),
-        .I2(s_axi_ctrl_araddr[4]),
-        .I3(s_axi_ctrl_araddr[5]),
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[8]_i_37 
+       (.I0(\reg_coeff_reg[23] [8]),
+        .I1(\reg_coeff_reg[22] [8]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [8]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_37_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[8]_i_4 
+       (.I0(reg_img_h[8]),
+        .I1(reg_img_w[8]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(reg_radius[8]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(reg_ctrl[8]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAEEFAAAAA)) 
+    \s_axi_ctrl_rdata_reg[8]_i_5 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_11_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_12_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[8]_i_13_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
         .I4(s_axi_ctrl_araddr[6]),
+        .I5(s_axi_ctrl_araddr[5]),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_5_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_14_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_6_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_7 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_16_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_17_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_7_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  LUT6 #(
+    .INIT(64'hEEEEEEEFEFEEEFEF)) 
+    \s_axi_ctrl_rdata_reg[8]_i_8 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .I1(s_axi_ctrl_araddr[8]),
+        .I2(s_axi_ctrl_araddr[7]),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[8]_i_18_n_0 ),
         .I5(\s_axi_ctrl_rdata_reg[8]_i_19_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[8]_i_9_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[8]_i_8_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[8]_i_9 
+       (.I0(\s_axi_ctrl_rdata_reg[8]_i_20_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[8]_i_21_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[8]_i_9_n_0 ),
+        .S(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:GE GND:CLR" *) 
   LDCE #(
@@ -34273,325 +34805,343 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .GE(1'b1),
         .Q(\^s_axi_ctrl_rdata [9]));
   LUT6 #(
-    .INIT(64'hAA8A0080AAAAAAAA)) 
+    .INIT(64'hFFFFFFFF11110100)) 
     \s_axi_ctrl_rdata_reg[9]_i_1 
        (.I0(\s_axi_ctrl_rdata_reg[9]_i_2_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[9]_i_3_n_0 ),
         .I2(s_axi_ctrl_araddr[6]),
-        .I3(s_axi_ctrl_araddr[5]),
-        .I4(\s_axi_ctrl_rdata_reg[9]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_4_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[9]_i_5_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_6_n_0 ),
         .O(\s_axi_ctrl_rdata_reg[9]_i_1_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_10 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_17_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_18_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_10_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF8 \s_axi_ctrl_rdata_reg[9]_i_11 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_19_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_20_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_11_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[9]_i_12 
+  LUT6 #(
+    .INIT(64'h00CFAAAA00C0AAAA)) 
+    \s_axi_ctrl_rdata_reg[9]_i_10 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_18_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[9]_i_19_n_0 ),
+        .I2(s_axi_ctrl_araddr[4]),
+        .I3(s_axi_ctrl_araddr[5]),
+        .I4(s_axi_ctrl_araddr[6]),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_20_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_10_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_11 
        (.I0(\s_axi_ctrl_rdata_reg[9]_i_21_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[9]_i_22_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_12_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF8 \s_axi_ctrl_rdata_reg[9]_i_13 
+        .O(\s_axi_ctrl_rdata_reg[9]_i_11_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
+  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_12 
        (.I0(\s_axi_ctrl_rdata_reg[9]_i_23_n_0 ),
         .I1(\s_axi_ctrl_rdata_reg[9]_i_24_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_13_n_0 ),
-        .S(s_axi_ctrl_araddr[5]));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_14 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_25_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_26_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_14_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_12_n_0 ),
         .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_15 
-       (.I0(\reg_coeff_reg[67] [9]),
-        .I1(\reg_coeff_reg[66] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[65] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[64] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_15_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_16 
-       (.I0(\reg_coeff_reg[71] [9]),
-        .I1(\reg_coeff_reg[70] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[69] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[68] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_16_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_17 
-       (.I0(\reg_coeff_reg[59] [9]),
-        .I1(\reg_coeff_reg[58] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[57] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[56] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_17_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_18 
-       (.I0(\reg_coeff_reg[63] [9]),
-        .I1(\reg_coeff_reg[62] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[61] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[60] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_18_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_19 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_27_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_28_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_19_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFF0CCAAAA)) 
-    \s_axi_ctrl_rdata_reg[9]_i_2 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_5_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_6_n_0 ),
-        .I2(reg_coeff_scale[9]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(\s_axi_ctrl_rdata_reg[15]_i_4_n_0 ),
-        .I5(s_axi_ctrl_araddr[8]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_2_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_20 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_29_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_30_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_20_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_21 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_31_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_32_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_21_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_22 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_33_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_34_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_22_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_23 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_35_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_36_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_23_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_24 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_37_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_38_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_24_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_25 
-       (.I0(\reg_coeff_reg[3] [9]),
-        .I1(\reg_coeff_reg[2] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[1] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[0] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_26 
-       (.I0(\reg_coeff_reg[7] [9]),
-        .I1(\reg_coeff_reg[6] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[5] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[4] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_26_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_27 
-       (.I0(\reg_coeff_reg[43] [9]),
-        .I1(\reg_coeff_reg[42] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[41] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[40] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_27_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_28 
-       (.I0(\reg_coeff_reg[47] [9]),
-        .I1(\reg_coeff_reg[46] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[45] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[44] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_28_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_29 
-       (.I0(\reg_coeff_reg[51] [9]),
-        .I1(\reg_coeff_reg[50] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[49] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[48] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_29_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_3 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_7_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_8_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_3_n_0 ),
-        .S(\s_axi_ctrl_rdata_reg[15]_i_25_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_30 
+    \s_axi_ctrl_rdata_reg[9]_i_13 
        (.I0(\reg_coeff_reg[55] [9]),
         .I1(\reg_coeff_reg[54] [9]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[53] [9]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[52] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_30_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[9]_i_13_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_31 
-       (.I0(\reg_coeff_reg[27] [9]),
-        .I1(\reg_coeff_reg[26] [9]),
+    \s_axi_ctrl_rdata_reg[9]_i_14 
+       (.I0(\reg_coeff_reg[51] [9]),
+        .I1(\reg_coeff_reg[50] [9]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[25] [9]),
+        .I3(\reg_coeff_reg[49] [9]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[24] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_31_n_0 ));
+        .I5(\reg_coeff_reg[48] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_14_n_0 ));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_32 
-       (.I0(\reg_coeff_reg[31] [9]),
-        .I1(\reg_coeff_reg[30] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[29] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[28] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_32_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_33 
-       (.I0(\reg_coeff_reg[35] [9]),
-        .I1(\reg_coeff_reg[34] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[33] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[32] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_33_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_34 
-       (.I0(\reg_coeff_reg[39] [9]),
-        .I1(\reg_coeff_reg[38] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[37] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[36] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_34_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_35 
-       (.I0(\reg_coeff_reg[11] [9]),
-        .I1(\reg_coeff_reg[10] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[9] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[8] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_35_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_36 
-       (.I0(\reg_coeff_reg[15] [9]),
-        .I1(\reg_coeff_reg[14] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[13] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[12] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_36_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_37 
-       (.I0(\reg_coeff_reg[19] [9]),
-        .I1(\reg_coeff_reg[18] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[17] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[16] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_37_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_38 
-       (.I0(\reg_coeff_reg[23] [9]),
-        .I1(\reg_coeff_reg[22] [9]),
-        .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[21] [9]),
-        .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[20] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_38_n_0 ));
-  LUT6 #(
-    .INIT(64'hFCFFACAC0C00ACAC)) 
-    \s_axi_ctrl_rdata_reg[9]_i_4 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_10_n_0 ),
+    .INIT(64'h0E000200FFFFFFFF)) 
+    \s_axi_ctrl_rdata_reg[9]_i_15 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_25_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
         .I2(s_axi_ctrl_araddr[5]),
-        .I3(s_axi_ctrl_araddr[4]),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\reg_coeff_reg[80] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_4_n_0 ));
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(\s_axi_ctrl_rdata_reg[9]_i_26_n_0 ),
+        .I5(s_axi_ctrl_araddr[7]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_15_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_5 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_11_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_12_n_0 ),
-        .I2(s_axi_ctrl_araddr[7]),
-        .I3(\s_axi_ctrl_rdata_reg[9]_i_13_n_0 ),
-        .I4(s_axi_ctrl_araddr[6]),
-        .I5(\s_axi_ctrl_rdata_reg[9]_i_14_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_6 
+    \s_axi_ctrl_rdata_reg[9]_i_16 
        (.I0(reg_img_h[9]),
         .I1(reg_img_w[9]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(reg_radius[9]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(reg_ctrl[9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_6_n_0 ));
+        .O(\s_axi_ctrl_rdata_reg[9]_i_16_n_0 ));
+  LUT6 #(
+    .INIT(64'h0002220222222222)) 
+    \s_axi_ctrl_rdata_reg[9]_i_17 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_27_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[9]_i_28_n_0 ),
+        .I2(\s_axi_ctrl_rdata_reg[9]_i_29_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[15]_i_14_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[9]_i_30_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[15]_i_13_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_17_n_0 ));
+  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_18 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_31_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[9]_i_32_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_18_n_0 ),
+        .S(s_axi_ctrl_araddr[4]));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_7 
-       (.I0(\reg_coeff_reg[75] [9]),
-        .I1(\reg_coeff_reg[74] [9]),
+    \s_axi_ctrl_rdata_reg[9]_i_19 
+       (.I0(\reg_coeff_reg[15] [9]),
+        .I1(\reg_coeff_reg[14] [9]),
         .I2(s_axi_ctrl_araddr[3]),
-        .I3(\reg_coeff_reg[73] [9]),
+        .I3(\reg_coeff_reg[13] [9]),
         .I4(s_axi_ctrl_araddr[2]),
-        .I5(\reg_coeff_reg[72] [9]),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_7_n_0 ));
+        .I5(\reg_coeff_reg[12] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000000000FF47)) 
+    \s_axi_ctrl_rdata_reg[9]_i_2 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_7_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(\s_axi_ctrl_rdata_reg[9]_i_8_n_0 ),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
+        .I4(s_axi_ctrl_araddr[7]),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_10_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    \s_axi_ctrl_rdata_reg[9]_i_8 
+    \s_axi_ctrl_rdata_reg[9]_i_20 
+       (.I0(\reg_coeff_reg[11] [9]),
+        .I1(\reg_coeff_reg[10] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[9] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[8] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_20_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_21 
+       (.I0(\reg_coeff_reg[27] [9]),
+        .I1(\reg_coeff_reg[26] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[25] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[24] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_21_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_22 
+       (.I0(\reg_coeff_reg[31] [9]),
+        .I1(\reg_coeff_reg[30] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[29] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[28] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_23 
+       (.I0(\reg_coeff_reg[35] [9]),
+        .I1(\reg_coeff_reg[34] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[33] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[32] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_23_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_24 
+       (.I0(\reg_coeff_reg[39] [9]),
+        .I1(\reg_coeff_reg[38] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[37] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[36] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_24_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_25 
+       (.I0(\reg_coeff_reg[43] [9]),
+        .I1(\reg_coeff_reg[42] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[41] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[40] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_25_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_26 
+       (.I0(\reg_coeff_reg[47] [9]),
+        .I1(\reg_coeff_reg[46] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[45] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[44] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_26_n_0 ));
+  LUT6 #(
+    .INIT(64'h7373737F7F7F737F)) 
+    \s_axi_ctrl_rdata_reg[9]_i_27 
+       (.I0(\reg_coeff_reg[80] [9]),
+        .I1(s_axi_ctrl_araddr[5]),
+        .I2(s_axi_ctrl_araddr[6]),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_33_n_0 ),
+        .I4(s_axi_ctrl_araddr[4]),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_34_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_27_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  LUT5 #(
+    .INIT(32'h000000E2)) 
+    \s_axi_ctrl_rdata_reg[9]_i_28 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_35_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(\s_axi_ctrl_rdata_reg[9]_i_36_n_0 ),
+        .I3(s_axi_ctrl_araddr[6]),
+        .I4(s_axi_ctrl_araddr[5]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_28_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_29 
        (.I0(\reg_coeff_reg[79] [9]),
         .I1(\reg_coeff_reg[78] [9]),
         .I2(s_axi_ctrl_araddr[3]),
         .I3(\reg_coeff_reg[77] [9]),
         .I4(s_axi_ctrl_araddr[2]),
         .I5(\reg_coeff_reg[76] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_29_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \s_axi_ctrl_rdata_reg[9]_i_3 
+       (.I0(s_axi_ctrl_araddr[8]),
+        .I1(\s_axi_ctrl_rdata_reg[15]_i_7_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_30 
+       (.I0(\reg_coeff_reg[75] [9]),
+        .I1(\reg_coeff_reg[74] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[73] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[72] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_30_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_31 
+       (.I0(\reg_coeff_reg[3] [9]),
+        .I1(\reg_coeff_reg[2] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[1] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[0] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_31_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_32 
+       (.I0(\reg_coeff_reg[7] [9]),
+        .I1(\reg_coeff_reg[6] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[5] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[4] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_32_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_33 
+       (.I0(\reg_coeff_reg[67] [9]),
+        .I1(\reg_coeff_reg[66] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[65] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[64] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_33_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_34 
+       (.I0(\reg_coeff_reg[71] [9]),
+        .I1(\reg_coeff_reg[70] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[69] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[68] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_34_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_35 
+       (.I0(\reg_coeff_reg[59] [9]),
+        .I1(\reg_coeff_reg[58] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[57] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[56] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_35_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_36 
+       (.I0(\reg_coeff_reg[63] [9]),
+        .I1(\reg_coeff_reg[62] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[61] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[60] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_36_n_0 ));
+  MUXF8 \s_axi_ctrl_rdata_reg[9]_i_4 
+       (.I0(\s_axi_ctrl_rdata_reg[9]_i_11_n_0 ),
+        .I1(\s_axi_ctrl_rdata_reg[9]_i_12_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_4_n_0 ),
+        .S(s_axi_ctrl_araddr[5]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF80888000)) 
+    \s_axi_ctrl_rdata_reg[9]_i_5 
+       (.I0(s_axi_ctrl_araddr[5]),
+        .I1(s_axi_ctrl_araddr[6]),
+        .I2(\s_axi_ctrl_rdata_reg[9]_i_13_n_0 ),
+        .I3(s_axi_ctrl_araddr[4]),
+        .I4(\s_axi_ctrl_rdata_reg[9]_i_14_n_0 ),
+        .I5(\s_axi_ctrl_rdata_reg[9]_i_15_n_0 ),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hA280FFFFA280A280)) 
+    \s_axi_ctrl_rdata_reg[9]_i_6 
+       (.I0(\s_axi_ctrl_rdata_reg[15]_i_8_n_0 ),
+        .I1(s_axi_ctrl_araddr[4]),
+        .I2(reg_coeff_scale[9]),
+        .I3(\s_axi_ctrl_rdata_reg[9]_i_16_n_0 ),
+        .I4(\s_axi_ctrl_rdata_reg[9]_i_17_n_0 ),
+        .I5(s_axi_ctrl_araddr[8]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_7 
+       (.I0(\reg_coeff_reg[23] [9]),
+        .I1(\reg_coeff_reg[22] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[21] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[20] [9]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    \s_axi_ctrl_rdata_reg[9]_i_8 
+       (.I0(\reg_coeff_reg[19] [9]),
+        .I1(\reg_coeff_reg[18] [9]),
+        .I2(s_axi_ctrl_araddr[3]),
+        .I3(\reg_coeff_reg[17] [9]),
+        .I4(s_axi_ctrl_araddr[2]),
+        .I5(\reg_coeff_reg[16] [9]),
         .O(\s_axi_ctrl_rdata_reg[9]_i_8_n_0 ));
-  MUXF7 \s_axi_ctrl_rdata_reg[9]_i_9 
-       (.I0(\s_axi_ctrl_rdata_reg[9]_i_15_n_0 ),
-        .I1(\s_axi_ctrl_rdata_reg[9]_i_16_n_0 ),
-        .O(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ),
-        .S(s_axi_ctrl_araddr[4]));
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \s_axi_ctrl_rdata_reg[9]_i_9 
+       (.I0(s_axi_ctrl_araddr[6]),
+        .I1(s_axi_ctrl_araddr[5]),
+        .O(\s_axi_ctrl_rdata_reg[9]_i_9_n_0 ));
   (* KEEP = "yes" *) 
   FDRE s_axis_tready_reg
        (.C(clk),
         .CE(1'b1),
-        .D(tvalid_fifo1),
+        .D(pipe_advance),
         .Q(s_axis_tready),
         .R(reset));
   LUT4 #(
@@ -34650,13 +35200,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I2(buff_flag),
         .I3(\buff_tdata_reg_n_0_[6] ),
         .O(p_1_in__0[6]));
-  LUT4 #(
-    .INIT(16'hEE2E)) 
+  LUT3 #(
+    .INIT(8'hE2)) 
     \tdata_buffer[7]_i_1 
        (.I0(s_axis_tvalid),
         .I1(fsm_img_processing_state),
-        .I2(tvalid_fifo[6]),
-        .I3(m_axis_tready),
+        .I2(pipe_advance),
         .O(\tdata_buffer[7]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'hEA2A)) 
@@ -34728,12 +35277,11 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(tlast_buffer_i_1_n_0),
         .Q(tlast_buffer),
         .R(reset));
-  LUT3 #(
-    .INIT(8'hA2)) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \tlast_fifo[6]_i_1 
-       (.I0(fsm_img_processing_state),
-        .I1(tvalid_fifo[6]),
-        .I2(m_axis_tready),
+       (.I0(pipe_advance),
+        .I1(fsm_img_processing_state),
         .O(sA_col));
   (* KEEP = "yes" *) 
   FDRE \tlast_fifo_reg[0] 
@@ -34794,12 +35342,11 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .I4(tvalid_buffer_i_2_n_0),
         .I5(tvalid_buffer),
         .O(tvalid_buffer_i_1_n_0));
-  LUT3 #(
-    .INIT(8'h4F)) 
+  LUT2 #(
+    .INIT(4'h7)) 
     tvalid_buffer_i_2
-       (.I0(m_axis_tready),
-        .I1(tvalid_fifo[6]),
-        .I2(fsm_img_processing_state),
+       (.I0(fsm_img_processing_state),
+        .I1(pipe_advance),
         .O(tvalid_buffer_i_2_n_0));
   (* KEEP = "yes" *) 
   FDRE tvalid_buffer_reg
@@ -34808,14 +35355,6 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .D(tvalid_buffer_i_1_n_0),
         .Q(tvalid_buffer),
         .R(reset));
-  LUT4 #(
-    .INIT(16'hBFA0)) 
-    \tvalid_fifo[6]_i_1 
-       (.I0(tvalid_fifo[5]),
-        .I1(m_axis_tready),
-        .I2(fsm_img_processing_state),
-        .I3(tvalid_fifo[6]),
-        .O(\tvalid_fifo[6]_i_1_n_0 ));
   (* KEEP = "yes" *) 
   FDRE \tvalid_fifo_reg[0] 
        (.C(clk),
@@ -34861,8 +35400,8 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
   (* KEEP = "yes" *) 
   FDRE \tvalid_fifo_reg[6] 
        (.C(clk),
-        .CE(1'b1),
-        .D(\tvalid_fifo[6]_i_1_n_0 ),
+        .CE(sA_col),
+        .D(tvalid_fifo[5]),
         .Q(tvalid_fifo[6]),
         .R(reset));
   (* FRAC_COEFF = "15" *) 
@@ -34881,13 +35420,12 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .result_valid(alu_valid),
         .rst(reset),
         .shift_en(alu_shift_en));
-  LUT4 #(
-    .INIT(16'hE0EE)) 
+  LUT3 #(
+    .INIT(8'hA8)) 
     u_alu_i_1
-       (.I0(pipe_draining),
-        .I1(sA_valid_reg_n_0),
-        .I2(m_axis_tready),
-        .I3(tvalid_fifo[6]),
+       (.I0(pipe_advance),
+        .I1(pipe_draining),
+        .I2(sA_valid_reg_n_0),
         .O(alu_shift_en));
   (* IMG_WIDTH_MAX = "512" *) 
   (* KEEP_HIERARCHY = "soft" *) 
@@ -34897,24 +35435,17 @@ module image_filter_acc_image_filter_0_2_acc_image_filter
         .col_out(bram_col_out),
         .pixel_in(sA_data),
         .rd_addr(img_col_counter),
-        .rd_advance(tvalid_fifo1),
+        .rd_advance(pipe_advance),
         .rd_enable(tvalid_buffer),
         .rst(reset),
         .wr_addr({\sA_col_reg_n_0_[8] ,\sA_col_reg_n_0_[7] ,\sA_col_reg_n_0_[6] ,\sA_col_reg_n_0_[5] ,\sA_col_reg_n_0_[4] ,\sA_col_reg_n_0_[3] ,\sA_col_reg_n_0_[2] ,\sA_col_reg_n_0_[1] ,\sA_col_reg_n_0_[0] }),
         .wr_enable(bram_wr_en));
-  LUT3 #(
-    .INIT(8'h8A)) 
-    u_bram_i_1
-       (.I0(sA_valid_reg_n_0),
-        .I1(m_axis_tready),
-        .I2(tvalid_fifo[6]),
-        .O(bram_wr_en));
   LUT2 #(
-    .INIT(4'hB)) 
-    u_bram_i_2
-       (.I0(m_axis_tready),
-        .I1(tvalid_fifo[6]),
-        .O(tvalid_fifo1));
+    .INIT(4'h8)) 
+    u_bram_i_1
+       (.I0(pipe_advance),
+        .I1(sA_valid_reg_n_0),
+        .O(bram_wr_en));
 endmodule
 
 (* IMG_WIDTH_MAX = "512" *) (* MAX_R = "4" *) (* ORIG_REF_NAME = "bram_linebuf" *) 

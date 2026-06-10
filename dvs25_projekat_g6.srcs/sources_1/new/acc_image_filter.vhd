@@ -100,9 +100,7 @@ architecture rtl of acc_image_filter is
     signal h_img_h       : std_logic_vector(15 downto 0) := (others => '0');
     signal h_coeff_scale : std_logic_vector(15 downto 0) := (others => '0');
     signal h_coeff       : coeff_array_t                 := (others => (others => '0'));
-	-- Internal signals used for processing
 
-	
     -- AXI4-Lite internal signals
     signal axi_awready : std_logic;
     signal axi_wready  : std_logic;
@@ -127,7 +125,7 @@ architecture rtl of acc_image_filter is
     signal fsm_axi_read_state : fsm_read_state_type;
     signal fsm_axi_write_state : fsm_write_state_type;
     
-    -- AXI Stream state machine
+    -- AXI Stream pipeline valid/last tracking FIFOs
     signal tvalid_fifo : std_logic_vector(PIPELINE_DEPTH-1 downto 0);
     signal tlast_fifo  : std_logic_vector(PIPELINE_DEPTH-1 downto 0);
     
@@ -165,21 +163,54 @@ architecture rtl of acc_image_filter is
     signal coeff_flat : std_logic_vector(((2*MAX_FILTER_RADIUS+1)**2) * 16 - 1 downto 0);
     signal alu_valid : std_logic;
     signal alu_shift_en : std_logic;
-    -- BRAM write gated directly by sA_valid + advance: prevents repeated
-    -- shift-left writes of the frozen sA_data during a stall, and prevents
-    -- spurious writes during end-of-frame drain cycles.
+    -- BRAM write: gated by sA_valid + advance to prevent spurious writes during
+    -- stalls or drain cycles.
     signal bram_wr_en  : std_logic;
-    -- BRAM read advance: combinatorial pipeline-advance condition fed directly to
-    -- the rd_advance port so col_out freezes during stall. Purely combinatorial -
-    -- no registered intermediate signal, cannot be optimized away by Vivado.
+    -- BRAM read advance: purely combinatorial. col_out freezes when '0'.
     signal bram_rd_adv : std_logic;
-    -- pipe_draining: asserted whenever any in-flight valid pixel occupies stages
-    -- 0..PIPELINE_DEPTH-2 of tvalid_fifo.  Keeps alu_shift_en high after the
-    -- last input pixel (sA_valid drops) so the ALU's 5 internal registered stages
-    -- can drain completely instead of freezing with the last pixels stuck inside.
+    -- pipe_draining: '1' while any in-flight pixel occupies stages 0..PD-2 of
+    -- tvalid_fifo, keeping alu_shift_en asserted after the last input pixel so
+    -- the ALU's five registered stages drain completely.
     signal pipe_draining : std_logic;
-    
-    
+
+    -- -----------------------------------------------------------------------
+    -- PACKING STAGE  (uint8 output mode only)
+    --
+    -- The ALU outputs one uint8 pixel per valid cycle in bits[7:0] of reg_output
+    -- with zeros in bits[15:8].  In uint8 mode we collect consecutive pairs and
+    -- emit a single 16-bit AXI-S word:
+    --
+    --   m_axis_tdata[7:0]  = first  (earlier) pixel  → ResultBuffer[2k]
+    --   m_axis_tdata[15:8] = second (later)   pixel  → ResultBuffer[2k+1]
+    --
+    -- In little-endian memory the DMA writes these as consecutive bytes, which
+    -- matches the byte-by-byte layout expected by the SW u8* CheckData loop.
+    --
+    -- Q9.7 mode (h_ctrl(0)='1') bypasses the packing stage entirely - the
+    -- pipeline output drives m_axis_* directly, exactly as before.
+    -- -----------------------------------------------------------------------
+
+    -- pack_half='0' : no pixel buffered, waiting for first of next pair
+    -- pack_half='1' : first pixel sits in pack_buf, waiting for second
+    signal pack_buf       : std_logic_vector(7 downto 0)  := (others => '0');
+    signal pack_half      : std_logic                     := '0';
+    -- Output register of the packing stage
+    signal pack_out_valid : std_logic                     := '0';
+    signal pack_out_data  : std_logic_vector(15 downto 0) := (others => '0');
+    signal pack_out_last  : std_logic                     := '0';
+
+    -- Combinatorial back-pressure from the packing stage to the pipeline:
+    --   Q9.7  : follows m_axis_tready directly (no packing)
+    --   uint8, pack_half='0' : always '1' - we can always buffer a first pixel
+    --   uint8, pack_half='1' : '1' only when output register is free or being
+    --                          consumed this cycle; '0' otherwise (stall)
+    signal pack_in_ready  : std_logic;
+
+    -- Unified pipeline advance gate - replaces the inline
+    --   "(tvalid_fifo(PD-1)='0' OR m_axis_tready='1')"
+    -- expression used throughout the original code.
+    signal pipe_advance   : std_logic;
+
    function flatten_coeffs(input : coeff_array_t; r : integer) return std_logic_vector is
         constant CELLS : integer := (2*r + 1)**2;
         variable res   : std_logic_vector(CELLS * 16 - 1 downto 0);
@@ -228,18 +259,44 @@ architecture rtl of acc_image_filter is
     attribute mark_debug of alu_valid       : signal is "true";
     attribute mark_debug of alu_valid_output : signal is "true";
  
-    -- Stall/Buffer Mechanism
+    -- Stall / Buffer Mechanism
     attribute mark_debug of buff_flag       : signal is "true";
     attribute mark_debug of buff_tvalid     : signal is "true";
     attribute mark_debug of tvalid_buffer   : signal is "true";
     attribute mark_debug of pipe_draining   : signal is "true";
-   
-    
 
+    -- Packing-stage probes
+    attribute mark_debug of pack_half       : signal is "true";
+    attribute mark_debug of pack_out_valid  : signal is "true";
+    attribute mark_debug of pack_out_last   : signal is "true";
+    attribute mark_debug of pack_in_ready   : signal is "true";
+    attribute mark_debug of pipe_advance    : signal is "true";
 
-    
 begin
+
     coeff_flat <= flatten_coeffs(h_coeff, MAX_FILTER_RADIUS);
+
+    -- -----------------------------------------------------------------------
+    -- PIPELINE ADVANCE GATE (combinatorial)
+    -- The pipeline may advance when the output stage is empty OR when the
+    -- stage immediately downstream of it (packing stage in uint8 mode,
+    -- AXI-S master directly in Q9.7 mode) is ready to accept a new word.
+    -- -----------------------------------------------------------------------
+    pipe_advance <= '1' when (tvalid_fifo(PIPELINE_DEPTH-1) = '0' or
+                               pack_in_ready = '1') else '0';
+
+    -- -----------------------------------------------------------------------
+    -- PACKING-STAGE BACK-PRESSURE (combinatorial)
+    -- -----------------------------------------------------------------------
+    pack_in_ready <=
+        -- Q9.7 mode: no packing, pass m_axis_tready straight through
+        m_axis_tready                          when h_ctrl(0) = '1' else
+        -- uint8, waiting for first pixel: always accept (just buffers pack_buf)
+        '1'                                    when pack_half  = '0' else
+        -- uint8, waiting for second pixel: accept only when output reg is free
+        -- or the downstream is consuming it right now
+        (not pack_out_valid) or m_axis_tready;
+
     -- AXI4-Lite write registers
     process (clk) is
     begin
@@ -512,13 +569,36 @@ MAIN_FSM_LOGIC: process (clk) is
                
                 elsif (fsm_img_processing_state = AccProcessing) then
                     
-                    -- Check for End of Frame (Last pixel leaves the pipeline)
-                    if (tvalid_fifo(PIPELINE_DEPTH-1) = '1' and m_axis_tready = '1' and tlast_fifo(PIPELINE_DEPTH-1) = '1') then
-                        fsm_img_processing_state <= AccIdle;
+                    -- ------------------------------------------------------------------
+                    -- CHECK FOR END OF FRAME
+                    --
+                    -- Q9.7 mode : the last pipeline word (tlast=1, tvalid=1) is
+                    --             accepted directly by the downstream (m_axis_tready=1).
+                    --
+                    -- uint8 mode: two pixels pack into one 16-bit word.  The "last"
+                    --             event is when the packing stage's output register
+                    --             (pack_out_valid=1, pack_out_last=1) is consumed.
+                    -- ------------------------------------------------------------------
+                    if h_ctrl(0) = '1' then
+                        -- Q9.7: last pixel exits pipeline
+                        if (tvalid_fifo(PIPELINE_DEPTH-1) = '1' and m_axis_tready = '1' and
+                                tlast_fifo(PIPELINE_DEPTH-1) = '1') then
+                            fsm_img_processing_state <= AccIdle;
+                        end if;
+                    else
+                        -- uint8: last packed word consumed by downstream
+                        if (pack_out_valid = '1' and m_axis_tready = '1' and
+                                pack_out_last = '1') then
+                            fsm_img_processing_state <= AccIdle;
+                        end if;
                     end if;
   
-                    -- PIPELINE ADVANCE CONDITION 
-                    if (tvalid_fifo(PIPELINE_DEPTH-1) = '0' or m_axis_tready = '1') then
+                    -- ------------------------------------------------------------------
+                    -- PIPELINE ADVANCE
+                    -- pipe_advance='1' when the output stage is empty (tvalid_fifo
+                    -- PD-1 = '0') or the packing stage is ready to absorb its value.
+                    -- ------------------------------------------------------------------
+                    if pipe_advance = '1' then
                         
                         
                         -- STAGE 0: p_fetch
@@ -618,7 +698,7 @@ MAIN_FSM_LOGIC: process (clk) is
                                  alu_valid_output(i) <= alu_valid_output(i-1);
                                 end loop;
                             
-                        -- Stage 1 update: Connect the output of your border logic (sA_out) 
+                        -- Stage 1 update: Connect the output of border logic (sA_out) 
                         -- to the rest of the pipeline chain
                         tvalid_fifo(1) <= tvalid_fifo(0);
                         tlast_fifo(1)  <= tlast_fifo(0);
@@ -645,23 +725,44 @@ MAIN_FSM_LOGIC: process (clk) is
     end process;
 
     
---    -- OUTPUT MAPPING
-    
-    m_axis_tvalid <= tvalid_fifo(PIPELINE_DEPTH-1) and alu_valid_output(PIPELINE_DEPTH-1);
-    m_axis_tlast  <= tlast_fifo(PIPELINE_DEPTH-1);
-    m_axis_tdata  <= reg_output;
+    -- -----------------------------------------------------------------------
+    -- OUTPUT MAPPING
+    --
+    -- Q9.7 mode (h_ctrl(0)='1'):
+    --   Direct pipeline output, unchanged from the original design.
+    --   One 16-bit signed word per valid pipeline pixel.
+    --
+    -- uint8 mode (h_ctrl(0)='0'):
+    --   Output comes from the packing stage (pack_out_*).
+    --   One 16-bit word carries TWO consecutive uint8 pixels:
+    --     tdata[7:0]  = first  pixel (lower  byte) → ResultBuffer[2k]
+    --     tdata[15:8] = second pixel (upper byte) → ResultBuffer[2k+1]
+    --   tlast is asserted with the LAST packed word of the frame.
+    -- -----------------------------------------------------------------------
+    m_axis_tvalid <= (tvalid_fifo(PIPELINE_DEPTH-1) and alu_valid_output(PIPELINE_DEPTH-1))
+                         when h_ctrl(0) = '1' else
+                     pack_out_valid;
+
+    m_axis_tlast  <= tlast_fifo(PIPELINE_DEPTH-1) when h_ctrl(0) = '1' else
+                     pack_out_last;
+
+    m_axis_tdata  <= reg_output when h_ctrl(0) = '1' else
+                     pack_out_data;
 
    
-    -- AXI-STREAM READY SIGNAL GENERATION
- 
+    -- -----------------------------------------------------------------------
+    -- AXI-STREAM INPUT READY SIGNAL
+    -- Registered one cycle ahead.  Uses pipe_advance so in uint8 mode the
+    -- ready de-asserts whenever the packing stage is blocked (pack_half='1'
+    -- and output register full and downstream not ready).
+    -- -----------------------------------------------------------------------
     process (clk) is
     begin
         if (rising_edge(clk)) then
             if (reset = '1') then
                 s_axis_tready <= '0';
             else
-                -- Ready if the output stage is empty or moving
-                if (tvalid_fifo(PIPELINE_DEPTH-1) = '0' or m_axis_tready = '1') then
+                if pipe_advance = '1' then
                     s_axis_tready <= '1';
                 else
                     s_axis_tready <= '0';
@@ -672,29 +773,109 @@ MAIN_FSM_LOGIC: process (clk) is
     
     -- pipe_draining: OR of all in-flight valid stages 0..PIPELINE_DEPTH-2.
     -- After tlast, sA_valid drops to '0' but these stages still hold live pixels
-    -- that must propagate through the ALU's 5 registered stages (p_mul_reg,
-    -- p_rowsum_reg, p_acc_parallel, p_stage1, p_stage2) before appearing at
-    -- result_reg.  Without this, alu_shift_en freezes at '0' on the cycle after
-    -- the last pixel and those pixels never complete their computation.
+    -- that must propagate through the ALU's 5 internal registered stages before
+    -- appearing at result_reg.  Without this, alu_shift_en would freeze at '0'
+    -- one cycle after the last pixel and those pixels would never complete.
     pipe_draining <= tvalid_fifo(0) or tvalid_fifo(1) or tvalid_fifo(2) or
                      tvalid_fifo(3) or tvalid_fifo(4) or tvalid_fifo(5);
 
     -- alu_shift_en: advance the ALU when new data is entering (sA_valid='1') OR
-    -- in-flight pixels still need to drain (pipe_draining='1'), AND the output
-    -- stage is not blocking.
-    alu_shift_en <= (sA_valid or pipe_draining) and
-                    (not tvalid_fifo(PIPELINE_DEPTH-1) or m_axis_tready);
+    -- in-flight pixels still need to drain (pipe_draining='1'), AND the pipeline
+    -- is not blocked (pipe_advance='1').
+    alu_shift_en <= (sA_valid or pipe_draining) and pipe_advance;
 
-    -- BRAM write: gated by sA_valid only (NOT alu_shift_en) to prevent spurious
-    -- shift-left BRAM writes during drain cycles when sA_data holds stale data.
-    bram_wr_en  <= sA_valid and (not tvalid_fifo(PIPELINE_DEPTH-1) or m_axis_tready);
+    -- bram_wr_en: gated by sA_valid only (not drain cycles) so stale sA_data
+    -- is never written during end-of-frame drain.  Also gated by pipe_advance.
+    bram_wr_en   <= sA_valid and pipe_advance;
 
-    -- BRAM read advance: purely combinatorial. Col_out holds when this is '0'.
-    -- Vivado cannot optimize this away because it directly gates the BRAM output register.
-    bram_rd_adv <= (not tvalid_fifo(PIPELINE_DEPTH-1)) or m_axis_tready;
-    
+    -- bram_rd_adv: purely combinatorial, equals pipe_advance.
+    -- col_out freezes when '0'; Vivado cannot optimize this away.
+    bram_rd_adv  <= pipe_advance;
+
+    -- -----------------------------------------------------------------------
+    -- PACKING STAGE PROCESS
+    --
+    -- Runs independently of MAIN_FSM_LOGIC.  Two separate sub-operations
+    -- may fire on the same rising edge (VHDL last-assignment-wins semantics):
+    --
+    --   (A) Consume: if downstream accepts the current output word this cycle,
+    --       clear pack_out_valid.
+    --
+    --   (B) Pack: if the pipeline is advancing and a valid uint8 pixel sits at
+    --       the pipeline output, process it:
+    --         pack_half='0': buffer it in pack_buf; wait for the second pixel.
+    --         pack_half='1': combine with pack_buf, write pack_out_data/valid.
+    --
+    -- If (A) and (B) both fire in the same cycle (downstream consuming old
+    -- word while simultaneously packing a new pair), the (B) assignment of
+    -- pack_out_valid<='1' overrides the (A) assignment of pack_out_valid<='0'.
+    -- The result is correct: the old word is consumed this cycle (the
+    -- handshake on m_axis_tvalid/tready completes) and the new word appears
+    -- in pack_out_data on the next cycle.
+    -- -----------------------------------------------------------------------
+    p_pack : process (clk) is
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                pack_buf       <= (others => '0');
+                pack_half      <= '0';
+                pack_out_valid <= '0';
+                pack_out_data  <= (others => '0');
+                pack_out_last  <= '0';
+            else
+
+                -- (A) Consume: clear output-valid when downstream accepts
+                if pack_out_valid = '1' and m_axis_tready = '1' then
+                    pack_out_valid <= '0';
+                end if;
+
+                -- (B) Pack: runs in uint8 mode only, when the pipeline is
+                -- advancing AND a border-valid pixel has reached the output stage.
+                if h_ctrl(0) = '0' and
+                   pipe_advance = '1' and
+                   tvalid_fifo(PIPELINE_DEPTH-1) = '1' and
+                   alu_valid_output(PIPELINE_DEPTH-1) = '1' then
+
+                    if pack_half = '0' then
+                        -- ---- First pixel of pair (or lone last pixel) ----
+                        if tlast_fifo(PIPELINE_DEPTH-1) = '1' then
+                            -- Edge case: odd total valid-pixel count.
+                            -- Output single pixel zero-padded to 16 bits.
+                            pack_out_data  <= x"00" & reg_output(7 downto 0);
+                            pack_out_valid <= '1';
+                            pack_out_last  <= '1';
+                            -- pack_half stays '0'
+                        else
+                            -- Normal case: buffer first pixel and wait for second
+                            pack_buf  <= reg_output(7 downto 0);
+                            pack_half <= '1';
+                        end if;
+
+                    else
+                        -- ---- Second pixel of pair: pack and emit ----
+                        --
+                        -- Word layout (little-endian DMA, ARM Cortex-A9):
+                        --   bits[ 7: 0] = pack_buf       = FIRST  pixel → byte addr N+0
+                        --   bits[15: 8] = reg_output[7:0] = SECOND pixel → byte addr N+1
+                        --
+                        -- ResultBuffer (u8*) therefore reads:
+                        --   [0] = first  pixel  ✓
+                        --   [1] = second pixel  ✓
+                        --   ...
+                        pack_out_data  <= reg_output(7 downto 0) & pack_buf;
+                        pack_out_valid <= '1';
+                        pack_out_last  <= tlast_fifo(PIPELINE_DEPTH-1);
+                        pack_half      <= '0';
+                    end if;
+
+                end if;
+            end if;
+        end if;
+    end process p_pack;
+
+    -- -----------------------------------------------------------------------
     -- BRAM INSTANCE
-
+    -- -----------------------------------------------------------------------
     u_bram : entity xil_defaultlib.bram_linebuf(Behavioral)
         generic map (
             MAX_R         => MAX_FILTER_RADIUS,
@@ -712,8 +893,16 @@ MAIN_FSM_LOGIC: process (clk) is
             col_out    => bram_col_out
         );
 
+    -- -----------------------------------------------------------------------
     -- ALU INSTANCE
-    
+    --
+    -- filter_alu.vhd is unchanged.  The uint8 arithmetic path inside it:
+    --   sh8  = scaled_reg >> (FRAC_COEFF + FRAC_SCALE) = scaled_reg >> 27
+    -- produces the correct integer pixel value (matches SW: scaled >> 27).
+    -- Output lives in result[7:0] with result[15:8]=0.
+    -- The packing of two such outputs into one 16-bit word is done above in
+    -- p_pack, keeping the ALU clean and the two concerns separated.
+    -- -----------------------------------------------------------------------
     u_alu : entity xil_defaultlib.filter_alu(Behavioral)
         generic map (
             MAX_R      => MAX_FILTER_RADIUS,
@@ -738,4 +927,4 @@ MAIN_FSM_LOGIC: process (clk) is
         );
     
    
-end architecture rtl; -- of acc_neg_image
+end architecture rtl;
