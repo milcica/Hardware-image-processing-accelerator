@@ -8,7 +8,7 @@ entity acc_image_filter is
         C_S_AXI_DATA_WIDTH : integer := 32;
         C_S_AXI_ADDR_WIDTH : integer := 10;
         MAX_FILTER_RADIUS  : integer := 4;
-        MAX_IMG_WIDTH      : integer := 512
+        MAX_IMG_WIDTH      : integer := 1024  -- widened: supports up to 1024-pixel wide images
     );
     port (
         -- Clock and reset
@@ -65,7 +65,7 @@ architecture rtl of acc_image_filter is
     
     constant ADDR_LSB       : natural := (C_S_AXI_DATA_WIDTH/32) + 1;
     constant PIPELINE_DEPTH : natural := 7;
-    constant CNT_W          : integer := 9; -- log2(MAX_IMG_WIDTH=512)
+    constant CNT_W          : integer := 10; -- log2(MAX_IMG_WIDTH=1024); was 9 (max 511) → now 10 (max 1023)
 
     constant WA_CTRL        : integer := 0;
     constant WA_RADIUS      : integer := 1;
@@ -211,6 +211,44 @@ architecture rtl of acc_image_filter is
     -- expression used throughout the original code.
     signal pipe_advance   : std_logic;
 
+    -- -----------------------------------------------------------------------
+    -- BYPASS PATH  (h_ctrl(1)='1')
+    --
+    -- When bypass is active the BRAM and ALU are completely idle.  Input
+    -- pixels flow through Stage-0 and Stage-A as usual (counters, border
+    -- detection, pipe_advance back-pressure all stay in place), but instead
+    -- of entering the 7-stage ALU pipeline they land in a single registered
+    -- stage (byp_stage_*) and go straight to the output mux.
+    --
+    -- Only centre pixels (NOT on any border) produce bypass output, so the
+    -- output count is (W-2R)×(H-2R) - identical to normal filter mode and
+    -- the SW reference.  The DMA OutSize therefore does not change.
+    --
+    -- byp_stage_data  : raw 8-bit centre pixel
+    -- byp_stage_valid : Q9.7 - sticky, held until m_axis_tready='1'
+    --                   uint8 - pulsed one cycle; p_byp_pack consumes it
+    -- byp_stage_last  : '1' for the very last centre pixel of the frame
+    -- byp_input_done  : set once the last *input* pixel (tlast) passes Stage-A;
+    --                   used to detect end-of-frame without relying on the
+    --                   ALU pipeline's tlast_fifo
+    -- byp_in_ready    : back-pressure from bypass output to pipe_advance
+    --
+    -- uint8 packing mirrors the normal p_pack but reads from byp_stage_*
+    -- instead of reg_output / tvalid_fifo.
+    -- -----------------------------------------------------------------------
+    signal byp_stage_data  : std_logic_vector(7 downto 0)  := (others => '0');
+    signal byp_stage_valid : std_logic                     := '0';
+    signal byp_stage_last  : std_logic                     := '0';
+    signal byp_input_done  : std_logic                     := '0';
+
+    signal byp_pack_buf    : std_logic_vector(7 downto 0)  := (others => '0');
+    signal byp_pack_half   : std_logic                     := '0';
+    signal byp_pack_valid  : std_logic                     := '0';
+    signal byp_pack_data   : std_logic_vector(15 downto 0) := (others => '0');
+    signal byp_pack_last   : std_logic                     := '0';
+
+    signal byp_in_ready    : std_logic;
+
    function flatten_coeffs(input : coeff_array_t; r : integer) return std_logic_vector is
         constant CELLS : integer := (2*r + 1)**2;
         variable res   : std_logic_vector(CELLS * 16 - 1 downto 0);
@@ -272,21 +310,35 @@ architecture rtl of acc_image_filter is
     attribute mark_debug of pack_in_ready   : signal is "true";
     attribute mark_debug of pipe_advance    : signal is "true";
 
+    -- Bypass-path probes
+    attribute mark_debug of byp_stage_valid : signal is "true";
+    attribute mark_debug of byp_stage_last  : signal is "true";
+    attribute mark_debug of byp_input_done  : signal is "true";
+    attribute mark_debug of byp_pack_valid  : signal is "true";
+    attribute mark_debug of byp_pack_last   : signal is "true";
+    attribute mark_debug of byp_in_ready    : signal is "true";
+
 begin
 
     coeff_flat <= flatten_coeffs(h_coeff, MAX_FILTER_RADIUS);
 
     -- -----------------------------------------------------------------------
     -- PIPELINE ADVANCE GATE (combinatorial)
-    -- The pipeline may advance when the output stage is empty OR when the
-    -- stage immediately downstream of it (packing stage in uint8 mode,
-    -- AXI-S master directly in Q9.7 mode) is ready to accept a new word.
+    --
+    -- Normal mode  : advance when the output stage is empty or the packing
+    --               stage is ready (original logic).
+    -- Bypass mode  : advance when the bypass output stage can accept the
+    --               next pixel (byp_in_ready).  The ALU pipeline's
+    --               tvalid_fifo still fills up in bypass mode but its
+    --               fullness no longer governs pipe_advance.
     -- -----------------------------------------------------------------------
-    pipe_advance <= '1' when (tvalid_fifo(PIPELINE_DEPTH-1) = '0' or
-                               pack_in_ready = '1') else '0';
+    pipe_advance <=
+        byp_in_ready  when h_ctrl(1) = '1' else
+        '1'           when (tvalid_fifo(PIPELINE_DEPTH-1) = '0' or
+                            pack_in_ready = '1') else '0';
 
     -- -----------------------------------------------------------------------
-    -- PACKING-STAGE BACK-PRESSURE (combinatorial)
+    -- PACKING-STAGE BACK-PRESSURE (combinatorial)  - normal mode only
     -- -----------------------------------------------------------------------
     pack_in_ready <=
         -- Q9.7 mode: no packing, pass m_axis_tready straight through
@@ -296,6 +348,17 @@ begin
         -- uint8, waiting for second pixel: accept only when output reg is free
         -- or the downstream is consuming it right now
         (not pack_out_valid) or m_axis_tready;
+
+    -- -----------------------------------------------------------------------
+    -- BYPASS BACK-PRESSURE (combinatorial)
+    --
+    -- Bypass always outputs raw uint8 (spec Table 5.2: "input pixel values are
+    -- forwarded").  The MODE bit is irrelevant for bypass; only the uint8 packer
+    -- path (p_byp_pack) is used regardless of h_ctrl(0).
+    -- -----------------------------------------------------------------------
+    byp_in_ready <=
+        '1'                              when byp_pack_half = '0' else
+        (not byp_pack_valid) or m_axis_tready;
 
     -- AXI4-Lite write registers
     process (clk) is
@@ -538,6 +601,12 @@ MAIN_FSM_LOGIC: process (clk) is
                 sA_out        <= '0'; 
                 sA_col <= (others => '0');
 
+                -- Bypass path reset
+                byp_stage_data  <= (others => '0');
+                byp_stage_valid <= '0';
+                byp_stage_last  <= '0';
+                byp_input_done  <= '0';
+
 
             else
                 
@@ -572,21 +641,38 @@ MAIN_FSM_LOGIC: process (clk) is
                     -- ------------------------------------------------------------------
                     -- CHECK FOR END OF FRAME
                     --
-                    -- Q9.7 mode : the last pipeline word (tlast=1, tvalid=1) is
-                    --             accepted directly by the downstream (m_axis_tready=1).
+                    -- Bypass mode : frame ends once every input pixel has been
+                    --   received (byp_input_done='1') AND any pending bypass output
+                    --   has been consumed by the downstream DMA.
+                    --   Using the input-side tlast (not the ALU pipeline's tlast_fifo)
+                    --   avoids the spurious re-trigger that would occur if AccIdle
+                    --   saw the remaining border pixels still on s_axis after the
+                    --   last valid bypass output.
                     --
-                    -- uint8 mode: two pixels pack into one 16-bit word.  The "last"
-                    --             event is when the packing stage's output register
-                    --             (pack_out_valid=1, pack_out_last=1) is consumed.
+                    -- Normal Q9.7 : unchanged - last pipeline word accepted.
+                    -- Normal uint8: unchanged - last packed word consumed.
                     -- ------------------------------------------------------------------
-                    if h_ctrl(0) = '1' then
-                        -- Q9.7: last pixel exits pipeline
+                    if h_ctrl(1) = '1' then
+                        -- BYPASS end-of-frame.
+                        -- Bypass always uses the uint8 packer.  Frame is complete
+                        -- when all input is done AND both Stage-A and the packer
+                        -- have fully drained.
+                        if byp_input_done = '1' and
+                           byp_pack_valid  = '0' and
+                           byp_pack_half   = '0' and
+                           byp_stage_valid = '0' then
+                            fsm_img_processing_state <= AccIdle;
+                            byp_input_done <= '0';
+                        end if;
+
+                    elsif h_ctrl(0) = '1' then
+                        -- ---- Normal Q9.7 end-of-frame ----
                         if (tvalid_fifo(PIPELINE_DEPTH-1) = '1' and m_axis_tready = '1' and
                                 tlast_fifo(PIPELINE_DEPTH-1) = '1') then
                             fsm_img_processing_state <= AccIdle;
                         end if;
                     else
-                        -- uint8: last packed word consumed by downstream
+                        -- ---- Normal uint8 end-of-frame ----
                         if (pack_out_valid = '1' and m_axis_tready = '1' and
                                 pack_out_last = '1') then
                             fsm_img_processing_state <= AccIdle;
@@ -642,8 +728,28 @@ MAIN_FSM_LOGIC: process (clk) is
 
                         -- Check for Bypass (Highest Priority)
                         if (h_ctrl(1) = '1') then
+                            -- --------------------------------------------------------
+                            -- BYPASS PATH - short-circuit BRAM and ALU entirely.
+                            --
+                            -- sA_data is still driven (it reaches the ALU port but
+                            -- alu_shift_en='0' so the ALU is frozen).
+                            -- --------------------------------------------------------
                             sA_data <= tdata_buffer;
-                            sA_out    <= '1'; -- Valid override
+                            sA_out  <= '1';
+
+                            -- Detect last INPUT pixel so end-of-frame can fire once
+                            -- the bypass output drains (byp_input_done handshake).
+                            if tvalid_buffer = '1' and tlast_buffer = '1' then
+                                byp_input_done <= '1';
+                            end if;
+
+                            -- Bypass: forward ALL input pixels (border + centre).
+                            -- byp_stage_last mirrors AXI-S TLAST so no per-pixel
+                            -- counter check is needed.  p_byp_pack packs every pixel
+                            -- as uint8, regardless of the MODE bit (h_ctrl(0)).
+                            byp_stage_data  <= tdata_buffer;
+                            byp_stage_valid <= tvalid_buffer;
+                            byp_stage_last  <= tlast_buffer;
                         else
                             -- Process Border Modes
                             case h_ctrl(3 downto 2) is
@@ -726,32 +832,8 @@ MAIN_FSM_LOGIC: process (clk) is
 
     
     -- -----------------------------------------------------------------------
-    -- OUTPUT MAPPING
-    --
-    -- Q9.7 mode (h_ctrl(0)='1'):
-    --   Direct pipeline output, unchanged from the original design.
-    --   One 16-bit signed word per valid pipeline pixel.
-    --
-    -- uint8 mode (h_ctrl(0)='0'):
-    --   Output comes from the packing stage (pack_out_*).
-    --   One 16-bit word carries TWO consecutive uint8 pixels:
-    --     tdata[7:0]  = first  pixel (lower  byte) → ResultBuffer[2k]
-    --     tdata[15:8] = second pixel (upper byte) → ResultBuffer[2k+1]
-    --   tlast is asserted with the LAST packed word of the frame.
+    -- BRAM INSTANCE
     -- -----------------------------------------------------------------------
-    m_axis_tvalid <= (tvalid_fifo(PIPELINE_DEPTH-1) and alu_valid_output(PIPELINE_DEPTH-1))
-                         when h_ctrl(0) = '1' else
-                     pack_out_valid;
-
-    m_axis_tlast  <= tlast_fifo(PIPELINE_DEPTH-1) when h_ctrl(0) = '1' else
-                     pack_out_last;
-
-    m_axis_tdata  <= reg_output when h_ctrl(0) = '1' else
-                     pack_out_data;
-
-   
-    -- -----------------------------------------------------------------------
-    -- AXI-STREAM INPUT READY SIGNAL
     -- Registered one cycle ahead.  Uses pipe_advance so in uint8 mode the
     -- ready de-asserts whenever the packing stage is blocked (pack_half='1'
     -- and output register full and downstream not ready).
@@ -782,11 +864,15 @@ MAIN_FSM_LOGIC: process (clk) is
     -- alu_shift_en: advance the ALU when new data is entering (sA_valid='1') OR
     -- in-flight pixels still need to drain (pipe_draining='1'), AND the pipeline
     -- is not blocked (pipe_advance='1').
-    alu_shift_en <= (sA_valid or pipe_draining) and pipe_advance;
+    -- In bypass mode the ALU is completely idle - shift_en held '0'.
+    alu_shift_en <= '0'  when h_ctrl(1) = '1' else
+                    (sA_valid or pipe_draining) and pipe_advance;
 
     -- bram_wr_en: gated by sA_valid only (not drain cycles) so stale sA_data
     -- is never written during end-of-frame drain.  Also gated by pipe_advance.
-    bram_wr_en   <= sA_valid and pipe_advance;
+    -- In bypass mode the BRAM is not written (data does not enter the BRAM).
+    bram_wr_en   <= '0'  when h_ctrl(1) = '1' else
+                    sA_valid and pipe_advance;
 
     -- bram_rd_adv: purely combinatorial, equals pipe_advance.
     -- col_out freezes when '0'; Vivado cannot optimize this away.
@@ -829,9 +915,10 @@ MAIN_FSM_LOGIC: process (clk) is
                     pack_out_valid <= '0';
                 end if;
 
-                -- (B) Pack: runs in uint8 mode only, when the pipeline is
-                -- advancing AND a border-valid pixel has reached the output stage.
-                if h_ctrl(0) = '0' and
+                -- (B) Pack: runs in uint8 NORMAL mode only (bypass has its own
+                -- p_byp_pack below).  When the pipeline is advancing AND a
+                -- border-valid pixel has reached the output stage.
+                if h_ctrl(0) = '0' and h_ctrl(1) = '0' and
                    pipe_advance = '1' and
                    tvalid_fifo(PIPELINE_DEPTH-1) = '1' and
                    alu_valid_output(PIPELINE_DEPTH-1) = '1' then
@@ -874,6 +961,100 @@ MAIN_FSM_LOGIC: process (clk) is
     end process p_pack;
 
     -- -----------------------------------------------------------------------
+    -- BYPASS PACKING STAGE (p_byp_pack)
+    --
+    -- Mirrors p_pack but reads from byp_stage_* instead of the ALU pipeline.
+    -- Active only when h_ctrl(1)='1' AND h_ctrl(0)='0' (bypass + uint8).
+    --
+    -- byp_stage_valid is pulsed HIGH for ONE cycle per valid centre pixel
+    -- (MAIN_FSM_LOGIC drives it).  p_byp_pack reads the value written in
+    -- the PREVIOUS cycle (standard VHDL clocked-process semantics), so it
+    -- processes each centre pixel exactly once with 1-cycle latency.
+    --
+    -- Blocked condition: pack_half='1' AND pack_valid='1' AND tready='0'.
+    -- In that cycle pipe_advance='0' so MAIN_FSM_LOGIC does not overwrite
+    -- byp_stage, and p_byp_pack skips the (B) branch to avoid double-packing.
+    -- -----------------------------------------------------------------------
+    p_byp_pack : process (clk) is
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                byp_pack_buf   <= (others => '0');
+                byp_pack_half  <= '0';
+                byp_pack_valid <= '0';
+                byp_pack_data  <= (others => '0');
+                byp_pack_last  <= '0';
+            else
+                -- (A) Consume: clear output-valid when downstream accepts
+                if byp_pack_valid = '1' and m_axis_tready = '1' then
+                    byp_pack_valid <= '0';
+                end if;
+
+                -- (B) Pack from bypass stage - active for ALL bypass modes.
+                -- Bypass always outputs uint8 packed, regardless of MODE bit.
+                -- Skip when the output register is full and not being consumed.
+                if h_ctrl(1) = '1' and
+                   byp_stage_valid = '1' and
+                   not (byp_pack_half = '1' and
+                        byp_pack_valid = '1' and
+                        m_axis_tready = '0') then
+
+                    if byp_pack_half = '0' then
+                        if byp_stage_last = '1' then
+                            -- Odd total pixel count: emit lone pixel zero-padded
+                            byp_pack_data  <= x"00" & byp_stage_data;
+                            byp_pack_valid <= '1';
+                            byp_pack_last  <= '1';
+                            -- byp_pack_half stays '0'
+                        else
+                            -- First of pair: buffer it
+                            byp_pack_buf  <= byp_stage_data;
+                            byp_pack_half <= '1';
+                        end if;
+                    else
+                        -- Second of pair: pack and emit
+                        --   bits[ 7:0] = byp_pack_buf  = FIRST  pixel
+                        --   bits[15:8] = byp_stage_data = SECOND pixel
+                        byp_pack_data  <= byp_stage_data & byp_pack_buf;
+                        byp_pack_valid <= '1';
+                        byp_pack_last  <= byp_stage_last;
+                        byp_pack_half  <= '0';
+                    end if;
+                end if;
+            end if;
+        end if;
+    end process p_byp_pack;
+
+    -- -----------------------------------------------------------------------
+    -- OUTPUT MAPPING
+    --
+    -- Priority: bypass (h_ctrl(1)='1') overrides normal pipeline.
+    --
+    -- Bypass Q9.7 : byp_stage holds the formatted pixel until consumed.
+    --               tdata = "0" & pixel & "0000000"  (pixel * 128 = Q9.7)
+    -- Bypass uint8: byp_pack_data holds the packed pair until consumed.
+    --
+    -- Normal Q9.7 : direct pipeline output (unchanged).
+    -- Normal uint8: packing stage output (unchanged).
+    -- -----------------------------------------------------------------------
+    -- Bypass always outputs via the uint8 packer (byp_pack_*).
+    -- Q9.7 bypass path is removed - bypass forwards raw uint8 per spec.
+    m_axis_tvalid <=
+        byp_pack_valid                                                           when h_ctrl(1) = '1' else
+        (tvalid_fifo(PIPELINE_DEPTH-1) and alu_valid_output(PIPELINE_DEPTH-1)) when h_ctrl(0) = '1' else
+        pack_out_valid;
+
+    m_axis_tlast <=
+        byp_pack_last                when h_ctrl(1) = '1' else
+        tlast_fifo(PIPELINE_DEPTH-1) when h_ctrl(0) = '1' else
+        pack_out_last;
+
+    m_axis_tdata <=
+        byp_pack_data  when h_ctrl(1) = '1' else
+        reg_output     when h_ctrl(0) = '1' else
+        pack_out_data;
+
+    -- -----------------------------------------------------------------------
     -- BRAM INSTANCE
     -- -----------------------------------------------------------------------
     u_bram : entity xil_defaultlib.bram_linebuf(Behavioral)
@@ -884,8 +1065,8 @@ MAIN_FSM_LOGIC: process (clk) is
         port map (
             clk        => clk,
             rst        => reset,
-            rd_addr    => img_col_counter(8 downto 0),
-            wr_addr    => sA_col(8 downto 0),
+            rd_addr    => img_col_counter(9 downto 0),  -- 10-bit (was 8 downto 0)
+            wr_addr    => sA_col(9 downto 0),           -- 10-bit
             pixel_in   => sA_data,
             wr_enable  => bram_wr_en,
             rd_enable  => tvalid_buffer,

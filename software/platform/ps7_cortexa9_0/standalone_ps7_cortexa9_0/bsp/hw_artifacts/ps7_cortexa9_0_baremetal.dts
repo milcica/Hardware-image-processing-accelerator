@@ -814,7 +814,7 @@
                         xlnx,edk-iptype = "PERIPHERAL";
                         reg = <0x40000000 0x1000>;
                         clocks = <&clkc 0xf>;
-                        xlnx,max-img-width = <0x200>;
+                        xlnx,max-img-width = <0x400>;
                         xlnx,name = "acc_image_filter_0";
                         phandle = <0x5>;
                 };

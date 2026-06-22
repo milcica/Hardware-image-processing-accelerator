@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="1,024"></ZoomEndTime>
+      <ZoomEndTime time="11"></ZoomEndTime>
       <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="148"></NameColumnWidth>
+      <NameColumnWidth column_width="144"></NameColumnWidth>
       <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="58" />
-   <wave_markers>
-   </wave_markers>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata">
       <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[15:0]</obj_property>
       <obj_property name="ObjectShortName">s_axi_ctrl_wdata[15:0]</obj_property>
@@ -127,9 +125,10 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/img_row_counter">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_row_counter[8:0]</obj_property>
-      <obj_property name="ObjectShortName">img_row_counter[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_row_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">img_row_counter[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -338,9 +337,10 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="image_filter_i/acc_image_filter_0/U0/img_col_counter">
-      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_col_counter[8:0]</obj_property>
-      <obj_property name="ObjectShortName">img_col_counter[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">image_filter_i/acc_image_filter_0/U0/img_col_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">img_col_counter[9:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

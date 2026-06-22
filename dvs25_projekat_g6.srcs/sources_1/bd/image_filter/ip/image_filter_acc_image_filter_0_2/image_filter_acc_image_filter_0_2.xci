@@ -11,14 +11,14 @@
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "C_S_AXI_ADDR_WIDTH": [ { "value": "10", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "MAX_FILTER_RADIUS": [ { "value": "4", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "MAX_IMG_WIDTH": [ { "value": "512", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "MAX_IMG_WIDTH": [ { "value": "1024", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "image_filter_acc_image_filter_0_2", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "C_S_AXI_DATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_S_AXI_ADDR_WIDTH": [ { "value": "10", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "MAX_FILTER_RADIUS": [ { "value": "4", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "MAX_IMG_WIDTH": [ { "value": "512", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "MAX_IMG_WIDTH": [ { "value": "1024", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],

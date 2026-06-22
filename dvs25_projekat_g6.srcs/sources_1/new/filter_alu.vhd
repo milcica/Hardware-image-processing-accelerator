@@ -194,7 +194,7 @@ begin
  
         for r in 0 to ROWS-1 loop
             for c in 0 to COLS-1 loop
-                cff := get_coeff(coeff, r*9 + c);
+                cff := get_coeff(coeff, (fdim - 1 - r) * 9 + c);
                 if r < fdim and c < fdim then
                     -- Zero-extend unsigned pixel to signed 9-bit
                     pix := signed('0' & shift_reg(r)(fdim - 1 - c));

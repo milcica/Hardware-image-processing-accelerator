@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Wed Jun 10 11:11:21 2026
+-- Date        : Sun Jun 21 15:21:16 2026
 -- Host        : yoga running 64-bit Ubuntu 24.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/image_filter_acc_image_filter_0_2_stub.vhdl
@@ -49,7 +49,7 @@ entity image_filter_acc_image_filter_0_2 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of image_filter_acc_image_filter_0_2 : entity is "image_filter_acc_image_filter_0_2,acc_image_filter,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of image_filter_acc_image_filter_0_2 : entity is "image_filter_acc_image_filter_0_2,acc_image_filter,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=acc_image_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=10,MAX_FILTER_RADIUS=4,MAX_IMG_WIDTH=512}";
+  attribute core_generation_info of image_filter_acc_image_filter_0_2 : entity is "image_filter_acc_image_filter_0_2,acc_image_filter,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=acc_image_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=10,MAX_FILTER_RADIUS=4,MAX_IMG_WIDTH=1024}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of image_filter_acc_image_filter_0_2 : entity is "yes";
   attribute ip_definition_source : string;

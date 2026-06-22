@@ -134,7 +134,7 @@ ARCHITECTURE image_filter_acc_image_filter_0_2_arch OF image_filter_acc_image_fi
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF image_filter_acc_image_filter_0_2_arch : ARCHITECTURE IS "image_filter_acc_image_filter_0_2,acc_image_filter,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF image_filter_acc_image_filter_0_2_arch: ARCHITECTURE IS "image_filter_acc_image_filter_0_2,acc_image_filter,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=acc_image_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=10,MAX_FILTER_RADIUS=4,MAX_IMG_WIDTH=512}";
+  ATTRIBUTE CORE_GENERATION_INFO OF image_filter_acc_image_filter_0_2_arch: ARCHITECTURE IS "image_filter_acc_image_filter_0_2,acc_image_filter,{x_ipProduct=Vivado 2025.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=acc_image_filter,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ADDR_WIDTH=10,MAX_FILTER_RADIUS=4,MAX_IMG_WIDTH=1024}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF image_filter_acc_image_filter_0_2_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -186,7 +186,7 @@ BEGIN
       C_S_AXI_DATA_WIDTH => 32,
       C_S_AXI_ADDR_WIDTH => 10,
       MAX_FILTER_RADIUS => 4,
-      MAX_IMG_WIDTH => 512
+      MAX_IMG_WIDTH => 1024
     )
     PORT MAP (
       clk => clk,

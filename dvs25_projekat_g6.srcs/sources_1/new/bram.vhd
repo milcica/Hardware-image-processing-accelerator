@@ -5,13 +5,13 @@ use IEEE.numeric_std.all;
 entity bram_linebuf is
     generic (
         MAX_R         : integer := 4;
-        IMG_WIDTH_MAX : integer := 512
+        IMG_WIDTH_MAX : integer := 1024  -- widened from 512 to support up to 1024-px images
     );
     port (
         clk       : in  std_logic;
         rst       : in  std_logic;
-        rd_addr   : in  std_logic_vector(8 downto 0);
-        wr_addr   : in  std_logic_vector(8 downto 0);
+        rd_addr   : in  std_logic_vector(9 downto 0);   -- 10-bit: covers 0..1023
+        wr_addr   : in  std_logic_vector(9 downto 0);   -- (was 8 downto 0 = max 511)
         pixel_in  : in  std_logic_vector(7 downto 0);
         wr_enable : in  std_logic;
         rd_enable : in  std_logic;

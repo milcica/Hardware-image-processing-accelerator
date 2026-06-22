@@ -178,7 +178,7 @@ BEGIN
       C_S_AXI_DATA_WIDTH => 32,
       C_S_AXI_ADDR_WIDTH => 10,
       MAX_FILTER_RADIUS => 4,
-      MAX_IMG_WIDTH => 512
+      MAX_IMG_WIDTH => 1024
     )
     PORT MAP (
       clk => clk,

@@ -224,6 +224,11 @@ connect_debug_port u_ila_0/probe35 [get_nets [list image_filter_i/acc_image_filt
 connect_debug_port u_ila_0/probe36 [get_nets [list image_filter_i/acc_image_filter_0/U0/output_can_advance]]
 connect_debug_port u_ila_0/probe38 [get_nets [list image_filter_i/acc_image_filter_0/U0/pixel_at_output]]
 
+
+
+
+
+
 create_debug_core u_ila_0 ila
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
 set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
@@ -236,100 +241,100 @@ set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
 set_property port_width 1 [get_debug_ports u_ila_0/clk]
 connect_debug_port u_ila_0/clk [get_nets [list image_filter_i/processing_system7_0/inst/FCLK_CLK0]]
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
-set_property port_width 64 [get_debug_ports u_ila_0/probe0]
-connect_debug_port u_ila_0/probe0 [get_nets [list {image_filter_i/acc_image_filter_0/U0/bram_col_out[0]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[1]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[2]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[3]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[4]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[5]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[6]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[7]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[8]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[9]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[10]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[11]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[12]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[13]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[14]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[15]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[16]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[17]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[18]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[19]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[20]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[21]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[22]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[23]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[24]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[25]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[26]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[27]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[28]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[29]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[30]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[31]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[32]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[33]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[34]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[35]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[36]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[37]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[38]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[39]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[40]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[41]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[42]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[43]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[44]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[45]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[46]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[47]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[48]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[49]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[50]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[51]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[52]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[53]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[54]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[55]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[56]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[57]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[58]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[59]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[60]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[61]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[62]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[63]}]]
+set_property port_width 8 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {image_filter_i/acc_image_filter_0/U0/sA_data[0]} {image_filter_i/acc_image_filter_0/U0/sA_data[1]} {image_filter_i/acc_image_filter_0/U0/sA_data[2]} {image_filter_i/acc_image_filter_0/U0/sA_data[3]} {image_filter_i/acc_image_filter_0/U0/sA_data[4]} {image_filter_i/acc_image_filter_0/U0/sA_data[5]} {image_filter_i/acc_image_filter_0/U0/sA_data[6]} {image_filter_i/acc_image_filter_0/U0/sA_data[7]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
 set_property port_width 16 [get_debug_ports u_ila_0/probe1]
-connect_debug_port u_ila_0/probe1 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_ctrl[0]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[1]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[2]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[3]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[4]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[5]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[6]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[7]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[8]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[9]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[10]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[11]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[12]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[13]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[14]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[15]}]]
+connect_debug_port u_ila_0/probe1 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_ctrl[0]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[1]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[2]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[3]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[4]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[5]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[6]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[7]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[8]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[9]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[10]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[11]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[12]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[13]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[14]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
-set_property port_width 7 [get_debug_ports u_ila_0/probe2]
-connect_debug_port u_ila_0/probe2 [get_nets [list {image_filter_i/acc_image_filter_0/U0/alu_valid_output[0]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[1]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[2]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[3]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[4]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[5]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[6]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_img_h[0]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[1]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[2]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[3]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[4]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[5]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[6]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[7]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[8]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[9]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[10]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[11]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[12]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[13]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[14]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
-set_property port_width 9 [get_debug_ports u_ila_0/probe3]
-connect_debug_port u_ila_0/probe3 [get_nets [list {image_filter_i/acc_image_filter_0/U0/img_col_counter[0]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[1]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[2]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[3]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[4]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[5]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[6]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[7]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[8]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_img_w[0]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[1]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[2]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[3]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[4]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[5]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[6]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[7]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[8]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[9]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[10]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[11]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[12]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[13]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[14]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
-set_property port_width 9 [get_debug_ports u_ila_0/probe4]
-connect_debug_port u_ila_0/probe4 [get_nets [list {image_filter_i/acc_image_filter_0/U0/img_row_counter[0]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[1]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[2]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[3]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[4]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[5]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[6]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[7]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[8]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_output[0]} {image_filter_i/acc_image_filter_0/U0/reg_output[1]} {image_filter_i/acc_image_filter_0/U0/reg_output[2]} {image_filter_i/acc_image_filter_0/U0/reg_output[3]} {image_filter_i/acc_image_filter_0/U0/reg_output[4]} {image_filter_i/acc_image_filter_0/U0/reg_output[5]} {image_filter_i/acc_image_filter_0/U0/reg_output[6]} {image_filter_i/acc_image_filter_0/U0/reg_output[7]} {image_filter_i/acc_image_filter_0/U0/reg_output[8]} {image_filter_i/acc_image_filter_0/U0/reg_output[9]} {image_filter_i/acc_image_filter_0/U0/reg_output[10]} {image_filter_i/acc_image_filter_0/U0/reg_output[11]} {image_filter_i/acc_image_filter_0/U0/reg_output[12]} {image_filter_i/acc_image_filter_0/U0/reg_output[13]} {image_filter_i/acc_image_filter_0/U0/reg_output[14]} {image_filter_i/acc_image_filter_0/U0/reg_output[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
 set_property port_width 16 [get_debug_ports u_ila_0/probe5]
-connect_debug_port u_ila_0/probe5 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[0]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[1]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[2]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[3]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[4]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[5]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[6]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[7]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[8]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[9]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[10]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[11]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[12]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[13]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[14]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[15]}]]
+connect_debug_port u_ila_0/probe5 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_radius[0]} {image_filter_i/acc_image_filter_0/U0/reg_radius[1]} {image_filter_i/acc_image_filter_0/U0/reg_radius[2]} {image_filter_i/acc_image_filter_0/U0/reg_radius[3]} {image_filter_i/acc_image_filter_0/U0/reg_radius[4]} {image_filter_i/acc_image_filter_0/U0/reg_radius[5]} {image_filter_i/acc_image_filter_0/U0/reg_radius[6]} {image_filter_i/acc_image_filter_0/U0/reg_radius[7]} {image_filter_i/acc_image_filter_0/U0/reg_radius[8]} {image_filter_i/acc_image_filter_0/U0/reg_radius[9]} {image_filter_i/acc_image_filter_0/U0/reg_radius[10]} {image_filter_i/acc_image_filter_0/U0/reg_radius[11]} {image_filter_i/acc_image_filter_0/U0/reg_radius[12]} {image_filter_i/acc_image_filter_0/U0/reg_radius[13]} {image_filter_i/acc_image_filter_0/U0/reg_radius[14]} {image_filter_i/acc_image_filter_0/U0/reg_radius[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
-set_property port_width 16 [get_debug_ports u_ila_0/probe6]
-connect_debug_port u_ila_0/probe6 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_ctrl[0]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[1]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[2]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[3]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[4]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[5]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[6]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[7]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[8]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[9]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[10]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[11]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[12]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[13]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[14]} {image_filter_i/acc_image_filter_0/U0/reg_ctrl[15]}]]
+set_property port_width 33 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[0]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[1]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[2]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[3]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[4]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[5]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[6]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[7]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[8]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[9]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[10]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[11]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[12]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[13]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[14]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[15]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[16]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[17]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[18]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[19]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[20]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[21]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[22]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[23]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[24]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[25]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[26]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[27]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[28]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[29]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[30]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[31]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[32]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
 set_property port_width 16 [get_debug_ports u_ila_0/probe7]
-connect_debug_port u_ila_0/probe7 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_img_h[0]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[1]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[2]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[3]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[4]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[5]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[6]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[7]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[8]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[9]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[10]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[11]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[12]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[13]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[14]} {image_filter_i/acc_image_filter_0/U0/reg_img_h[15]}]]
+connect_debug_port u_ila_0/probe7 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[0]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[1]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[2]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[3]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[4]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[5]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[6]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[7]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[8]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[9]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[10]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[11]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[12]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[13]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[14]} {image_filter_i/acc_image_filter_0/U0/reg_coeff_scale[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
-set_property port_width 16 [get_debug_ports u_ila_0/probe8]
-connect_debug_port u_ila_0/probe8 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_img_w[0]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[1]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[2]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[3]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[4]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[5]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[6]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[7]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[8]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[9]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[10]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[11]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[12]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[13]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[14]} {image_filter_i/acc_image_filter_0/U0/reg_img_w[15]}]]
+set_property port_width 7 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[0]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[1]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[2]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[3]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[4]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[5]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe9]
-set_property port_width 16 [get_debug_ports u_ila_0/probe9]
-connect_debug_port u_ila_0/probe9 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_output[0]} {image_filter_i/acc_image_filter_0/U0/reg_output[1]} {image_filter_i/acc_image_filter_0/U0/reg_output[2]} {image_filter_i/acc_image_filter_0/U0/reg_output[3]} {image_filter_i/acc_image_filter_0/U0/reg_output[4]} {image_filter_i/acc_image_filter_0/U0/reg_output[5]} {image_filter_i/acc_image_filter_0/U0/reg_output[6]} {image_filter_i/acc_image_filter_0/U0/reg_output[7]} {image_filter_i/acc_image_filter_0/U0/reg_output[8]} {image_filter_i/acc_image_filter_0/U0/reg_output[9]} {image_filter_i/acc_image_filter_0/U0/reg_output[10]} {image_filter_i/acc_image_filter_0/U0/reg_output[11]} {image_filter_i/acc_image_filter_0/U0/reg_output[12]} {image_filter_i/acc_image_filter_0/U0/reg_output[13]} {image_filter_i/acc_image_filter_0/U0/reg_output[14]} {image_filter_i/acc_image_filter_0/U0/reg_output[15]}]]
+set_property port_width 7 [get_debug_ports u_ila_0/probe9]
+connect_debug_port u_ila_0/probe9 [get_nets [list {image_filter_i/acc_image_filter_0/U0/tlast_fifo[0]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[1]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[2]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[3]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[4]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[5]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[6]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe10]
 set_property port_width 16 [get_debug_ports u_ila_0/probe10]
-connect_debug_port u_ila_0/probe10 [get_nets [list {image_filter_i/acc_image_filter_0/U0/reg_radius[0]} {image_filter_i/acc_image_filter_0/U0/reg_radius[1]} {image_filter_i/acc_image_filter_0/U0/reg_radius[2]} {image_filter_i/acc_image_filter_0/U0/reg_radius[3]} {image_filter_i/acc_image_filter_0/U0/reg_radius[4]} {image_filter_i/acc_image_filter_0/U0/reg_radius[5]} {image_filter_i/acc_image_filter_0/U0/reg_radius[6]} {image_filter_i/acc_image_filter_0/U0/reg_radius[7]} {image_filter_i/acc_image_filter_0/U0/reg_radius[8]} {image_filter_i/acc_image_filter_0/U0/reg_radius[9]} {image_filter_i/acc_image_filter_0/U0/reg_radius[10]} {image_filter_i/acc_image_filter_0/U0/reg_radius[11]} {image_filter_i/acc_image_filter_0/U0/reg_radius[12]} {image_filter_i/acc_image_filter_0/U0/reg_radius[13]} {image_filter_i/acc_image_filter_0/U0/reg_radius[14]} {image_filter_i/acc_image_filter_0/U0/reg_radius[15]}]]
+connect_debug_port u_ila_0/probe10 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_img_h[0]} {image_filter_i/acc_image_filter_0/U0/h_img_h[1]} {image_filter_i/acc_image_filter_0/U0/h_img_h[2]} {image_filter_i/acc_image_filter_0/U0/h_img_h[3]} {image_filter_i/acc_image_filter_0/U0/h_img_h[4]} {image_filter_i/acc_image_filter_0/U0/h_img_h[5]} {image_filter_i/acc_image_filter_0/U0/h_img_h[6]} {image_filter_i/acc_image_filter_0/U0/h_img_h[7]} {image_filter_i/acc_image_filter_0/U0/h_img_h[8]} {image_filter_i/acc_image_filter_0/U0/h_img_h[9]} {image_filter_i/acc_image_filter_0/U0/h_img_h[10]} {image_filter_i/acc_image_filter_0/U0/h_img_h[11]} {image_filter_i/acc_image_filter_0/U0/h_img_h[12]} {image_filter_i/acc_image_filter_0/U0/h_img_h[13]} {image_filter_i/acc_image_filter_0/U0/h_img_h[14]} {image_filter_i/acc_image_filter_0/U0/h_img_h[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe11]
-set_property port_width 8 [get_debug_ports u_ila_0/probe11]
-connect_debug_port u_ila_0/probe11 [get_nets [list {image_filter_i/acc_image_filter_0/U0/sA_data[0]} {image_filter_i/acc_image_filter_0/U0/sA_data[1]} {image_filter_i/acc_image_filter_0/U0/sA_data[2]} {image_filter_i/acc_image_filter_0/U0/sA_data[3]} {image_filter_i/acc_image_filter_0/U0/sA_data[4]} {image_filter_i/acc_image_filter_0/U0/sA_data[5]} {image_filter_i/acc_image_filter_0/U0/sA_data[6]} {image_filter_i/acc_image_filter_0/U0/sA_data[7]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe11]
+connect_debug_port u_ila_0/probe11 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_img_w[0]} {image_filter_i/acc_image_filter_0/U0/h_img_w[1]} {image_filter_i/acc_image_filter_0/U0/h_img_w[2]} {image_filter_i/acc_image_filter_0/U0/h_img_w[3]} {image_filter_i/acc_image_filter_0/U0/h_img_w[4]} {image_filter_i/acc_image_filter_0/U0/h_img_w[5]} {image_filter_i/acc_image_filter_0/U0/h_img_w[6]} {image_filter_i/acc_image_filter_0/U0/h_img_w[7]} {image_filter_i/acc_image_filter_0/U0/h_img_w[8]} {image_filter_i/acc_image_filter_0/U0/h_img_w[9]} {image_filter_i/acc_image_filter_0/U0/h_img_w[10]} {image_filter_i/acc_image_filter_0/U0/h_img_w[11]} {image_filter_i/acc_image_filter_0/U0/h_img_w[12]} {image_filter_i/acc_image_filter_0/U0/h_img_w[13]} {image_filter_i/acc_image_filter_0/U0/h_img_w[14]} {image_filter_i/acc_image_filter_0/U0/h_img_w[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe12]
-set_property port_width 8 [get_debug_ports u_ila_0/probe12]
-connect_debug_port u_ila_0/probe12 [get_nets [list {image_filter_i/acc_image_filter_0/s_axis_tdata[0]} {image_filter_i/acc_image_filter_0/s_axis_tdata[1]} {image_filter_i/acc_image_filter_0/s_axis_tdata[2]} {image_filter_i/acc_image_filter_0/s_axis_tdata[3]} {image_filter_i/acc_image_filter_0/s_axis_tdata[4]} {image_filter_i/acc_image_filter_0/s_axis_tdata[5]} {image_filter_i/acc_image_filter_0/s_axis_tdata[6]} {image_filter_i/acc_image_filter_0/s_axis_tdata[7]}]]
+set_property port_width 50 [get_debug_ports u_ila_0/probe12]
+connect_debug_port u_ila_0/probe12 [get_nets [list {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[0]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[1]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[2]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[3]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[4]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[5]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[6]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[7]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[8]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[9]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[10]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[11]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[12]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[13]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[14]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[15]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[16]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[17]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[18]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[19]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[20]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[21]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[22]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[23]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[24]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[25]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[26]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[27]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[28]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[29]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[30]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[31]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[32]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[33]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[34]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[35]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[36]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[37]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[38]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[39]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[40]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[41]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[42]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[43]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[44]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[45]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[46]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[47]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[48]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[49]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe13]
-set_property port_width 2 [get_debug_ports u_ila_0/probe13]
-connect_debug_port u_ila_0/probe13 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_wstrb[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wstrb[1]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe13]
+connect_debug_port u_ila_0/probe13 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_ctrl[0]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[1]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[2]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[3]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[4]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[5]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[6]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[7]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[8]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[9]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[10]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[11]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[12]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[13]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[14]} {image_filter_i/acc_image_filter_0/U0/h_ctrl[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe14]
-set_property port_width 16 [get_debug_ports u_ila_0/probe14]
-connect_debug_port u_ila_0/probe14 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[1]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[2]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[3]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[4]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[5]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[6]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[7]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[8]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[9]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[10]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[11]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[12]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[13]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[14]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[15]}]]
+set_property port_width 10 [get_debug_ports u_ila_0/probe14]
+connect_debug_port u_ila_0/probe14 [get_nets [list {image_filter_i/acc_image_filter_0/U0/img_row_counter[0]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[1]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[2]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[3]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[4]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[5]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[6]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[7]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[8]} {image_filter_i/acc_image_filter_0/U0/img_row_counter[9]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe15]
-set_property port_width 16 [get_debug_ports u_ila_0/probe15]
-connect_debug_port u_ila_0/probe15 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[1]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[2]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[3]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[4]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[5]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[6]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[7]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[8]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[9]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[10]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[11]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[12]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[13]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[14]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[15]}]]
+set_property port_width 10 [get_debug_ports u_ila_0/probe15]
+connect_debug_port u_ila_0/probe15 [get_nets [list {image_filter_i/acc_image_filter_0/U0/img_col_counter[0]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[1]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[2]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[3]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[4]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[5]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[6]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[7]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[8]} {image_filter_i/acc_image_filter_0/U0/img_col_counter[9]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe16]
-set_property port_width 16 [get_debug_ports u_ila_0/probe16]
-connect_debug_port u_ila_0/probe16 [get_nets [list {image_filter_i/acc_image_filter_0/m_axis_tdata[0]} {image_filter_i/acc_image_filter_0/m_axis_tdata[1]} {image_filter_i/acc_image_filter_0/m_axis_tdata[2]} {image_filter_i/acc_image_filter_0/m_axis_tdata[3]} {image_filter_i/acc_image_filter_0/m_axis_tdata[4]} {image_filter_i/acc_image_filter_0/m_axis_tdata[5]} {image_filter_i/acc_image_filter_0/m_axis_tdata[6]} {image_filter_i/acc_image_filter_0/m_axis_tdata[7]} {image_filter_i/acc_image_filter_0/m_axis_tdata[8]} {image_filter_i/acc_image_filter_0/m_axis_tdata[9]} {image_filter_i/acc_image_filter_0/m_axis_tdata[10]} {image_filter_i/acc_image_filter_0/m_axis_tdata[11]} {image_filter_i/acc_image_filter_0/m_axis_tdata[12]} {image_filter_i/acc_image_filter_0/m_axis_tdata[13]} {image_filter_i/acc_image_filter_0/m_axis_tdata[14]} {image_filter_i/acc_image_filter_0/m_axis_tdata[15]}]]
+set_property port_width 64 [get_debug_ports u_ila_0/probe16]
+connect_debug_port u_ila_0/probe16 [get_nets [list {image_filter_i/acc_image_filter_0/U0/bram_col_out[0]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[1]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[2]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[3]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[4]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[5]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[6]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[7]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[8]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[9]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[10]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[11]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[12]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[13]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[14]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[15]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[16]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[17]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[18]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[19]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[20]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[21]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[22]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[23]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[24]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[25]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[26]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[27]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[28]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[29]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[30]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[31]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[32]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[33]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[34]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[35]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[36]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[37]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[38]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[39]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[40]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[41]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[42]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[43]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[44]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[45]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[46]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[47]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[48]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[49]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[50]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[51]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[52]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[53]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[54]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[55]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[56]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[57]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[58]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[59]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[60]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[61]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[62]} {image_filter_i/acc_image_filter_0/U0/bram_col_out[63]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe17]
-set_property port_width 7 [get_debug_ports u_ila_0/probe17]
-connect_debug_port u_ila_0/probe17 [get_nets [list {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[0]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[1]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[2]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[3]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[4]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[5]} {image_filter_i/acc_image_filter_0/U0/tvalid_fifo[6]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe17]
+connect_debug_port u_ila_0/probe17 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_radius[0]} {image_filter_i/acc_image_filter_0/U0/h_radius[1]} {image_filter_i/acc_image_filter_0/U0/h_radius[2]} {image_filter_i/acc_image_filter_0/U0/h_radius[3]} {image_filter_i/acc_image_filter_0/U0/h_radius[4]} {image_filter_i/acc_image_filter_0/U0/h_radius[5]} {image_filter_i/acc_image_filter_0/U0/h_radius[6]} {image_filter_i/acc_image_filter_0/U0/h_radius[7]} {image_filter_i/acc_image_filter_0/U0/h_radius[8]} {image_filter_i/acc_image_filter_0/U0/h_radius[9]} {image_filter_i/acc_image_filter_0/U0/h_radius[10]} {image_filter_i/acc_image_filter_0/U0/h_radius[11]} {image_filter_i/acc_image_filter_0/U0/h_radius[12]} {image_filter_i/acc_image_filter_0/U0/h_radius[13]} {image_filter_i/acc_image_filter_0/U0/h_radius[14]} {image_filter_i/acc_image_filter_0/U0/h_radius[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe18]
 set_property port_width 7 [get_debug_ports u_ila_0/probe18]
-connect_debug_port u_ila_0/probe18 [get_nets [list {image_filter_i/acc_image_filter_0/U0/tlast_fifo[0]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[1]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[2]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[3]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[4]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[5]} {image_filter_i/acc_image_filter_0/U0/tlast_fifo[6]}]]
+connect_debug_port u_ila_0/probe18 [get_nets [list {image_filter_i/acc_image_filter_0/U0/alu_valid_output[0]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[1]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[2]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[3]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[4]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[5]} {image_filter_i/acc_image_filter_0/U0/alu_valid_output[6]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe19]
-set_property port_width 33 [get_debug_ports u_ila_0/probe19]
-connect_debug_port u_ila_0/probe19 [get_nets [list {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[0]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[1]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[2]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[3]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[4]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[5]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[6]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[7]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[8]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[9]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[10]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[11]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[12]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[13]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[14]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[15]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[16]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[17]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[18]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[19]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[20]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[21]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[22]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[23]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[24]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[25]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[26]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[27]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[28]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[29]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[30]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[31]} {image_filter_i/acc_image_filter_0/U0/u_alu/acc_reg[32]}]]
+set_property port_width 16 [get_debug_ports u_ila_0/probe19]
+connect_debug_port u_ila_0/probe19 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[1]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[2]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[3]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[4]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[5]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[6]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[7]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[8]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[9]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[10]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[11]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[12]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[13]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[14]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_rdata[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe20]
-set_property port_width 50 [get_debug_ports u_ila_0/probe20]
-connect_debug_port u_ila_0/probe20 [get_nets [list {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[0]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[1]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[2]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[3]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[4]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[5]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[6]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[7]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[8]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[9]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[10]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[11]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[12]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[13]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[14]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[15]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[16]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[17]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[18]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[19]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[20]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[21]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[22]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[23]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[24]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[25]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[26]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[27]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[28]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[29]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[30]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[31]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[32]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[33]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[34]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[35]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[36]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[37]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[38]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[39]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[40]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[41]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[42]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[43]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[44]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[45]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[46]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[47]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[48]} {image_filter_i/acc_image_filter_0/U0/u_alu/scaled_reg[49]}]]
+set_property port_width 2 [get_debug_ports u_ila_0/probe20]
+connect_debug_port u_ila_0/probe20 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_wstrb[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wstrb[1]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe21]
-set_property port_width 16 [get_debug_ports u_ila_0/probe21]
-connect_debug_port u_ila_0/probe21 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_img_w[0]} {image_filter_i/acc_image_filter_0/U0/h_img_w[1]} {image_filter_i/acc_image_filter_0/U0/h_img_w[2]} {image_filter_i/acc_image_filter_0/U0/h_img_w[3]} {image_filter_i/acc_image_filter_0/U0/h_img_w[4]} {image_filter_i/acc_image_filter_0/U0/h_img_w[5]} {image_filter_i/acc_image_filter_0/U0/h_img_w[6]} {image_filter_i/acc_image_filter_0/U0/h_img_w[7]} {image_filter_i/acc_image_filter_0/U0/h_img_w[8]} {image_filter_i/acc_image_filter_0/U0/h_img_w[9]} {image_filter_i/acc_image_filter_0/U0/h_img_w[10]} {image_filter_i/acc_image_filter_0/U0/h_img_w[11]} {image_filter_i/acc_image_filter_0/U0/h_img_w[12]} {image_filter_i/acc_image_filter_0/U0/h_img_w[13]} {image_filter_i/acc_image_filter_0/U0/h_img_w[14]} {image_filter_i/acc_image_filter_0/U0/h_img_w[15]}]]
+set_property port_width 8 [get_debug_ports u_ila_0/probe21]
+connect_debug_port u_ila_0/probe21 [get_nets [list {image_filter_i/acc_image_filter_0/s_axis_tdata[0]} {image_filter_i/acc_image_filter_0/s_axis_tdata[1]} {image_filter_i/acc_image_filter_0/s_axis_tdata[2]} {image_filter_i/acc_image_filter_0/s_axis_tdata[3]} {image_filter_i/acc_image_filter_0/s_axis_tdata[4]} {image_filter_i/acc_image_filter_0/s_axis_tdata[5]} {image_filter_i/acc_image_filter_0/s_axis_tdata[6]} {image_filter_i/acc_image_filter_0/s_axis_tdata[7]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe22]
 set_property port_width 16 [get_debug_ports u_ila_0/probe22]
-connect_debug_port u_ila_0/probe22 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_radius[0]} {image_filter_i/acc_image_filter_0/U0/h_radius[1]} {image_filter_i/acc_image_filter_0/U0/h_radius[2]} {image_filter_i/acc_image_filter_0/U0/h_radius[3]} {image_filter_i/acc_image_filter_0/U0/h_radius[4]} {image_filter_i/acc_image_filter_0/U0/h_radius[5]} {image_filter_i/acc_image_filter_0/U0/h_radius[6]} {image_filter_i/acc_image_filter_0/U0/h_radius[7]} {image_filter_i/acc_image_filter_0/U0/h_radius[8]} {image_filter_i/acc_image_filter_0/U0/h_radius[9]} {image_filter_i/acc_image_filter_0/U0/h_radius[10]} {image_filter_i/acc_image_filter_0/U0/h_radius[11]} {image_filter_i/acc_image_filter_0/U0/h_radius[12]} {image_filter_i/acc_image_filter_0/U0/h_radius[13]} {image_filter_i/acc_image_filter_0/U0/h_radius[14]} {image_filter_i/acc_image_filter_0/U0/h_radius[15]}]]
+connect_debug_port u_ila_0/probe22 [get_nets [list {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[0]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[1]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[2]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[3]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[4]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[5]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[6]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[7]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[8]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[9]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[10]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[11]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[12]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[13]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[14]} {image_filter_i/acc_image_filter_0/s_axi_ctrl_wdata[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe23]
 set_property port_width 16 [get_debug_ports u_ila_0/probe23]
-connect_debug_port u_ila_0/probe23 [get_nets [list {image_filter_i/acc_image_filter_0/U0/h_img_h[0]} {image_filter_i/acc_image_filter_0/U0/h_img_h[1]} {image_filter_i/acc_image_filter_0/U0/h_img_h[2]} {image_filter_i/acc_image_filter_0/U0/h_img_h[3]} {image_filter_i/acc_image_filter_0/U0/h_img_h[4]} {image_filter_i/acc_image_filter_0/U0/h_img_h[5]} {image_filter_i/acc_image_filter_0/U0/h_img_h[6]} {image_filter_i/acc_image_filter_0/U0/h_img_h[7]} {image_filter_i/acc_image_filter_0/U0/h_img_h[8]} {image_filter_i/acc_image_filter_0/U0/h_img_h[9]} {image_filter_i/acc_image_filter_0/U0/h_img_h[10]} {image_filter_i/acc_image_filter_0/U0/h_img_h[11]} {image_filter_i/acc_image_filter_0/U0/h_img_h[12]} {image_filter_i/acc_image_filter_0/U0/h_img_h[13]} {image_filter_i/acc_image_filter_0/U0/h_img_h[14]} {image_filter_i/acc_image_filter_0/U0/h_img_h[15]}]]
+connect_debug_port u_ila_0/probe23 [get_nets [list {image_filter_i/acc_image_filter_0/m_axis_tdata[0]} {image_filter_i/acc_image_filter_0/m_axis_tdata[1]} {image_filter_i/acc_image_filter_0/m_axis_tdata[2]} {image_filter_i/acc_image_filter_0/m_axis_tdata[3]} {image_filter_i/acc_image_filter_0/m_axis_tdata[4]} {image_filter_i/acc_image_filter_0/m_axis_tdata[5]} {image_filter_i/acc_image_filter_0/m_axis_tdata[6]} {image_filter_i/acc_image_filter_0/m_axis_tdata[7]} {image_filter_i/acc_image_filter_0/m_axis_tdata[8]} {image_filter_i/acc_image_filter_0/m_axis_tdata[9]} {image_filter_i/acc_image_filter_0/m_axis_tdata[10]} {image_filter_i/acc_image_filter_0/m_axis_tdata[11]} {image_filter_i/acc_image_filter_0/m_axis_tdata[12]} {image_filter_i/acc_image_filter_0/m_axis_tdata[13]} {image_filter_i/acc_image_filter_0/m_axis_tdata[14]} {image_filter_i/acc_image_filter_0/m_axis_tdata[15]}]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe24]
 set_property port_width 1 [get_debug_ports u_ila_0/probe24]
@@ -345,131 +350,155 @@ connect_debug_port u_ila_0/probe26 [get_nets [list image_filter_i/acc_image_filt
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe27]
 set_property port_width 1 [get_debug_ports u_ila_0/probe27]
-connect_debug_port u_ila_0/probe27 [get_nets [list image_filter_i/acc_image_filter_0/U0/fsm_img_processing_state]]
+connect_debug_port u_ila_0/probe27 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_in_ready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe28]
 set_property port_width 1 [get_debug_ports u_ila_0/probe28]
-connect_debug_port u_ila_0/probe28 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tlast]]
+connect_debug_port u_ila_0/probe28 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_input_done]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe29]
 set_property port_width 1 [get_debug_ports u_ila_0/probe29]
-connect_debug_port u_ila_0/probe29 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tready]]
+connect_debug_port u_ila_0/probe29 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_pack_last]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe30]
 set_property port_width 1 [get_debug_ports u_ila_0/probe30]
-connect_debug_port u_ila_0/probe30 [get_nets [list image_filter_i/acc_image_filter_0/U0/m_axis_tready]]
+connect_debug_port u_ila_0/probe30 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_pack_valid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe31]
 set_property port_width 1 [get_debug_ports u_ila_0/probe31]
-connect_debug_port u_ila_0/probe31 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tvalid]]
+connect_debug_port u_ila_0/probe31 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_stage_last]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe32]
 set_property port_width 1 [get_debug_ports u_ila_0/probe32]
-connect_debug_port u_ila_0/probe32 [get_nets [list image_filter_i/acc_image_filter_0/U0/m_axis_tvalid]]
+connect_debug_port u_ila_0/probe32 [get_nets [list image_filter_i/acc_image_filter_0/U0/byp_stage_valid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe33]
 set_property port_width 1 [get_debug_ports u_ila_0/probe33]
-connect_debug_port u_ila_0/probe33 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_half]]
+connect_debug_port u_ila_0/probe33 [get_nets [list image_filter_i/acc_image_filter_0/U0/fsm_img_processing_state]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe34]
 set_property port_width 1 [get_debug_ports u_ila_0/probe34]
-connect_debug_port u_ila_0/probe34 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_in_ready]]
+connect_debug_port u_ila_0/probe34 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tlast]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe35]
 set_property port_width 1 [get_debug_ports u_ila_0/probe35]
-connect_debug_port u_ila_0/probe35 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_out_last]]
+connect_debug_port u_ila_0/probe35 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe36]
 set_property port_width 1 [get_debug_ports u_ila_0/probe36]
-connect_debug_port u_ila_0/probe36 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_out_valid]]
+connect_debug_port u_ila_0/probe36 [get_nets [list image_filter_i/acc_image_filter_0/U0/m_axis_tready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe37]
 set_property port_width 1 [get_debug_ports u_ila_0/probe37]
-connect_debug_port u_ila_0/probe37 [get_nets [list image_filter_i/acc_image_filter_0/U0/pipe_advance]]
+connect_debug_port u_ila_0/probe37 [get_nets [list image_filter_i/acc_image_filter_0/U0/m_axis_tvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe38]
 set_property port_width 1 [get_debug_ports u_ila_0/probe38]
-connect_debug_port u_ila_0/probe38 [get_nets [list image_filter_i/acc_image_filter_0/U0/pipe_draining]]
+connect_debug_port u_ila_0/probe38 [get_nets [list image_filter_i/acc_image_filter_0/m_axis_tvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe39]
 set_property port_width 1 [get_debug_ports u_ila_0/probe39]
-connect_debug_port u_ila_0/probe39 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_arready]]
+connect_debug_port u_ila_0/probe39 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_half]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe40]
 set_property port_width 1 [get_debug_ports u_ila_0/probe40]
-connect_debug_port u_ila_0/probe40 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_awready]]
+connect_debug_port u_ila_0/probe40 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_in_ready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe41]
 set_property port_width 1 [get_debug_ports u_ila_0/probe41]
-connect_debug_port u_ila_0/probe41 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_awvalid]]
+connect_debug_port u_ila_0/probe41 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_out_last]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe42]
 set_property port_width 1 [get_debug_ports u_ila_0/probe42]
-connect_debug_port u_ila_0/probe42 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_bready]]
+connect_debug_port u_ila_0/probe42 [get_nets [list image_filter_i/acc_image_filter_0/U0/pack_out_valid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe43]
 set_property port_width 1 [get_debug_ports u_ila_0/probe43]
-connect_debug_port u_ila_0/probe43 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid]]
+connect_debug_port u_ila_0/probe43 [get_nets [list image_filter_i/acc_image_filter_0/U0/pipe_advance]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe44]
 set_property port_width 1 [get_debug_ports u_ila_0/probe44]
-connect_debug_port u_ila_0/probe44 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_rready]]
+connect_debug_port u_ila_0/probe44 [get_nets [list image_filter_i/acc_image_filter_0/U0/pipe_draining]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe45]
 set_property port_width 1 [get_debug_ports u_ila_0/probe45]
-connect_debug_port u_ila_0/probe45 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_rvalid]]
+connect_debug_port u_ila_0/probe45 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_arready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe46]
 set_property port_width 1 [get_debug_ports u_ila_0/probe46]
-connect_debug_port u_ila_0/probe46 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_wready]]
+connect_debug_port u_ila_0/probe46 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_awready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe47]
 set_property port_width 1 [get_debug_ports u_ila_0/probe47]
-connect_debug_port u_ila_0/probe47 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_wvalid]]
+connect_debug_port u_ila_0/probe47 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_awvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe48]
 set_property port_width 1 [get_debug_ports u_ila_0/probe48]
-connect_debug_port u_ila_0/probe48 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tlast]]
+connect_debug_port u_ila_0/probe48 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_bready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe49]
 set_property port_width 1 [get_debug_ports u_ila_0/probe49]
-connect_debug_port u_ila_0/probe49 [get_nets [list image_filter_i/acc_image_filter_0/U0/s_axis_tready]]
+connect_debug_port u_ila_0/probe49 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_bvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe50]
 set_property port_width 1 [get_debug_ports u_ila_0/probe50]
-connect_debug_port u_ila_0/probe50 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tready]]
+connect_debug_port u_ila_0/probe50 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_rready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe51]
 set_property port_width 1 [get_debug_ports u_ila_0/probe51]
-connect_debug_port u_ila_0/probe51 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tvalid]]
+connect_debug_port u_ila_0/probe51 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_rvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe52]
 set_property port_width 1 [get_debug_ports u_ila_0/probe52]
-connect_debug_port u_ila_0/probe52 [get_nets [list image_filter_i/acc_image_filter_0/U0/sA_out]]
+connect_debug_port u_ila_0/probe52 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_wready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe53]
 set_property port_width 1 [get_debug_ports u_ila_0/probe53]
-connect_debug_port u_ila_0/probe53 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/shift_en]]
+connect_debug_port u_ila_0/probe53 [get_nets [list image_filter_i/acc_image_filter_0/s_axi_ctrl_wvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe54]
 set_property port_width 1 [get_debug_ports u_ila_0/probe54]
-connect_debug_port u_ila_0/probe54 [get_nets [list image_filter_i/acc_image_filter_0/U0/tvalid_buffer]]
+connect_debug_port u_ila_0/probe54 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tlast]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe55]
 set_property port_width 1 [get_debug_ports u_ila_0/probe55]
-connect_debug_port u_ila_0/probe55 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_acc]]
+connect_debug_port u_ila_0/probe55 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe56]
 set_property port_width 1 [get_debug_ports u_ila_0/probe56]
-connect_debug_port u_ila_0/probe56 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_mul]]
+connect_debug_port u_ila_0/probe56 [get_nets [list image_filter_i/acc_image_filter_0/U0/s_axis_tready]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe57]
 set_property port_width 1 [get_debug_ports u_ila_0/probe57]
-connect_debug_port u_ila_0/probe57 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_reg1]]
+connect_debug_port u_ila_0/probe57 [get_nets [list image_filter_i/acc_image_filter_0/s_axis_tvalid]]
 create_debug_port u_ila_0 probe
 set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe58]
 set_property port_width 1 [get_debug_ports u_ila_0/probe58]
-connect_debug_port u_ila_0/probe58 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_rowsum]]
+connect_debug_port u_ila_0/probe58 [get_nets [list image_filter_i/acc_image_filter_0/U0/sA_out]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe59]
+set_property port_width 1 [get_debug_ports u_ila_0/probe59]
+connect_debug_port u_ila_0/probe59 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/shift_en]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe60]
+set_property port_width 1 [get_debug_ports u_ila_0/probe60]
+connect_debug_port u_ila_0/probe60 [get_nets [list image_filter_i/acc_image_filter_0/U0/tvalid_buffer]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe61]
+set_property port_width 1 [get_debug_ports u_ila_0/probe61]
+connect_debug_port u_ila_0/probe61 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_acc]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe62]
+set_property port_width 1 [get_debug_ports u_ila_0/probe62]
+connect_debug_port u_ila_0/probe62 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_mul]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe63]
+set_property port_width 1 [get_debug_ports u_ila_0/probe63]
+connect_debug_port u_ila_0/probe63 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_reg1]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe64]
+set_property port_width 1 [get_debug_ports u_ila_0/probe64]
+connect_debug_port u_ila_0/probe64 [get_nets [list image_filter_i/acc_image_filter_0/U0/u_alu/valid_rowsum]]
 set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
 set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
