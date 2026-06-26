@@ -16,8 +16,8 @@
 #endif
 
 #define OUTPUT_MODE_UINT8   0
-#define OUTPUT_MODE_Q9_7    1
-#define ACTIVE_MODE         OUTPUT_MODE_UINT8  /* uint8 → direct 8-bit RGB output */
+#define OUTPUT_MODE_Q9_7    4
+#define ACTIVE_MODE         OUTPUT_MODE_Q9_7 /* uint8 → direct 8-bit RGB output */
 
 /* --- Filter types --- */
 #define FILTER_TYPE_BOX           0
@@ -29,8 +29,8 @@
 #define FILTER_TYPE_SHARPEN_GAUSS 6  /* unsharp mask: identity + Gaussian-based edge   */
 #define FILTER_TYPE_LAPLACIAN     7
 
-#define ACTIVE_FILTER           FILTER_TYPE_BOX   /* <-- Select your filter */
-#define FILTER_RADIUS           1                  /* <-- 1(3x3) 2(5x5) 3(7x7) 4(9x9) */
+#define ACTIVE_FILTER           FILTER_TYPE_SOBEL_X  /* <-- Select your filter */
+#define FILTER_RADIUS           2                 /* <-- 1(3x3) 2(5x5) 3(7x7) 4(9x9) */
 
 /* Number of colour planes.
  *   1 → grayscale  (DataBuffer = W×H bytes)
@@ -38,7 +38,7 @@
  * Each plane is sent as a SEPARATE DMA transaction so the hardware goes
  * AccIdle → AccProcessing → AccIdle cleanly for every plane.
  * The BRAM line buffer is therefore never contaminated across planes. */
-#define IMG_PLANES              3  /* <-- 1 = grayscale, 3 = RGB */
+#define IMG_PLANES              1  /* <-- 1 = grayscale, 3 = RGB */
 
 /* CoeffScale: set manually to match the active filter.
  *   Standard filters (box, gaussian, LoG, sobel, laplacian) → 4096
@@ -71,8 +71,8 @@
 #define MAX_NUM_COEFFS        81
 
 /* Image dimensions – landscape 768×512 parrots image */
-#define IMG_WIDTH           768   /* <-- columns */
-#define IMG_HEIGHT          512   /* <-- rows    */
+#define IMG_WIDTH           128   /* <-- columns */
+#define IMG_HEIGHT          128   /* <-- rows    */
 
 /* Output dimensions */
 #if BYPASS_ENABLE

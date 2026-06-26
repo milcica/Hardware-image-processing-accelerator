@@ -260,63 +260,63 @@ architecture rtl of acc_image_filter is
     end function;
     
     
-     -- VIVADO DEBUG ATTRIBUTES
+--     -- VIVADO DEBUG ATTRIBUTES
  
-    attribute mark_debug : string;
+--    attribute mark_debug : string;
  
-    -- AXI4-Lite Control Registers
-    attribute mark_debug of reg_ctrl        : signal is "true";
-    attribute mark_debug of reg_radius      : signal is "true";
-    attribute mark_debug of reg_img_w       : signal is "true";
-    attribute mark_debug of reg_img_h       : signal is "true";
-    attribute mark_debug of reg_coeff_scale : signal is "true";
+--    -- AXI4-Lite Control Registers
+--    attribute mark_debug of reg_ctrl        : signal is "true";
+--    attribute mark_debug of reg_radius      : signal is "true";
+--    attribute mark_debug of reg_img_w       : signal is "true";
+--    attribute mark_debug of reg_img_h       : signal is "true";
+--    attribute mark_debug of reg_coeff_scale : signal is "true";
  
-    -- Snapshot/Held Registers (Frame Start)
-    attribute mark_debug of h_ctrl          : signal is "true";
-    attribute mark_debug of h_radius        : signal is "true";
-    attribute mark_debug of h_img_w         : signal is "true";
-    attribute mark_debug of h_img_h         : signal is "true";
+--    -- Snapshot/Held Registers (Frame Start)
+--    attribute mark_debug of h_ctrl          : signal is "true";
+--    attribute mark_debug of h_radius        : signal is "true";
+--    attribute mark_debug of h_img_w         : signal is "true";
+--    attribute mark_debug of h_img_h         : signal is "true";
  
-    -- AXI-Stream Pipeline and Flow Control
-    attribute mark_debug of fsm_img_processing_state : signal is "true";
-    attribute mark_debug of tvalid_fifo     : signal is "true";
-    attribute mark_debug of tlast_fifo      : signal is "true";
-    attribute mark_debug of s_axis_tready   : signal is "true";
-    attribute mark_debug of m_axis_tvalid   : signal is "true";
-    attribute mark_debug of m_axis_tready   : signal is "true";
+--    -- AXI-Stream Pipeline and Flow Control
+--    attribute mark_debug of fsm_img_processing_state : signal is "true";
+--    attribute mark_debug of tvalid_fifo     : signal is "true";
+--    attribute mark_debug of tlast_fifo      : signal is "true";
+--    attribute mark_debug of s_axis_tready   : signal is "true";
+--    attribute mark_debug of m_axis_tvalid   : signal is "true";
+--    attribute mark_debug of m_axis_tready   : signal is "true";
  
-    -- Counter and Addressing Logic
-    attribute mark_debug of img_row_counter : signal is "true";
-    attribute mark_debug of img_col_counter : signal is "true";
+--    -- Counter and Addressing Logic
+--    attribute mark_debug of img_row_counter : signal is "true";
+--    attribute mark_debug of img_col_counter : signal is "true";
  
-    -- Data Path: BRAM and ALU Interface
-    attribute mark_debug of sA_data         : signal is "true";
-    attribute mark_debug of sA_out          : signal is "true";
-    attribute mark_debug of bram_col_out    : signal is "true";
-    attribute mark_debug of reg_output      : signal is "true";
-    attribute mark_debug of alu_valid       : signal is "true";
-    attribute mark_debug of alu_valid_output : signal is "true";
+--    -- Data Path: BRAM and ALU Interface
+--    attribute mark_debug of sA_data         : signal is "true";
+--    attribute mark_debug of sA_out          : signal is "true";
+--    attribute mark_debug of bram_col_out    : signal is "true";
+--    attribute mark_debug of reg_output      : signal is "true";
+--    attribute mark_debug of alu_valid       : signal is "true";
+--    attribute mark_debug of alu_valid_output : signal is "true";
  
-    -- Stall / Buffer Mechanism
-    attribute mark_debug of buff_flag       : signal is "true";
-    attribute mark_debug of buff_tvalid     : signal is "true";
-    attribute mark_debug of tvalid_buffer   : signal is "true";
-    attribute mark_debug of pipe_draining   : signal is "true";
+--    -- Stall / Buffer Mechanism
+--    attribute mark_debug of buff_flag       : signal is "true";
+--    attribute mark_debug of buff_tvalid     : signal is "true";
+--    attribute mark_debug of tvalid_buffer   : signal is "true";
+--    attribute mark_debug of pipe_draining   : signal is "true";
 
-    -- Packing-stage probes
-    attribute mark_debug of pack_half       : signal is "true";
-    attribute mark_debug of pack_out_valid  : signal is "true";
-    attribute mark_debug of pack_out_last   : signal is "true";
-    attribute mark_debug of pack_in_ready   : signal is "true";
-    attribute mark_debug of pipe_advance    : signal is "true";
+--    -- Packing-stage probes
+--    attribute mark_debug of pack_half       : signal is "true";
+--    attribute mark_debug of pack_out_valid  : signal is "true";
+--    attribute mark_debug of pack_out_last   : signal is "true";
+--    attribute mark_debug of pack_in_ready   : signal is "true";
+--    attribute mark_debug of pipe_advance    : signal is "true";
 
-    -- Bypass-path probes
-    attribute mark_debug of byp_stage_valid : signal is "true";
-    attribute mark_debug of byp_stage_last  : signal is "true";
-    attribute mark_debug of byp_input_done  : signal is "true";
-    attribute mark_debug of byp_pack_valid  : signal is "true";
-    attribute mark_debug of byp_pack_last   : signal is "true";
-    attribute mark_debug of byp_in_ready    : signal is "true";
+--    -- Bypass-path probes
+--    attribute mark_debug of byp_stage_valid : signal is "true";
+--    attribute mark_debug of byp_stage_last  : signal is "true";
+--    attribute mark_debug of byp_input_done  : signal is "true";
+--    attribute mark_debug of byp_pack_valid  : signal is "true";
+--    attribute mark_debug of byp_pack_last   : signal is "true";
+--    attribute mark_debug of byp_in_ready    : signal is "true";
 
 begin
 
@@ -921,7 +921,7 @@ MAIN_FSM_LOGIC: process (clk) is
                 if h_ctrl(0) = '0' and h_ctrl(1) = '0' and
                    pipe_advance = '1' and
                    tvalid_fifo(PIPELINE_DEPTH-1) = '1' and
-                   alu_valid_output(PIPELINE_DEPTH-1) = '1' then
+                   (alu_valid_output(PIPELINE_DEPTH-1) = '1' or tlast_fifo(PIPELINE_DEPTH-1) = '1') then
 
                     if pack_half = '0' then
                         -- ---- First pixel of pair (or lone last pixel) ----

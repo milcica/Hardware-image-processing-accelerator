@@ -114,21 +114,58 @@ architecture Behavioral of filter_alu is
         return shift_right(v, n);
     end function;
     
-    -- VIVADO DEBUG ATTRIBUTES
-    attribute mark_debug : string;
+--    -- VIVADO DEBUG ATTRIBUTES
+--    attribute mark_debug : string;
 
-    attribute mark_debug of shift_en      : signal is "true";
-    attribute mark_debug of pixel_new     : signal is "true";
+--    attribute mark_debug of shift_en      : signal is "true";
+--    attribute mark_debug of pixel_new     : signal is "true";
     
-    attribute mark_debug of valid_mul     : signal is "true";
-    attribute mark_debug of valid_rowsum  : signal is "true";
-    attribute mark_debug of valid_acc     : signal is "true";
-    attribute mark_debug of valid_reg1    : signal is "true";
-    attribute mark_debug of valid_reg2    : signal is "true";
+--    attribute mark_debug of valid_mul     : signal is "true";
+--    attribute mark_debug of valid_rowsum  : signal is "true";
+--    attribute mark_debug of valid_acc     : signal is "true";
+--    attribute mark_debug of valid_reg1    : signal is "true";
+--    attribute mark_debug of valid_reg2    : signal is "true";
 
-    attribute mark_debug of acc_reg       : signal is "true";
-    attribute mark_debug of scaled_reg    : signal is "true";   
-    attribute mark_debug of result_reg    : signal is "true";
+--    attribute mark_debug of acc_reg       : signal is "true";
+--    attribute mark_debug of scaled_reg    : signal is "true";   
+--    attribute mark_debug of result_reg    : signal is "true";
+
+    -- -----------------------------------------------------------------------
+    -- TIMING FIX: disable DSP48 inference for the row-sum and accumulator
+    -- registers.
+    --
+    -- Symptom (routed timing, FCLK0 = 83.3 MHz / period 12.000 ns):
+    --   Worst slack -2.494 ns, 495 failing endpoints, all on one path:
+    --     row_sums_reg_reg[4]0/CLK -> row_sums_reg_reg[4]/PCIN[0]
+    --   Data Path Delay 12.834 ns (99.5% logic, 0.5% routing)
+    --   Logic Levels: 6 (DSP48E1=6)
+    --
+    -- Root cause: even though p_rowsum_reg and p_acc_parallel are written as
+    -- explicit 4-level balanced binary trees of additions, Vivado ignores the
+    -- parenthesisation when products_reg (the pix*cff results) is inferred
+    -- into DSP48s.  It "optimises" the sum-of-DSP48-outputs by chaining 7
+    -- DSP48s through their PCIN/PCOUT cascade (each stage ~1.7 ns, serial,
+    -- NOT a tree), collapsing the 4-level tree into a 7-deep serial cascade.
+    --
+    -- Fix: force row_sums_reg and acc_reg to be implemented in fabric LUTs
+    -- (carry-chain adders).  This makes Vivado respect the balanced binary
+    -- tree topology in the source code:
+    --   * 4 levels of 29-bit carries for row_sums_reg  (~3-5 ns)
+    --   * 4 levels of 33-bit carries for acc_reg       (~3-5 ns)
+    -- Both comfortably inside the ~8 ns data-path budget (12 ns period -
+    -- ~3 ns clock skew - ~1 ns setup uncertainty).
+    --
+    -- products_reg is intentionally LEFT in DSP48s: each product is an
+    -- independent 9x16-bit multiply, a perfect standalone DSP48 with no
+    -- cascade needed.  Moving those to LUTs would burn ~80 LUT-based muls
+    -- and *hurt* timing.
+    --
+    -- PIPELINE_DEPTH, alu_valid_output, the valid-pipeline chain and main.c
+    -- are all unchanged - this is a pure synthesis-hint change.
+    -- -----------------------------------------------------------------------
+    attribute use_dsp : string;
+    attribute use_dsp of row_sums_reg : signal is "no";
+    attribute use_dsp of acc_reg      : signal is "no";
  
 begin
  
@@ -251,8 +288,33 @@ begin
     -- -----------------------------------------------------------------------
  
     -- Parallel row-sum register: fires once per pixel, computes 9 row sums
+    -- -----------------------------------------------------------------------
+    -- TIMING FIX (FCLK0 = 90 MHz): the original code accumulated 9 column
+    -- products per row using "for c in 0 to COLS-1 loop rs := rs + ...;"
+    -- which Vivado synthesizes as an 8-deep CHAIN of 29-bit carry-propagate
+    -- adders per row (sequential variable accumulation -> ripple chain,
+    -- NOT a balanced tree). At Zynq-7 -1 speed grade each 29-bit carry
+    -- chain is ~1.5-2.0 ns of LUT/carry logic, so 8 deep ~ 12-16 ns
+    -- before routing -> max ~60-65 MHz. This was the row_sum_reg critical
+    -- path reported by timing.
+    --
+    -- Fix: write the sum as an explicit balanced binary tree of depth
+    -- ceil(log2(9)) = 4 levels instead of depth 8. Vivado respects the
+    -- explicit parenthesisation, producing a balanced adder tree whose
+    -- critical path is 4 adders deep (~6-8 ns), comfortably inside the
+    -- 11.1 ns budget at 90 MHz.
+    --
+    -- NO PIPELINE STAGE ADDED: this is still 1 clock cycle from
+    -- products_reg (registered at T) to row_sums_reg (registered at T+1).
+    -- The change is purely the combinational adder topology inside the
+    -- clocked process. PIPELINE_DEPTH, alu_valid_output, valid-pipeline
+    -- chain, and main.c are all unaffected.
+    -- -----------------------------------------------------------------------
     p_rowsum_reg : process(clk)
-        variable rs : signed(28 downto 0);
+        variable p0, p1, p2, p3, p4, p5, p6, p7, p8 : signed(28 downto 0);
+        variable s01, s23, s45, s67                  : signed(28 downto 0);
+        variable s0123, s4567                        : signed(28 downto 0);
+        variable s01234567                           : signed(28 downto 0);
     begin
         if rising_edge(clk) then
             if rst = '1' then
@@ -264,11 +326,33 @@ begin
                 valid_rowsum <= '0';
                 if valid_mul = '1' then
                     for r in 0 to ROWS-1 loop
-                        rs := (others => '0');
-                        for c in 0 to COLS-1 loop
-                            rs := rs + resize(products_reg(r, c), 29);
-                        end loop;
-                        row_sums_reg(r) <= rs;
+                        -- Resize all 9 products to 29-bit signed once,
+                        -- then form a 4-level balanced binary tree.
+                        p0 := resize(products_reg(r, 0), 29);
+                        p1 := resize(products_reg(r, 1), 29);
+                        p2 := resize(products_reg(r, 2), 29);
+                        p3 := resize(products_reg(r, 3), 29);
+                        p4 := resize(products_reg(r, 4), 29);
+                        p5 := resize(products_reg(r, 5), 29);
+                        p6 := resize(products_reg(r, 6), 29);
+                        p7 := resize(products_reg(r, 7), 29);
+                        p8 := resize(products_reg(r, 8), 29);
+
+                        -- Level 1 (4 pair sums, p8 stands alone)
+                        s01 := p0 + p1;
+                        s23 := p2 + p3;
+                        s45 := p4 + p5;
+                        s67 := p6 + p7;
+
+                        -- Level 2 (2 quad sums, p8 still alone)
+                        s0123   := s01 + s23;
+                        s4567   := s45 + s67;
+
+                        -- Level 3 (1 octet sum, p8 still alone)
+                        s01234567 := s0123 + s4567;
+
+                        -- Level 4 (octet + p8 -> full 9-input row sum)
+                        row_sums_reg(r) <= s01234567 + p8;
                     end loop;
                     valid_rowsum <= '1';
                     mode_rowsum  <= mode_mul;
@@ -280,8 +364,25 @@ begin
     -- Parallel accumulator: sum all 9 row sums in one cycle
     -- This is a single registered stage - Vivado may infer DSP48 cascade here.
     -- If timing fails, add attribute use_dsp of acc_reg : signal is "no".
+    -- -----------------------------------------------------------------------
+    -- TIMING FIX (FCLK0 = 90 MHz): same problem as p_rowsum_reg. The
+    -- original "for r in 0 to ROWS-1 loop acc_v := acc_v + ..." produced
+    -- an 8-deep chain of 33-bit carry-propagate adders feeding acc_reg.
+    -- This was the acc_reg critical path reported by timing.
+    --
+    -- Fix: rewrite the addition as a 4-level balanced binary tree.
+    --
+    -- NO PIPELINE STAGE ADDED: this is still 1 clock cycle from
+    -- row_sums_reg (registered at T) to acc_reg (registered at T+1).
+    -- The change is purely the combinational adder topology inside the
+    -- clocked process. PIPELINE_DEPTH, alu_valid_output, valid-pipeline
+    -- chain, and main.c are all unaffected.
+    -- -----------------------------------------------------------------------
     p_acc_parallel : process(clk)
-        variable acc_v : signed(ACC_W-1 downto 0);
+        variable r0, r1, r2, r3, r4, r5, r6, r7, r8 : signed(ACC_W-1 downto 0);
+        variable a01, a23, a45, a67                  : signed(ACC_W-1 downto 0);
+        variable a0123, a4567                        : signed(ACC_W-1 downto 0);
+        variable a01234567                           : signed(ACC_W-1 downto 0);
     begin
         if rising_edge(clk) then
             if rst = '1' then
@@ -292,11 +393,32 @@ begin
                 -- Clock-enabled by shift_en: holds during stall.
                 valid_acc <= '0';
                 if valid_rowsum = '1' then
-                    acc_v := (others => '0');
-                    for r in 0 to ROWS-1 loop
-                        acc_v := acc_v + resize(row_sums_reg(r), ACC_W);
-                    end loop;
-                    acc_reg   <= acc_v;
+                    -- Resize all 9 row sums to ACC_W bits, then 4-level tree.
+                    r0 := resize(row_sums_reg(0), ACC_W);
+                    r1 := resize(row_sums_reg(1), ACC_W);
+                    r2 := resize(row_sums_reg(2), ACC_W);
+                    r3 := resize(row_sums_reg(3), ACC_W);
+                    r4 := resize(row_sums_reg(4), ACC_W);
+                    r5 := resize(row_sums_reg(5), ACC_W);
+                    r6 := resize(row_sums_reg(6), ACC_W);
+                    r7 := resize(row_sums_reg(7), ACC_W);
+                    r8 := resize(row_sums_reg(8), ACC_W);
+
+                    -- Level 1 (4 pair sums, r8 alone)
+                    a01 := r0 + r1;
+                    a23 := r2 + r3;
+                    a45 := r4 + r5;
+                    a67 := r6 + r7;
+
+                    -- Level 2 (2 quad sums, r8 alone)
+                    a0123 := a01 + a23;
+                    a4567 := a45 + a67;
+
+                    -- Level 3 (1 octet sum, r8 alone)
+                    a01234567 := a0123 + a4567;
+
+                    -- Level 4 (octet + r8 -> full 9-input accumulator)
+                    acc_reg   <= a01234567 + r8;
                     valid_acc <= '1';
                     mode_acc  <= mode_rowsum;
                 end if;

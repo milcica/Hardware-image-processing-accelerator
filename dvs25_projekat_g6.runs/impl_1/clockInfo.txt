@@ -1,8 +1,8 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.1
-| Date         : Sun Jun 21 15:27:31 2026
+| Date         : Fri Jun 26 18:49:42 2026
 | Host         : yoga
-| Design       : checkpoint_image_filter_wrapper
+| Design       : design_1
 | Device       : xc7z020-clg400-1--
 -------------------------------------
 

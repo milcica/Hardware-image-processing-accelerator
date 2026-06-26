@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sun Jun 21 15:20:34 2026
-# Process ID         : 164545
+# Start of session at: Fri Jun 26 18:46:39 2026
+# Process ID         : 43987
 # Current directory  : /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/image_filter_acc_image_filter_0_2_synth_1
 # Command line       : vivado -log image_filter_acc_image_filter_0_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_filter_acc_image_filter_0_2.tcl
 # Log file           : /home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/image_filter_acc_image_filter_0_2_synth_1/image_filter_acc_image_filter_0_2.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.4 LTS
 # Processor Detail   : AMD Ryzen 7 8840HS w/ Radeon 780M Graphics
-# CPU Frequency      : 1653.590 MHz
+# CPU Frequency      : 2308.339 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 15976 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20271 MB
-# Available Virtual  : 11620 MB
+# Available Virtual  : 13358 MB
 #-----------------------------------------------------------
 source image_filter_acc_image_filter_0_2.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -32,9 +32,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 164604
+INFO: [Synth 8-7075] Helper process launched with PID 44066
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2126.824 ; gain = 440.711 ; free physical = 3799 ; free virtual = 9834
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2127.086 ; gain = 441.711 ; free physical = 1974 ; free virtual = 11493
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'image_filter_acc_image_filter_0_2' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/synth/image_filter_acc_image_filter_0_2.vhd:90]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -55,11 +55,9 @@ INFO: [Synth 8-638] synthesizing module 'filter_alu' [/home/kowalski/Desktop/ETF
 INFO: [Synth 8-256] done synthesizing module 'filter_alu' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/filter_alu.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'acc_image_filter' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:63]
 INFO: [Synth 8-256] done synthesizing module 'image_filter_acc_image_filter_0_2' (0#1) [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/synth/image_filter_acc_image_filter_0_2.vhd:90]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_alu'. This will prevent further optimization [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:1087]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'U0'. This will prevent further optimization [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.gen/sources_1/bd/image_filter/ip/image_filter_acc_image_filter_0_2/synth/image_filter_acc_image_filter_0_2.vhd:184]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_bram'. This will prevent further optimization [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:1060]
 WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:454]
 WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:493]
+WARNING: [Synth 8-6014] Unused sequential element sA_out_reg was removed.  [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:601]
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awaddr[1] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awaddr[0] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awprot[2] in module acc_image_filter is either unconnected or has no load
@@ -89,45 +87,45 @@ WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[2] in module acc_image_filter is 
 WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[1] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[0] in module acc_image_filter is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2378.762 ; gain = 692.648 ; free physical = 3547 ; free virtual = 9584
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2307.055 ; gain = 621.680 ; free physical = 1774 ; free virtual = 11296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2378.762 ; gain = 692.648 ; free physical = 3547 ; free virtual = 9584
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2307.055 ; gain = 621.680 ; free physical = 1773 ; free virtual = 11296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2378.762 ; gain = 692.648 ; free physical = 3547 ; free virtual = 9584
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2307.055 ; gain = 621.680 ; free physical = 1773 ; free virtual = 11296
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2378.762 ; gain = 0.000 ; free physical = 3557 ; free virtual = 9594
+Netlist sorting complete. Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2307.055 ; gain = 0.000 ; free physical = 1782 ; free virtual = 11304
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2484.227 ; gain = 0.000 ; free physical = 3555 ; free virtual = 9593
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.887 ; gain = 0.000 ; free physical = 1800 ; free virtual = 11337
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2484.262 ; gain = 0.000 ; free physical = 3555 ; free virtual = 9593
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2413.922 ; gain = 0.000 ; free physical = 1798 ; free virtual = 11334
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2484.262 ; gain = 798.148 ; free physical = 3594 ; free virtual = 9631
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2413.922 ; gain = 728.547 ; free physical = 1859 ; free virtual = 11397
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2492.230 ; gain = 806.117 ; free physical = 3594 ; free virtual = 9631
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2421.891 ; gain = 736.516 ; free physical = 1863 ; free virtual = 11400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2492.230 ; gain = 806.117 ; free physical = 3594 ; free virtual = 9631
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2421.891 ; gain = 736.516 ; free physical = 1868 ; free virtual = 11405
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_axi_write_state_reg' in module 'acc_image_filter'
 ---------------------------------------------------------------------------------------------------
@@ -140,7 +138,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'fsm_axi_write_state_reg' in
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_axi_write_state_reg' using encoding 'one-hot' in module 'acc_image_filter'
 WARNING: [Synth 8-327] inferring latch for variable 's_axi_ctrl_rdata_reg' [/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.srcs/sources_1/new/acc_image_filter.vhd:422]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2492.230 ; gain = 806.117 ; free physical = 3592 ; free virtual = 9632
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2421.891 ; gain = 736.516 ; free physical = 1884 ; free virtual = 11424
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -148,6 +146,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   9 Input   33 Bit       Adders := 1     
+	   9 Input   29 Bit       Adders := 9     
 	   2 Input   10 Bit       Adders := 4     
 	   3 Input   10 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 1     
@@ -160,26 +159,22 @@ Detailed RTL Component Info :
 	               10 Bit    Registers := 3     
 	                8 Bit    Registers := 87    
 	                7 Bit    Registers := 3     
-	                1 Bit    Registers := 33    
+	                1 Bit    Registers := 32    
 +---Multipliers : 
 	              17x33  Multipliers := 1     
 +---RAMs : 
 	              64K Bit	(1024 X 64 bit)          RAMs := 1     
 +---Muxes : 
-	   2 Input   50 Bit        Muxes := 1     
-	   2 Input   33 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 96    
 	   5 Input   16 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 9     
 	   2 Input    9 Bit        Muxes := 80    
-	   2 Input    8 Bit        Muxes := 178   
+	   2 Input    8 Bit        Muxes := 176   
 	   3 Input    8 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 6     
+	   2 Input    7 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 61    
+	   2 Input    1 Bit        Muxes := 51    
 	   3 Input    1 Bit        Muxes := 6     
-	   6 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -196,336 +191,258 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP products_reg_reg[1,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[1,8] is absorbed into DSP products_reg_reg[1,8].
-DSP Report: operator products_reg_reg[1,8]0 is absorbed into DSP products_reg_reg[1,8].
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,0] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,0]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,7] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,7]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,6] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,6]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,5] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,5]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,4] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,4]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,3] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,3]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[1,2] is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator products_reg_reg[1,2]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1]0.
-DSP Report: Generating DSP row_sums_reg_reg[1], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[1] is absorbed into DSP row_sums_reg_reg[1].
-DSP Report: register products_reg_reg[1,1] is absorbed into DSP row_sums_reg_reg[1].
-DSP Report: operator row_sums_reg_reg[1]0 is absorbed into DSP row_sums_reg_reg[1].
-DSP Report: operator products_reg_reg[1,1]0 is absorbed into DSP row_sums_reg_reg[1].
-DSP Report: Generating DSP products_reg_reg[2,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[2,8] is absorbed into DSP products_reg_reg[2,8].
-DSP Report: operator products_reg_reg[2,8]0 is absorbed into DSP products_reg_reg[2,8].
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,0] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,0]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,7] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,7]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,6] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,6]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,5] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,5]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,4] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,4]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,3] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,3]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[2,2] is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator products_reg_reg[2,2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2]0.
-DSP Report: Generating DSP row_sums_reg_reg[2], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[2] is absorbed into DSP row_sums_reg_reg[2].
-DSP Report: register products_reg_reg[2,1] is absorbed into DSP row_sums_reg_reg[2].
-DSP Report: operator row_sums_reg_reg[2]0 is absorbed into DSP row_sums_reg_reg[2].
-DSP Report: operator products_reg_reg[2,1]0 is absorbed into DSP row_sums_reg_reg[2].
-DSP Report: Generating DSP products_reg_reg[3,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[3,8] is absorbed into DSP products_reg_reg[3,8].
-DSP Report: operator products_reg_reg[3,8]0 is absorbed into DSP products_reg_reg[3,8].
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,0] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,0]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,7] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,7]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,6] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,6]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,5] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,5]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,4] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,4]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,3] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[3,2] is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator products_reg_reg[3,2]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3]0.
-DSP Report: Generating DSP row_sums_reg_reg[3], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[3] is absorbed into DSP row_sums_reg_reg[3].
-DSP Report: register products_reg_reg[3,1] is absorbed into DSP row_sums_reg_reg[3].
-DSP Report: operator row_sums_reg_reg[3]0 is absorbed into DSP row_sums_reg_reg[3].
-DSP Report: operator products_reg_reg[3,1]0 is absorbed into DSP row_sums_reg_reg[3].
-DSP Report: Generating DSP products_reg_reg[4,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[4,8] is absorbed into DSP products_reg_reg[4,8].
-DSP Report: operator products_reg_reg[4,8]0 is absorbed into DSP products_reg_reg[4,8].
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,0] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,0]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,7] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,7]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,6] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,6]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,5] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,5]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,4] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,3] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,3]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[4,2] is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator products_reg_reg[4,2]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4]0.
-DSP Report: Generating DSP row_sums_reg_reg[4], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[4] is absorbed into DSP row_sums_reg_reg[4].
-DSP Report: register products_reg_reg[4,1] is absorbed into DSP row_sums_reg_reg[4].
-DSP Report: operator row_sums_reg_reg[4]0 is absorbed into DSP row_sums_reg_reg[4].
-DSP Report: operator products_reg_reg[4,1]0 is absorbed into DSP row_sums_reg_reg[4].
-DSP Report: Generating DSP products_reg_reg[5,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[5,8] is absorbed into DSP products_reg_reg[5,8].
-DSP Report: operator products_reg_reg[5,8]0 is absorbed into DSP products_reg_reg[5,8].
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,0] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,0]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,7] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,7]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,6] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,6]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,5] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,4] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,4]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,3] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,3]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[5,2] is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator products_reg_reg[5,2]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5]0.
-DSP Report: Generating DSP row_sums_reg_reg[5], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[5] is absorbed into DSP row_sums_reg_reg[5].
-DSP Report: register products_reg_reg[5,1] is absorbed into DSP row_sums_reg_reg[5].
-DSP Report: operator row_sums_reg_reg[5]0 is absorbed into DSP row_sums_reg_reg[5].
-DSP Report: operator products_reg_reg[5,1]0 is absorbed into DSP row_sums_reg_reg[5].
-DSP Report: Generating DSP products_reg_reg[6,8], operation Mode is: (A*B)'.
-DSP Report: register products_reg_reg[6,8] is absorbed into DSP products_reg_reg[6,8].
-DSP Report: operator products_reg_reg[6,8]0 is absorbed into DSP products_reg_reg[6,8].
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,0] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,0]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,7] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,7]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,6] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,5] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,5]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,4] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,4]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,3] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,3]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[6,2] is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator products_reg_reg[6,2]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6]0.
-DSP Report: Generating DSP row_sums_reg_reg[6], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[6] is absorbed into DSP row_sums_reg_reg[6].
-DSP Report: register products_reg_reg[6,1] is absorbed into DSP row_sums_reg_reg[6].
-DSP Report: operator row_sums_reg_reg[6]0 is absorbed into DSP row_sums_reg_reg[6].
-DSP Report: operator products_reg_reg[6,1]0 is absorbed into DSP row_sums_reg_reg[6].
+DSP Report: Generating DSP products_reg_reg[7,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,7] is absorbed into DSP products_reg_reg[7,7].
+DSP Report: operator products_reg_reg[7,7]0 is absorbed into DSP products_reg_reg[7,7].
+DSP Report: Generating DSP products_reg_reg[7,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,5] is absorbed into DSP products_reg_reg[7,5].
+DSP Report: operator products_reg_reg[7,5]0 is absorbed into DSP products_reg_reg[7,5].
+DSP Report: Generating DSP products_reg_reg[7,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,6] is absorbed into DSP products_reg_reg[7,6].
+DSP Report: operator products_reg_reg[7,6]0 is absorbed into DSP products_reg_reg[7,6].
+DSP Report: Generating DSP products_reg_reg[7,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,3] is absorbed into DSP products_reg_reg[7,3].
+DSP Report: operator products_reg_reg[7,3]0 is absorbed into DSP products_reg_reg[7,3].
+DSP Report: Generating DSP products_reg_reg[7,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,1] is absorbed into DSP products_reg_reg[7,1].
+DSP Report: operator products_reg_reg[7,1]0 is absorbed into DSP products_reg_reg[7,1].
+DSP Report: Generating DSP products_reg_reg[7,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,2] is absorbed into DSP products_reg_reg[7,2].
+DSP Report: operator products_reg_reg[7,2]0 is absorbed into DSP products_reg_reg[7,2].
+DSP Report: Generating DSP products_reg_reg[7,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,4] is absorbed into DSP products_reg_reg[7,4].
+DSP Report: operator products_reg_reg[7,4]0 is absorbed into DSP products_reg_reg[7,4].
 DSP Report: Generating DSP products_reg_reg[7,8], operation Mode is: (A*B)'.
 DSP Report: register products_reg_reg[7,8] is absorbed into DSP products_reg_reg[7,8].
 DSP Report: operator products_reg_reg[7,8]0 is absorbed into DSP products_reg_reg[7,8].
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,0] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,0]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,7] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,6] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,6]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,5] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,5]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,4] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,4]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,3] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,3]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[7,2] is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator products_reg_reg[7,2]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7]0.
-DSP Report: Generating DSP row_sums_reg_reg[7], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[7] is absorbed into DSP row_sums_reg_reg[7].
-DSP Report: register products_reg_reg[7,1] is absorbed into DSP row_sums_reg_reg[7].
-DSP Report: operator row_sums_reg_reg[7]0 is absorbed into DSP row_sums_reg_reg[7].
-DSP Report: operator products_reg_reg[7,1]0 is absorbed into DSP row_sums_reg_reg[7].
+DSP Report: Generating DSP products_reg_reg[7,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[7,0] is absorbed into DSP products_reg_reg[7,0].
+DSP Report: operator products_reg_reg[7,0]0 is absorbed into DSP products_reg_reg[7,0].
+DSP Report: Generating DSP products_reg_reg[5,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,7] is absorbed into DSP products_reg_reg[5,7].
+DSP Report: operator products_reg_reg[5,7]0 is absorbed into DSP products_reg_reg[5,7].
+DSP Report: Generating DSP products_reg_reg[5,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,5] is absorbed into DSP products_reg_reg[5,5].
+DSP Report: operator products_reg_reg[5,5]0 is absorbed into DSP products_reg_reg[5,5].
+DSP Report: Generating DSP products_reg_reg[5,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,6] is absorbed into DSP products_reg_reg[5,6].
+DSP Report: operator products_reg_reg[5,6]0 is absorbed into DSP products_reg_reg[5,6].
+DSP Report: Generating DSP products_reg_reg[5,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,3] is absorbed into DSP products_reg_reg[5,3].
+DSP Report: operator products_reg_reg[5,3]0 is absorbed into DSP products_reg_reg[5,3].
+DSP Report: Generating DSP products_reg_reg[5,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,1] is absorbed into DSP products_reg_reg[5,1].
+DSP Report: operator products_reg_reg[5,1]0 is absorbed into DSP products_reg_reg[5,1].
+DSP Report: Generating DSP products_reg_reg[5,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,2] is absorbed into DSP products_reg_reg[5,2].
+DSP Report: operator products_reg_reg[5,2]0 is absorbed into DSP products_reg_reg[5,2].
+DSP Report: Generating DSP products_reg_reg[5,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,4] is absorbed into DSP products_reg_reg[5,4].
+DSP Report: operator products_reg_reg[5,4]0 is absorbed into DSP products_reg_reg[5,4].
+DSP Report: Generating DSP products_reg_reg[5,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,8] is absorbed into DSP products_reg_reg[5,8].
+DSP Report: operator products_reg_reg[5,8]0 is absorbed into DSP products_reg_reg[5,8].
+DSP Report: Generating DSP products_reg_reg[5,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[5,0] is absorbed into DSP products_reg_reg[5,0].
+DSP Report: operator products_reg_reg[5,0]0 is absorbed into DSP products_reg_reg[5,0].
+DSP Report: Generating DSP products_reg_reg[6,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,7] is absorbed into DSP products_reg_reg[6,7].
+DSP Report: operator products_reg_reg[6,7]0 is absorbed into DSP products_reg_reg[6,7].
+DSP Report: Generating DSP products_reg_reg[6,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,5] is absorbed into DSP products_reg_reg[6,5].
+DSP Report: operator products_reg_reg[6,5]0 is absorbed into DSP products_reg_reg[6,5].
+DSP Report: Generating DSP products_reg_reg[6,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,6] is absorbed into DSP products_reg_reg[6,6].
+DSP Report: operator products_reg_reg[6,6]0 is absorbed into DSP products_reg_reg[6,6].
+DSP Report: Generating DSP products_reg_reg[6,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,3] is absorbed into DSP products_reg_reg[6,3].
+DSP Report: operator products_reg_reg[6,3]0 is absorbed into DSP products_reg_reg[6,3].
+DSP Report: Generating DSP products_reg_reg[6,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,1] is absorbed into DSP products_reg_reg[6,1].
+DSP Report: operator products_reg_reg[6,1]0 is absorbed into DSP products_reg_reg[6,1].
+DSP Report: Generating DSP products_reg_reg[6,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,2] is absorbed into DSP products_reg_reg[6,2].
+DSP Report: operator products_reg_reg[6,2]0 is absorbed into DSP products_reg_reg[6,2].
+DSP Report: Generating DSP products_reg_reg[6,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,4] is absorbed into DSP products_reg_reg[6,4].
+DSP Report: operator products_reg_reg[6,4]0 is absorbed into DSP products_reg_reg[6,4].
+DSP Report: Generating DSP products_reg_reg[6,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,8] is absorbed into DSP products_reg_reg[6,8].
+DSP Report: operator products_reg_reg[6,8]0 is absorbed into DSP products_reg_reg[6,8].
+DSP Report: Generating DSP products_reg_reg[6,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[6,0] is absorbed into DSP products_reg_reg[6,0].
+DSP Report: operator products_reg_reg[6,0]0 is absorbed into DSP products_reg_reg[6,0].
+DSP Report: Generating DSP products_reg_reg[3,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,7] is absorbed into DSP products_reg_reg[3,7].
+DSP Report: operator products_reg_reg[3,7]0 is absorbed into DSP products_reg_reg[3,7].
+DSP Report: Generating DSP products_reg_reg[3,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,5] is absorbed into DSP products_reg_reg[3,5].
+DSP Report: operator products_reg_reg[3,5]0 is absorbed into DSP products_reg_reg[3,5].
+DSP Report: Generating DSP products_reg_reg[3,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,6] is absorbed into DSP products_reg_reg[3,6].
+DSP Report: operator products_reg_reg[3,6]0 is absorbed into DSP products_reg_reg[3,6].
+DSP Report: Generating DSP products_reg_reg[3,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,3] is absorbed into DSP products_reg_reg[3,3].
+DSP Report: operator products_reg_reg[3,3]0 is absorbed into DSP products_reg_reg[3,3].
+DSP Report: Generating DSP products_reg_reg[3,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,1] is absorbed into DSP products_reg_reg[3,1].
+DSP Report: operator products_reg_reg[3,1]0 is absorbed into DSP products_reg_reg[3,1].
+DSP Report: Generating DSP products_reg_reg[3,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,2] is absorbed into DSP products_reg_reg[3,2].
+DSP Report: operator products_reg_reg[3,2]0 is absorbed into DSP products_reg_reg[3,2].
+DSP Report: Generating DSP products_reg_reg[3,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,4] is absorbed into DSP products_reg_reg[3,4].
+DSP Report: operator products_reg_reg[3,4]0 is absorbed into DSP products_reg_reg[3,4].
+DSP Report: Generating DSP products_reg_reg[3,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,8] is absorbed into DSP products_reg_reg[3,8].
+DSP Report: operator products_reg_reg[3,8]0 is absorbed into DSP products_reg_reg[3,8].
+DSP Report: Generating DSP products_reg_reg[3,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[3,0] is absorbed into DSP products_reg_reg[3,0].
+DSP Report: operator products_reg_reg[3,0]0 is absorbed into DSP products_reg_reg[3,0].
+DSP Report: Generating DSP products_reg_reg[1,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,7] is absorbed into DSP products_reg_reg[1,7].
+DSP Report: operator products_reg_reg[1,7]0 is absorbed into DSP products_reg_reg[1,7].
+DSP Report: Generating DSP products_reg_reg[1,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,5] is absorbed into DSP products_reg_reg[1,5].
+DSP Report: operator products_reg_reg[1,5]0 is absorbed into DSP products_reg_reg[1,5].
+DSP Report: Generating DSP products_reg_reg[1,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,6] is absorbed into DSP products_reg_reg[1,6].
+DSP Report: operator products_reg_reg[1,6]0 is absorbed into DSP products_reg_reg[1,6].
+DSP Report: Generating DSP products_reg_reg[1,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,3] is absorbed into DSP products_reg_reg[1,3].
+DSP Report: operator products_reg_reg[1,3]0 is absorbed into DSP products_reg_reg[1,3].
+DSP Report: Generating DSP products_reg_reg[1,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,1] is absorbed into DSP products_reg_reg[1,1].
+DSP Report: operator products_reg_reg[1,1]0 is absorbed into DSP products_reg_reg[1,1].
+DSP Report: Generating DSP products_reg_reg[1,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,2] is absorbed into DSP products_reg_reg[1,2].
+DSP Report: operator products_reg_reg[1,2]0 is absorbed into DSP products_reg_reg[1,2].
+DSP Report: Generating DSP products_reg_reg[1,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,4] is absorbed into DSP products_reg_reg[1,4].
+DSP Report: operator products_reg_reg[1,4]0 is absorbed into DSP products_reg_reg[1,4].
+DSP Report: Generating DSP products_reg_reg[1,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,8] is absorbed into DSP products_reg_reg[1,8].
+DSP Report: operator products_reg_reg[1,8]0 is absorbed into DSP products_reg_reg[1,8].
+DSP Report: Generating DSP products_reg_reg[1,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[1,0] is absorbed into DSP products_reg_reg[1,0].
+DSP Report: operator products_reg_reg[1,0]0 is absorbed into DSP products_reg_reg[1,0].
+DSP Report: Generating DSP products_reg_reg[2,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,7] is absorbed into DSP products_reg_reg[2,7].
+DSP Report: operator products_reg_reg[2,7]0 is absorbed into DSP products_reg_reg[2,7].
+DSP Report: Generating DSP products_reg_reg[2,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,5] is absorbed into DSP products_reg_reg[2,5].
+DSP Report: operator products_reg_reg[2,5]0 is absorbed into DSP products_reg_reg[2,5].
+DSP Report: Generating DSP products_reg_reg[2,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,6] is absorbed into DSP products_reg_reg[2,6].
+DSP Report: operator products_reg_reg[2,6]0 is absorbed into DSP products_reg_reg[2,6].
+DSP Report: Generating DSP products_reg_reg[2,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,3] is absorbed into DSP products_reg_reg[2,3].
+DSP Report: operator products_reg_reg[2,3]0 is absorbed into DSP products_reg_reg[2,3].
+DSP Report: Generating DSP products_reg_reg[2,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,1] is absorbed into DSP products_reg_reg[2,1].
+DSP Report: operator products_reg_reg[2,1]0 is absorbed into DSP products_reg_reg[2,1].
+DSP Report: Generating DSP products_reg_reg[2,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,2] is absorbed into DSP products_reg_reg[2,2].
+DSP Report: operator products_reg_reg[2,2]0 is absorbed into DSP products_reg_reg[2,2].
+DSP Report: Generating DSP products_reg_reg[2,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,4] is absorbed into DSP products_reg_reg[2,4].
+DSP Report: operator products_reg_reg[2,4]0 is absorbed into DSP products_reg_reg[2,4].
+DSP Report: Generating DSP products_reg_reg[2,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,8] is absorbed into DSP products_reg_reg[2,8].
+DSP Report: operator products_reg_reg[2,8]0 is absorbed into DSP products_reg_reg[2,8].
+DSP Report: Generating DSP products_reg_reg[2,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[2,0] is absorbed into DSP products_reg_reg[2,0].
+DSP Report: operator products_reg_reg[2,0]0 is absorbed into DSP products_reg_reg[2,0].
+DSP Report: Generating DSP products_reg_reg[4,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,7] is absorbed into DSP products_reg_reg[4,7].
+DSP Report: operator products_reg_reg[4,7]0 is absorbed into DSP products_reg_reg[4,7].
+DSP Report: Generating DSP products_reg_reg[4,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,5] is absorbed into DSP products_reg_reg[4,5].
+DSP Report: operator products_reg_reg[4,5]0 is absorbed into DSP products_reg_reg[4,5].
+DSP Report: Generating DSP products_reg_reg[4,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,6] is absorbed into DSP products_reg_reg[4,6].
+DSP Report: operator products_reg_reg[4,6]0 is absorbed into DSP products_reg_reg[4,6].
+DSP Report: Generating DSP products_reg_reg[4,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,3] is absorbed into DSP products_reg_reg[4,3].
+DSP Report: operator products_reg_reg[4,3]0 is absorbed into DSP products_reg_reg[4,3].
+DSP Report: Generating DSP products_reg_reg[4,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,1] is absorbed into DSP products_reg_reg[4,1].
+DSP Report: operator products_reg_reg[4,1]0 is absorbed into DSP products_reg_reg[4,1].
+DSP Report: Generating DSP products_reg_reg[4,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,2] is absorbed into DSP products_reg_reg[4,2].
+DSP Report: operator products_reg_reg[4,2]0 is absorbed into DSP products_reg_reg[4,2].
+DSP Report: Generating DSP products_reg_reg[4,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,4] is absorbed into DSP products_reg_reg[4,4].
+DSP Report: operator products_reg_reg[4,4]0 is absorbed into DSP products_reg_reg[4,4].
+DSP Report: Generating DSP products_reg_reg[4,8], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,8] is absorbed into DSP products_reg_reg[4,8].
+DSP Report: operator products_reg_reg[4,8]0 is absorbed into DSP products_reg_reg[4,8].
+DSP Report: Generating DSP products_reg_reg[4,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[4,0] is absorbed into DSP products_reg_reg[4,0].
+DSP Report: operator products_reg_reg[4,0]0 is absorbed into DSP products_reg_reg[4,0].
+DSP Report: Generating DSP products_reg_reg[8,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,7] is absorbed into DSP products_reg_reg[8,7].
+DSP Report: operator products_reg_reg[8,7]0 is absorbed into DSP products_reg_reg[8,7].
+DSP Report: Generating DSP products_reg_reg[8,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,5] is absorbed into DSP products_reg_reg[8,5].
+DSP Report: operator products_reg_reg[8,5]0 is absorbed into DSP products_reg_reg[8,5].
+DSP Report: Generating DSP products_reg_reg[8,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,6] is absorbed into DSP products_reg_reg[8,6].
+DSP Report: operator products_reg_reg[8,6]0 is absorbed into DSP products_reg_reg[8,6].
+DSP Report: Generating DSP products_reg_reg[8,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,3] is absorbed into DSP products_reg_reg[8,3].
+DSP Report: operator products_reg_reg[8,3]0 is absorbed into DSP products_reg_reg[8,3].
+DSP Report: Generating DSP products_reg_reg[8,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,1] is absorbed into DSP products_reg_reg[8,1].
+DSP Report: operator products_reg_reg[8,1]0 is absorbed into DSP products_reg_reg[8,1].
+DSP Report: Generating DSP products_reg_reg[8,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,2] is absorbed into DSP products_reg_reg[8,2].
+DSP Report: operator products_reg_reg[8,2]0 is absorbed into DSP products_reg_reg[8,2].
+DSP Report: Generating DSP products_reg_reg[8,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,4] is absorbed into DSP products_reg_reg[8,4].
+DSP Report: operator products_reg_reg[8,4]0 is absorbed into DSP products_reg_reg[8,4].
 DSP Report: Generating DSP products_reg_reg[8,8], operation Mode is: (A*B)'.
 DSP Report: register products_reg_reg[8,8] is absorbed into DSP products_reg_reg[8,8].
 DSP Report: operator products_reg_reg[8,8]0 is absorbed into DSP products_reg_reg[8,8].
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,0] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,0]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,7] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,7]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,6] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,6]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,5] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,5]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,4] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,4]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,3] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,3]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[8,2] is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator products_reg_reg[8,2]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8]0.
-DSP Report: Generating DSP row_sums_reg_reg[8], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[8] is absorbed into DSP row_sums_reg_reg[8].
-DSP Report: register products_reg_reg[8,1] is absorbed into DSP row_sums_reg_reg[8].
-DSP Report: operator row_sums_reg_reg[8]0 is absorbed into DSP row_sums_reg_reg[8].
-DSP Report: operator products_reg_reg[8,1]0 is absorbed into DSP row_sums_reg_reg[8].
+DSP Report: Generating DSP products_reg_reg[8,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[8,0] is absorbed into DSP products_reg_reg[8,0].
+DSP Report: operator products_reg_reg[8,0]0 is absorbed into DSP products_reg_reg[8,0].
+DSP Report: Generating DSP products_reg_reg[0,7], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,7] is absorbed into DSP products_reg_reg[0,7].
+DSP Report: operator products_reg_reg[0,7]0 is absorbed into DSP products_reg_reg[0,7].
+DSP Report: Generating DSP products_reg_reg[0,5], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,5] is absorbed into DSP products_reg_reg[0,5].
+DSP Report: operator products_reg_reg[0,5]0 is absorbed into DSP products_reg_reg[0,5].
+DSP Report: Generating DSP products_reg_reg[0,6], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,6] is absorbed into DSP products_reg_reg[0,6].
+DSP Report: operator products_reg_reg[0,6]0 is absorbed into DSP products_reg_reg[0,6].
+DSP Report: Generating DSP products_reg_reg[0,3], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,3] is absorbed into DSP products_reg_reg[0,3].
+DSP Report: operator products_reg_reg[0,3]0 is absorbed into DSP products_reg_reg[0,3].
+DSP Report: Generating DSP products_reg_reg[0,1], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,1] is absorbed into DSP products_reg_reg[0,1].
+DSP Report: operator products_reg_reg[0,1]0 is absorbed into DSP products_reg_reg[0,1].
+DSP Report: Generating DSP products_reg_reg[0,2], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,2] is absorbed into DSP products_reg_reg[0,2].
+DSP Report: operator products_reg_reg[0,2]0 is absorbed into DSP products_reg_reg[0,2].
+DSP Report: Generating DSP products_reg_reg[0,4], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,4] is absorbed into DSP products_reg_reg[0,4].
+DSP Report: operator products_reg_reg[0,4]0 is absorbed into DSP products_reg_reg[0,4].
 DSP Report: Generating DSP products_reg_reg[0,8], operation Mode is: (A*B)'.
 DSP Report: register products_reg_reg[0,8] is absorbed into DSP products_reg_reg[0,8].
 DSP Report: operator products_reg_reg[0,8]0 is absorbed into DSP products_reg_reg[0,8].
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,0] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,7] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,7]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,6] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,6]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,5] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,5]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,4] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,4]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,3] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,3]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0]0, operation Mode is: PCIN+(A*B)'.
-DSP Report: register products_reg_reg[0,2] is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator products_reg_reg[0,2]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0]0.
-DSP Report: Generating DSP row_sums_reg_reg[0], operation Mode is: (PCIN+(A*B)')'.
-DSP Report: register row_sums_reg_reg[0] is absorbed into DSP row_sums_reg_reg[0].
-DSP Report: register products_reg_reg[0,1] is absorbed into DSP row_sums_reg_reg[0].
-DSP Report: operator row_sums_reg_reg[0]0 is absorbed into DSP row_sums_reg_reg[0].
-DSP Report: operator products_reg_reg[0,1]0 is absorbed into DSP row_sums_reg_reg[0].
-DSP Report: Generating DSP scaled_reg0, operation Mode is: A*B.
+DSP Report: Generating DSP products_reg_reg[0,0], operation Mode is: (A*B)'.
+DSP Report: register products_reg_reg[0,0] is absorbed into DSP products_reg_reg[0,0].
+DSP Report: operator products_reg_reg[0,0]0 is absorbed into DSP products_reg_reg[0,0].
+DSP Report: Generating DSP scaled_reg0, operation Mode is: A2*B.
+DSP Report: register scaled_reg0 is absorbed into DSP scaled_reg0.
 DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg0.
 DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg0.
-DSP Report: Generating DSP scaled_reg0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg0.
-DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg0.
+DSP Report: Generating DSP scaled_reg_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register acc_reg_reg is absorbed into DSP scaled_reg_reg.
+DSP Report: register scaled_reg_reg is absorbed into DSP scaled_reg_reg.
+DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg_reg.
+DSP Report: operator scaled_reg0 is absorbed into DSP scaled_reg_reg.
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awaddr[1] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awaddr[0] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_awprot[2] in module acc_image_filter is either unconnected or has no load
@@ -554,193 +471,257 @@ WARNING: [Synth 8-7129] Port s_axi_ctrl_araddr[0] in module acc_image_filter is 
 WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[2] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[1] in module acc_image_filter is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axi_ctrl_arprot[0] in module acc_image_filter is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[47]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[46]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[45]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[44]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[43]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[42]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[41]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[40]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[39]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[38]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[37]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[36]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[35]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[34]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[33]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[32]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[31]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[30]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[29]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[28]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[27]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[26]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[25]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[24]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[23]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[22]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[21]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[20]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[19]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[18]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[17]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[16]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[15]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[14]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[13]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[12]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[11]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[10]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[9]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[8]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[7]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[6]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[5]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[4]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[3]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[2]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[1]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (scaled_reg_reg[0]) is unused and will be removed from module filter_alu.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[31]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[30]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[29]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[28]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[27]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[26]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[25]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[24]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[23]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[22]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[21]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[20]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[19]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[18]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[17]) is unused and will be removed from module acc_image_filter.
+WARNING: [Synth 8-3332] Sequential element (s_axi_ctrl_rdata_reg[16]) is unused and will be removed from module acc_image_filter.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2570.980 ; gain = 884.867 ; free physical = 3509 ; free virtual = 9549
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2495.008 ; gain = 809.633 ; free physical = 1801 ; free virtual = 11342
 ---------------------------------------------------------------------------------
- Sort Area is  products_reg_reg[0,8]_0 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[0,8]_0 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[1,8]_c : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[2,8]_b : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[3,8]_a : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[4,8]_9 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[5,8]_8 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[6,8]_7 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[7,8]_6 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 0 : 979 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 1 : 1067 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 2 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 3 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 4 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 5 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 6 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 7 : 1071 9572 : Used 1 time 0
- Sort Area is  products_reg_reg[8,8]_5 : 0 8 : 1100 9572 : Used 1 time 0
- Sort Area is  scaled_reg0_d : 0 0 : 3017 5738 : Used 1 time 0
- Sort Area is  scaled_reg0_d : 0 1 : 2721 5738 : Used 1 time 0
+ Sort Area is  scaled_reg0_52 : 0 0 : 2567 4812 : Used 1 time 0
+ Sort Area is  scaled_reg0_52 : 0 1 : 2245 4812 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,0]_0 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,1]_5 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,2]_4 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,3]_6 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,4]_3 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,5]_8 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,6]_7 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,7]_9 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[0,8]_2 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,0]_25 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,1]_29 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,2]_28 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,3]_2a : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,4]_27 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,5]_2c : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,6]_2b : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,7]_2d : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[1,8]_26 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,0]_1c : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,1]_20 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,2]_1f : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,3]_21 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,4]_1e : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,5]_23 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,6]_22 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,7]_24 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[2,8]_1d : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,0]_2e : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,1]_32 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,2]_31 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,3]_33 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,4]_30 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,5]_35 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,6]_34 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,7]_36 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[3,8]_2f : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,0]_13 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,1]_17 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,2]_16 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,3]_18 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,4]_15 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,5]_1a : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,6]_19 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,7]_1b : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[4,8]_14 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,0]_40 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,1]_44 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,2]_43 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,3]_45 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,4]_42 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,5]_47 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,6]_46 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,7]_48 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[5,8]_41 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,0]_37 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,1]_3b : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,2]_3a : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,3]_3c : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,4]_39 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,5]_3e : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,6]_3d : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,7]_3f : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[6,8]_38 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,0]_49 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,1]_4d : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,2]_4c : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,3]_4e : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,4]_4b : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,5]_50 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,6]_4f : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,7]_51 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[7,8]_4a : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,0]_a : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,1]_e : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,2]_d : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,3]_f : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,4]_c : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,5]_11 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,6]_10 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,7]_12 : 0 0 : 979 979 : Used 1 time 0
+ Sort Area is  products_reg_reg[8,8]_b : 0 0 : 979 979 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Preliminary Mapping Report (see note below)
-+------------+------------+-----------+----------------------+------------------+
-|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives       | 
-+------------+------------+-----------+----------------------+------------------+
-|U0/u_bram   | mem_reg    | Implied   | 1 K x 64             | RAM128X1D x 512  | 
-+------------+------------+-----------+----------------------+------------------+
++------------+----------------+-----------+----------------------+------------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives       | 
++------------+----------------+-----------+----------------------+------------------+
+|U0          | u_bram/mem_reg | Implied   | 1 K x 64             | RAM128X1D x 512  | 
++------------+----------------+-----------+----------------------+------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 16     | 9      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | A*B            | 18     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|filter_alu  | (PCIN>>17)+A*B | 17     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | (A*B)'          | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|filter_alu  | A2*B            | 18     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|filter_alu  | (PCIN>>17)+A*B2 | 17     | 16     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -750,24 +731,24 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2610.980 ; gain = 924.867 ; free physical = 3464 ; free virtual = 9504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2541.008 ; gain = 855.633 ; free physical = 1766 ; free virtual = 11315
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 2621.980 ; gain = 935.867 ; free physical = 3456 ; free virtual = 9496
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2554.008 ; gain = 868.633 ; free physical = 1746 ; free virtual = 11296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping Report
-+------------+------------+-----------+----------------------+------------------+
-|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives       | 
-+------------+------------+-----------+----------------------+------------------+
-|U0/u_bram   | mem_reg    | Implied   | 1 K x 64             | RAM128X1D x 512  | 
-+------------+------------+-----------+----------------------+------------------+
++------------+----------------+-----------+----------------------+------------------+
+|Module Name | RTL Object     | Inference | Size (Depth x Width) | Primitives       | 
++------------+----------------+-----------+----------------------+------------------+
+|U0          | u_bram/mem_reg | Implied   | 1 K x 64             | RAM128X1D x 512  | 
++------------+----------------+-----------+----------------------+------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -776,7 +757,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2658.457 ; gain = 972.344 ; free physical = 3428 ; free virtual = 9467
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2600.055 ; gain = 914.680 ; free physical = 1702 ; free virtual = 11251
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -794,130 +775,145 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3310 ; free virtual = 9350
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1584 ; free virtual = 11134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3310 ; free virtual = 9350
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1584 ; free virtual = 11134
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                       | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|image_filter_acc_image_filter_0_2 | U0/tlast_fifo_reg[6]       | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|image_filter_acc_image_filter_0_2 | U0/alu_valid_output_reg[6] | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++----------------------------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | (A*B)'         | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | PCIN+(A*B)'    | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|filter_alu  | (PCIN+(A*B)')' | 30     | 8      | -      | -      | 29     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|filter_alu  | A*B            | 17     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|filter_alu  | PCIN>>17+A*B   | 16     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping       | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | (A*B)'            | 30     | 8      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|filter_alu  | A'*B'             | 17     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|filter_alu  | (PCIN>>17+A'*B')' | 16     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -930,48 +926,49 @@ Report Cell Usage:
 +------+----------+------+
 |      |Cell      |Count |
 +------+----------+------+
-|1     |CARRY4    |    70|
+|1     |CARRY4    |   332|
 |2     |DSP48E1   |    83|
-|6     |LUT1      |    49|
-|7     |LUT2      |   367|
-|8     |LUT3      |   781|
-|9     |LUT4      |   381|
-|10    |LUT5      |   869|
-|11    |LUT6      |  2933|
-|12    |MUXF7     |   248|
-|13    |MUXF8     |    16|
-|14    |RAM128X1D |   512|
-|15    |FDRE      |  3729|
-|16    |FDSE      |     1|
+|5     |LUT1      |    63|
+|6     |LUT2      |   374|
+|7     |LUT3      |  1533|
+|8     |LUT4      |  1145|
+|9     |LUT5      |   944|
+|10    |LUT6      |  2770|
+|11    |MUXF7     |   280|
+|12    |MUXF8     |    64|
+|13    |RAM128X1D |   512|
+|14    |SRL16E    |     2|
+|15    |FDRE      |  4137|
+|16    |FDSE      |     8|
 |17    |LD        |    16|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.270 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.695 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11125
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 30 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2795.270 ; gain = 1003.656 ; free physical = 3308 ; free virtual = 9348
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2795.277 ; gain = 1109.156 ; free physical = 3308 ; free virtual = 9348
+Synthesis finished with 0 errors, 0 critical warnings and 94 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 2736.695 ; gain = 944.453 ; free physical = 1576 ; free virtual = 11126
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2736.703 ; gain = 1051.320 ; free physical = 1576 ; free virtual = 11126
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2795.277 ; gain = 0.000 ; free physical = 3472 ; free virtual = 9512
-INFO: [Netlist 29-17] Analyzing 945 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2736.703 ; gain = 0.000 ; free physical = 1733 ; free virtual = 11286
+INFO: [Netlist 29-17] Analyzing 1287 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2851.297 ; gain = 0.000 ; free physical = 3473 ; free virtual = 9513
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2792.723 ; gain = 0.000 ; free physical = 1755 ; free virtual = 11308
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 528 instances were transformed.
   LD => LDCE: 16 instances
   RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 512 instances
 
-Synth Design complete | Checksum: 62eaf0d9
+Synth Design complete | Checksum: b1b2fb16
 INFO: [Common 17-83] Releasing license: Synthesis
-32 Infos, 66 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 131 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2851.332 ; gain = 1335.953 ; free physical = 3472 ; free virtual = 9512
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2055.007; main = 1962.025; forked = 267.585
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3622.336; main = 2851.301; forked = 963.875
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2792.758 ; gain = 1271.117 ; free physical = 1755 ; free virtual = 11308
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1940.344; main = 1908.526; forked = 265.805
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3504.891; main = 2792.727; forked = 963.879
 INFO: [Coretcl 2-1174] Renamed 3 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2875.309 ; gain = 0.000 ; free physical = 3472 ; free virtual = 9512
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2816.734 ; gain = 0.000 ; free physical = 1753 ; free virtual = 11308
 INFO: [Common 17-1381] The checkpoint '/home/kowalski/Desktop/ETF/CETVRTA-GODINA/DVS/dvs25_projekat_g6/dvs25_projekat_g6.runs/image_filter_acc_image_filter_0_2_synth_1/image_filter_acc_image_filter_0_2.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file image_filter_acc_image_filter_0_2_utilization_synth.rpt -pb image_filter_acc_image_filter_0_2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jun 21 15:21:17 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 18:47:26 2026...
