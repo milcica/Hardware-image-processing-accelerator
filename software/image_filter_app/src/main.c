@@ -17,7 +17,7 @@
 
 #define OUTPUT_MODE_UINT8   0
 #define OUTPUT_MODE_Q9_7    4
-#define ACTIVE_MODE         OUTPUT_MODE_Q9_7 /* uint8 → direct 8-bit RGB output */
+#define ACTIVE_MODE         OUTPUT_MODE_Q9_7  /* uint8 → direct 8-bit RGB output */
 
 /* --- Filter types --- */
 #define FILTER_TYPE_BOX           0
@@ -25,20 +25,13 @@
 #define FILTER_TYPE_LOG           2
 #define FILTER_TYPE_SOBEL_X       3
 #define FILTER_TYPE_SOBEL_Y       4
-#define FILTER_TYPE_SHARPEN_BOX   5  /* unsharp mask: identity + box-blur-based edge   */
-#define FILTER_TYPE_SHARPEN_GAUSS 6  /* unsharp mask: identity + Gaussian-based edge   */
+#define FILTER_TYPE_SHARPEN_BOX   5  
+#define FILTER_TYPE_SHARPEN_GAUSS 6 
 #define FILTER_TYPE_LAPLACIAN     7
+#define ACTIVE_FILTER           FILTER_TYPE_LAPLACIAN 
+#define FILTER_RADIUS          1                
 
-#define ACTIVE_FILTER           FILTER_TYPE_SOBEL_X  /* <-- Select your filter */
-#define FILTER_RADIUS           2                 /* <-- 1(3x3) 2(5x5) 3(7x7) 4(9x9) */
-
-/* Number of colour planes.
- *   1 → grayscale  (DataBuffer = W×H bytes)
- *   3 → RGB        (DataBuffer = W×H×3 bytes, planar: R plane then G then B)
- * Each plane is sent as a SEPARATE DMA transaction so the hardware goes
- * AccIdle → AccProcessing → AccIdle cleanly for every plane.
- * The BRAM line buffer is therefore never contaminated across planes. */
-#define IMG_PLANES              1  /* <-- 1 = grayscale, 3 = RGB */
+#define IMG_PLANES              3  
 
 /* CoeffScale: set manually to match the active filter.
  *   Standard filters (box, gaussian, LoG, sobel, laplacian) → 4096
@@ -47,7 +40,7 @@
 #define COEFF_SCALE_VAL  4096   /* <-- change to 8192 for SHARPEN_BOX / SHARPEN_GAUSS */
 
 /* --- Bypass --- */
-#define BYPASS_ENABLE           0   /* 0 = normal filter | 1 = bypass BRAM+ALU */
+#define BYPASS_ENABLE         0   /* 0 = normal filter | 1 = bypass BRAM+ALU */
 
 /* --- AXI4-Lite register map (Table 5.2) --- */
 #define REG_CTRL_ADDR         0x00
@@ -70,9 +63,9 @@
 
 #define MAX_NUM_COEFFS        81
 
-/* Image dimensions – landscape 768×512 parrots image */
-#define IMG_WIDTH           128   /* <-- columns */
-#define IMG_HEIGHT          128   /* <-- rows    */
+
+#define IMG_WIDTH           768   /* <-- columns */
+#define IMG_HEIGHT          512   /* <-- rows    */
 
 /* Output dimensions */
 #if BYPASS_ENABLE
@@ -103,7 +96,6 @@
 #endif
 
 #define OUT_BUFFER_BYTES  (OUT_WIDTH * OUT_HEIGHT * IMG_PLANES * OUT_PIXEL_BYTES)
-/* 768×512 plane @ 100 MHz AXI ≈ 3.9 ms; 5 000 000 poll iterations >>10 ms */
 #define DMA_TRANSFER_TIMEOUT  5000000
 #define TMR_COUNTER_0         0
 #define TMR_FREQ_HZ           100000000ULL
@@ -148,27 +140,18 @@ static const char *FilterNameStr[] = {
     "Laplacian"
 };
 
-/* ==============================================================
- * GenerateCoeffsMath
- *
+/* GenerateCoeffsMath
  * Writes kernels in STANDARD orientation (row 0 = top of window).
  * Y-flip to match BRAM newest-first storage is handled entirely in
  * filter_alu.vhd via the (fdim-1-r)*9+c coefficient index.
- * ============================================================== */
+ */
 static void GenerateCoeffsMath(int type, int radius, s16* hw_coeffs)
 {
     int K = 2 * radius + 1;
 
-    /* σ = R/2: fits Gaussian inside the kernel for all supported radii */
+    /* σ = R/2: fits Gaussian inside the kernel for all supported radius */
     float sigma = (radius > 0) ? (radius / 2.0f) : 1.0f;
 
-    /* ----------------------------------------------------------------
-     * SHARPENING (separate path – avoids s16 overflow on centre coeff)
-     *
-     * Spec formula: W = (1+k)·δ − k·W_LP_norm   (k=1 → W = 2δ − W_LP)
-     * Centre value ≈ 2 overflows Q15.
-     * Fix: pre-scale all coefficients by 0.5 → CoeffScale must be 8192.
-     * ---------------------------------------------------------------- */
     if (type == FILTER_TYPE_SHARPEN_BOX || type == FILTER_TYPE_SHARPEN_GAUSS) {
         float lp[81] = {0.0f};
         float lp_sum = 0.0f;
@@ -200,9 +183,6 @@ static void GenerateCoeffsMath(int type, int radius, s16* hw_coeffs)
         return;
     }
 
-    /* ----------------------------------------------------------------
-     * ALL OTHER FILTER TYPES
-     * ---------------------------------------------------------------- */
     float f_math[81] = {0.0f};
     float sum_all = 0.0f;
     float sum_pos = 0.0f;
@@ -231,14 +211,7 @@ static void GenerateCoeffsMath(int type, int radius, s16* hw_coeffs)
                 case FILTER_TYPE_SOBEL_Y:
                     val = (dist_sq == 0.0f) ? 0.0f : dy / dist_sq;
                     break;
-                case FILTER_TYPE_LAPLACIAN:
-                    /* Full K×K discrete Laplacian:
-                     *   centre = -(K²-1)  all others = +1
-                     * Uses every pixel in the window (not just 4-connectivity).
-                     * Zero-sum: -(K²-1) + (K²-1)×1 = 0  ✓
-                     * For K=3: centre=-8, others=+1  (8-connectivity Laplacian)
-                     * For K=7: centre=-48, others=+1
-                     * For K=9: centre=-80, others=+1                           */
+                case FILTER_TYPE_LAPLACIAN:                          
                     val = (dx == 0.0f && dy == 0.0f) ? -(float)(K*K - 1) : 1.0f;
                     break;
             }
@@ -283,9 +256,6 @@ static void GenerateCoeffsMath(int type, int radius, s16* hw_coeffs)
     }
 }
 
-/* ==============================================================
- * main
- * ============================================================== */
 int main(void)
 {
     int Status;
@@ -411,12 +381,7 @@ int main(void)
     xil_printf("  SW time : %u us\r\n", SwTimeUs);
     xil_printf("  HW time : %u us\r\n", HwTimeUs);
     if (HwTimeUs > 0) xil_printf("  Speedup : %u x\r\n", SwTimeUs / HwTimeUs);
-
-    /* DMA timeout diagnostic.
-     * For 768×512 RGB (3 planes, box R=1, uint8):
-     *   HW ≈ 3 × (768×512 / 100MHz) ≈ 11.8 ms – well under 5 s.
-     * DMA timeout always manifests as HW time ~230 ms (polling loop
-     * runs to its iteration limit).  Flag anything over 2 s as hung. */
+    // DMA TIMEOUT WARNING
     if (HwTimeUs > 2000000) {
         xil_printf("WARNING: HW time >2 s – DMA timeout likely!\r\n");
         xil_printf("  Check: bitstream regenerated after VHDL changes?\r\n");
@@ -434,9 +399,9 @@ int main(void)
     return XST_SUCCESS;
 }
 
-/* ==============================================================
+/* 
  * FilterImageSW
- * ============================================================== */
+ */
 static void FilterImageSW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
 {
     int   R      = Params.Radius;
@@ -491,9 +456,9 @@ static void FilterImageSW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
     }
 }
 
-/* ==============================================================
- * AccConfigure
- * ============================================================== */
+/* 
+  AccConfigure
+  */
 static int AccConfigure(UINTPTR BaseAddress, FilterParams Params)
 {
     Xil_Out32(BaseAddress + REG_CTRL_ADDR,        (u32)Params.Ctrl);
@@ -508,16 +473,9 @@ static int AccConfigure(UINTPTR BaseAddress, FilterParams Params)
     return XST_SUCCESS;
 }
 
-/* ==============================================================
- * ImageFilterHW
- *
- * Each colour plane is processed as a SEPARATE DMA transaction.
- * This forces the hardware through AccIdle→AccProcessing→AccIdle
- * for every plane so the BRAM line buffer starts filling from
- * fresh data each time.  Sending all planes in one burst was the
- * root cause of the RGB corruption (BRAM tail from plane N
- * contaminated the first 2*R rows of plane N+1).
- * ============================================================== */
+/* 
+ ImageFilterHW
+ */
 static int ImageFilterHW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
 {
     int Status;
@@ -574,9 +532,9 @@ static int ImageFilterHW(u8 *DataBuffer, u8 *ResultBuffer, FilterParams Params)
     return XST_SUCCESS;
 }
 
-/* ==============================================================
- * CheckData
- * ============================================================== */
+/* 
+CheckData
+*/
 static int CheckData(u8 *ResultBuffer, u8 *ReferentBuffer, FilterParams Params)
 {
     int is_bypass = (Params.Ctrl & CTRL_BYPASS) != 0;
@@ -617,9 +575,9 @@ static int CheckData(u8 *ResultBuffer, u8 *ReferentBuffer, FilterParams Params)
     return XST_SUCCESS;
 }
 
-/* ==============================================================
+/* 
  * DMA helpers
- * ============================================================== */
+ */
 static int DmaConfigure(XAxiDma_Config *AxiDmaConfigPtr, XAxiDma *AxiDmaPtr) {
     int Status = XAxiDma_CfgInitialize(AxiDmaPtr, AxiDmaConfigPtr);
     if (Status != XST_SUCCESS) return XST_FAILURE;
